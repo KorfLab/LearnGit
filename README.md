@@ -1,4 +1,4 @@
 LearnGit
 ========
 
-Let's Learn Git
+This repository contains the Korf Lab Sequence Perl Module.
