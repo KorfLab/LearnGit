@@ -1,4 +1,4 @@
 LearnGit
 ========
+This repository contains the Korf Lab Collaborative Project. 
 
-This repository contains the Korf Lab Sequence Perl Module.
