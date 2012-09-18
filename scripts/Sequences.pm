@@ -4,131 +4,6 @@ use warnings;
 my $NUCLEOTIDE="ACGTURYSWKMBDHVN._";
 my $AMINO_ACID="ABCDEFGHIKLMNPQRSTVWXYZ.*";
 
-
-
-###############################################################################
-package Fasta;
-
-#Create new Fasta object from File or GLOB
-#Todo: implement gzip compatibility
-sub new {
-    my ($class,$file) = @_;
-    
-    my $fh;
-    if (ref $file eq "GLOB"){
-        $fh=$file;
-    }
-    elsif (ref $file eq "SCALAR"){
-        open $fh , "<" , $$file or die "Couldn't open " . $$file . " for reading fasta file\n";
-    }
-    else{
-        if (!-e $file){
-            die "$file doesn't exist\n";
-        }
-        else{
-            open $fh , "<" , $file or die "Couldn't open " . $file . " for reading fasta file\n";
-        }
-    }
-    
-    my $self = bless {}, $class;
-    $self->{FH}=$fh;
-    
-    #Check first line for valid Fasta mark
-    my $first_line = <$fh>;
-    chomp $first_line;
-    if ($first_line=~/^>/ || $first_line=~/^;/){
-        $self->{LAST}=$first_line;
-        seek($fh,0,0);
-    }
-    else{
-        die "Not FASTA format file\n";
-    }
-    
-    return $self;
-}
-
-#Get the next sequence in the file and return a Sequence object
-#Todo: test using FASTA format with > or ;\n;...\n
-sub getNext{
-    my $self = shift;
-    my $fh = $self->{FH};
-    my $seq = new Sequence();
-    while(<$fh>){
-        chomp;
-        if (/^;/){
-            next;
-        }
-        elsif (/^>/){
-            $seq->set_header($self->{LAST});
-            $self->{LAST}=$_;
-            return $seq;
-        }
-        else{
-            $seq->{sequence}.=$_;
-        }
-    }
-    
-    if (length $seq->{sequence}==0){
-        return;
-    }
-    
-    $seq->set_header($self->{LAST});
-    return $seq;
-}
-
-#Get all the sequences in the file and return a Sequences object
-sub getAll{
-    my $self = shift;
-    my $fh = $self->{FH};
-    my $seqs = new Sequences();
-    my $seq = new Sequence();
-    while(<$fh>){
-        chomp;
-        if (/^;/){
-            next;
-        }
-        elsif (/^>/){
-            $seq->set_header($self->{LAST});
-            $self->{LAST}=$_;
-            $seqs->push_sequence($seq);
-            $seq=new Sequence();
-        }
-        else{
-            $seq->{sequence}.=$_;
-        }
-    }
-    
-    if (length $seq->{sequence}==0){
-        return $seqs;
-    }
-    
-    $seq->set_header($self->{LAST});
-    $seqs->push_sequence($seq);
-    return $seqs;
-}
-
-###############################################################################
-package Genbank;
-
-#Create a new Genbank object
-sub new{
-    
-}
-
-#Get the next sequence in the file and return a Sequence object
-sub getNext{
-    
-}
-
-#Get all the sequences in the file and return a Sequences object
-sub getAll{
-    
-}
-
-
-
-
-
 ###############################################################################
 package Sequence;
 
@@ -137,7 +12,7 @@ package Sequence;
 #Create a new sequence object
 sub new{
     my ($class,$header,$seq)=@_;
-    my $self = bless {sequence=>"",header=>""}, $class;
+    my $self = bless {sequence=>undef,header=>undef}, $class;
     if (defined $header){
         $self->set_header($header);
         $self->set_sequence($seq);
@@ -316,6 +191,130 @@ sub shuffle{
 sub print{
     
 }
+
+###############################################################################
+package Fasta;
+
+
+#Create new Fasta object from File or GLOB
+#Todo: implement gzip compatibility
+sub new {
+    my ($class,$file) = @_;
+    
+    my $fh;
+    if (ref $file eq "GLOB"){
+        $fh=$file;
+    }
+    elsif (ref $file eq "SCALAR"){
+        open $fh , "<" , $$file or die "Couldn't open " . $$file . " for reading fasta file\n";
+    }
+    else{
+        if (!-e $file){
+            die "$file doesn't exist\n";
+        }
+        else{
+            open $fh , "<" , $file or die "Couldn't open " . $file . " for reading fasta file\n";
+        }
+    }
+    
+    my $self = bless {}, $class;
+    $self->{FH}=$fh;
+    
+    #Check first line for valid Fasta mark
+    my $first_line = <$fh>;
+    chomp $first_line;
+    if ($first_line=~/^>/ || $first_line=~/^;/){
+        $self->{LAST}=$first_line;
+    }
+    else{
+        die "Not FASTA format file\n";
+    }
+    
+    return $self;
+}
+
+#Get the next sequence in the file and return a Sequence object
+#Todo: test using FASTA format with > or ;\n;...\n
+sub getNext{
+    my $self = shift;
+    my $fh = $self->{FH};
+    my $seq = new Sequence();
+    while(<$fh>){
+        chomp;
+        if (/^;/){
+            next;
+        }
+        elsif (/^>/){
+            $seq->set_header($self->{LAST});
+            $self->{LAST}=$_;
+            return $seq;
+        }
+        else{
+            $seq->{sequence}.=$_;
+        }
+    }
+    
+    if (length $seq->{sequence}==0){
+        return;
+    }
+    
+    $seq->set_header($self->{LAST});
+    return $seq;
+}
+
+#Get all the sequences in the file and return a Sequences object
+sub getAll{
+    my $self = shift;
+    my $fh = $self->{FH};
+    my $seqs = new Sequences();
+    my $seq = new Sequence();
+    while(<$fh>){
+        chomp;
+        if (/^;/){
+            next;
+        }
+        elsif (/^>/){
+            $seq->set_header($self->{LAST});
+            $self->{LAST}=$_;
+            $seqs->push_sequence($seq);
+            $seq=new Sequence();
+        }
+        else{
+            $seq->{sequence}.=$_;
+        }
+    }
+    
+    if (length $seq->{sequence}==0){
+        return $seqs;
+    }
+    
+    $seq->set_header($self->{LAST});
+    $seqs->push_sequence($seq);
+    return $seqs;
+}
+
+###############################################################################
+package Genbank;
+
+#Create a new Genbank object
+sub new{
+    
+}
+
+#Get the next sequence in the file and return a Sequence object
+sub getNext{
+    
+}
+
+#Get all the sequences in the file and return a Sequences object
+sub getAll{
+    
+}
+
+
+
+
+
 
 
 ###############################################################################
