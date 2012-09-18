@@ -205,15 +205,25 @@ sub new {
     if (ref $file eq "GLOB"){
         $fh=$file;
     }
-    elsif (ref $file eq "SCALAR"){
-        open $fh , "<" , $$file or die "Couldn't open " . $$file . " for reading fasta file\n";
-    }
     else{
-        if (!-e $file){
-            die "$file doesn't exist\n";
+        my $filename;
+        if (ref $file eq "SCALAR"){
+            $filename = $$file;
         }
         else{
-            open $fh , "<" , $file or die "Couldn't open " . $file . " for reading fasta file\n";
+            $filename=$file;
+        }
+        
+        if (!-e $filename){
+            die "$filename doesn't exist\n";
+        }
+        else{
+            if ($filename=~/\.gz$/){
+                open $fh , "gunzip -c $filename |" or die "Couldn't open " . $filename . " for reading fasta file\n";
+            }
+            else{
+                open $fh , "<" , $filename or die "Couldn't open " . $filename . " for reading fasta file\n";
+            }
         }
     }
     
