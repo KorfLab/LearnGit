@@ -2,7 +2,7 @@
 use warnings;
 use strict;
 
-#Fill table with numbers 1-16
+#Fill array with numbers 1-16
 #Calculates mean, population variance and std deviation of array
 
 my @row;
