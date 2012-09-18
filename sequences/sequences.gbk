@@ -2758,3 +2758,70 @@ ORIGIN
      1261 atggctgcac ttcaacaacc ggaacatcat attccaccat tagttcgagt tatttcacgt
      1321 cttattcgga gttttttgta g
 //
+LOCUS       NM_063306                645 bp    mRNA    linear   INV 29-JUN-2012
+DEFINITION  Caenorhabditis elegans Protein RPL-10 (rpl-10) mRNA, complete cds.
+ACCESSION   NM_063306
+VERSION     NM_063306.5  GI:392890778
+KEYWORDS    .
+SOURCE      Caenorhabditis elegans
+  ORGANISM  Caenorhabditis elegans
+            Eukaryota; Metazoa; Ecdysozoa; Nematoda; Chromadorea; Rhabditida;
+            Rhabditoidea; Rhabditidae; Peloderinae; Caenorhabditis.
+REFERENCE   1  (bases 1 to 645)
+  CONSRTM   C. elegans Sequencing Consortium
+  TITLE     Genome sequence of the nematode C. elegans: a platform for
+            investigating biology
+  JOURNAL   Science 282 (5396), 2012-2018 (1998)
+   PUBMED   9851916
+  REMARK    Erratum:[Science 1999 Jan 1;283(5398):35]
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. This
+            record is derived from an annotated genomic sequence (NC_003280).
+            On Jun 26, 2012 this sequence version replaced gi:193204381.
+            WormBase Consortium, Wellcome Trust Sanger Institute, Hinxton,
+            Cambridge CB10 1SA, UNITED KINGDOM. This record corresponds to
+            Wormbase release WS231.
+            COMPLETENESS: incomplete on both ends.
+FEATURES             Location/Qualifiers
+     source          1..645
+                     /organism="Caenorhabditis elegans"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:6239"
+                     /chromosome="II"
+     gene            1..645
+                     /gene="rpl-10"
+                     /locus_tag="CELE_F10B5.1"
+                     /db_xref="GeneID:174311"
+     CDS             1..645
+                     /gene="rpl-10"
+                     /locus_tag="CELE_F10B5.1"
+                     /standard_name="F10B5.1"
+                     /note="Confirmed by transcript evidence;
+                     ribosomal protein L10 (QM protein)"
+                     /codon_start=1
+                     /product="Protein RPL-10"
+                     /protein_id="NP_495707.1"
+                     /db_xref="GI:17533037"
+                     /db_xref="GOA:Q09533"
+                     /db_xref="InterPro:IPR001197"
+                     /db_xref="InterPro:IPR016180"
+                     /db_xref="InterPro:IPR018255"
+                     /db_xref="UniProtKB/Swiss-Prot:Q09533"
+                     /db_xref="WormBase:WBGene00004421"
+                     /db_xref="GeneID:174311"
+                     /translation="MGRRPARCYRYIKNKPYPKSRFCRGVPDAKIRIFDLGNKRANVD
+                     TFPACVHMMSNEREHLSSEALEAARICANKYMVKNCGKDGFHLRVRKHPFHVTRINKM
+                     LSCAGADRLQTGMRGAYGKPQGLVARVDIGDILFSMRIKEGNVKHAIEAFRRAKFKFP
+                     GRQIIVSSRKWGFTKWDREDYERMRAEGRLRSDGVGVQLQREHGPLTKWIENPI"
+ORIGIN      
+        1 atgggtagac gtccagcgcg gtgctaccgc tatatcaaga acaagccata cccaaagtcc
+       61 cgcttctgca gaggagttcc ggacgcgaag atcagaatct tcgatttggg aaacaagagg
+      121 gctaacgttg acaccttccc agcatgtgtg cacatgatgt ccaacgagcg tgagcatctt
+      181 tcctctgaag ctctcgaagc cgcccgtatt tgcgccaaca agtacatggt caagaactgc
+      241 ggaaaggacg gattccatct ccgtgttcgc aagcatccat tccacgtcac ccgtatcaac
+      301 aaaatgcttt cctgtgccgg agctgatcgt ctccaaactg gaatgcgtgg agcttacgga
+      361 aagccacaag gattggtcgc tcgtgtcgac attggagata ttcttttctc catgagaatc
+      421 aaggaaggaa acgtcaagca cgctattgaa gccttccgtc gtgccaagtt caagttccca
+      481 ggacgtcaaa tcatcgtctc ttcccgcaag tggggattca ccaagtggga tcgcgaagac
+      541 tacgagcgca tgcgtgctga aggaagactc cgctccgacg gagttggagt tcaactccaa
+      601 cgtgagcatg gaccactcac caagtggatt gagaacccaa tctaa
+//
