@@ -4722,4 +4722,280 @@ ORIGIN
       901 ttgggctata gcataattag attttctggc tttcaaaaat ttggattgca atcacagcaa
       961 actttgttat ttttacagtt ttcagtacaa aagtgtttat atagaaacaa taaagttgac
      1021 atttgagtac cttttaaaaa
+//LOCUS       NM_001205386            2551 bp    mRNA    linear   ROD 15-SEP-2012
+DEFINITION  Mus musculus ARP3 actin-related protein 3 (Actr3), transcript
+            variant 3, mRNA.
+ACCESSION   NM_001205386
+VERSION     NM_001205386.1  GI:329664972
+KEYWORDS    .
+SOURCE      Mus musculus (house mouse)
+  ORGANISM  Mus musculus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Rodentia;
+            Sciurognathi; Muroidea; Muridae; Murinae; Mus; Mus.
+REFERENCE   1  (bases 1 to 2551)
+  AUTHORS   Wu,C., Asokan,S.B., Berginski,M.E., Haynes,E.M., Sharpless,N.E.,
+            Griffith,J.D., Gomez,S.M. and Bear,J.E.
+  TITLE     Arp2/3 is critical for lamellipodia and response to extracellular
+            matrix cues but is dispensable for chemotaxis
+  JOURNAL   Cell 148 (5), 973-987 (2012)
+   PUBMED   22385962
+  REMARK    GeneRIF: Cells depleted of Arp2/3 complex cannot respond to a
+            surface-bound gradient of extracellular matrix (haptotaxis).
+REFERENCE   2  (bases 1 to 2551)
+  AUTHORS   Yi,K., Unruh,J.R., Deng,M., Slaughter,B.D., Rubinstein,B. and Li,R.
+  TITLE     Dynamic maintenance of asymmetric meiotic spindle position through
+            Arp2/3-complex-driven cytoplasmic streaming in mouse oocytes
+  JOURNAL   Nat. Cell Biol. 13 (10), 1252-1258 (2011)
+   PUBMED   21874009
+  REMARK    GeneRIF: Show that the Arp2/3 complex localizes to the oocyte
+            cortical cap in a Ran-GTPase-dependent manner and nucleates actin
+            filaments in the cortical cap and a cytoplasmic actin network.
+            Publication Status: Online-Only
+REFERENCE   3  (bases 1 to 2551)
+  AUTHORS   Saarikangas,J., Mattila,P.K., Varjosalo,M., Bovellan,M.,
+            Hakanen,J., Calzada-Wack,J., Tost,M., Jennen,L., Rathkolb,B.,
+            Hans,W., Horsch,M., Hyvonen,M.E., Perala,N., Fuchs,H.,
+            Gailus-Durner,V., Esposito,I., Wolf,E., de Angelis,M.H.,
+            Frilander,M.J., Savilahti,H., Sariola,H., Sainio,K., Lehtonen,S.,
+            Taipale,J., Salminen,M. and Lappalainen,P.
+  TITLE     Missing-in-metastasis MIM/MTSS1 promotes actin assembly at
+            intercellular junctions and is required for integrity of kidney
+            epithelia
+  JOURNAL   J. Cell. Sci. 124 (PT 8), 1245-1255 (2011)
+   PUBMED   21406566
+REFERENCE   4  (bases 1 to 2551)
+  AUTHORS   Sun,S.C., Wang,Z.B., Xu,Y.N., Lee,S.E., Cui,X.S. and Kim,N.H.
+  TITLE     Arp2/3 complex regulates asymmetric division and cytokinesis in
+            mouse oocytes
+  JOURNAL   PLoS ONE 6 (4), E18392 (2011)
+   PUBMED   21494665
+  REMARK    Publication Status: Online-Only
+REFERENCE   5  (bases 1 to 2551)
+  AUTHORS   Derivery,E., Sousa,C., Gautier,J.J., Lombard,B., Loew,D. and
+            Gautreau,A.
+  TITLE     The Arp2/3 activator WASH controls the fission of endosomes through
+            a large multiprotein complex
+  JOURNAL   Dev. Cell 17 (5), 712-723 (2009)
+   PUBMED   19922875
+  REMARK    GeneRIF: WASH complex activates Arp2/3-mediated actin nucleation
+            and binds directly to liposomes. WASH also interacts with dynamin.
+REFERENCE   6  (bases 1 to 2551)
+  AUTHORS   Merrifield,C.J., Qualmann,B., Kessels,M.M. and Almers,W.
+  TITLE     Neural Wiskott Aldrich Syndrome Protein (N-WASP) and the Arp2/3
+            complex are recruited to sites of clathrin-mediated endocytosis in
+            cultured fibroblasts
+  JOURNAL   Eur. J. Cell Biol. 83 (1), 13-18 (2004)
+   PUBMED   15085951
+  REMARK    GeneRIF: N-WASP and the Arp2/3 complex trigger actin polymerization
+            during a late step in clathrin-mediated endocytosis
+REFERENCE   7  (bases 1 to 2551)
+  AUTHORS   Gavard,J., Lambert,M., Grosheva,I., Marthiens,V., Irinopoulou,T.,
+            Riou,J.F., Bershadsky,A. and Mege,R.M.
+  TITLE     Lamellipodium extension and cadherin adhesion: two cell responses
+            to cadherin activation relying on distinct signalling pathways
+  JOURNAL   J. Cell. Sci. 117 (PT 2), 257-270 (2004)
+   PUBMED   14657280
+REFERENCE   8  (bases 1 to 2551)
+  AUTHORS   Magdalena,J., Millard,T.H., Etienne-Manneville,S., Launay,S.,
+            Warwick,H.K. and Machesky,L.M.
+  TITLE     Involvement of the Arp2/3 complex and Scar2 in Golgi polarity in
+            scratch wound models
+  JOURNAL   Mol. Biol. Cell 14 (2), 670-684 (2003)
+   PUBMED   12589062
+  REMARK    GeneRIF: Scar2 and the Arp2/3 complex appear to be involved in the
+            establishment and maintenance of Golgi polarity during directed
+            migration
+REFERENCE   9  (bases 1 to 2551)
+  AUTHORS   Uruno,T., Liu,J., Zhang,P., Fan,Yx., Egile,C., Li,R., Mueller,S.C.
+            and Zhan,X.
+  TITLE     Activation of Arp2/3 complex-mediated actin polymerization by
+            cortactin
+  JOURNAL   Nat. Cell Biol. 3 (3), 259-266 (2001)
+   PUBMED   11231575
+REFERENCE   10 (bases 1 to 2551)
+  AUTHORS   Jiang,C.H., Tsien,J.Z., Schultz,P.G. and Hu,Y.
+  TITLE     The effects of aging on gene expression in the hypothalamus and
+            cortex of mice
+  JOURNAL   Proc. Natl. Acad. Sci. U.S.A. 98 (4), 1930-1934 (2001)
+   PUBMED   11172053
+COMMENT     VALIDATED REFSEQ: This record has undergone validation or
+            preliminary review. The reference sequence was derived from
+            AC124528.4, AK166529.1 and AV137086.1.
+            
+            Transcript Variant: This variant (3) differs in the 5' UTR,
+            compared to variant 1. Variants 1, 2 and 3 encode the same protein.
+            
+            Sequence Note: This RefSeq record was created from transcript and
+            genomic sequence data to make the sequence consistent with the
+            reference genome assembly. The genomic coordinates used for the
+            transcript record were based on transcript alignments.
+            
+            Publication Note:  This RefSeq record includes a subset of the
+            publications that are available for this gene. Please see the Gene
+            record to access additional publications.
+            
+            ##RefSeq-Attributes-START##
+            Transcript_exon_combination_evidence :: AK166529.1, AK166586.1
+                                                    [ECO:0000332]
+            ##RefSeq-Attributes-END##
+            COMPLETENESS: complete on the 3' end.
+PRIMARY     REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP
+            1-54                AC124528.4         76602-76655
+            55-2539             AK166529.1         2-2486
+            2540-2551           AV137086.1         281-292
+FEATURES             Location/Qualifiers
+     source          1..2551
+                     /organism="Mus musculus"
+                     /mol_type="mRNA"
+                     /strain="C57BL/6"
+                     /db_xref="taxon:10090"
+                     /chromosome="1"
+                     /map="1"
+     gene            1..2551
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /note="ARP3 actin-related protein 3"
+                     /db_xref="GeneID:74117"
+                     /db_xref="MGI:1921367"
+     exon            1..75
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=1a
+     exon            76..248
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=1d
+     misc_feature    148..150
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /note="upstream in-frame stop codon"
+     CDS             205..1461
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /note="ARP3 actin-related protein 3 homolog; actin-like
+                     protein 3"
+                     /codon_start=1
+                     /product="actin-related protein 3"
+                     /protein_id="NP_001192315.1"
+                     /db_xref="GI:329664973"
+                     /db_xref="CCDS:CCDS15242.1"
+                     /db_xref="GeneID:74117"
+                     /db_xref="MGI:1921367"
+                     /translation="MAGRLPACVVDCGTGYTKLGYAGNTEPQFIIPSCIAIKESAKVG
+                     DQAQRRVMKGVDDLDFFIGDEAIEKPTYATKWPIRHGIVEDWDLMERFMEQVIFKYLR
+                     AEPEDHYFLLTEPPLNTPENREYTAEIMFESFNVPGLYIAVQAVLALAASWTSRQVGE
+                     RTLTGTVIDSGDGVTHVIPVAEGYVIGSCIKHIPIAGRDITYFIQQLLRDREVGIPPE
+                     QSLETAKAVKERYSYVCPDLVKEFNKYDTDGSKWIKQYTGVNAISKKEFSIDVGYERF
+                     LGPEIFFHPEFANPDFTQPISEVVDEVIQNCPIDVRRPLYKNIVLSGGSTMFRDFGRR
+                     LQRDLKRTVDARLKLSEELSGGRLKPKPIDVQVITHHMQRYAVWFGGSMLASTPEFYQ
+                     VCHTKKDYEEIGPSICRHNPVFGVMS"
+     misc_feature    1456..1458
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (Q99JY9.3); phosphorylation site"
+     exon            249..304
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=2
+     exon            305..429
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=3
+     exon            430..540
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=4
+     exon            541..636
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=5
+     exon            637..744
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=6
+     exon            745..888
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=7
+     exon            889..1062
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=8
+     exon            1063..1155
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=9
+     exon            1156..1281
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=10
+     exon            1282..1365
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=11
+     exon            1366..2551
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=12
+ORIGIN      
+        1 gggagcgatc gcggcctggg gcctggcctg gccggggcgt cggcagcggc ggccatcttg
+       61 gctccccgcg gaaagctccc tcccttcctc cctccctccc gaccgagggc ggcccgggcc
+      121 ggtgcatggt cagccagctc ccatctctag ctccccggcc tctcagcagc acggaacgga
+      181 cggcagcggc gggcgaggag gaagatggcg ggacggctgc cggcctgtgt ggtggactgt
+      241 ggcacgggat atacaaaact aggatatgct ggaaatacag agccacagtt tatcatccca
+      301 tcatgtattg ccattaaaga gtctgcaaaa gtgggtgacc aagcccagag gagggtgatg
+      361 aaaggcgtgg atgacctaga cttcttcatt ggtgatgaag caatagaaaa gcccacatat
+      421 gcaacaaagt ggccaattcg ccatggtata gttgaagact gggacttaat ggaaaggttt
+      481 atggagcaag tgatttttaa atatttaagg gcagaacctg aagatcatta ctttcttttg
+      541 actgaacctc cactgaatac tccagaaaac agggaatata ctgctgaaat aatgtttgaa
+      601 tccttcaatg ttccaggctt gtacattgct gtgcaggctg ttcttgcctt agctgcatcc
+      661 tggacctcaa gacaagtagg agagcggacg ctgacgggta cagtaataga cagtggagac
+      721 ggagtcactc atgtcattcc tgtggctgaa ggatatgtta tcggcagctg tattaaacac
+      781 attccaatcg caggaagaga tataacatat tttattcagc aactgctgcg agaccgagaa
+      841 gtaggaatcc ctcctgagca gtccttggaa actgcgaaag cagtgaagga acgctacagt
+      901 tatgtctgcc cagatttagt aaaagagttt aacaagtatg acaccgatgg gtcaaagtgg
+      961 atcaaacagt acaccggagt caacgccatc tcaaagaaag agttttctat tgatgttggc
+     1021 tatgagcgat tcctgggacc cgagatcttt ttccatccag agtttgctaa tccagatttt
+     1081 acacaaccta tctcagaagt tgtagatgaa gtcattcaga attgccccat tgatgtccgg
+     1141 cgtcctctct acaagaacat tgtcctctct ggtggttcaa ccatgttcag ggactttgga
+     1201 cgtcgtttgc aaagagattt gaagagaact gtagatgcca ggctgaagtt aagcgaggag
+     1261 ctgagtggtg gtagattgaa gcccaagcct attgatgtac aagttattac acaccatatg
+     1321 cagcggtatg cagtctggtt tggagggtca atgctggctt ccacgcctga gttctaccaa
+     1381 gtatgccaca ccaaaaagga ttatgaagaa attggaccta gcatttgtcg tcacaatcca
+     1441 gtgtttggag tcatgtccta aagttgactt cttgttgatt gggttaggga gatggaaatg
+     1501 agataatctt tctgatgacc tgtttttgtc tgaatggatg gttctgaggt ttttaaccaa
+     1561 acatgatcat acaggaatat ttaatgagtg tgtcaacatg cagatgtaga agagagctaa
+     1621 gacgattgtt ttcctttagg ttgaatattt gaatcttatg tgtatcaaaa aagaaatggg
+     1681 ttttagttct ttctttgccc tgatattttg tatattattg acttacccag tgtgctgggc
+     1741 tcagtgggtg tgtagagagc tctgtaatgc ctgattgggc actgctgagt gggtagtgcc
+     1801 tgagcttgtt tatatttcat acttttttat actttgagga aaaaaagtca aagaaaaact
+     1861 gtagtattgg agggaaacaa tgtgaccaag gaaaagatga gttcaacaag cagcctcatg
+     1921 ggacttggcg cacactctgg gttccagtta tctcgagctg ctccacccct ccccagccca
+     1981 acggttctct ctgcaaatgc ttggatctaa gaagctagtc tcctgggtta gccgatgcct
+     2041 gccctgcttt ctggttactt acattctgtt tcttgcttta aaagaaggac aagactgttg
+     2101 gaccagtatt gcaattctgt agagtcgttt cttattaaaa caataatgtg attaccaaaa
+     2161 ttggcatatt taaggcctaa tgccattcta ataaaggcaa aaaatttctt tttactactt
+     2221 gtttcaggct ctttgatctc tttataagtt aactaatacg tctattttct tcagattctg
+     2281 cagtagctct ttaaaagcac agcggttgga tagcaagctg acttttttat gtgctctgta
+     2341 caaataattg tgaactttta atatgttgag tgctttcatt ttgataactg gatctccatt
+     2401 tgatatttca tttgtataac tcatttgcag tctgaatttt ttttagtgcc agtccctgac
+     2461 atatcatgaa aagttggttt tctttgcatt ttcaaatatc tggatcatga agaaaaagtg
+     2521 atgacaataa attaaaattg aattaccctt c
 //
