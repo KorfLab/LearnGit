@@ -4722,7 +4722,8 @@ ORIGIN
       901 ttgggctata gcataattag attttctggc tttcaaaaat ttggattgca atcacagcaa
       961 actttgttat ttttacagtt ttcagtacaa aagtgtttat atagaaacaa taaagttgac
      1021 atttgagtac cttttaaaaa
-//LOCUS       NM_001205386            2551 bp    mRNA    linear   ROD 15-SEP-2012
+//
+LOCUS       NM_001205386            2551 bp    mRNA    linear   ROD 15-SEP-2012
 DEFINITION  Mus musculus ARP3 actin-related protein 3 (Actr3), transcript
             variant 3, mRNA.
 ACCESSION   NM_001205386
