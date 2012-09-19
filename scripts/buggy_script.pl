@@ -1,5 +1,9 @@
 #!/usr/bin/perl
+# 
+# buggy_script.pl
+#
 # The 'fix-the-typo-and-add-a-new-typo-challenge'!
+# remember...confirm you have added a bug by running 'perl -c buggy_script.pl' 
 
 use warnings;
 use strict;
