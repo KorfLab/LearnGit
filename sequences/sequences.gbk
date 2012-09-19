@@ -3696,3 +3696,65 @@ ORIGIN
     11281 tactttaaat cagaagattt catagttaat ttattttttt tttcaacaaa atggtcatcc
     11341 aaactcaaac ttgagaaaat atcttgcttt caaattggca ctgatt
 //
+LOCUS       MUSGATIII               2144 bp    mRNA    linear   ROD 27-APR-1993
+DEFINITION  Mouse GABA transporter (GAT3) mRNA.
+ACCESSION   L04663
+VERSION     L04663.1  GI:193433
+KEYWORDS    GABA transporter.
+SOURCE      Mus cookii (Cook's mouse)
+  ORGANISM  Mus cookii
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Rodentia;
+            Sciurognathi; Muroidea; Muridae; Murinae; Mus; Mus.
+REFERENCE   1  (bases 1 to 2144)
+  AUTHORS   Liu,Q.R., Lopez-Corcuera,B., Mandiyan,S., Nelson,H. and Nelson,N.
+  TITLE     Molecular characterization of four pharmacologically distinct
+            gamma-aminobutyric acid transporters in mouse brain [corrected]
+  JOURNAL   J. Biol. Chem. 268 (3), 2106-2112 (1993)
+   PUBMED   8420981
+COMMENT     Original source text: Mus cookii neonatal brain cDNA to mRNA.
+FEATURES             Location/Qualifiers
+     source          1..2144
+                     /organism="Mus cookii"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:10098"
+                     /tissue_type="brain"
+                     /dev_stage="neonatal"
+ORIGIN      
+        1 gaattcggca cgaggaaact tcaccaaggt gggatggaga acagggcctc gggaacaacc
+       61 agtaatggag agacaaagcc agtgtgtcca gccatggaga aagtggagga agatggtacc
+      121 ctggaacggg agcactggaa caacaagatg gagtttgtgc tgtctgtggc tggggagatc
+      181 attggcttag gcaacgtctg gaggtttccc tatctctgct acaagaacgg gggaggtgcc
+      241 ttctttatcc cctacctcat cttccttttt acctgtggca tccctgtctt cttcttggag
+      301 acagcgcttg gccagtacac caaccaggga ggcatcacag cctggaggag aatctgtccc
+      361 atctttgaag gcatcggcta tgcctcacag atgatcgtca gcctcctcaa tgtctactac
+      421 atcgttgtct tggcctgggc cctcttctac ctcttcagca gcttcaccac tgacctcccc
+      481 tggggaagct gcagccatga gtggaataca gaaaactgtg tggaattcca gaaggccaat
+      541 gattccatga atgtgacctc cgagaatgcc acctcccctg tcatcgagtt ctgggagagg
+      601 cgagtcctga agctctcgga tggcatccag cacctggggt ccctgcgctg ggaactggtc
+      661 ctgtgcctcc tgctcgcctg gatcatctgc tacttctgca tctggaaggg ggtcaagtcc
+      721 acgggcaagg tggtctactt cacagccact ttcccttacc tcatgctggt ggtcctgttg
+      781 attcgaggag tgacactgcc cggagcagcc caaggaattc agttttacct gtaccccaac
+      841 atcacacgtc tgtgggatcc ccaggtgtgg atggatgcag gcacccagat cttcttctcc
+      901 tttgccatct gtctggggtg cctcacggcc ctgggaagct acaacaagta ccacaacaat
+      961 tgctacaggg actgcatcgc cctttgcatc ctcaacagca gcaccagctt catggccggg
+     1021 tttgctatct tctccatcct gggcttcatg tctcaggagc agggtgtgcc catatctgag
+     1081 gttgctgaat caggccctgg cctggcattc atcgcctacc ctcgagctgt ggtgatgtta
+     1141 cccttctcac cgttgtgggc ctgctgtttc ttcttcatgg tcgttctcct gggactagat
+     1201 agccagtttg tgtgtgtaga aagccttgtg acagcattag tggacatgta tccccgggtg
+     1261 ttccgtaaga agaatcggag ggaggtcctc atccttattg tgtccgtcat ctcgttcttc
+     1321 atcgggctca tcatgctcac agagggcggc atgtacgtgt tccagctctt tgactactat
+     1381 gcagccagtg gcatgtgtct tctcttcgtg gccatctttg agtccctctg tgtggcttgg
+     1441 gtttatggag ccggccgctt ctacgacaac attgaggata tgattgggta taagccatgg
+     1501 cctcttatca aatattgttg gctctttttc acgccagctg tgtgcctggc gaccttcctg
+     1561 ttctccctga tcaaatacac gccactgacc tacaacaaga agtacacgta cccatggtgg
+     1621 ggggatgccc tagggtggct cctagctctg tcctccatga tctgcattcc tgcctggagc
+     1681 atctacaagc tgaggactct caagggccca ctcagagaga gacttcgcca gctcgtgtgc
+     1741 ccggctgaag accttcccca gaagaaccaa ccagagccaa ctgctcctgc gacaccgatg
+     1801 acatcccttc tcaggctcac agaactggag tctaactgct aggccagggc ctttgacaca
+     1861 cctgtgagcc tggctgtggg ggcagctata gaggcagagg ggcggaacta cccctctgtg
+     1921 gtggggcaga aagacgaaag ggggtatttg ggactcacct tctgaactgg gtacctccta
+     1981 tcttgatgcc cctattccag ggtggtccac acattgtgac gtgcccgaat caataacatc
+     2041 ccattgaggc agcttgggaa gcccagggag ggctggggag gcaaaagcct ggcttgttgc
+     2101 tgggccctct tccttccatg tcattaaatc caacttcctc tcac
+//
