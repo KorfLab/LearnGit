@@ -1,0 +1,186 @@
+LOCUS       NM_001111966            1627 bp    mRNA    linear   PLN 21-JUL-2012
+DEFINITION  Zea mays knotted1 (kn1), mRNA.
+ACCESSION   NM_001111966
+VERSION     NM_001111966.2  GI:162952039
+KEYWORDS    .
+SOURCE      Zea mays
+  ORGANISM  Zea mays
+            Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;
+            Spermatophyta; Magnoliophyta; Liliopsida; Poales; Poaceae; PACMAD
+            clade; Panicoideae; Andropogoneae; Zea.
+REFERENCE   1  (bases 1 to 1627)
+  AUTHORS   Xu,X.M., Wang,J., Xuan,Z., Goldshmidt,A., Borrill,P.G.,
+            Hariharan,N., Kim,J.Y. and Jackson,D.
+  TITLE     Chaperonins facilitate KNOTTED1 cell-to-cell trafficking and stem
+            cell function
+  JOURNAL   Science 333 (6046), 1141-1144 (2011)
+   PUBMED   21868675
+  REMARK    GeneRIF: KN1 trafficking requires chaperonin complex; study shows
+            chaperonins are essential for cell-to-cell trafficking of subset of
+            mobile transcription factors and demonstrates importance of
+            chaperonin-dependent protein trafficking for plant stem cell
+            function
+REFERENCE   2  (bases 1 to 1627)
+  AUTHORS   Woodward,J.B., Abeydeera,N.D., Paul,D., Phillips,K.,
+            Rapala-Kozik,M., Freeling,M., Begley,T.P., Ealick,S.E., McSteen,P.
+            and Scanlon,M.J.
+  TITLE     A maize thiamine auxotroph is defective in shoot meristem
+            maintenance
+  JOURNAL   Plant Cell 22 (10), 3305-3317 (2010)
+   PUBMED   20971897
+REFERENCE   3  (bases 1 to 1627)
+  AUTHORS   Ramirez,J., Bolduc,N., Lisch,D. and Hake,S.
+  TITLE     Distal expression of knotted1 in maize leaves leads to
+            reestablishment of proximal/distal patterning and leaf dissection
+  JOURNAL   Plant Physiol. 151 (4), 1878-1888 (2009)
+   PUBMED   19854860
+  REMARK    GeneRIF: kn1 normally participates in the establishment of
+            proximal/distal polarity in the incipient leaf.
+REFERENCE   4  (bases 1 to 1627)
+  AUTHORS   Bolduc,N. and Hake,S.
+  TITLE     The maize transcription factor KNOTTED1 directly regulates the
+            gibberellin catabolism gene ga2ox1
+  JOURNAL   Plant Cell 21 (6), 1647-1658 (2009)
+   PUBMED   19567707
+  REMARK    GeneRIF: KN1 negatively modulates the accumulation of gibberellin
+            (GA) through the control of ga2ox1.
+REFERENCE   5  (bases 1 to 1627)
+  AUTHORS   Lunde,C. and Hake,S.
+  TITLE     The interaction of knotted1 and thick tassel dwarf1 in vegetative
+            and reproductive meristems of maize
+  JOURNAL   Genetics 181 (4), 1693-1697 (2009)
+   PUBMED   19153258
+  REMARK    GeneRIF: kn1 and td1 function in a pathway to maintain meristem
+            homeostasis but their products may interact with different partners
+            during development.
+REFERENCE   6  (bases 1 to 1627)
+  AUTHORS   Gardiner,J., Schroeder,S., Polacco,M.L., Sanchez-Villeda,H.,
+            Fang,Z., Morgante,M., Landewe,T., Fengler,K., Useche,F.,
+            Hanafey,M., Tingey,S., Chou,H., Wing,R., Soderlund,C. and Coe,E.H.
+            Jr.
+  TITLE     Anchoring 9,371 maize expressed sequence tagged unigenes to the
+            bacterial artificial chromosome contig map by two-dimensional
+            overgo hybridization
+  JOURNAL   Plant Physiol. 134 (4), 1317-1326 (2004)
+   PUBMED   15020742
+REFERENCE   7  (bases 1 to 1627)
+  AUTHORS   Meisel,L. and Lam,E.
+  TITLE     The conserved ELK-homeodomain of KNOTTED-1 contains two regions
+            that signal nuclear localization
+  JOURNAL   Plant Mol. Biol. 30 (1), 1-14 (1996)
+   PUBMED   8616227
+REFERENCE   8  (bases 1 to 1627)
+  AUTHORS   Smith,L.G., Greene,B., Veit,B. and Hake,S.
+  TITLE     A dominant mutation in the maize homeobox gene, Knotted-1, causes
+            its ectopic expression in leaf cells with altered fates
+  JOURNAL   Development 116 (1), 21-30 (1992)
+   PUBMED   1362381
+REFERENCE   9  (bases 1 to 1627)
+  AUTHORS   Vollbrecht,E., Veit,B., Sinha,N. and Hake,S.
+  TITLE     The developmental gene Knotted-1 is a member of a maize homeobox
+            gene family
+  JOURNAL   Nature 350 (6315), 241-243 (1991)
+   PUBMED   1672445
+REFERENCE   10 (bases 1 to 1627)
+  AUTHORS   Veit,B., Vollbrecht,E., Mathern,J. and Hake,S.
+  TITLE     A tandem duplication causes the Kn1-O allele of Knotted, a dominant
+            morphological mutant of maize
+  JOURNAL   Genetics 125 (3), 623-631 (1990)
+   PUBMED   2165968
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence was derived from X61308.1.
+            On Dec 18, 2007 this sequence version replaced gi:162458084.
+FEATURES             Location/Qualifiers
+     source          1..1627
+                     /organism="Zea mays"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:4577"
+                     /chromosome="1L"
+                     /map="128 centimorgans"
+     gene            1..1627
+                     /gene="kn1"
+                     /gene_synonym="KN-1"
+                     /note="knotted1"
+                     /db_xref="GeneID:542391"
+                     /db_xref="MaizeGDB:12352"
+     CDS             181..1260
+                     /gene="kn1"
+                     /gene_synonym="KN-1"
+                     /note="SC19; H2; H3; PCO065671; PCO065671_ov; gsy19(kn1);
+                     p-H2"
+                     /codon_start=1
+                     /product="homeotic protein knotted-1"
+                     /protein_id="NP_001105436.1"
+                     /db_xref="GI:162458085"
+                     /db_xref="GeneID:542391"
+                     /db_xref="MaizeGDB:12352"
+                     /translation="MEEITQHFGVGASSHGHGHGQHHHHHHHHHPWASSLSAVVAPLP
+                     PQPPSAGLPLTLNTVAATGNSGGSGNPVLQLANGGGLLDACVKAKEPSSSSPYAGDVE
+                     AIKAKIISHPHYYSLLTAYLECNKVGAPPEVSARLTEIAQEVEARQRTALGGLAAATE
+                     PELDQFMEAYHEMLVKFREELTRPLQEAMEFMRRVESQLNSLSISGRSLRNILSSGSS
+                     EEDQEGSGGETELPEVDAHGVDQELKHHLLKKYSGYLSSLKQELSKKKKKGKLPKEAR
+                     QQLLSWWDQHYKWPYPSETQKVALAESTGLDLKQINNWFINQRKRHWKPSEEMHHLMM
+                     DGYHTTNAFYMDGHFINDGGLYRLG"
+     misc_feature    223..270
+                     /gene="kn1"
+                     /gene_synonym="KN-1"
+                     /note="histidine-rich or CAX region"
+     misc_feature    <559..<559
+                     /gene="kn1"
+                     /gene_synonym="KN-1"
+                     /note="intron /exon boundary"
+     misc_feature    <682..<682
+                     /gene="kn1"
+                     /gene_synonym="KN-1"
+                     /note="intron /exon boundary"
+     misc_feature    811..888
+                     /gene="kn1"
+                     /gene_synonym="KN-1"
+                     /note="PEST sequence"
+     misc_feature    <827..<827
+                     /gene="kn1"
+                     /gene_synonym="KN-1"
+                     /note="intron /exon boundary"
+     misc_feature    967..1158
+                     /gene="kn1"
+                     /gene_synonym="KN-1"
+                     /note="homeodomain region"
+     misc_feature    <1060..<1060
+                     /gene="kn1"
+                     /gene_synonym="KN-1"
+                     /note="intron /exon boundary"
+     STS             1315..1587
+                     /gene="kn1"
+                     /gene_synonym="KN-1"
+                     /standard_name="scl285_p5_B73"
+                     /db_xref="UniSTS:260113"
+ORIGIN      
+        1 ccgaggcatc cttctccttt ccctctcctt ccccaaaccc ttttcctctt tccctcgccc
+       61 caagaacttc atctcatctc caggcgcccc ttttgcgctt gcgcaggagg agctcacggg
+      121 gacagtgggc ggagagctcg atcgctgcac cactacttca ctggaggtcc gcccactccc
+      181 atggaggaga tcacccaaca ctttggagtt ggcgcaagca gccacggcca tggccacggc
+      241 cagcaccacc atcatcacca ccaccaccac ccgtgggcat cctccctcag cgccgtcgta
+      301 gcgccgctgc cgccgcaacc gccaagcgca ggcctgccgc tgaccctgaa cacggtggcg
+      361 gccactggga acagcggcgg tagcggcaac ccggtgctgc agcttgccaa cggtggcggc
+      421 ctcctcgacg catgcgtcaa ggcgaaggag ccctcgtcgt cgtctcccta cgcaggcgac
+      481 gtcgaggcca tcaaggccaa gatcatctcg cacccacact actactcgct cctcactgcc
+      541 tacctcgagt gcaacaaggt gggggcacca ccggaggtgt cggcgaggct gacggagata
+      601 gcgcaggagg tggaggcgcg gcagcgcacg gcgctcggcg gcctggccgc tgcgacggag
+      661 ccggagctgg accagttcat ggaggcgtac cacgagatgc tggtgaagtt cagggaggag
+      721 ctgacgaggc cgctgcagga ggcgatggag ttcatgcgaa gggtggagtc gcagctgaac
+      781 tcgctttcca tctccggaag gtcgctgcgc aacatccttt catctggctc ttctgaggag
+      841 gatcaagaag gtagcggagg agagaccgag ctccctgaag ttgatgcaca tggtgtggac
+      901 caagagctga agcaccatct cctgaagaaa tacagtggct atctaagctc gctcaagcaa
+      961 gaactgtcaa agaagaagaa gaaagggaag ctccccaagg aggctcgcca gcagctcctt
+     1021 agctggtggg atcagcacta caaatggcct tacccctcag agactcagaa ggtggcactg
+     1081 gctgagtcta ccgggcttga cctgaagcag atcaacaact ggttcatcaa ccagcggaag
+     1141 cggcactgga agccatccga ggagatgcac cacctgatga tggatgggta ccacaccacc
+     1201 aatgccttct acatggacgg ccacttcatc aacgacggcg ggctgtaccg gctcggctag
+     1261 ccaccggtat ctcgcttcca tttcacaccc cacggcctag ctataaagac taatggttcc
+     1321 aggtgtctga agtactgaag acaggggggc tagctatcta atgtttgtgc cgcacgcatg
+     1381 agctgtaagg aggccatgct taattattct gttgccgttg ctactctatc tatatgcgcc
+     1441 tatgcctccg tgcatgaact atgctttagg tggttgctgc tccacactgt ggtggtgtgc
+     1501 ttttgctttt gtgtggtcgt attgtatgcg taacctgaca gatggatccc tgattgctac
+     1561 atgtttgaat aatttgcatg atctagctag tttctgccta atctaatggt acggctcatg
+     1621 tcttgtc
+//
