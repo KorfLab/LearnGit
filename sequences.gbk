@@ -1,0 +1,442 @@
+LOCUS       NM_001895               2732 bp    mRNA    linear   PRI 08-SEP-2012
+DEFINITION  Homo sapiens casein kinase 2, alpha 1 polypeptide (CSNK2A1),
+            transcript variant 2, mRNA.
+ACCESSION   NM_001895
+VERSION     NM_001895.3  GI:47419902
+KEYWORDS    .
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 2732)
+  AUTHORS   Manni,S., Brancalion,A., Tubi,L.Q., Colpo,A., Pavan,L.,
+            Cabrelle,A., Ave,E., Zaffino,F., Di Maira,G., Ruzzene,M., Adami,F.,
+            Zambello,R., Pitari,M.R., Tassone,P., Pinna,L.A., Gurrieri,C.,
+            Semenzato,G. and Piazza,F.
+  TITLE     Protein kinase CK2 protects multiple myeloma cells from ER
+            stress-induced apoptosis and from the cytotoxic effect of HSP90
+            inhibition through regulation of the unfolded protein response
+  JOURNAL   Clin. Cancer Res. 18 (7), 1888-1900 (2012)
+   PUBMED   22351691
+  REMARK    GeneRIF: Results suggest CK2 as a novel regulator of the
+            endoplasmic reticulum (ER) stress/unfolded protein response (UPR)
+            cascades and HSP90 function in myeloma cells and offer the
+            groundwork to design novel combination treatments for this disease.
+REFERENCE   2  (bases 1 to 2732)
+  AUTHORS   Tarrant,M.K., Rho,H.S., Xie,Z., Jiang,Y.L., Gross,C., Culhane,J.C.,
+            Yan,G., Qian,J., Ichikawa,Y., Matsuoka,T., Zachara,N.,
+            Etzkorn,F.A., Hart,G.W., Jeong,J.S., Blackshaw,S., Zhu,H. and
+            Cole,P.A.
+  TITLE     Regulation of CK2 by phosphorylation and O-GlcNAcylation revealed
+            by semisynthesis
+  JOURNAL   Nat. Chem. Biol. 8 (3), 262-269 (2012)
+   PUBMED   22267120
+  REMARK    GeneRIF: The the CK2 catalytic subunit CK2alpha is modified by
+            O-linked beta-N-acetyl-glucosamine (O-GlcNAc) on Ser347, proximal
+            to a cyclin-dependent kinase phosphorylation site (Thr344).
+            Publication Status: Online-Only
+REFERENCE   3  (bases 1 to 2732)
+  AUTHORS   Alvarez,D.E. and Agaisse,H.
+  TITLE     Casein kinase 2 regulates vaccinia virus actin tail formation
+  JOURNAL   Virology 423 (2), 143-151 (2012)
+   PUBMED   22209233
+  REMARK    GeneRIF: CK2 regulates vaccinia virus dissemination and actin tail
+            formation.
+REFERENCE   4  (bases 1 to 2732)
+  AUTHORS   Taylor,K.M., Hiscox,S., Nicholson,R.I., Hogstrand,C. and Kille,P.
+  TITLE     Protein kinase CK2 triggers cytosolic zinc signaling pathways by
+            phosphorylation of zinc channel ZIP7
+  JOURNAL   Sci Signal 5 (210), RA11 (2012)
+   PUBMED   22317921
+  REMARK    GeneRIF: The connection with proliferation and migration, as well
+            as the activation of ZIP7 by CK2, a kinase that is antiapoptotic
+            and promotes cell division
+            Publication Status: Online-Only
+REFERENCE   5  (bases 1 to 2732)
+  AUTHORS   Olsen,B.B., Wang,S.Y., Svenstrup,T.H., Chen,B.P. and Guerra,B.
+  TITLE     Protein kinase CK2 localizes to sites of DNA double-strand break
+            regulating the cellular response to DNA damage
+  JOURNAL   BMC Mol. Biol. 13, 7 (2012)
+   PUBMED   22404984
+  REMARK    GeneRIF: Protein kinase CK2 co-localizes with gamma-H2AX to sites
+            of genetic lesions and modulation of its expression levels affects
+            the cellular DNA damage response.
+            Publication Status: Online-Only
+REFERENCE   6  (bases 1 to 2732)
+  AUTHORS   Hagiwara,T., Nakaya,K., Nakamura,Y., Nakajima,H., Nishimura,S. and
+            Taya,Y.
+  TITLE     Specific phosphorylation of the acidic central region of the N-myc
+            protein by casein kinase II
+  JOURNAL   Eur. J. Biochem. 209 (3), 945-950 (1992)
+   PUBMED   1425701
+REFERENCE   7  (bases 1 to 2732)
+  AUTHORS   Russo,G.L., Vandenberg,M.T., Yu,I.J., Bae,Y.S., Franza,B.R. Jr. and
+            Marshak,D.R.
+  TITLE     Casein kinase II phosphorylates p34cdc2 kinase in G1 phase of the
+            HeLa cell division cycle
+  JOURNAL   J. Biol. Chem. 267 (28), 20317-20325 (1992)
+   PUBMED   1400350
+REFERENCE   8  (bases 1 to 2732)
+  AUTHORS   Lin,A., Frost,J., Deng,T., Smeal,T., al-Alawi,N., Kikkawa,U.,
+            Hunter,T., Brenner,D. and Karin,M.
+  TITLE     Casein kinase II is a negative regulator of c-Jun DNA binding and
+            AP-1 activity
+  JOURNAL   Cell 70 (5), 777-789 (1992)
+   PUBMED   1516134
+  REMARK    Erratum:[Cell. 1992 Nov 27;71(5):887. PMID: 1423636]
+REFERENCE   9  (bases 1 to 2732)
+  AUTHORS   Sacks,D.B., Davis,H.W., Crimmins,D.L. and McDonald,J.M.
+  TITLE     Insulin-stimulated phosphorylation of calmodulin
+  JOURNAL   Biochem. J. 286 (PT 1), 211-216 (1992)
+   PUBMED   1520270
+REFERENCE   10 (bases 1 to 2732)
+  AUTHORS   Schubert,U., Schneider,T., Henklein,P., Hoffmann,K., Berthold,E.,
+            Hauser,H., Pauli,G. and Porstmann,T.
+  TITLE     Human-immunodeficiency-virus-type-1-encoded Vpu protein is
+            phosphorylated by casein kinase II
+  JOURNAL   Eur. J. Biochem. 204 (2), 875-883 (1992)
+   PUBMED   1541298
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. The
+            reference sequence was derived from AF011920.1, AU133318.1,
+            M55265.1 and BC053532.1.
+            On Aug 18, 2004 this sequence version replaced gi:29570794.
+            
+            Summary: Casein kinase II is a serine/threonine protein kinase that
+            phosphorylates acidic proteins such as casein. The kinase exists as
+            a tetramer and is composed of an alpha, an alpha-prime, and two
+            beta subunits. The alpha subunits contain the catalytic activity
+            while the beta subunits undergo autophosphorylation. The protein
+            encoded by this gene represents the alpha subunit. While this gene
+            is found on chromosome 20, a related transcribed pseudogene is
+            found on chromosome 11. Three transcript variants encoding two
+            different proteins have been found for this gene. [provided by
+            RefSeq, Jul 2008].
+            
+            Transcript Variant: This variant (2) differs in the 5' UTR compared
+            to variant 1. Variants 1 and 2 both encode the same protein.
+            
+            Publication Note:  This RefSeq record includes a subset of the
+            publications that are available for this gene. Please see the Gene
+            record to access additional publications.
+            
+            ##RefSeq-Attributes-START##
+            Transcript_exon_combination_evidence :: BC050036.1, M55265.1
+                                                    [ECO:0000332]
+            ##RefSeq-Attributes-END##
+            COMPLETENESS: full length.
+PRIMARY     REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP
+            1-48                AF011920.1         6855-6902
+            49-786              AU133318.1         1-738
+            787-2323            M55265.1           659-2195
+            2324-2732           BC053532.1         2143-2551
+FEATURES             Location/Qualifiers
+     source          1..2732
+                     /organism="Homo sapiens"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="20"
+                     /map="20p13"
+     gene            1..2732
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /note="casein kinase 2, alpha 1 polypeptide"
+                     /db_xref="GeneID:1457"
+                     /db_xref="HGNC:2457"
+                     /db_xref="HPRD:00277"
+                     /db_xref="MIM:115440"
+     exon            1..167
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=1
+     misc_feature    50
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /note="Region: alternate transcription start site"
+     exon            168..377
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=3
+     STS             189..372
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /standard_name="GDB:197832"
+                     /db_xref="UniSTS:155955"
+     misc_feature    223..225
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /note="upstream in-frame stop codon"
+     CDS             277..1452
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /EC_number="2.7.11.1"
+                     /note="isoform a is encoded by transcript variant 2; CK2
+                     catalytic subunit alpha; protein kinase CK2; casein kinase
+                     II alpha 1 subunit; CK II alpha"
+                     /codon_start=1
+                     /product="casein kinase II subunit alpha isoform a"
+                     /protein_id="NP_001886.1"
+                     /db_xref="GI:4503095"
+                     /db_xref="CCDS:CCDS13003.1"
+                     /db_xref="GeneID:1457"
+                     /db_xref="HGNC:2457"
+                     /db_xref="HPRD:00277"
+                     /db_xref="MIM:115440"
+                     /translation="MSGPVPSRARVYTDVNTHRPREYWDYESHVVEWGNQDDYQLVRK
+                     LGRGKYSEVFEAINITNNEKVVVKILKPVKKKKIKREIKILENLRGGPNIITLADIVK
+                     DPVSRTPALVFEHVNNTDFKQLYQTLTDYDIRFYMYEILKALDYCHSMGIMHRDVKPH
+                     NVMIDHEHRKLRLIDWGLAEFYHPGQEYNVRVASRYFKGPELLVDYQMYDYSLDMWSL
+                     GCMLASMIFRKEPFFHGHDNYDQLVRIAKVLGTEDLYDYIDKYNIELDPRFNDILGRH
+                     SRKRWERFVHSENQHLVSPEALDFLDKLLRYDHQSRLTAREAMEHPYFYTVVKDQARM
+                     GSSSMPGGSTPVSSANMMSGISSVPTPSPLGPLAGSPVIAAANPLGMPVPAAAGAQQ"
+     misc_feature    280..282
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P68400.1); phosphorylation site"
+     misc_feature    295..297
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P68400.1); phosphorylation site"
+     misc_feature    382..399
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="propagated from UniProtKB/Swiss-Prot (P68400.1);
+                     Region: Interaction with beta subunit (By similarity)"
+     misc_feature    424..426
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphotyrosine; propagated from
+                     UniProtKB/Swiss-Prot (P68400.1); phosphorylation site"
+     misc_feature    580..582
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="N6-acetyllysine; propagated from
+                     UniProtKB/Swiss-Prot (P68400.1); acetylation site"
+     misc_feature    649..651
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphotyrosine; propagated from
+                     UniProtKB/Swiss-Prot (P68400.1); phosphorylation site"
+     misc_feature    655..657
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphothreonine; propagated from
+                     UniProtKB/Swiss-Prot (P68400.1); phosphorylation site"
+     misc_feature    856..858
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P68400.1); phosphorylation site"
+     misc_feature    1039..1041
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphotyrosine; propagated from
+                     UniProtKB/Swiss-Prot (P68400.1); phosphorylation site"
+     misc_feature    1105..1107
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P68400.1); phosphorylation site"
+     misc_feature    1135..1137
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P68400.1); phosphorylation site"
+     misc_feature    1306..1308
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphothreonine, by CDK1; propagated from
+                     UniProtKB/Swiss-Prot (P68400.1); phosphorylation site"
+     misc_feature    1354..1356
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphothreonine, by CDK1; propagated from
+                     UniProtKB/Swiss-Prot (P68400.1); phosphorylation site"
+     misc_feature    1360..1362
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine, by CDK1; propagated from
+                     UniProtKB/Swiss-Prot (P68400.1); phosphorylation site"
+     misc_feature    1384..1386
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine, by CDK1; propagated from
+                     UniProtKB/Swiss-Prot (P68400.1); phosphorylation site"
+     STS             314..451
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /standard_name="WI-16945"
+                     /db_xref="UniSTS:75863"
+     exon            378..489
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=4
+     exon            490..591
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=5
+     exon            592..642
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=6
+     exon            643..702
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=7
+     exon            703..786
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=8
+     exon            787..897
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=9
+     exon            898..999
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=10
+     STS             997..1288
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /standard_name="CSNK2A1"
+                     /db_xref="UniSTS:253713"
+     exon            1000..1100
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=11
+     exon            1101..1249
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=12
+     STS             1199..1332
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /standard_name="STS-M78020"
+                     /db_xref="UniSTS:27753"
+     exon            1250..1336
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=13
+     exon            1337..2719
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=14
+     STS             1501..1582
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /standard_name="U51866"
+                     /db_xref="UniSTS:125766"
+     STS             2203..2412
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /standard_name="STS-T29481"
+                     /db_xref="UniSTS:66449"
+     STS             2394..2548
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /standard_name="16.MMHAP54FLF1.seq"
+                     /db_xref="UniSTS:123309"
+     polyA_signal    2694..2699
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+     polyA_site      2715
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+     polyA_site      2719
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+ORIGIN      
+        1 cccgcctcct ggtaggaggg ggtttccgct tccggcagca gcggctgcag cctcgctctg
+       61 gtccctgcgg ctggcggccg agccgtgtgt ctcctcctcc atcgccgcca tattgtctgt
+      121 gtgagcagag gggagagcgg ccgccgccgc tgccgcttcc accacagttt gaagaaaaca
+      181 ggtctgaaac aaggtcttac ccccagctgc ttctgaacac agtgactgcc agatctccaa
+      241 acatcaagtc cagctttgtc cgccaacctg tctgacatgt cgggacccgt gccaagcagg
+      301 gccagagttt acacagatgt taatacacac agacctcgag aatactggga ttacgagtca
+      361 catgtggtgg aatggggaaa tcaagatgac taccagctgg ttcgaaaatt aggccgaggt
+      421 aaatacagtg aagtatttga agccatcaac atcacaaata atgaaaaagt tgttgttaaa
+      481 attctcaagc cagtaaaaaa gaagaaaatt aagcgtgaaa taaagatttt ggagaatttg
+      541 agaggaggtc ccaacatcat cacactggca gacattgtaa aagaccctgt gtcacgaacc
+      601 cccgccttgg tttttgaaca cgtaaacaac acagacttca agcaattgta ccagacgtta
+      661 acagactatg atattcgatt ttacatgtat gagattctga aggccctgga ttattgtcac
+      721 agcatgggaa ttatgcacag agatgtcaag ccccataatg tcatgattga tcatgagcac
+      781 agaaagctac gactaataga ctggggtttg gctgagtttt atcatcctgg ccaagaatat
+      841 aatgtccgag ttgcttcccg atacttcaaa ggtcctgagc tacttgtaga ctatcagatg
+      901 tacgattata gtttggatat gtggagtttg ggttgtatgc tggcaagtat gatctttcgg
+      961 aaggagccat ttttccatgg acatgacaat tatgatcagt tggtgaggat agccaaggtt
+     1021 ctggggacag aagatttata tgactatatt gacaaataca acattgaatt agatccacgt
+     1081 ttcaatgata tcttgggcag acactctcga aagcgatggg aacgctttgt ccacagtgaa
+     1141 aatcagcacc ttgtcagccc tgaggccttg gatttcctgg acaaactgct gcgatatgac
+     1201 caccagtcac ggcttactgc aagagaggca atggagcacc cctatttcta cactgttgtg
+     1261 aaggaccagg ctcgaatggg ttcatctagc atgccagggg gcagtacgcc cgtcagcagc
+     1321 gccaatatga tgtcagggat ttcttcagtg ccaacccctt caccccttgg acctctggca
+     1381 ggctcaccag tgattgctgc tgccaacccc cttgggatgc ctgttccagc tgccgctggc
+     1441 gctcagcagt aacggcccta tctgtctcct gatgcctgag cagaggtggg ggagtccacc
+     1501 ctctccttga tgcagcttgc gcctggcggg gaggggtgaa acacttcaga agcaccgtgt
+     1561 ctgaaccgtt gcttgtggat ttatagtagt tcagtcataa aaaaaaaatt ataataggct
+     1621 gattttcttt tttctttttt tttttaactc gaacttttca taactcaggg gattccctga
+     1681 aaaattacct gcaggtggaa tatttcatgg acaaattttt ttttctcccc tcccaaattt
+     1741 agttcctcat cacaaaagaa caaagataaa ccagcctcaa tcccggctgc tgcatttagg
+     1801 tggagacttc ttcccattcc caccattgtt cctccaccgt cccacacttt agggggttgg
+     1861 tatctcgtgc tcttctccag agattacaaa aatgtagctt ctcaggggag gcaggaagaa
+     1921 aggaaggaag gaaagaagga agggaggacc caatctatag gagcagtgga ctgcttgctg
+     1981 gtcgcttaca tcactttact ccataagcgc ttcagtgggg ttatcctagt ggctcttgtg
+     2041 gaagtgtgtc ttagttacat caagatgttg aaaatctacc caaaatgcag acagatacta
+     2101 aaaacttctg ttcagtaaga atcatgtctt actgatctaa ccctaaatcc aactcattta
+     2161 tacttttatt tttagttcag tttaaaatgt tgataccttc cctcccaggc tccttacctt
+     2221 ggtcttttcc ctgttcatct cccaacatgc tgtgctccat agctggtagg agagggaagg
+     2281 caaaatcttt cttagttttc tttgtcttgg ccattttgaa ttcatttagt tactgggcat
+     2341 aacttactgc tttttacaaa agaaacaaac attgtctgta caggtttcat gctagagcta
+     2401 atgggagatg tggccacact gacttccatt ttaagctttc taccttcttt tcctccgacc
+     2461 gtccccttcc ctcacatgcc atccagtgag aagacctgct cctcagtctt gtaaatgtat
+     2521 cttgagaggt aggagcagag ccactatctc cattgaagct gaaatggtag acctgtaatt
+     2581 gtgggaaaac tataaactct cttgttacag ccccgccacc ccttgctgtg tgtatatata
+     2641 taatactttg tccttcatat gtgaaagatc cagtgttgga attctttggt gtaaataaac
+     2701 gtttggtttt atttatcaaa aaaaaaaaaa aa
+//
