@@ -1,39 +1,46 @@
 #!/usr/bin/perl
+# The 'fix-the-typo-and-add-a-new-typo-challenge'!
+
 use warnings;
 use strict;
 
-#Fill array with numbers 1-16
-#Calculates mean, population variance and std deviation of array
+# Fill array with 5–20 random integers (with values ranging from 1–10)
+# Calculates mean, population variance and std deviation of numbers in array
+my @numbers;
 
-my @row;
-my @array;
+my $random = int(rand(15))+5;
+print "Generating $random random numbers: ";   
 
-print "Filling array with 1..16\n";   
-
-for(my $i=0;$i<16;$i+=4){
-    push @row , ($i+1,$i+2,$i+3,$i+4);  #fill row with value
-    push @array, @row;  #push row onto array
+for(my $i = 1; $i <= $random; $i++){
+	my $rand_int = int(rand(10)) + 1;
+	print "$rand_int ";
+    push @numbers, $rand_int;  #push row onto array
 }
+print "\n\n";
 
-#Calculate Mean and Population variance and std deviation in One Pass
+
+# Calculate Mean and Population variance and std deviation in One Pass
 my $sum = 0;
 my $square_sum = 0;
-my $n = scalar @array;
+my $n = scalar @numbers;
 
-for(my $i=0; $i< scalar @array; $i++){
-    $sum += $array[$i];
-    $square_sum+=$array[$i] * $array[$i];
+# loop over each number
+for(my $i = 0; $i < scalar @numbers; $i++){
+    $sum += $numbers[$i];
+    $square_sum += ($numbers[$i] * $numbers[$i]);
 }
 
-my $mean = $sum/$n;
-my $variance = $square_sum/$n - $mean * $mean;
-my $sd = sqrt($variance);
+#  calculate basic stats and round down to 2 d.p.
+my $mean     = sprintf("%.2f", $sum / $n);
+my $variance = sprintf("%2.f", $square_sum / $n - $mean * $mean);
+my $sd       = sprintf("%.2f", sqrt($variance));
 
-(abs($mean-8.5) < 0.0001) ? printf "Mean:\t%f\n",$mean :
-    printf "Incorrect Mean:\t%f\n", $mean;
 
-(abs($variance - 21.25) < 0.0001) ? printf "Population Variance:\t%f\n", $variance :
-    printf "Incorrect Variance:\t%f\n",$variance;
+# print final output
+print "n = $n\n";
+print "Sum = $sum\n";
+print "Mean = $mean\n";
+print "Variance = $variance\n";
+print "Standard deviation = $sd\n\n\n";
 
-(abs($sd - 4.609772)<0.0001) ? printf "Population Std. Deviation:\t%f\n", $sd :
-    printf "Incorrect Std Dev:\t%f\n",$sd;
+exit;
