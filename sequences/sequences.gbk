@@ -3758,3 +3758,1122 @@ ORIGIN
      2041 ccattgaggc agcttgggaa gcccagggag ggctggggag gcaaaagcct ggcttgttgc
      2101 tgggccctct tccttccatg tcattaaatc caacttcctc tcac
 //
+LOCUS       NM_004992              10241 bp    mRNA    linear   PRI 16-SEP-2012
+DEFINITION  Homo sapiens methyl CpG binding protein 2 (Rett syndrome) (MECP2),
+            transcript variant 1, mRNA.
+ACCESSION   NM_004992
+VERSION     NM_004992.3  GI:160707948
+KEYWORDS    .
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 10241)
+  AUTHORS   Vignoli,A., Borgatti,R., Peron,A., Zucca,C., Ballarati,L.,
+            Bonaglia,C., Bellini,M., Giordano,L., Romaniello,R., Bedeschi,M.F.,
+            Epifanio,R., Russo,S., Caselli,R., Giardino,D., Darra,F., La
+            Briola,F., Banderali,G. and Canevini,M.P.
+  TITLE     Electroclinical pattern in MECP2 duplication syndrome: eight new
+            reported cases and review of literature
+  JOURNAL   Epilepsia 53 (7), 1146-1155 (2012)
+   PUBMED   22578097
+  REMARK    GeneRIF: This study presented that Electroclinical pattern in MECP2
+            duplication in epilepsy.
+            Review article
+REFERENCE   2  (bases 1 to 10241)
+  AUTHORS   Kim,H.J., Kim,S.H., Kim,H.D., Lee,J.S., Lee,Y.M., Koo,K.Y.,
+            Lee,J.S. and Kang,H.C.
+  TITLE     Genetic and epileptic features in Rett syndrome
+  JOURNAL   Yonsei Med. J. 53 (3), 495-500 (2012)
+   PUBMED   22476991
+  REMARK    GeneRIF: Study identified MECP2 mutations in all 20 Rett syndrome
+            patients. The mutations consisted of 14 distinct types, including
+            seven missense, four nonsense, and three frameshift mutations.
+REFERENCE   3  (bases 1 to 10241)
+  AUTHORS   Okabe,Y., Takahashi,T., Mitsumasu,C., Kosai,K., Tanaka,E. and
+            Matsuishi,T.
+  TITLE     Alterations of gene expression and glutamate clearance in
+            astrocytes derived from an MeCP2-null mouse model of Rett syndrome
+  JOURNAL   PLoS ONE 7 (4), E35354 (2012)
+   PUBMED   22532851
+  REMARK    GeneRIF: These findings suggest that MeCP2 affects astroglial genes
+            expression in cultured astrocytes, and that abnormal Glu clearance
+            in MeCP2-deficient astrocytes may influence the onset and
+            progression of Rett syndrome.
+REFERENCE   4  (bases 1 to 10241)
+  AUTHORS   Harvey,C.G., Menon,S.D., Stachowiak,B., Noor,A., Proctor,A.,
+            Mensah,A.K., Mnatzakanian,G.N., Alfred,S.E., Guo,R., Scherer,S.W.,
+            Kennedy,J.L., Roberts,W., Srivastava,A.K., Minassian,B.A. and
+            Vincent,J.B.
+  TITLE     Sequence variants within exon 1 of MECP2 occur in females with
+            mental retardation
+  JOURNAL   Am. J. Med. Genet. B Neuropsychiatr. Genet. 144B (3), 355-360
+            (2007)
+   PUBMED   17171659
+  REMARK    GeneRIF: polymorphisms within exon 1 of MECP2 occur in females with
+            mental retardation.
+            GeneRIF: Observational study of gene-disease association. (HuGE
+            Navigator)
+            Erratum:[Am J Med Genet B Neuropsychiatr Genet. 2007 Oct
+            5;144(7):969. Srivistava, Anand K [corrected to Srivastava, Anand
+            K]]
+REFERENCE   5  (bases 1 to 10241)
+  AUTHORS   Francke,U.
+  TITLE     Mechanisms of disease: neurogenetics of MeCP2 deficiency
+  JOURNAL   Nat Clin Pract Neurol 2 (4), 212-221 (2006)
+   PUBMED   16932552
+  REMARK    GeneRIF: Rett syndrome is caused by heterozygosity for mutations in
+            the X-linked gene MECP2, which encodes methyl-CpG binding protein
+            2.
+            Review article
+REFERENCE   6  (bases 1 to 10241)
+  AUTHORS   Mnatzakanian,G.N., Lohi,H., Munteanu,I., Alfred,S.E., Yamada,T.,
+            MacLeod,P.J., Jones,J.R., Scherer,S.W., Schanen,N.C., Friez,M.J.,
+            Vincent,J.B. and Minassian,B.A.
+  TITLE     A previously unidentified MECP2 open reading frame defines a new
+            protein isoform relevant to Rett syndrome
+  JOURNAL   Nat. Genet. 36 (4), 339-341 (2004)
+   PUBMED   15034579
+  REMARK    GeneRIF: description of a previously unknown MeCP2 isoform
+            Erratum:[Nat Genet. 2004 May;36(5):540]
+REFERENCE   7  (bases 1 to 10241)
+  AUTHORS   Reichwald,K., Thiesen,J., Wiehe,T., Weitzel,J., Poustka,W.A.,
+            Rosenthal,A., Platzer,M., Stratling,W.H. and Kioschis,P.
+  TITLE     Comparative sequence analysis of the MECP2-locus in human and mouse
+            reveals new transcribed regions
+  JOURNAL   Mamm. Genome 11 (3), 182-190 (2000)
+   PUBMED   10723722
+REFERENCE   8  (bases 1 to 10241)
+  AUTHORS   D'Esposito,M., Quaderi,N.A., Ciccodicola,A., Bruni,P., Esposito,T.,
+            D'Urso,M. and Brown,S.D.
+  TITLE     Isolation, physical mapping, and northern analysis of the X-linked
+            human gene encoding methyl CpG-binding protein, MECP2
+  JOURNAL   Mamm. Genome 7 (7), 533-535 (1996)
+   PUBMED   8672133
+REFERENCE   9  (bases 1 to 10241)
+  AUTHORS   Tate,P., Skarnes,W. and Bird,A.
+  TITLE     The methyl-CpG binding protein MeCP2 is essential for embryonic
+            development in the mouse
+  JOURNAL   Nat. Genet. 12 (2), 205-208 (1996)
+   PUBMED   8563762
+  REMARK    GeneRIF: MECP2 is dispensible in stem cells, but is essential for
+            embryonic development.
+REFERENCE   10 (bases 1 to 10241)
+  AUTHORS   Lewis,J.D., Meehan,R.R., Henzel,W.J., Maurer-Fogy,I., Jeppesen,P.,
+            Klein,F. and Bird,A.
+  TITLE     Purification, sequence, and cellular localization of a novel
+            chromosomal protein that binds to methylated DNA
+  JOURNAL   Cell 69 (6), 905-914 (1992)
+   PUBMED   1606614
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. The
+            reference sequence was derived from AB209464.1, AF030876.2 and
+            AF158180.1.
+            This sequence is a reference standard in the RefSeqGene project.
+            On Nov 20, 2007 this sequence version replaced gi:7710148.
+            
+            Summary: DNA methylation is the major modification of eukaryotic
+            genomes and plays an essential role in mammalian development. Human
+            proteins MECP2, MBD1, MBD2, MBD3, and MBD4 comprise a family of
+            nuclear proteins related by the presence in each of a methyl-CpG
+            binding domain (MBD). Each of these proteins, with the exception of
+            MBD3, is capable of binding specifically to methylated DNA. MECP2,
+            MBD1 and MBD2 can also repress transcription from methylated gene
+            promoters. In contrast to other MBD family members, MECP2 is
+            X-linked and subject to X inactivation. MECP2 is dispensible in
+            stem cells, but is essential for embryonic development. MECP2 gene
+            mutations are the cause of most cases of Rett syndrome, a
+            progressive neurologic developmental disorder and one of the most
+            common causes of mental retardation in females. [provided by
+            RefSeq, Jul 2009].
+            
+            Transcript Variant: This variant (1), also known as MECP2A,
+            includes exon 2. Translation is reported to initiate in exon 2
+            resulting in a protein isoform (1) with a distinct N-terminus.
+            
+            Publication Note:  This RefSeq record includes a subset of the
+            publications that are available for this gene. Please see the Gene
+            record to access additional publications.
+            
+            ##RefSeq-Attributes-START##
+            Transcript_exon_combination_evidence :: GQ203293.1, GQ203294.1
+                                                    [ECO:0000332]
+            ##RefSeq-Attributes-END##
+            COMPLETENESS: complete on the 3' end.
+PRIMARY     REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP
+            1-29                AB209464.1         1-29
+            30-59               AF030876.2         89151-89180         c
+            60-10241            AF158180.1         1-10182
+FEATURES             Location/Qualifiers
+     source          1..10241
+                     /organism="Homo sapiens"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="X"
+                     /map="Xq28"
+     gene            1..10241
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /note="methyl CpG binding protein 2 (Rett syndrome)"
+                     /db_xref="GeneID:4204"
+                     /db_xref="HGNC:6990"
+                     /db_xref="HPRD:02050"
+                     /db_xref="MIM:300005"
+     exon            1..128
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /inference="alignment:Splign"
+                     /number=1
+     exon            129..252
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /inference="alignment:Splign"
+                     /number=2
+     misc_feature    176..178
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /note="upstream in-frame stop codon"
+     CDS             227..1687
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /note="isoform 1 is encoded by transcript variant 1;
+                     meCp-2 protein"
+                     /codon_start=1
+                     /product="methyl-CpG-binding protein 2 isoform 1"
+                     /protein_id="NP_004983.1"
+                     /db_xref="GI:4826830"
+                     /db_xref="CCDS:CCDS14741.1"
+                     /db_xref="GeneID:4204"
+                     /db_xref="HGNC:6990"
+                     /db_xref="HPRD:02050"
+                     /db_xref="MIM:300005"
+                     /translation="MVAGMLGLREEKSEDQDLQGLKDKPLKFKKVKKDKKEEKEGKHE
+                     PVQPSAHHSAEPAEAGKAETSEGSGSAPAVPEASASPKQRRSIIRDRGPMYDDPTLPE
+                     GWTRKLKQRKSGRSAGKYDVYLINPQGKAFRSKVELIAYFEKVGDTSLDPNDFDFTVT
+                     GRGSPSRREQKPPKKPKSPKAPGTGRGRGRPKGSGTTRPKAATSEGVQVKRVLEKSPG
+                     KLLVKMPFQTSPGGKAEGGGATTSTQVMVIKRPGRKRKAEADPQAIPKKRGRKPGSVV
+                     AAAAAEAKKKAVKESSIRSVQETVLPIKKRKTRETVSIEVKEVVKPLLVSTLGEKSGK
+                     GLKTCKSPGRKSKESSPKGRSSSASSPPKKEHHHHHHHSESPKAPVPLLPPLPPPPPE
+                     PESSEDPTSPPEPQDLSSSVCKEEKMPRGGSLESDGCPKEPAKTQPAVATAATAAEKY
+                     KHRGEGERKDIVSSSMPRPNREEPVDSRTPVTERVS"
+     misc_feature    464..466
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P51608.1); phosphorylation site"
+     misc_feature    572..574
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P51608.1); phosphorylation site"
+     misc_feature    1502..1504
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P51608.1); phosphorylation site"
+     misc_feature    1571..1573
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="N6-acetyllysine; propagated from
+                     UniProtKB/Swiss-Prot (P51608.1); acetylation site"
+     exon            253..603
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /inference="alignment:Splign"
+                     /number=3
+     STS             329..566
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88606"
+                     /db_xref="UniSTS:413404"
+     STS             540..1139
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="stSG603781"
+                     /db_xref="UniSTS:447239"
+     exon            604..10241
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /inference="alignment:Splign"
+                     /number=4b
+     STS             744..1001
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88601"
+                     /db_xref="UniSTS:413399"
+     STS             872..1706
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="ECD02314"
+                     /db_xref="UniSTS:283414"
+     STS             982..1233
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88600"
+                     /db_xref="UniSTS:413398"
+     STS             1094..1951
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="MECP2_4127"
+                     /db_xref="UniSTS:462907"
+     STS             1223..1480
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88599"
+                     /db_xref="UniSTS:413397"
+     STS             1433..1657
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88598"
+                     /db_xref="UniSTS:413396"
+     STS             1600..1844
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88597"
+                     /db_xref="UniSTS:413395"
+     polyA_signal    1790..1795
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /note="alternative signal"
+     polyA_site      1814
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /note="alternative site"
+     STS             1819..2065
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88596"
+                     /db_xref="UniSTS:413394"
+     STS             1837..2328
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="ECD14555"
+                     /db_xref="UniSTS:295575"
+     STS             2037..2284
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88595"
+                     /db_xref="UniSTS:413393"
+     STS             2240..2490
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88594"
+                     /db_xref="UniSTS:413392"
+     STS             2288..2491
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="stSG603779"
+                     /db_xref="UniSTS:447238"
+     STS             2352..2477
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="RH79177"
+                     /db_xref="UniSTS:53862"
+     STS             2369..2860
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="ECD14554"
+                     /db_xref="UniSTS:295574"
+     STS             2460..2710
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88593"
+                     /db_xref="UniSTS:413391"
+     STS             2472..3642
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="stSG603778"
+                     /db_xref="UniSTS:447237"
+     STS             2673..2908
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88592"
+                     /db_xref="UniSTS:413390"
+     STS             2896..3150
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88591"
+                     /db_xref="UniSTS:413389"
+     STS             3008..3848
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="ECD02130"
+                     /db_xref="UniSTS:283231"
+     STS             3115..3350
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88590"
+                     /db_xref="UniSTS:413388"
+     STS             3332..3582
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88589"
+                     /db_xref="UniSTS:413387"
+     STS             3559..3814
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88588"
+                     /db_xref="UniSTS:413386"
+     STS             3808..4065
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88587"
+                     /db_xref="UniSTS:413385"
+     STS             3821..5098
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="stSG603776"
+                     /db_xref="UniSTS:447236"
+     STS             3859..4648
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="ECD03607"
+                     /db_xref="UniSTS:284687"
+     STS             4038..4293
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88586"
+                     /db_xref="UniSTS:413384"
+     STS             4057..4174
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="DXS1012E"
+                     /db_xref="UniSTS:99497"
+     STS             4285..4537
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88585"
+                     /db_xref="UniSTS:413383"
+     STS             4515..4757
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88584"
+                     /db_xref="UniSTS:413382"
+     STS             4726..4984
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88583"
+                     /db_xref="UniSTS:413381"
+     STS             4752..5554
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="ECD03207"
+                     /db_xref="UniSTS:284292"
+     STS             4960..5230
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88582"
+                     /db_xref="UniSTS:413380"
+     STS             4993..5129
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="DXS7069"
+                     /db_xref="UniSTS:99721"
+     STS             5079..6404
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="stSG603775"
+                     /db_xref="UniSTS:447235"
+     STS             5208..5454
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88581"
+                     /db_xref="UniSTS:413379"
+     STS             5441..5677
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88580"
+                     /db_xref="UniSTS:413378"
+     STS             5603..6404
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="ECD03233"
+                     /db_xref="UniSTS:284318"
+     STS             5654..5910
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88579"
+                     /db_xref="UniSTS:413377"
+     STS             5840..6086
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88578"
+                     /db_xref="UniSTS:413376"
+     STS             6054..6301
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88577"
+                     /db_xref="UniSTS:413375"
+     STS             6279..6529
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88576"
+                     /db_xref="UniSTS:413374"
+     STS             6385..7683
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="stSG603774"
+                     /db_xref="UniSTS:447234"
+     STS             6444..7218
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="ECD04118"
+                     /db_xref="UniSTS:285197"
+     STS             6506..6747
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88575"
+                     /db_xref="UniSTS:413373"
+     STS             6727..6993
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88574"
+                     /db_xref="UniSTS:413372"
+     STS             6982..7215
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88573"
+                     /db_xref="UniSTS:413371"
+     STS             7117..7216
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="RH80656"
+                     /db_xref="UniSTS:89389"
+     STS             7183..7410
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88572"
+                     /db_xref="UniSTS:413370"
+     STS             7356..8215
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="ECD01621"
+                     /db_xref="UniSTS:282723"
+     STS             7373..7619
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88571"
+                     /db_xref="UniSTS:413369"
+     STS             7601..7851
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88570"
+                     /db_xref="UniSTS:413368"
+     STS             7789..9218
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="stSG603773"
+                     /db_xref="UniSTS:447233"
+     STS             7789..7890
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="RH45050"
+                     /db_xref="UniSTS:22039"
+     STS             7819..8066
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88569"
+                     /db_xref="UniSTS:413367"
+     STS             8044..8291
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88568"
+                     /db_xref="UniSTS:413366"
+     STS             8272..8519
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88567"
+                     /db_xref="UniSTS:413365"
+     STS             8310..9189
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="ECD01063"
+                     /db_xref="UniSTS:282170"
+     STS             8494..8753
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88566"
+                     /db_xref="UniSTS:413364"
+     STS             8737..8983
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88565"
+                     /db_xref="UniSTS:413363"
+     STS             8955..9184
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88564"
+                     /db_xref="UniSTS:413362"
+     STS             9178..9427
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88563"
+                     /db_xref="UniSTS:413361"
+     STS             9245..10091
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="ECD01974"
+                     /db_xref="UniSTS:283075"
+     STS             9393..9617
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88562"
+                     /db_xref="UniSTS:413360"
+     STS             9610..9881
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88561"
+                     /db_xref="UniSTS:413359"
+     STS             9851..10078
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88560"
+                     /db_xref="UniSTS:413358"
+     polyA_signal    10218..10222
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+     polyA_signal    10234..10238
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+     polyA_site      10241
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+ORIGIN      
+        1 ccggcgtcgg cggcgcgcgc gctccctcct ctcggagaga gggctgtggt aaaagccgtc
+       61 cggaaaatgg ccgccgccgc cgccgccgcg ccgagcggag gaggaggagg aggcgaggag
+      121 gagagactgc tccataaaaa tacagactca ccagttcctg ctttgatgtg acatgtgact
+      181 ccccagaata caccttgctt ctgtagacca gctccaacag gattccatgg tagctgggat
+      241 gttagggctc agggaagaaa agtcagaaga ccaggacctc cagggcctca aggacaaacc
+      301 cctcaagttt aaaaaggtga agaaagataa gaaagaagag aaagagggca agcatgagcc
+      361 cgtgcagcca tcagcccacc actctgctga gcccgcagag gcaggcaaag cagagacatc
+      421 agaagggtca ggctccgccc cggctgtgcc ggaagcttct gcctccccca aacagcggcg
+      481 ctccatcatc cgtgaccggg gacccatgta tgatgacccc accctgcctg aaggctggac
+      541 acggaagctt aagcaaagga aatctggccg ctctgctggg aagtatgatg tgtatttgat
+      601 caatccccag ggaaaagcct ttcgctctaa agtggagttg attgcgtact tcgaaaaggt
+      661 aggcgacaca tccctggacc ctaatgattt tgacttcacg gtaactggga gagggagccc
+      721 ctcccggcga gagcagaaac cacctaagaa gcccaaatct cccaaagctc caggaactgg
+      781 cagaggccgg ggacgcccca aagggagcgg caccacgaga cccaaggcgg ccacgtcaga
+      841 gggtgtgcag gtgaaaaggg tcctggagaa aagtcctggg aagctccttg tcaagatgcc
+      901 ttttcaaact tcgccagggg gcaaggctga ggggggtggg gccaccacat ccacccaggt
+      961 catggtgatc aaacgccccg gcaggaagcg aaaagctgag gccgaccctc aggccattcc
+     1021 caagaaacgg ggccgaaagc cggggagtgt ggtggcagcc gctgccgccg aggccaaaaa
+     1081 gaaagccgtg aaggagtctt ctatccgatc tgtgcaggag accgtactcc ccatcaagaa
+     1141 gcgcaagacc cgggagacgg tcagcatcga ggtcaaggaa gtggtgaagc ccctgctggt
+     1201 gtccaccctc ggtgagaaga gcgggaaagg actgaagacc tgtaagagcc ctgggcggaa
+     1261 aagcaaggag agcagcccca aggggcgcag cagcagcgcc tcctcacccc ccaagaagga
+     1321 gcaccaccac catcaccacc actcagagtc cccaaaggcc cccgtgccac tgctcccacc
+     1381 cctgccccca cctccacctg agcccgagag ctccgaggac cccaccagcc cccctgagcc
+     1441 ccaggacttg agcagcagcg tctgcaaaga ggagaagatg cccagaggag gctcactgga
+     1501 gagcgacggc tgccccaagg agccagctaa gactcagccc gcggttgcca ccgccgccac
+     1561 ggccgcagaa aagtacaaac accgagggga gggagagcgc aaagacattg tttcatcctc
+     1621 catgccaagg ccaaacagag aggagcctgt ggacagccgg acgcccgtga ccgagagagt
+     1681 tagctgactt tacacggagc ggattgcaaa gcaaaccaac aagaataaag gcagctgttg
+     1741 tctcttctcc ttatgggtag ggctctgaca aagcttcccg attaactgaa ataaaaaata
+     1801 tttttttttc tttcagtaaa cttagagttt cgtggcttca gggtgggagt agttggagca
+     1861 ttggggatgt ttttcttacc gacaagcaca gtcaggttga agacctaacc agggccagaa
+     1921 gtagctttgc acttttctaa actaggctcc ttcaacaagg cttgctgcag atactactga
+     1981 ccagacaagc tgttgaccag gcacctcccc tcccgcccaa acctttcccc catgtggtcg
+     2041 ttagagacag agcgacagag cagttgagag gacactcccg ttttcggtgc catcagtgcc
+     2101 ccgtctacag ctcccccagc tccccccacc tcccccactc ccaaccacgt tgggacaggg
+     2161 aggtgtgagg caggagagac agttggattc tttagagaag atggatatga ccagtggcta
+     2221 tggcctgtgc gatcccaccc gtggtggctc aagtctggcc ccacaccagc cccaatccaa
+     2281 aactggcaag gacgcttcac aggacaggaa agtggcacct gtctgctcca gctctggcat
+     2341 ggctaggagg ggggagtccc ttgaactact gggtgtagac tggcctgaac cacaggagag
+     2401 gatggcccag ggtgaggtgg catggtccat tctcaaggga cgtcctccaa cgggtggcgc
+     2461 tagaggccat ggaggcagta ggacaaggtg caggcaggct ggcctggggt caggccgggc
+     2521 agagcacagc ggggtgagag ggattcctaa tcactcagag cagtctgtga cttagtggac
+     2581 aggggagggg gcaaaggggg aggagaagaa aatgttcttc cagttacttt ccaattctcc
+     2641 tttagggaca gcttagaatt atttgcacta ttgagtcttc atgttcccac ttcaaaacaa
+     2701 acagatgctc tgagagcaaa ctggcttgaa ttggtgacat ttagtccctc aagccaccag
+     2761 atgtgacagt gttgagaact acctggattt gtatatatac ctgcgcttgt tttaaagtgg
+     2821 gctcagcaca tagggttccc acgaagctcc gaaactctaa gtgtttgctg caattttata
+     2881 aggacttcct gattggtttc tcttctcccc ttccatttct gccttttgtt catttcatcc
+     2941 tttcacttct ttcccttcct ccgtcctcct ccttcctagt tcatcccttc tcttccaggc
+     3001 agccgcggtg cccaaccaca cttgtcggct ccagtcccca gaactctgcc tgccctttgt
+     3061 cctcctgctg ccagtaccag ccccaccctg ttttgagccc tgaggaggcc ttgggctctg
+     3121 ctgagtccga cctggcctgt ctgtgaagag caagagagca gcaaggtctt gctctcctag
+     3181 gtagccccct cttccctggt aagaaaaagc aaaaggcatt tcccaccctg aacaacgagc
+     3241 cttttcaccc ttctactcta gagaagtgga ctggaggagc tgggcccgat ttggtagttg
+     3301 aggaaagcac agaggcctcc tgtggcctgc cagtcatcga gtggcccaac aggggctcca
+     3361 tgccagccga ccttgacctc actcagaagt ccagagtcta gcgtagtgca gcagggcagt
+     3421 agcggtacca atgcagaact cccaagaccc gagctgggac cagtacctgg gtccccagcc
+     3481 cttcctctgc tccccctttt ccctcggagt tcttcttgaa tggcaatgtt ttgcttttgc
+     3541 tcgatgcaga cagggggcca gaacaccaca catttcactg tctgtctggt ccatagctgt
+     3601 ggtgtagggg cttagaggca tgggcttgct gtgggttttt aattgatcag ttttcatgtg
+     3661 ggatcccatc tttttaacct ctgttcagga agtccttatc tagctgcata tcttcatcat
+     3721 attggtatat ccttttctgt gtttacagag atgtctctta tatctaaatc tgtccaactg
+     3781 agaagtacct tatcaaagta gcaaatgaga cagcagtctt atgcttccag aaacacccac
+     3841 aggcatgtcc catgtgagct gctgccatga actgtcaagt gtgtgttgtc ttgtgtattt
+     3901 cagttattgt ccctggcttc cttactatgg tgtaatcatg aaggagtgaa acatcataga
+     3961 aactgtctag cacttccttg ccagtcttta gtgatcagga accatagttg acagttccaa
+     4021 tcagtagctt aagaaaaaac cgtgtttgtc tcttctggaa tggttagaag tgagggagtt
+     4081 tgccccgttc tgtttgtaga gtctcatagt tggactttct agcatatatg tgtccatttc
+     4141 cttatgctgt aaaagcaagt cctgcaacca aactcccatc agcccaatcc ctgatccctg
+     4201 atcccttcca cctgctctgc tgatgacccc cccagcttca cttctgactc ttccccagga
+     4261 agggaagggg ggtcagaaga gagggtgagt cctccagaac tcttcctcca aggacagaag
+     4321 gctcctgccc ccatagtggc ctcgaactcc tggcactacc aaaggacact tatccacgag
+     4381 agcgcagcat ccgaccaggt tgtcactgag aagatgttta ttttggtcag ttgggttttt
+     4441 atgtattata cttagtcaaa tgtaatgtgg cttctggaat cattgtccag agctgcttcc
+     4501 ccgtcacctg ggcgtcatct ggtcctggta agaggagtgc gtggcccacc aggcccccct
+     4561 gtcacccatg acagttcatt cagggccgat ggggcagtcg tggttgggaa cacagcattt
+     4621 caagcgtcac tttatttcat tcgggcccca cctgcagctc cctcaaagag gcagttgccc
+     4681 agcctctttc ccttccagtt tattccagag ctgccagtgg ggcctgaggc tccttagggt
+     4741 tttctctcta tttccccctt tcttcctcat tccctcgtct ttcccaaagg catcacgagt
+     4801 cagtcgcctt tcagcaggca gccttggcgg tttatcgccc tggcaggcag gggccctgca
+     4861 gctctcatgc tgcccctgcc ttggggtcag gttgacagga ggttggaggg aaagccttaa
+     4921 gctgcaggat tctcaccagc tgtgtccggc ccagttttgg ggtgtgacct caatttcaat
+     4981 tttgtctgta cttgaacatt atgaagatgg gggcctcttt cagtgaattt gtgaacagca
+     5041 gaattgaccg acagctttcc agtacccatg gggctaggtc attaaggcca catccacagt
+     5101 ctcccccacc cttgttccag ttgttagtta ctacctcctc tcctgacaat actgtatgtc
+     5161 gtcgagctcc ccccaggtct acccctcccg gccctgcctg ctggtgggct tgtcatagcc
+     5221 agtgggattg ccggtcttga cagctcagtg agctggagat acttggtcac agccaggcgc
+     5281 tagcacagct cccttctgtt gatgctgtat tcccatatca aaagacacag gggacaccca
+     5341 gaaacgccac atcccccaat ccatcagtgc caaactagcc aacggcccca gcttctcagc
+     5401 tcgctggatg gcggaagctg ctactcgtga gcgccagtgc gggtgcagac aatcttctgt
+     5461 tgggtggcat cattccaggc ccgaagcatg aacagtgcac ctgggacagg gagcagcccc
+     5521 aaattgtcac ctgcttctct gcccagcttt tcattgctgt gacagtgatg gcgaaagagg
+     5581 gtaataacca gacacaaact gccaagttgg gtggagaaag gagtttcttt agctgacaga
+     5641 atctctgaat tttaaatcac ttagtaagcg gctcaagccc aggagggagc agagggatac
+     5701 gagcggagtc ccctgcgcgg gaccatctgg aattggttta gcccaagtgg agcctgacag
+     5761 ccagaactct gtgtcccccg tctaaccaca gctccttttc cagagcattc cagtcaggct
+     5821 ctctgggctg actgggccag gggaggttac aggtaccagt tctttaagaa gatctttggg
+     5881 catatacatt tttagcctgt gtcattgccc caaatggatt cctgtttcaa gttcacacct
+     5941 gcagattcta ggacctgtgt cctagacttc agggagtcag ctgtttctag agttcctacc
+     6001 atggagtggg tctggaggac ctgcccggtg ggggggcaga gccctgctcc ctccgggtct
+     6061 tcctactctt ctctctgctc tgacgggatt tgttgattct ctccattttg gtgtctttct
+     6121 cttttagata ttgtatcaat ctttagaaaa ggcatagtct acttgttata aatcgttagg
+     6181 atactgcctc ccccagggtc taaaattaca tattagaggg gaaaagctga acactgaagt
+     6241 cagttctcaa caatttagaa ggaaaaccta gaaaacattt ggcagaaaat tacatttcga
+     6301 tgtttttgaa tgaatacgag caagctttta caacagtgct gatctaaaaa tacttagcac
+     6361 ttggcctgag atgcctggtg agcattacag gcaaggggaa tctggaggta gccgacctga
+     6421 ggacatggct tctgaacctg tcttttggga gtggtatgga aggtggagcg ttcaccagtg
+     6481 acctggaagg cccagcacca ccctccttcc cactcttctc atcttgacag agcctgcccc
+     6541 agcgctgacg tgtcaggaaa acacccaggg aactaggaag gcacttctgc ctgaggggca
+     6601 gcctgccttg cccactcctg ctctgctcgc ctcggatcag ctgagccttc tgagctggcc
+     6661 tctcactgcc tccccaaggc cccctgcctg ccctgtcagg aggcagaagg aagcaggtgt
+     6721 gagggcagtg caaggaggga gcacaacccc cagctcccgc tccgggctcc gacttgtgca
+     6781 caggcagagc ccagaccctg gaggaaatcc tacctttgaa ttcaagaaca tttggggaat
+     6841 ttggaaatct ctttgccccc aaacccccat tctgtcctac ctttaatcag gtcctgctca
+     6901 gcagtgagag cagatgaggt gaaaaggcca agaggtttgg ctcctgccca ctgatagccc
+     6961 ctctccccgc agtgtttgtg tgtcaagtgg caaagctgtt cttcctggtg accctgatta
+     7021 tatccagtaa cacatagact gtgcgcatag gcctgctttg tctcctctat cctgggcttt
+     7081 tgttttgctt tttagttttg cttttagttt ttctgtccct tttatttaac gcaccgacta
+     7141 gacacacaaa gcagttgaat ttttatatat atatctgtat attgcacaat tataaactca
+     7201 ttttgcttgt ggctccacac acacaaaaaa agacctgtta aaattatacc tgttgcttaa
+     7261 ttacaatatt tctgataacc atagcatagg acaagggaaa ataaaaaaag aaaaaaaaga
+     7321 aaaaaaaacg acaaatctgt ctgctggtca cttcttctgt ccaagcagat tcgtggtctt
+     7381 ttcctcgctt ctttcaaggg ctttcctgtg ccaggtgaag gaggctccag gcagcaccca
+     7441 ggttttgcac tcttgtttct cccgtgcttg tgaaagaggt cccaaggttc tgggtgcagg
+     7501 agcgctccct tgacctgctg aagtccggaa cgtagtcggc acagcctggt cgccttccac
+     7561 ctctgggagc tggagtccac tggggtggcc tgactccccc agtccccttc ccgtgacctg
+     7621 gtcagggtga gcccatgtgg agtcagcctc gcaggcctcc ctgccagtag ggtccgagtg
+     7681 tgtttcatcc ttcccactct gtcgagcctg ggggctggag cggagacggg aggcctggcc
+     7741 tgtctcggaa cctgtgagct gcaccaggta gaacgccagg gaccccagaa tcatgtgcgt
+     7801 cagtccaagg ggtcccctcc aggagtagtg aagactccag aaatgtccct ttcttctccc
+     7861 ccatcctacg agtaattgca tttgcttttg taattcttaa tgagcaatat ctgctagaga
+     7921 gtttagctgt aacagttctt tttgatcatc tttttttaat aattagaaac accaaaaaaa
+     7981 tccagaaact tgttcttcca aagcagagag cattataatc accagggcca aaagcttccc
+     8041 tccctgctgt cattgcttct tctgaggcct gaatccaaaa gaaaaacagc cataggccct
+     8101 ttcagtggcc gggctacccg tgagcccttc ggaggaccag ggctggggca gcctctgggc
+     8161 ccacatccgg ggccagctcc ggcgtgtgtt cagtgttagc agtgggtcat gatgctcttt
+     8221 cccacccagc ctgggatagg ggcagaggag gcgaggaggc cgttgccgct gatgtttggc
+     8281 cgtgaacagg tgggtgtctg cgtgcgtcca cgtgcgtgtt ttctgactga catgaaatcg
+     8341 acgcccgagt tagcctcacc cggtgacctc tagccctgcc cggatggagc ggggcccacc
+     8401 cggttcagtg tttctgggga gctggacagt ggagtgcaaa aggcttgcag aacttgaagc
+     8461 ctgctccttc ccttgctacc acggcctcct ttccgtttga tttgtcactg cttcaatcaa
+     8521 taacagccgc tccagagtca gtagtcaatg aatatatgac caaatatcac caggactgtt
+     8581 actcaatgtg tgccgagccc ttgcccatgc tgggctcccg tgtatctgga cactgtaacg
+     8641 tgtgctgtgt ttgctcccct tccccttcct tctttgccct ttacttgtct ttctggggtt
+     8701 tttctgtttg ggtttggttt ggtttttatt tctccttttg tgttccaaac atgaggttct
+     8761 ctctactggt cctcttaact gtggtgttga ggcttatatt tgtgtaattt ttggtgggtg
+     8821 aaaggaattt tgctaagtaa atctcttctg tgtttgaact gaagtctgta ttgtaactat
+     8881 gtttaaagta attgttccag agacaaatat ttctagacac tttttcttta caaacaaaag
+     8941 cattcggagg gagggggatg gtgactgaga tgagagggga gagctgaaca gatgacccct
+     9001 gcccagatca gccagaagcc acccaaagca gtggagccca ggagtcccac tccaagccag
+     9061 caagccgaat agctgatgtg ttgccacttt ccaagtcact gcaaaaccag gttttgttcc
+     9121 gcccagtgga ttcttgtttt gcttcccctc cccccgagat tattaccacc atcccgtgct
+     9181 tttaaggaaa ggcaagattg atgtttcctt gaggggagcc aggaggggat gtgtgtgtgc
+     9241 agagctgaag agctggggag aatggggctg ggcccaccca agcaggaggc tgggacgctc
+     9301 tgctgtgggc acaggtcagg ctaatgttgg cagatgcagc tcttcctgga caggccaggt
+     9361 ggtgggcatt ctctctccaa ggtgtgcccc gtgggcatta ctgtttaaga cacttccgtc
+     9421 acatcccacc ccatcctcca gggctcaaca ctgtgacatc tctattcccc accctcccct
+     9481 tcccagggca ataaaatgac catggagggg gcttgcactc tcttggctgt cacccgatcg
+     9541 ccagcaaaac ttagatgtga gaaaacccct tcccattcca tggcgaaaac atctccttag
+     9601 aaaagccatt accctcatta ggcatggttt tgggctccca aaacacctga cagcccctcc
+     9661 ctcctctgag aggcggagag tgctgactgt agtgaccatt gcatgccggg tgcagcatct
+     9721 ggaagagcta ggcagggtgt ctgccccctc ctgagttgaa gtcatgctcc cctgtgccag
+     9781 cccagaggcc gagagctatg gacagcattg ccagtaacac aggccaccct gtgcagaagg
+     9841 gagctggctc cagcctggaa acctgtctga ggttgggaga ggtgcacttg gggcacaggg
+     9901 agaggccggg acacacttag ctggagatgt ctctaaaagc cctgtatcgt attcaccttc
+     9961 agtttttgtg ttttgggaca attactttag aaaataagta ggtcgtttta aaaacaaaaa
+    10021 ttattgattg cttttttgta gtgttcagaa aaaaggttct ttgtgtatag ccaaatgact
+    10081 gaaagcactg atatatttaa aaacaaaagg caatttatta aggaaatttg taccatttca
+    10141 gtaaacctgt ctgaatgtac ctgtatacgt ttcaaaaaca cccccccccc actgaatccc
+    10201 tgtaacctat ttattatata aagagtttgc cttataaatt t
+//
+LOCUS       NM_001110792            1734 bp    mRNA    linear   PRI 16-SEP-2012
+DEFINITION  Homo sapiens methyl CpG binding protein 2 (Rett syndrome) (MECP2),
+            transcript variant 2, mRNA.
+ACCESSION   NM_001110792
+VERSION     NM_001110792.1  GI:160707949
+KEYWORDS    .
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 1734)
+  AUTHORS   Vignoli,A., Borgatti,R., Peron,A., Zucca,C., Ballarati,L.,
+            Bonaglia,C., Bellini,M., Giordano,L., Romaniello,R., Bedeschi,M.F.,
+            Epifanio,R., Russo,S., Caselli,R., Giardino,D., Darra,F., La
+            Briola,F., Banderali,G. and Canevini,M.P.
+  TITLE     Electroclinical pattern in MECP2 duplication syndrome: eight new
+            reported cases and review of literature
+  JOURNAL   Epilepsia 53 (7), 1146-1155 (2012)
+   PUBMED   22578097
+  REMARK    GeneRIF: This study presented that Electroclinical pattern in MECP2
+            duplication in epilepsy.
+            Review article
+REFERENCE   2  (bases 1 to 1734)
+  AUTHORS   Kim,H.J., Kim,S.H., Kim,H.D., Lee,J.S., Lee,Y.M., Koo,K.Y.,
+            Lee,J.S. and Kang,H.C.
+  TITLE     Genetic and epileptic features in Rett syndrome
+  JOURNAL   Yonsei Med. J. 53 (3), 495-500 (2012)
+   PUBMED   22476991
+  REMARK    GeneRIF: Study identified MECP2 mutations in all 20 Rett syndrome
+            patients. The mutations consisted of 14 distinct types, including
+            seven missense, four nonsense, and three frameshift mutations.
+REFERENCE   3  (bases 1 to 1734)
+  AUTHORS   Okabe,Y., Takahashi,T., Mitsumasu,C., Kosai,K., Tanaka,E. and
+            Matsuishi,T.
+  TITLE     Alterations of gene expression and glutamate clearance in
+            astrocytes derived from an MeCP2-null mouse model of Rett syndrome
+  JOURNAL   PLoS ONE 7 (4), E35354 (2012)
+   PUBMED   22532851
+  REMARK    GeneRIF: These findings suggest that MeCP2 affects astroglial genes
+            expression in cultured astrocytes, and that abnormal Glu clearance
+            in MeCP2-deficient astrocytes may influence the onset and
+            progression of Rett syndrome.
+REFERENCE   4  (bases 1 to 1734)
+  AUTHORS   Harvey,C.G., Menon,S.D., Stachowiak,B., Noor,A., Proctor,A.,
+            Mensah,A.K., Mnatzakanian,G.N., Alfred,S.E., Guo,R., Scherer,S.W.,
+            Kennedy,J.L., Roberts,W., Srivastava,A.K., Minassian,B.A. and
+            Vincent,J.B.
+  TITLE     Sequence variants within exon 1 of MECP2 occur in females with
+            mental retardation
+  JOURNAL   Am. J. Med. Genet. B Neuropsychiatr. Genet. 144B (3), 355-360
+            (2007)
+   PUBMED   17171659
+  REMARK    GeneRIF: polymorphisms within exon 1 of MECP2 occur in females with
+            mental retardation.
+            GeneRIF: Observational study of gene-disease association. (HuGE
+            Navigator)
+            Erratum:[Am J Med Genet B Neuropsychiatr Genet. 2007 Oct
+            5;144(7):969. Srivistava, Anand K [corrected to Srivastava, Anand
+            K]]
+REFERENCE   5  (bases 1 to 1734)
+  AUTHORS   Francke,U.
+  TITLE     Mechanisms of disease: neurogenetics of MeCP2 deficiency
+  JOURNAL   Nat Clin Pract Neurol 2 (4), 212-221 (2006)
+   PUBMED   16932552
+  REMARK    GeneRIF: Rett syndrome is caused by heterozygosity for mutations in
+            the X-linked gene MECP2, which encodes methyl-CpG binding protein
+            2.
+            Review article
+REFERENCE   6  (bases 1 to 1734)
+  AUTHORS   Mnatzakanian,G.N., Lohi,H., Munteanu,I., Alfred,S.E., Yamada,T.,
+            MacLeod,P.J., Jones,J.R., Scherer,S.W., Schanen,N.C., Friez,M.J.,
+            Vincent,J.B. and Minassian,B.A.
+  TITLE     A previously unidentified MECP2 open reading frame defines a new
+            protein isoform relevant to Rett syndrome
+  JOURNAL   Nat. Genet. 36 (4), 339-341 (2004)
+   PUBMED   15034579
+  REMARK    GeneRIF: description of a previously unknown MeCP2 isoform
+            Erratum:[Nat Genet. 2004 May;36(5):540]
+REFERENCE   7  (bases 1 to 1734)
+  AUTHORS   Reichwald,K., Thiesen,J., Wiehe,T., Weitzel,J., Poustka,W.A.,
+            Rosenthal,A., Platzer,M., Stratling,W.H. and Kioschis,P.
+  TITLE     Comparative sequence analysis of the MECP2-locus in human and mouse
+            reveals new transcribed regions
+  JOURNAL   Mamm. Genome 11 (3), 182-190 (2000)
+   PUBMED   10723722
+REFERENCE   8  (bases 1 to 1734)
+  AUTHORS   D'Esposito,M., Quaderi,N.A., Ciccodicola,A., Bruni,P., Esposito,T.,
+            D'Urso,M. and Brown,S.D.
+  TITLE     Isolation, physical mapping, and northern analysis of the X-linked
+            human gene encoding methyl CpG-binding protein, MECP2
+  JOURNAL   Mamm. Genome 7 (7), 533-535 (1996)
+   PUBMED   8672133
+REFERENCE   9  (bases 1 to 1734)
+  AUTHORS   Tate,P., Skarnes,W. and Bird,A.
+  TITLE     The methyl-CpG binding protein MeCP2 is essential for embryonic
+            development in the mouse
+  JOURNAL   Nat. Genet. 12 (2), 205-208 (1996)
+   PUBMED   8563762
+  REMARK    GeneRIF: MECP2 is dispensible in stem cells, but is essential for
+            embryonic development.
+REFERENCE   10 (bases 1 to 1734)
+  AUTHORS   Lewis,J.D., Meehan,R.R., Henzel,W.J., Maurer-Fogy,I., Jeppesen,P.,
+            Klein,F. and Bird,A.
+  TITLE     Purification, sequence, and cellular localization of a novel
+            chromosomal protein that binds to methylated DNA
+  JOURNAL   Cell 69 (6), 905-914 (1992)
+   PUBMED   1606614
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. The
+            reference sequence was derived from AB209464.1, BX538060.1 and
+            BC011612.1.
+            This sequence is a reference standard in the RefSeqGene project.
+            
+            Summary: DNA methylation is the major modification of eukaryotic
+            genomes and plays an essential role in mammalian development. Human
+            proteins MECP2, MBD1, MBD2, MBD3, and MBD4 comprise a family of
+            nuclear proteins related by the presence in each of a methyl-CpG
+            binding domain (MBD). Each of these proteins, with the exception of
+            MBD3, is capable of binding specifically to methylated DNA. MECP2,
+            MBD1 and MBD2 can also repress transcription from methylated gene
+            promoters. In contrast to other MBD family members, MECP2 is
+            X-linked and subject to X inactivation. MECP2 is dispensible in
+            stem cells, but is essential for embryonic development. MECP2 gene
+            mutations are the cause of most cases of Rett syndrome, a
+            progressive neurologic developmental disorder and one of the most
+            common causes of mental retardation in females. [provided by
+            RefSeq, Jul 2009].
+            
+            Transcript Variant: This variant (2), also known as MECP2B, lacks
+            exon 2. Translation is reported to initiate in the first exon
+            resulting in a protein isoform (2) with a distinct N-terminus. This
+            transcript is reported to be abundant in the central nervous system
+            (PMID: 15034579, 17171659).
+            
+            Publication Note:  This RefSeq record includes a subset of the
+            publications that are available for this gene. Please see the Gene
+            record to access additional publications.
+            
+            ##RefSeq-Attributes-START##
+            Transcript_exon_combination_evidence :: BX538060.1, BI458175.1
+                                                    [ECO:0000332]
+            ##RefSeq-Attributes-END##
+PRIMARY     REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP
+            1-11                AB209464.1         1-11
+            12-494              BX538060.1         2-484
+            495-1734            BC011612.1         477-1716
+FEATURES             Location/Qualifiers
+     source          1..1734
+                     /organism="Homo sapiens"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="X"
+                     /map="Xq28"
+     gene            1..1734
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /note="methyl CpG binding protein 2 (Rett syndrome)"
+                     /db_xref="GeneID:4204"
+                     /db_xref="HGNC:6990"
+                     /db_xref="MIM:300005"
+     exon            1..128
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /inference="alignment:Splign"
+                     /number=1
+     CDS             67..1563
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /note="isoform 2 is encoded by transcript variant 2;
+                     meCp-2 protein"
+                     /codon_start=1
+                     /product="methyl-CpG-binding protein 2 isoform 2"
+                     /protein_id="NP_001104262.1"
+                     /db_xref="GI:160707950"
+                     /db_xref="CCDS:CCDS48193.1"
+                     /db_xref="GeneID:4204"
+                     /db_xref="HGNC:6990"
+                     /db_xref="MIM:300005"
+                     /translation="MAAAAAAAPSGGGGGGEEERLEEKSEDQDLQGLKDKPLKFKKVK
+                     KDKKEEKEGKHEPVQPSAHHSAEPAEAGKAETSEGSGSAPAVPEASASPKQRRSIIRD
+                     RGPMYDDPTLPEGWTRKLKQRKSGRSAGKYDVYLINPQGKAFRSKVELIAYFEKVGDT
+                     SLDPNDFDFTVTGRGSPSRREQKPPKKPKSPKAPGTGRGRGRPKGSGTTRPKAATSEG
+                     VQVKRVLEKSPGKLLVKMPFQTSPGGKAEGGGATTSTQVMVIKRPGRKRKAEADPQAI
+                     PKKRGRKPGSVVAAAAAEAKKKAVKESSIRSVQETVLPIKKRKTRETVSIEVKEVVKP
+                     LLVSTLGEKSGKGLKTCKSPGRKSKESSPKGRSSSASSPPKKEHHHHHHHSESPKAPV
+                     PLLPPLPPPPPEPESSEDPTSPPEPQDLSSSVCKEEKMPRGGSLESDGCPKEPAKTQP
+                     AVATAATAAEKYKHRGEGERKDIVSSSMPRPNREEPVDSRTPVTERVS"
+     exon            129..479
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /inference="alignment:Splign"
+                     /number=3
+     STS             205..442
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88606"
+                     /db_xref="UniSTS:413404"
+     STS             416..1015
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="stSG603781"
+                     /db_xref="UniSTS:447239"
+     exon            480..1696
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /inference="alignment:Splign"
+                     /number=4a
+     STS             620..877
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88601"
+                     /db_xref="UniSTS:413399"
+     STS             748..1582
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="ECD02314"
+                     /db_xref="UniSTS:283414"
+     STS             858..1109
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88600"
+                     /db_xref="UniSTS:413398"
+     STS             1099..1356
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88599"
+                     /db_xref="UniSTS:413397"
+     STS             1309..1533
+                     /gene="MECP2"
+                     /gene_synonym="AUTSX3; MRX16; MRX79; MRXS13; MRXSL; PPMX;
+                     RS; RTS; RTT"
+                     /standard_name="REN88598"
+                     /db_xref="UniSTS:413396"
+ORIGIN      
+        1 ccggcgtcgg cggcgcgcgc gctccctcct ctcggagaga gggctgtggt aaaagccgtc
+       61 cggaaaatgg ccgccgccgc cgccgccgcg ccgagcggag gaggaggagg aggcgaggag
+      121 gagagactgg aagaaaagtc agaagaccag gacctccagg gcctcaagga caaacccctc
+      181 aagtttaaaa aggtgaagaa agataagaaa gaagagaaag agggcaagca tgagcccgtg
+      241 cagccatcag cccaccactc tgctgagccc gcagaggcag gcaaagcaga gacatcagaa
+      301 gggtcaggct ccgccccggc tgtgccggaa gcttctgcct cccccaaaca gcggcgctcc
+      361 atcatccgtg accggggacc catgtatgat gaccccaccc tgcctgaagg ctggacacgg
+      421 aagcttaagc aaaggaaatc tggccgctct gctgggaagt atgatgtgta tttgatcaat
+      481 ccccagggaa aagcctttcg ctctaaagtg gagttgattg cgtacttcga aaaggtaggc
+      541 gacacatccc tggaccctaa tgattttgac ttcacggtaa ctgggagagg gagcccctcc
+      601 cggcgagagc agaaaccacc taagaagccc aaatctccca aagctccagg aactggcaga
+      661 ggccggggac gccccaaagg gagcggcacc acgagaccca aggcggccac gtcagagggt
+      721 gtgcaggtga aaagggtcct ggagaaaagt cctgggaagc tccttgtcaa gatgcctttt
+      781 caaacttcgc cagggggcaa ggctgagggg ggtggggcca ccacatccac ccaggtcatg
+      841 gtgatcaaac gccccggcag gaagcgaaaa gctgaggccg accctcaggc cattcccaag
+      901 aaacggggcc gaaagccggg gagtgtggtg gcagccgctg ccgccgaggc caaaaagaaa
+      961 gccgtgaagg agtcttctat ccgatctgtg caggagaccg tactccccat caagaagcgc
+     1021 aagacccggg agacggtcag catcgaggtc aaggaagtgg tgaagcccct gctggtgtcc
+     1081 accctcggtg agaagagcgg gaaaggactg aagacctgta agagccctgg gcggaaaagc
+     1141 aaggagagca gccccaaggg gcgcagcagc agcgcctcct caccccccaa gaaggagcac
+     1201 caccaccatc accaccactc agagtcccca aaggcccccg tgccactgct cccacccctg
+     1261 cccccacctc cacctgagcc cgagagctcc gaggacccca ccagcccccc tgagccccag
+     1321 gacttgagca gcagcgtctg caaagaggag aagatgccca gaggaggctc actggagagc
+     1381 gacggctgcc ccaaggagcc agctaagact cagcccgcgg ttgccaccgc cgccacggcc
+     1441 gcagaaaagt acaaacaccg aggggaggga gagcgcaaag acattgtttc atcctccatg
+     1501 ccaaggccaa acagagagga gcctgtggac agccggacgc ccgtgaccga gagagttagc
+     1561 tgactttaca cggagcggat tgcaaagcaa accaacaaga ataaaggcag ctgttgtctc
+     1621 ttctccttat gggtagggct ctgacaaagc ttcccgatta actgaaataa aaaatatttt
+     1681 tttttctttc agtaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaa
+//
