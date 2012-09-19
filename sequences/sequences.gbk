@@ -4200,3 +4200,355 @@ ORIGIN
      2641 taatactttg tccttcatat gtgaaagatc cagtgttgga attctttggt gtaaataaac
      2701 gtttggtttt atttatcaaa aaaaaaaaaa aa
 //
+LOCUS       NM_002875               2299 bp    mRNA    linear   PRI 02-SEP-2012
+DEFINITION  Homo sapiens RAD51 homolog (S. cerevisiae) (RAD51), transcript
+            variant 1, mRNA.
+ACCESSION   NM_002875
+VERSION     NM_002875.4  GI:256017139
+KEYWORDS    .
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 2299)
+  AUTHORS   Gresner,P., Gromadzinska,J., Polanska,K., Twardowska,E.,
+            Jurewicz,J. and Wasowicz,W.
+  TITLE     Genetic variability of Xrcc3 and Rad51 modulates the risk of head
+            and neck cancer
+  JOURNAL   Gene 504 (2), 166-174 (2012)
+   PUBMED   22613844
+  REMARK    GeneRIF: genetic variability of Xrcc3 and/or Rad51 genes might be
+            of relevance with respect to HNC risk
+REFERENCE   2  (bases 1 to 2299)
+  AUTHORS   Iwata,T., Shimada,M., Kurita,N., Nishioka,M., Morimoto,S.,
+            Yoshikawa,K., Higashijima,J., Nakao,T. and Komatsu,M.
+  TITLE     Evaluation of relation of RAD51 and the effect of chemo-radiation
+            therapy for advanced rectal cancer
+  JOURNAL   Hepatogastroenterology 59 (116), 990-993 (2012)
+   PUBMED   22580645
+  REMARK    GeneRIF: RAD51 expression could be one of the most important
+            predictive factors of preoperative chemoradiography for advanced
+            lower rectal cancer.
+REFERENCE   3  (bases 1 to 2299)
+  AUTHORS   Fornander,L.H., Frykholm,K., Reymer,A., Renodon-Corniere,A.,
+            Takahashi,M. and Norden,B.
+  TITLE     Ca2+ improves organization of single-stranded DNA bases in human
+            Rad51 filament, explaining stimulatory effect on gene recombination
+  JOURNAL   Nucleic Acids Res. 40 (11), 4904-4913 (2012)
+   PUBMED   22362735
+  REMARK    GeneRIF: It is proposed that Ca(2+) stabilizes the L2 loop
+            conformation of Rad51 and thereby the protein-DNA interaction.
+REFERENCE   4  (bases 1 to 2299)
+  AUTHORS   Yata,K., Lloyd,J., Maslen,S., Bleuyard,J.Y., Skehel,M.,
+            Smerdon,S.J. and Esashi,F.
+  TITLE     Plk1 and CK2 act in concert to regulate Rad51 during DNA double
+            strand break repair
+  JOURNAL   Mol. Cell 45 (3), 371-383 (2012)
+   PUBMED   22325354
+  REMARK    GeneRIF: S14 followed by T13 phosphorylation of Rad51 facilitates
+            Rad51 recruitment to damage sites, thus enhancing cellular
+            resistance to genotoxic stresses
+REFERENCE   5  (bases 1 to 2299)
+  AUTHORS   Romanowicz-Makowska,H., Smolarz,B., Zadrozny,M., Westfa,B.,
+            Baszczynski,J., Kokolaszwili,G., Burzyfiski,M., Polac,I. and
+            Sporny,S.
+  TITLE     The association between polymorphisms of the RAD51-G135C,
+            XRCC2-Arg188His and XRCC3-Thr241Met genes and clinico-pathologic
+            features in breast cancer in Poland
+  JOURNAL   Eur. J. Gynaecol. Oncol. 33 (2), 145-150 (2012)
+   PUBMED   22611952
+  REMARK    GeneRIF: The results support the hypothesis that polymorphism of
+            RAD51 may be associated with the incidence of sporadic breast
+            cancer in Polish women.
+REFERENCE   6  (bases 1 to 2299)
+  AUTHORS   Kovalenko,O.V., Plug,A.W., Haaf,T., Gonda,D.K., Ashley,T.,
+            Ward,D.C., Radding,C.M. and Golub,E.I.
+  TITLE     Mammalian ubiquitin-conjugating enzyme Ubc9 interacts with Rad51
+            recombination protein and localizes in synaptonemal complexes
+  JOURNAL   Proc. Natl. Acad. Sci. U.S.A. 93 (7), 2958-2963 (1996)
+   PUBMED   8610150
+REFERENCE   7  (bases 1 to 2299)
+  AUTHORS   Benson,F.E., Stasiak,A. and West,S.C.
+  TITLE     Purification and characterization of the human Rad51 protein, an
+            analogue of E. coli RecA
+  JOURNAL   EMBO J. 13 (23), 5764-5771 (1994)
+   PUBMED   7988572
+REFERENCE   8  (bases 1 to 2299)
+  AUTHORS   Takahashi,E., Matsuda,Y., Hori,T., Yasuda,N., Tsuji,S., Mori,M.,
+            Yoshimura,Y., Yamamoto,A., Morita,T. and Matsushiro,A.
+  TITLE     Chromosome mapping of the human (RECA) and mouse (Reca) homologs of
+            the yeast RAD51 and Escherichia coli recA genes to human (15q15.1)
+            and mouse (2F1) chromosomes by direct R-banding fluorescence in
+            situ hybridization
+  JOURNAL   Genomics 19 (2), 376-378 (1994)
+   PUBMED   8188269
+REFERENCE   9  (bases 1 to 2299)
+  AUTHORS   Shinohara,A., Ogawa,H., Matsuda,Y., Ushio,N., Ikeo,K. and Ogawa,T.
+  TITLE     Cloning of human, mouse and fission yeast recombination genes
+            homologous to RAD51 and recA
+  JOURNAL   Nat. Genet. 4 (3), 239-243 (1993)
+   PUBMED   8358431
+  REMARK    Erratum:[Nat Genet 1993 Nov;5(3):312]
+REFERENCE   10 (bases 1 to 2299)
+  AUTHORS   Yoshimura,Y., Morita,T., Yamamoto,A. and Matsushiro,A.
+  TITLE     Cloning and sequence of the human RecA-like gene cDNA
+  JOURNAL   Nucleic Acids Res. 21 (7), 1665 (1993)
+   PUBMED   8479919
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. The
+            reference sequence was derived from EU362635.1, AK313503.1 and
+            AC012476.8.
+            This sequence is a reference standard in the RefSeqGene project.
+            On Aug 19, 2009 this sequence version replaced gi:154275772.
+            
+            Summary: The protein encoded by this gene is a member of the RAD51
+            protein family. RAD51 family members are highly similar to
+            bacterial RecA and Saccharomyces cerevisiae Rad51, and are known to
+            be involved in the homologous recombination and repair of DNA. This
+            protein can interact with the ssDNA-binding protein RPA and RAD52,
+            and it is thought to play roles in homologous pairing and strand
+            transfer of DNA. This protein is also found to interact with BRCA1
+            and BRCA2, which may be important for the cellular response to DNA
+            damage. BRCA2 is shown to regulate both the intracellular
+            localization and DNA-binding ability of this protein. Loss of these
+            controls following BRCA2 inactivation may be a key event leading to
+            genomic instability and tumorigenesis. Multiple transcript variants
+            encoding different isoforms have been found for this gene.
+            [provided by RefSeq, Aug 2009].
+            
+            Transcript Variant: This variant (1) uses an alternate exon in the
+            5' coding region, compared to variant 2. The resulting isoform (1)
+            contains a distinct segment near the N-terminus, compared to
+            isoform 2.
+            
+            Sequence Note: This RefSeq record was created from transcript and
+            genomic sequence data to make the sequence consistent with the
+            reference genome assembly. The genomic coordinates used for the
+            transcript record were based on transcript alignments.
+            
+            Publication Note:  This RefSeq record includes a subset of the
+            publications that are available for this gene. Please see the Gene
+            record to access additional publications.
+            
+            ##RefSeq-Attributes-START##
+            Transcript_exon_combination_evidence :: D14134.1, D13804.1
+                                                    [ECO:0000332]
+            ##RefSeq-Attributes-END##
+            COMPLETENESS: complete on the 3' end.
+PRIMARY     REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP
+            1-45                EU362635.1         1-45
+            46-1319             AK313503.1         1-1274
+            1320-2299           AC012476.8         44527-45506
+FEATURES             Location/Qualifiers
+     source          1..2299
+                     /organism="Homo sapiens"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="15"
+                     /map="15q15.1"
+     gene            1..2299
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /note="RAD51 homolog (S. cerevisiae)"
+                     /db_xref="GeneID:5888"
+                     /db_xref="HGNC:9817"
+                     /db_xref="HPRD:01557"
+                     /db_xref="MIM:179617"
+     exon            1..297
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /inference="alignment:Splign"
+                     /number=1a
+     STS             130..286
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /standard_name="PMC30636P1"
+                     /db_xref="UniSTS:272573"
+     misc_feature    249..251
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /note="upstream in-frame stop codon"
+     exon            298..386
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /inference="alignment:Splign"
+                     /number=2
+     CDS             300..1319
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /note="isoform 1 is encoded by transcript variant 1;
+                     BRCA1/BRCA2-containing complex, subunit 5; recombination
+                     protein A; RecA, E. coli, homolog of; RecA-like protein;
+                     DNA repair protein RAD51 homolog 1; RAD51 homolog A; RAD51
+                     homolog (RecA homolog, E. coli)"
+                     /codon_start=1
+                     /product="DNA repair protein RAD51 homolog 1 isoform 1"
+                     /protein_id="NP_002866.2"
+                     /db_xref="GI:19924133"
+                     /db_xref="CCDS:CCDS10062.1"
+                     /db_xref="GeneID:5888"
+                     /db_xref="HGNC:9817"
+                     /db_xref="HPRD:01557"
+                     /db_xref="MIM:179617"
+                     /translation="MAMQMQLEANADTSVEEESFGPQPISRLEQCGINANDVKKLEEA
+                     GFHTVEAVAYAPKKELINIKGISEAKADKILAEAAKLVPMGFTTATEFHQRRSEIIQI
+                     TTGSKELDKLLQGGIETGSITEMFGEFRTGKTQICHTLAVTCQLPIDRGGGEGKAMYI
+                     DTEGTFRPERLLAVAERYGLSGSDVLDNVAYARAFNTDHQTQLLYQASAMMVESRYAL
+                     LIVDSATALYRTDYSGRGELSARQMHLARFLRMLLRLADEFGVAVVITNQVVAQVDGA
+                     AMFAADPKKPIGGNIIAHASTTRLYLRKGRGETRICKIYDSPCLPEAEAMFAINADGV
+                     GDAKD"
+     misc_feature    459..461
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphotyrosine, by ABL1; propagated from
+                     UniProtKB/Swiss-Prot (Q06609.1); phosphorylation site"
+     misc_feature    849..1070
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q06609.1);
+                     Region: Interaction with PALB2"
+     misc_feature    1224..1226
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphothreonine, by CHEK1; propagated from
+                     UniProtKB/Swiss-Prot (Q06609.1); phosphorylation site"
+     exon            387..524
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /inference="alignment:Splign"
+                     /number=3
+     exon            525..642
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /inference="alignment:Splign"
+                     /number=5
+     exon            643..734
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /inference="alignment:Splign"
+                     /number=6
+     exon            735..829
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /inference="alignment:Splign"
+                     /number=7
+     exon            830..943
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /inference="alignment:Splign"
+                     /number=8
+     exon            944..1073
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /inference="alignment:Splign"
+                     /number=9
+     exon            1074..1195
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /inference="alignment:Splign"
+                     /number=10
+     exon            1196..2299
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /inference="alignment:Splign"
+                     /number=11
+     STS             1340..1441
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /standard_name="D15S1195"
+                     /db_xref="UniSTS:76142"
+     polyA_site      1514
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+     polyA_signal    1705..1710
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+     polyA_site      1731
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+     polyA_site      1791
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+     STS             1799..1919
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /standard_name="STS-D14134"
+                     /db_xref="UniSTS:57459"
+     polyA_signal    2276..2281
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+     polyA_site      2299
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+ORIGIN      
+        1 gttacgtcga cgcgggcgtg accctgggcg agagggtttg gcgggaattc tgaaagccgc
+       61 tggcggaccg cgcgcagcgg ccagagaccg agccctaagg agagtgcggc gcttcccgag
+      121 gcgtgcagct gggaactgca actcatctgg gttgtgcgca gaaggctggg gcaagcgagt
+      181 agagaagtgg agcgtaagcc aggggcgttg ggggccgtgc gggtcgggcg cgtgccacgc
+      241 ccgcggggtg aagtcggagc gcggggcctg ctggagagag gagcgctgcg gaccgagtaa
+      301 tggcaatgca gatgcagctt gaagcaaatg cagatacttc agtggaagaa gaaagctttg
+      361 gcccacaacc catttcacgg ttagagcagt gtggcataaa tgccaacgat gtgaagaaat
+      421 tggaagaagc tggattccat actgtggagg ctgttgccta tgcgccaaag aaggagctaa
+      481 taaatattaa gggaattagt gaagccaaag ctgataaaat tctggctgag gcagctaaat
+      541 tagttccaat gggtttcacc actgcaactg aattccacca aaggcggtca gagatcatac
+      601 agattactac tggctccaaa gagcttgaca aactacttca aggtggaatt gagactggat
+      661 ctatcacaga aatgtttgga gaattccgaa ctgggaagac ccagatctgt catacgctag
+      721 ctgtcacctg ccagcttccc attgaccggg gtggaggtga aggaaaggcc atgtacattg
+      781 acactgaggg tacctttagg ccagaacggc tgctggcagt ggctgagagg tatggtctct
+      841 ctggcagtga tgtcctggat aatgtagcat atgctcgagc gttcaacaca gaccaccaga
+      901 cccagctcct ttatcaagca tcagccatga tggtagaatc taggtatgca ctgcttattg
+      961 tagacagtgc caccgccctt tacagaacag actactcggg tcgaggtgag ctttcagcca
+     1021 ggcagatgca cttggccagg tttctgcgga tgcttctgcg actcgctgat gagtttggtg
+     1081 tagcagtggt aatcactaat caggtggtag ctcaagtgga tggagcagcg atgtttgctg
+     1141 ctgatcccaa aaaacctatt ggaggaaata tcatcgccca tgcatcaaca accagattgt
+     1201 atctgaggaa aggaagaggg gaaaccagaa tctgcaaaat ctacgactct ccctgtcttc
+     1261 ctgaagctga agctatgttc gccattaatg cagatggagt gggagatgcc aaagactgaa
+     1321 tcattgggtt tttcctctgt taaaaacctt aagtgctgca gcctaatgag agtgcactgc
+     1381 tccctggggt tctctacagg cctcttcctg ttgtgactgc caggataaag cttccgggaa
+     1441 aacagctatt atatcagctt ttctgatggt ataaacagga gacaggtcag tagtcacaaa
+     1501 ctgatctaaa atgtttattc cttctgtagt gtattaatct ctgtgtgttt tctttggttt
+     1561 tggaggaggg gtatgaagta tctttgacat ggtgccttag gaatgacttg ggtttaacaa
+     1621 gctgtctact ggacaatctt atgtttccaa gagaactaaa gctggagaga cctgaccctt
+     1681 ctctcacttc taaattaatg gtaaaataaa atgcctcagc tatgtagcaa agggaatggg
+     1741 tctgcacaga ttcttttttt ctgtcagtaa aactctcaag caggttttta agttgtctgt
+     1801 ctgaatgatc ttgtgtaagg ttttggttat ggagtcttgt gccaaaccta ctaggccatt
+     1861 agcccttcac catctacctg cttggtcttt cattgctaag actaactcaa gataatccta
+     1921 gagtcttaaa gcatttcagg ccagtgtggt gtcttgcgcc tgtactccca gcactttggg
+     1981 aggccgaggc aggtggatcg cttgagccca ggagttttaa gtccagcttg gccaaggtgg
+     2041 tgaaatccca tctctacaaa aaatgcagaa cttaatctgg acacactgtt acacgtgcct
+     2101 gtagtcccag ctactcgata gcctgaggtg ggagaatcac ttaagcctgg aaggtggaag
+     2161 ttgcagtgag tcgagattgc actgctgcat tccagccagg gtgacagagt gagaccatgt
+     2221 ttcaaacaag aaacatttca gagggtaagt aaacagattt gattgtgagg cttctaataa
+     2281 agtagttatt agtagtgaa
+//
