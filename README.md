@@ -13,3 +13,4 @@ There are two directories:
 
 
 
+Please remember to add suitable comments to any git commit you make after modifying files.
