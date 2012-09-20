@@ -23,7 +23,7 @@ for(my $i = 1; $i <= $random; $i++){
 print "\n\n";
 
 
-# Calculate Mean and Population variance and std deviation in One Pass
+# Calculate Mean and population variance and population std deviation in One Pass
 my $sum = 0;
 my $square_sum = 0;
 my $n = scalar @numbers;
@@ -48,3 +48,8 @@ print "Variance = $variance\n";
 print "Standard deviation = $sd\n\n\n";
 
 exit;
+
+__END__
+Some people asked if variance could actually be calculated in a single pass.  Yes, see the links below for one pass algorithms:
+http://en.wikipedia.org/wiki/Algorithms_for_calculating_variance
+http://www.strchr.com/standard_deviation_in_one_pass
