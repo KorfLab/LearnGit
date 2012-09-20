@@ -1,7 +1,6 @@
 LearnGit
 ========
-This repository contains the Korf Lab Collaborative Project. Develop sequences.pm for the Korf Lab that contains
-commonly used functions for sequence analysis.
+This repository contains the Korf Lab Collaborative Project.
 
 There are two directories:
   1. scripts:  contains the perl scripts and modules
