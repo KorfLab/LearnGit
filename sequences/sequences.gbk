@@ -4877,3 +4877,1431 @@ ORIGIN
      1621 ttctccttat gggtagggct ctgacaaagc ttcccgatta actgaaataa aaaatatttt
      1681 tttttctttc agtaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaa
 //
+LOCUS       NM_001895               2732 bp    mRNA    linear   PRI 08-SEP-2012
+DEFINITION  Homo sapiens casein kinase 2, alpha 1 polypeptide (CSNK2A1),
+            transcript variant 2, mRNA.
+ACCESSION   NM_001895
+VERSION     NM_001895.3  GI:47419902
+KEYWORDS    .
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 2732)
+  AUTHORS   Manni,S., Brancalion,A., Tubi,L.Q., Colpo,A., Pavan,L.,
+            Cabrelle,A., Ave,E., Zaffino,F., Di Maira,G., Ruzzene,M., Adami,F.,
+            Zambello,R., Pitari,M.R., Tassone,P., Pinna,L.A., Gurrieri,C.,
+            Semenzato,G. and Piazza,F.
+  TITLE     Protein kinase CK2 protects multiple myeloma cells from ER
+            stress-induced apoptosis and from the cytotoxic effect of HSP90
+            inhibition through regulation of the unfolded protein response
+  JOURNAL   Clin. Cancer Res. 18 (7), 1888-1900 (2012)
+   PUBMED   22351691
+  REMARK    GeneRIF: Results suggest CK2 as a novel regulator of the
+            endoplasmic reticulum (ER) stress/unfolded protein response (UPR)
+            cascades and HSP90 function in myeloma cells and offer the
+            groundwork to design novel combination treatments for this disease.
+REFERENCE   2  (bases 1 to 2732)
+  AUTHORS   Tarrant,M.K., Rho,H.S., Xie,Z., Jiang,Y.L., Gross,C., Culhane,J.C.,
+            Yan,G., Qian,J., Ichikawa,Y., Matsuoka,T., Zachara,N.,
+            Etzkorn,F.A., Hart,G.W., Jeong,J.S., Blackshaw,S., Zhu,H. and
+            Cole,P.A.
+  TITLE     Regulation of CK2 by phosphorylation and O-GlcNAcylation revealed
+            by semisynthesis
+  JOURNAL   Nat. Chem. Biol. 8 (3), 262-269 (2012)
+   PUBMED   22267120
+  REMARK    GeneRIF: The the CK2 catalytic subunit CK2alpha is modified by
+            O-linked beta-N-acetyl-glucosamine (O-GlcNAc) on Ser347, proximal
+            to a cyclin-dependent kinase phosphorylation site (Thr344).
+            Publication Status: Online-Only
+REFERENCE   3  (bases 1 to 2732)
+  AUTHORS   Alvarez,D.E. and Agaisse,H.
+  TITLE     Casein kinase 2 regulates vaccinia virus actin tail formation
+  JOURNAL   Virology 423 (2), 143-151 (2012)
+   PUBMED   22209233
+  REMARK    GeneRIF: CK2 regulates vaccinia virus dissemination and actin tail
+            formation.
+REFERENCE   4  (bases 1 to 2732)
+  AUTHORS   Taylor,K.M., Hiscox,S., Nicholson,R.I., Hogstrand,C. and Kille,P.
+  TITLE     Protein kinase CK2 triggers cytosolic zinc signaling pathways by
+            phosphorylation of zinc channel ZIP7
+  JOURNAL   Sci Signal 5 (210), RA11 (2012)
+   PUBMED   22317921
+  REMARK    GeneRIF: The connection with proliferation and migration, as well
+            as the activation of ZIP7 by CK2, a kinase that is antiapoptotic
+            and promotes cell division
+            Publication Status: Online-Only
+REFERENCE   5  (bases 1 to 2732)
+  AUTHORS   Olsen,B.B., Wang,S.Y., Svenstrup,T.H., Chen,B.P. and Guerra,B.
+  TITLE     Protein kinase CK2 localizes to sites of DNA double-strand break
+            regulating the cellular response to DNA damage
+  JOURNAL   BMC Mol. Biol. 13, 7 (2012)
+   PUBMED   22404984
+  REMARK    GeneRIF: Protein kinase CK2 co-localizes with gamma-H2AX to sites
+            of genetic lesions and modulation of its expression levels affects
+            the cellular DNA damage response.
+            Publication Status: Online-Only
+REFERENCE   6  (bases 1 to 2732)
+  AUTHORS   Hagiwara,T., Nakaya,K., Nakamura,Y., Nakajima,H., Nishimura,S. and
+            Taya,Y.
+  TITLE     Specific phosphorylation of the acidic central region of the N-myc
+            protein by casein kinase II
+  JOURNAL   Eur. J. Biochem. 209 (3), 945-950 (1992)
+   PUBMED   1425701
+REFERENCE   7  (bases 1 to 2732)
+  AUTHORS   Russo,G.L., Vandenberg,M.T., Yu,I.J., Bae,Y.S., Franza,B.R. Jr. and
+            Marshak,D.R.
+  TITLE     Casein kinase II phosphorylates p34cdc2 kinase in G1 phase of the
+            HeLa cell division cycle
+  JOURNAL   J. Biol. Chem. 267 (28), 20317-20325 (1992)
+   PUBMED   1400350
+REFERENCE   8  (bases 1 to 2732)
+  AUTHORS   Lin,A., Frost,J., Deng,T., Smeal,T., al-Alawi,N., Kikkawa,U.,
+            Hunter,T., Brenner,D. and Karin,M.
+  TITLE     Casein kinase II is a negative regulator of c-Jun DNA binding and
+            AP-1 activity
+  JOURNAL   Cell 70 (5), 777-789 (1992)
+   PUBMED   1516134
+  REMARK    Erratum:[Cell. 1992 Nov 27;71(5):887. PMID: 1423636]
+REFERENCE   9  (bases 1 to 2732)
+  AUTHORS   Sacks,D.B., Davis,H.W., Crimmins,D.L. and McDonald,J.M.
+  TITLE     Insulin-stimulated phosphorylation of calmodulin
+  JOURNAL   Biochem. J. 286 (PT 1), 211-216 (1992)
+   PUBMED   1520270
+REFERENCE   10 (bases 1 to 2732)
+  AUTHORS   Schubert,U., Schneider,T., Henklein,P., Hoffmann,K., Berthold,E.,
+            Hauser,H., Pauli,G. and Porstmann,T.
+  TITLE     Human-immunodeficiency-virus-type-1-encoded Vpu protein is
+            phosphorylated by casein kinase II
+  JOURNAL   Eur. J. Biochem. 204 (2), 875-883 (1992)
+   PUBMED   1541298
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. The
+            reference sequence was derived from AF011920.1, AU133318.1,
+            M55265.1 and BC053532.1.
+            On Aug 18, 2004 this sequence version replaced gi:29570794.
+            
+            Summary: Casein kinase II is a serine/threonine protein kinase that
+            phosphorylates acidic proteins such as casein. The kinase exists as
+            a tetramer and is composed of an alpha, an alpha-prime, and two
+            beta subunits. The alpha subunits contain the catalytic activity
+            while the beta subunits undergo autophosphorylation. The protein
+            encoded by this gene represents the alpha subunit. While this gene
+            is found on chromosome 20, a related transcribed pseudogene is
+            found on chromosome 11. Three transcript variants encoding two
+            different proteins have been found for this gene. [provided by
+            RefSeq, Jul 2008].
+            
+            Transcript Variant: This variant (2) differs in the 5' UTR compared
+            to variant 1. Variants 1 and 2 both encode the same protein.
+            
+            Publication Note:  This RefSeq record includes a subset of the
+            publications that are available for this gene. Please see the Gene
+            record to access additional publications.
+            
+            ##RefSeq-Attributes-START##
+            Transcript_exon_combination_evidence :: BC050036.1, M55265.1
+                                                    [ECO:0000332]
+            ##RefSeq-Attributes-END##
+            COMPLETENESS: full length.
+PRIMARY     REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP
+            1-48                AF011920.1         6855-6902
+            49-786              AU133318.1         1-738
+            787-2323            M55265.1           659-2195
+            2324-2732           BC053532.1         2143-2551
+FEATURES             Location/Qualifiers
+     source          1..2732
+                     /organism="Homo sapiens"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="20"
+                     /map="20p13"
+     gene            1..2732
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /note="casein kinase 2, alpha 1 polypeptide"
+                     /db_xref="GeneID:1457"
+                     /db_xref="HGNC:2457"
+                     /db_xref="HPRD:00277"
+                     /db_xref="MIM:115440"
+     exon            1..167
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=1
+     misc_feature    50
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /note="Region: alternate transcription start site"
+     exon            168..377
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=3
+     STS             189..372
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /standard_name="GDB:197832"
+                     /db_xref="UniSTS:155955"
+     misc_feature    223..225
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /note="upstream in-frame stop codon"
+     CDS             277..1452
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /EC_number="2.7.11.1"
+                     /note="isoform a is encoded by transcript variant 2; CK2
+                     catalytic subunit alpha; protein kinase CK2; casein kinase
+                     II alpha 1 subunit; CK II alpha"
+                     /codon_start=1
+                     /product="casein kinase II subunit alpha isoform a"
+                     /protein_id="NP_001886.1"
+                     /db_xref="GI:4503095"
+                     /db_xref="CCDS:CCDS13003.1"
+                     /db_xref="GeneID:1457"
+                     /db_xref="HGNC:2457"
+                     /db_xref="HPRD:00277"
+                     /db_xref="MIM:115440"
+                     /translation="MSGPVPSRARVYTDVNTHRPREYWDYESHVVEWGNQDDYQLVRK
+                     LGRGKYSEVFEAINITNNEKVVVKILKPVKKKKIKREIKILENLRGGPNIITLADIVK
+                     DPVSRTPALVFEHVNNTDFKQLYQTLTDYDIRFYMYEILKALDYCHSMGIMHRDVKPH
+                     NVMIDHEHRKLRLIDWGLAEFYHPGQEYNVRVASRYFKGPELLVDYQMYDYSLDMWSL
+                     GCMLASMIFRKEPFFHGHDNYDQLVRIAKVLGTEDLYDYIDKYNIELDPRFNDILGRH
+                     SRKRWERFVHSENQHLVSPEALDFLDKLLRYDHQSRLTAREAMEHPYFYTVVKDQARM
+                     GSSSMPGGSTPVSSANMMSGISSVPTPSPLGPLAGSPVIAAANPLGMPVPAAAGAQQ"
+     misc_feature    280..282
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P68400.1); phosphorylation site"
+     misc_feature    295..297
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P68400.1); phosphorylation site"
+     misc_feature    382..399
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="propagated from UniProtKB/Swiss-Prot (P68400.1);
+                     Region: Interaction with beta subunit (By similarity)"
+     misc_feature    424..426
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphotyrosine; propagated from
+                     UniProtKB/Swiss-Prot (P68400.1); phosphorylation site"
+     misc_feature    580..582
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="N6-acetyllysine; propagated from
+                     UniProtKB/Swiss-Prot (P68400.1); acetylation site"
+     misc_feature    649..651
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphotyrosine; propagated from
+                     UniProtKB/Swiss-Prot (P68400.1); phosphorylation site"
+     misc_feature    655..657
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphothreonine; propagated from
+                     UniProtKB/Swiss-Prot (P68400.1); phosphorylation site"
+     misc_feature    856..858
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P68400.1); phosphorylation site"
+     misc_feature    1039..1041
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphotyrosine; propagated from
+                     UniProtKB/Swiss-Prot (P68400.1); phosphorylation site"
+     misc_feature    1105..1107
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P68400.1); phosphorylation site"
+     misc_feature    1135..1137
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P68400.1); phosphorylation site"
+     misc_feature    1306..1308
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphothreonine, by CDK1; propagated from
+                     UniProtKB/Swiss-Prot (P68400.1); phosphorylation site"
+     misc_feature    1354..1356
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphothreonine, by CDK1; propagated from
+                     UniProtKB/Swiss-Prot (P68400.1); phosphorylation site"
+     misc_feature    1360..1362
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine, by CDK1; propagated from
+                     UniProtKB/Swiss-Prot (P68400.1); phosphorylation site"
+     misc_feature    1384..1386
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine, by CDK1; propagated from
+                     UniProtKB/Swiss-Prot (P68400.1); phosphorylation site"
+     STS             314..451
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /standard_name="WI-16945"
+                     /db_xref="UniSTS:75863"
+     exon            378..489
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=4
+     exon            490..591
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=5
+     exon            592..642
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=6
+     exon            643..702
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=7
+     exon            703..786
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=8
+     exon            787..897
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=9
+     exon            898..999
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=10
+     STS             997..1288
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /standard_name="CSNK2A1"
+                     /db_xref="UniSTS:253713"
+     exon            1000..1100
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=11
+     exon            1101..1249
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=12
+     STS             1199..1332
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /standard_name="STS-M78020"
+                     /db_xref="UniSTS:27753"
+     exon            1250..1336
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=13
+     exon            1337..2719
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /inference="alignment:Splign"
+                     /number=14
+     STS             1501..1582
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /standard_name="U51866"
+                     /db_xref="UniSTS:125766"
+     STS             2203..2412
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /standard_name="STS-T29481"
+                     /db_xref="UniSTS:66449"
+     STS             2394..2548
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /standard_name="16.MMHAP54FLF1.seq"
+                     /db_xref="UniSTS:123309"
+     polyA_signal    2694..2699
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+     polyA_site      2715
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+     polyA_site      2719
+                     /gene="CSNK2A1"
+                     /gene_synonym="CK2A1; CKII"
+ORIGIN      
+        1 cccgcctcct ggtaggaggg ggtttccgct tccggcagca gcggctgcag cctcgctctg
+       61 gtccctgcgg ctggcggccg agccgtgtgt ctcctcctcc atcgccgcca tattgtctgt
+      121 gtgagcagag gggagagcgg ccgccgccgc tgccgcttcc accacagttt gaagaaaaca
+      181 ggtctgaaac aaggtcttac ccccagctgc ttctgaacac agtgactgcc agatctccaa
+      241 acatcaagtc cagctttgtc cgccaacctg tctgacatgt cgggacccgt gccaagcagg
+      301 gccagagttt acacagatgt taatacacac agacctcgag aatactggga ttacgagtca
+      361 catgtggtgg aatggggaaa tcaagatgac taccagctgg ttcgaaaatt aggccgaggt
+      421 aaatacagtg aagtatttga agccatcaac atcacaaata atgaaaaagt tgttgttaaa
+      481 attctcaagc cagtaaaaaa gaagaaaatt aagcgtgaaa taaagatttt ggagaatttg
+      541 agaggaggtc ccaacatcat cacactggca gacattgtaa aagaccctgt gtcacgaacc
+      601 cccgccttgg tttttgaaca cgtaaacaac acagacttca agcaattgta ccagacgtta
+      661 acagactatg atattcgatt ttacatgtat gagattctga aggccctgga ttattgtcac
+      721 agcatgggaa ttatgcacag agatgtcaag ccccataatg tcatgattga tcatgagcac
+      781 agaaagctac gactaataga ctggggtttg gctgagtttt atcatcctgg ccaagaatat
+      841 aatgtccgag ttgcttcccg atacttcaaa ggtcctgagc tacttgtaga ctatcagatg
+      901 tacgattata gtttggatat gtggagtttg ggttgtatgc tggcaagtat gatctttcgg
+      961 aaggagccat ttttccatgg acatgacaat tatgatcagt tggtgaggat agccaaggtt
+     1021 ctggggacag aagatttata tgactatatt gacaaataca acattgaatt agatccacgt
+     1081 ttcaatgata tcttgggcag acactctcga aagcgatggg aacgctttgt ccacagtgaa
+     1141 aatcagcacc ttgtcagccc tgaggccttg gatttcctgg acaaactgct gcgatatgac
+     1201 caccagtcac ggcttactgc aagagaggca atggagcacc cctatttcta cactgttgtg
+     1261 aaggaccagg ctcgaatggg ttcatctagc atgccagggg gcagtacgcc cgtcagcagc
+     1321 gccaatatga tgtcagggat ttcttcagtg ccaacccctt caccccttgg acctctggca
+     1381 ggctcaccag tgattgctgc tgccaacccc cttgggatgc ctgttccagc tgccgctggc
+     1441 gctcagcagt aacggcccta tctgtctcct gatgcctgag cagaggtggg ggagtccacc
+     1501 ctctccttga tgcagcttgc gcctggcggg gaggggtgaa acacttcaga agcaccgtgt
+     1561 ctgaaccgtt gcttgtggat ttatagtagt tcagtcataa aaaaaaaatt ataataggct
+     1621 gattttcttt tttctttttt tttttaactc gaacttttca taactcaggg gattccctga
+     1681 aaaattacct gcaggtggaa tatttcatgg acaaattttt ttttctcccc tcccaaattt
+     1741 agttcctcat cacaaaagaa caaagataaa ccagcctcaa tcccggctgc tgcatttagg
+     1801 tggagacttc ttcccattcc caccattgtt cctccaccgt cccacacttt agggggttgg
+     1861 tatctcgtgc tcttctccag agattacaaa aatgtagctt ctcaggggag gcaggaagaa
+     1921 aggaaggaag gaaagaagga agggaggacc caatctatag gagcagtgga ctgcttgctg
+     1981 gtcgcttaca tcactttact ccataagcgc ttcagtgggg ttatcctagt ggctcttgtg
+     2041 gaagtgtgtc ttagttacat caagatgttg aaaatctacc caaaatgcag acagatacta
+     2101 aaaacttctg ttcagtaaga atcatgtctt actgatctaa ccctaaatcc aactcattta
+     2161 tacttttatt tttagttcag tttaaaatgt tgataccttc cctcccaggc tccttacctt
+     2221 ggtcttttcc ctgttcatct cccaacatgc tgtgctccat agctggtagg agagggaagg
+     2281 caaaatcttt cttagttttc tttgtcttgg ccattttgaa ttcatttagt tactgggcat
+     2341 aacttactgc tttttacaaa agaaacaaac attgtctgta caggtttcat gctagagcta
+     2401 atgggagatg tggccacact gacttccatt ttaagctttc taccttcttt tcctccgacc
+     2461 gtccccttcc ctcacatgcc atccagtgag aagacctgct cctcagtctt gtaaatgtat
+     2521 cttgagaggt aggagcagag ccactatctc cattgaagct gaaatggtag acctgtaatt
+     2581 gtgggaaaac tataaactct cttgttacag ccccgccacc ccttgctgtg tgtatatata
+     2641 taatactttg tccttcatat gtgaaagatc cagtgttgga attctttggt gtaaataaac
+     2701 gtttggtttt atttatcaaa aaaaaaaaaa aa
+//
+LOCUS       NM_002875               2299 bp    mRNA    linear   PRI 02-SEP-2012
+DEFINITION  Homo sapiens RAD51 homolog (S. cerevisiae) (RAD51), transcript
+            variant 1, mRNA.
+ACCESSION   NM_002875
+VERSION     NM_002875.4  GI:256017139
+KEYWORDS    .
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 2299)
+  AUTHORS   Gresner,P., Gromadzinska,J., Polanska,K., Twardowska,E.,
+            Jurewicz,J. and Wasowicz,W.
+  TITLE     Genetic variability of Xrcc3 and Rad51 modulates the risk of head
+            and neck cancer
+  JOURNAL   Gene 504 (2), 166-174 (2012)
+   PUBMED   22613844
+  REMARK    GeneRIF: genetic variability of Xrcc3 and/or Rad51 genes might be
+            of relevance with respect to HNC risk
+REFERENCE   2  (bases 1 to 2299)
+  AUTHORS   Iwata,T., Shimada,M., Kurita,N., Nishioka,M., Morimoto,S.,
+            Yoshikawa,K., Higashijima,J., Nakao,T. and Komatsu,M.
+  TITLE     Evaluation of relation of RAD51 and the effect of chemo-radiation
+            therapy for advanced rectal cancer
+  JOURNAL   Hepatogastroenterology 59 (116), 990-993 (2012)
+   PUBMED   22580645
+  REMARK    GeneRIF: RAD51 expression could be one of the most important
+            predictive factors of preoperative chemoradiography for advanced
+            lower rectal cancer.
+REFERENCE   3  (bases 1 to 2299)
+  AUTHORS   Fornander,L.H., Frykholm,K., Reymer,A., Renodon-Corniere,A.,
+            Takahashi,M. and Norden,B.
+  TITLE     Ca2+ improves organization of single-stranded DNA bases in human
+            Rad51 filament, explaining stimulatory effect on gene recombination
+  JOURNAL   Nucleic Acids Res. 40 (11), 4904-4913 (2012)
+   PUBMED   22362735
+  REMARK    GeneRIF: It is proposed that Ca(2+) stabilizes the L2 loop
+            conformation of Rad51 and thereby the protein-DNA interaction.
+REFERENCE   4  (bases 1 to 2299)
+  AUTHORS   Yata,K., Lloyd,J., Maslen,S., Bleuyard,J.Y., Skehel,M.,
+            Smerdon,S.J. and Esashi,F.
+  TITLE     Plk1 and CK2 act in concert to regulate Rad51 during DNA double
+            strand break repair
+  JOURNAL   Mol. Cell 45 (3), 371-383 (2012)
+   PUBMED   22325354
+  REMARK    GeneRIF: S14 followed by T13 phosphorylation of Rad51 facilitates
+            Rad51 recruitment to damage sites, thus enhancing cellular
+            resistance to genotoxic stresses
+REFERENCE   5  (bases 1 to 2299)
+  AUTHORS   Romanowicz-Makowska,H., Smolarz,B., Zadrozny,M., Westfa,B.,
+            Baszczynski,J., Kokolaszwili,G., Burzyfiski,M., Polac,I. and
+            Sporny,S.
+  TITLE     The association between polymorphisms of the RAD51-G135C,
+            XRCC2-Arg188His and XRCC3-Thr241Met genes and clinico-pathologic
+            features in breast cancer in Poland
+  JOURNAL   Eur. J. Gynaecol. Oncol. 33 (2), 145-150 (2012)
+   PUBMED   22611952
+  REMARK    GeneRIF: The results support the hypothesis that polymorphism of
+            RAD51 may be associated with the incidence of sporadic breast
+            cancer in Polish women.
+REFERENCE   6  (bases 1 to 2299)
+  AUTHORS   Kovalenko,O.V., Plug,A.W., Haaf,T., Gonda,D.K., Ashley,T.,
+            Ward,D.C., Radding,C.M. and Golub,E.I.
+  TITLE     Mammalian ubiquitin-conjugating enzyme Ubc9 interacts with Rad51
+            recombination protein and localizes in synaptonemal complexes
+  JOURNAL   Proc. Natl. Acad. Sci. U.S.A. 93 (7), 2958-2963 (1996)
+   PUBMED   8610150
+REFERENCE   7  (bases 1 to 2299)
+  AUTHORS   Benson,F.E., Stasiak,A. and West,S.C.
+  TITLE     Purification and characterization of the human Rad51 protein, an
+            analogue of E. coli RecA
+  JOURNAL   EMBO J. 13 (23), 5764-5771 (1994)
+   PUBMED   7988572
+REFERENCE   8  (bases 1 to 2299)
+  AUTHORS   Takahashi,E., Matsuda,Y., Hori,T., Yasuda,N., Tsuji,S., Mori,M.,
+            Yoshimura,Y., Yamamoto,A., Morita,T. and Matsushiro,A.
+  TITLE     Chromosome mapping of the human (RECA) and mouse (Reca) homologs of
+            the yeast RAD51 and Escherichia coli recA genes to human (15q15.1)
+            and mouse (2F1) chromosomes by direct R-banding fluorescence in
+            situ hybridization
+  JOURNAL   Genomics 19 (2), 376-378 (1994)
+   PUBMED   8188269
+REFERENCE   9  (bases 1 to 2299)
+  AUTHORS   Shinohara,A., Ogawa,H., Matsuda,Y., Ushio,N., Ikeo,K. and Ogawa,T.
+  TITLE     Cloning of human, mouse and fission yeast recombination genes
+            homologous to RAD51 and recA
+  JOURNAL   Nat. Genet. 4 (3), 239-243 (1993)
+   PUBMED   8358431
+  REMARK    Erratum:[Nat Genet 1993 Nov;5(3):312]
+REFERENCE   10 (bases 1 to 2299)
+  AUTHORS   Yoshimura,Y., Morita,T., Yamamoto,A. and Matsushiro,A.
+  TITLE     Cloning and sequence of the human RecA-like gene cDNA
+  JOURNAL   Nucleic Acids Res. 21 (7), 1665 (1993)
+   PUBMED   8479919
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. The
+            reference sequence was derived from EU362635.1, AK313503.1 and
+            AC012476.8.
+            This sequence is a reference standard in the RefSeqGene project.
+            On Aug 19, 2009 this sequence version replaced gi:154275772.
+            
+            Summary: The protein encoded by this gene is a member of the RAD51
+            protein family. RAD51 family members are highly similar to
+            bacterial RecA and Saccharomyces cerevisiae Rad51, and are known to
+            be involved in the homologous recombination and repair of DNA. This
+            protein can interact with the ssDNA-binding protein RPA and RAD52,
+            and it is thought to play roles in homologous pairing and strand
+            transfer of DNA. This protein is also found to interact with BRCA1
+            and BRCA2, which may be important for the cellular response to DNA
+            damage. BRCA2 is shown to regulate both the intracellular
+            localization and DNA-binding ability of this protein. Loss of these
+            controls following BRCA2 inactivation may be a key event leading to
+            genomic instability and tumorigenesis. Multiple transcript variants
+            encoding different isoforms have been found for this gene.
+            [provided by RefSeq, Aug 2009].
+            
+            Transcript Variant: This variant (1) uses an alternate exon in the
+            5' coding region, compared to variant 2. The resulting isoform (1)
+            contains a distinct segment near the N-terminus, compared to
+            isoform 2.
+            
+            Sequence Note: This RefSeq record was created from transcript and
+            genomic sequence data to make the sequence consistent with the
+            reference genome assembly. The genomic coordinates used for the
+            transcript record were based on transcript alignments.
+            
+            Publication Note:  This RefSeq record includes a subset of the
+            publications that are available for this gene. Please see the Gene
+            record to access additional publications.
+            
+            ##RefSeq-Attributes-START##
+            Transcript_exon_combination_evidence :: D14134.1, D13804.1
+                                                    [ECO:0000332]
+            ##RefSeq-Attributes-END##
+            COMPLETENESS: complete on the 3' end.
+PRIMARY     REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP
+            1-45                EU362635.1         1-45
+            46-1319             AK313503.1         1-1274
+            1320-2299           AC012476.8         44527-45506
+FEATURES             Location/Qualifiers
+     source          1..2299
+                     /organism="Homo sapiens"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="15"
+                     /map="15q15.1"
+     gene            1..2299
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /note="RAD51 homolog (S. cerevisiae)"
+                     /db_xref="GeneID:5888"
+                     /db_xref="HGNC:9817"
+                     /db_xref="HPRD:01557"
+                     /db_xref="MIM:179617"
+     exon            1..297
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /inference="alignment:Splign"
+                     /number=1a
+     STS             130..286
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /standard_name="PMC30636P1"
+                     /db_xref="UniSTS:272573"
+     misc_feature    249..251
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /note="upstream in-frame stop codon"
+     exon            298..386
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /inference="alignment:Splign"
+                     /number=2
+     CDS             300..1319
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /note="isoform 1 is encoded by transcript variant 1;
+                     BRCA1/BRCA2-containing complex, subunit 5; recombination
+                     protein A; RecA, E. coli, homolog of; RecA-like protein;
+                     DNA repair protein RAD51 homolog 1; RAD51 homolog A; RAD51
+                     homolog (RecA homolog, E. coli)"
+                     /codon_start=1
+                     /product="DNA repair protein RAD51 homolog 1 isoform 1"
+                     /protein_id="NP_002866.2"
+                     /db_xref="GI:19924133"
+                     /db_xref="CCDS:CCDS10062.1"
+                     /db_xref="GeneID:5888"
+                     /db_xref="HGNC:9817"
+                     /db_xref="HPRD:01557"
+                     /db_xref="MIM:179617"
+                     /translation="MAMQMQLEANADTSVEEESFGPQPISRLEQCGINANDVKKLEEA
+                     GFHTVEAVAYAPKKELINIKGISEAKADKILAEAAKLVPMGFTTATEFHQRRSEIIQI
+                     TTGSKELDKLLQGGIETGSITEMFGEFRTGKTQICHTLAVTCQLPIDRGGGEGKAMYI
+                     DTEGTFRPERLLAVAERYGLSGSDVLDNVAYARAFNTDHQTQLLYQASAMMVESRYAL
+                     LIVDSATALYRTDYSGRGELSARQMHLARFLRMLLRLADEFGVAVVITNQVVAQVDGA
+                     AMFAADPKKPIGGNIIAHASTTRLYLRKGRGETRICKIYDSPCLPEAEAMFAINADGV
+                     GDAKD"
+     misc_feature    459..461
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphotyrosine, by ABL1; propagated from
+                     UniProtKB/Swiss-Prot (Q06609.1); phosphorylation site"
+     misc_feature    849..1070
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q06609.1);
+                     Region: Interaction with PALB2"
+     misc_feature    1224..1226
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphothreonine, by CHEK1; propagated from
+                     UniProtKB/Swiss-Prot (Q06609.1); phosphorylation site"
+     exon            387..524
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /inference="alignment:Splign"
+                     /number=3
+     exon            525..642
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /inference="alignment:Splign"
+                     /number=5
+     exon            643..734
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /inference="alignment:Splign"
+                     /number=6
+     exon            735..829
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /inference="alignment:Splign"
+                     /number=7
+     exon            830..943
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /inference="alignment:Splign"
+                     /number=8
+     exon            944..1073
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /inference="alignment:Splign"
+                     /number=9
+     exon            1074..1195
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /inference="alignment:Splign"
+                     /number=10
+     exon            1196..2299
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /inference="alignment:Splign"
+                     /number=11
+     STS             1340..1441
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /standard_name="D15S1195"
+                     /db_xref="UniSTS:76142"
+     polyA_site      1514
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+     polyA_signal    1705..1710
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+     polyA_site      1731
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+     polyA_site      1791
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+     STS             1799..1919
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+                     /standard_name="STS-D14134"
+                     /db_xref="UniSTS:57459"
+     polyA_signal    2276..2281
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+     polyA_site      2299
+                     /gene="RAD51"
+                     /gene_synonym="BRCC5; HRAD51; HsRad51; HsT16930; MRMV2;
+                     RAD51A; RECA"
+ORIGIN      
+        1 gttacgtcga cgcgggcgtg accctgggcg agagggtttg gcgggaattc tgaaagccgc
+       61 tggcggaccg cgcgcagcgg ccagagaccg agccctaagg agagtgcggc gcttcccgag
+      121 gcgtgcagct gggaactgca actcatctgg gttgtgcgca gaaggctggg gcaagcgagt
+      181 agagaagtgg agcgtaagcc aggggcgttg ggggccgtgc gggtcgggcg cgtgccacgc
+      241 ccgcggggtg aagtcggagc gcggggcctg ctggagagag gagcgctgcg gaccgagtaa
+      301 tggcaatgca gatgcagctt gaagcaaatg cagatacttc agtggaagaa gaaagctttg
+      361 gcccacaacc catttcacgg ttagagcagt gtggcataaa tgccaacgat gtgaagaaat
+      421 tggaagaagc tggattccat actgtggagg ctgttgccta tgcgccaaag aaggagctaa
+      481 taaatattaa gggaattagt gaagccaaag ctgataaaat tctggctgag gcagctaaat
+      541 tagttccaat gggtttcacc actgcaactg aattccacca aaggcggtca gagatcatac
+      601 agattactac tggctccaaa gagcttgaca aactacttca aggtggaatt gagactggat
+      661 ctatcacaga aatgtttgga gaattccgaa ctgggaagac ccagatctgt catacgctag
+      721 ctgtcacctg ccagcttccc attgaccggg gtggaggtga aggaaaggcc atgtacattg
+      781 acactgaggg tacctttagg ccagaacggc tgctggcagt ggctgagagg tatggtctct
+      841 ctggcagtga tgtcctggat aatgtagcat atgctcgagc gttcaacaca gaccaccaga
+      901 cccagctcct ttatcaagca tcagccatga tggtagaatc taggtatgca ctgcttattg
+      961 tagacagtgc caccgccctt tacagaacag actactcggg tcgaggtgag ctttcagcca
+     1021 ggcagatgca cttggccagg tttctgcgga tgcttctgcg actcgctgat gagtttggtg
+     1081 tagcagtggt aatcactaat caggtggtag ctcaagtgga tggagcagcg atgtttgctg
+     1141 ctgatcccaa aaaacctatt ggaggaaata tcatcgccca tgcatcaaca accagattgt
+     1201 atctgaggaa aggaagaggg gaaaccagaa tctgcaaaat ctacgactct ccctgtcttc
+     1261 ctgaagctga agctatgttc gccattaatg cagatggagt gggagatgcc aaagactgaa
+     1321 tcattgggtt tttcctctgt taaaaacctt aagtgctgca gcctaatgag agtgcactgc
+     1381 tccctggggt tctctacagg cctcttcctg ttgtgactgc caggataaag cttccgggaa
+     1441 aacagctatt atatcagctt ttctgatggt ataaacagga gacaggtcag tagtcacaaa
+     1501 ctgatctaaa atgtttattc cttctgtagt gtattaatct ctgtgtgttt tctttggttt
+     1561 tggaggaggg gtatgaagta tctttgacat ggtgccttag gaatgacttg ggtttaacaa
+     1621 gctgtctact ggacaatctt atgtttccaa gagaactaaa gctggagaga cctgaccctt
+     1681 ctctcacttc taaattaatg gtaaaataaa atgcctcagc tatgtagcaa agggaatggg
+     1741 tctgcacaga ttcttttttt ctgtcagtaa aactctcaag caggttttta agttgtctgt
+     1801 ctgaatgatc ttgtgtaagg ttttggttat ggagtcttgt gccaaaccta ctaggccatt
+     1861 agcccttcac catctacctg cttggtcttt cattgctaag actaactcaa gataatccta
+     1921 gagtcttaaa gcatttcagg ccagtgtggt gtcttgcgcc tgtactccca gcactttggg
+     1981 aggccgaggc aggtggatcg cttgagccca ggagttttaa gtccagcttg gccaaggtgg
+     2041 tgaaatccca tctctacaaa aaatgcagaa cttaatctgg acacactgtt acacgtgcct
+     2101 gtagtcccag ctactcgata gcctgaggtg ggagaatcac ttaagcctgg aaggtggaag
+     2161 ttgcagtgag tcgagattgc actgctgcat tccagccagg gtgacagagt gagaccatgt
+     2221 ttcaaacaag aaacatttca gagggtaagt aaacagattt gattgtgagg cttctaataa
+     2281 agtagttatt agtagtgaa
+//
+LOCUS       NM_199286               1040 bp    mRNA    linear   PRI 08-SEP-2012
+DEFINITION  Homo sapiens developmental pluripotency associated 3 (DPPA3), mRNA.
+ACCESSION   NM_199286 XM_290555
+VERSION     NM_199286.2  GI:52426759
+KEYWORDS    .
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 1040)
+  AUTHORS   Nakamura,T., Arai,Y., Umehara,H., Masuhara,M., Kimura,T.,
+            Taniguchi,H., Sekimoto,T., Ikawa,M., Yoneda,Y., Okabe,M.,
+            Tanaka,S., Shiota,K. and Nakano,T.
+  TITLE     PGC7/Stella protects against DNA demethylation in early
+            embryogenesis
+  JOURNAL   Nat. Cell Biol. 9 (1), 64-71 (2007)
+   PUBMED   17143267
+  REMARK    GeneRIF: These results demonstrate that PGC7/Stella is
+            indispensable for the maintenance of methylation involved in
+            epigenetic reprogramming after fertilization.
+REFERENCE   2  (bases 1 to 1040)
+  AUTHORS   Elliman,S.J., Wu,I. and Kemp,D.M.
+  TITLE     Adult tissue-specific expression of a Dppa3-derived retrogene
+            represents a postnatal transcript of pluripotent cell origin
+  JOURNAL   J. Biol. Chem. 281 (1), 16-19 (2006)
+   PUBMED   16291741
+  REMARK    GeneRIF: human adult tissue-specific transcripts originate via
+            retrotransposition of the pluripotent cell-specific gene, Dppa3
+REFERENCE   3  (bases 1 to 1040)
+  AUTHORS   Bortvin,A., Goodheart,M., Liao,M. and Page,D.C.
+  TITLE     Dppa3 / Pgc7 / stella is a maternal factor and is not required for
+            germ cell specification in mice
+  JOURNAL   BMC Dev. Biol. 4, 2 (2004)
+   PUBMED   15018652
+  REMARK    GeneRIF: In mice, knockout experiments show this gene may be a
+            maternal factor in cleavage stage embryogenesis.
+            Publication Status: Online-Only
+REFERENCE   4  (bases 1 to 1040)
+  AUTHORS   Clark,A.T., Rodriguez,R.T., Bodnar,M.S., Abeyta,M.J., Cedars,M.I.,
+            Turek,P.J., Firpo,M.T. and Reijo Pera,R.A.
+  TITLE     Human STELLAR, NANOG, and GDF3 genes are expressed in pluripotent
+            cells and map to chromosome 12p13, a hotspot for teratocarcinoma
+  JOURNAL   Stem Cells 22 (2), 169-179 (2004)
+   PUBMED   14990856
+REFERENCE   5  (bases 1 to 1040)
+  AUTHORS   Payer,B., Saitou,M., Barton,S.C., Thresher,R., Dixon,J.P., Zahn,D.,
+            Colledge,W.H., Carlton,M.B., Nakano,T. and Surani,M.A.
+  TITLE     Stella is a maternal effect gene required for normal early
+            development in mice
+  JOURNAL   Curr. Biol. 13 (23), 2110-2117 (2003)
+   PUBMED   14654002
+  REMARK    GeneRIF: In mice, a targeted mutation results in reduced female
+            fertility and may function as a mammalian maternal effect gene.
+REFERENCE   6  (bases 1 to 1040)
+  AUTHORS   Bowles,J., Teasdale,R.P., James,K. and Koopman,P.
+  TITLE     Dppa3 is a marker of pluripotency and has a human homologue that is
+            expressed in germ cell tumours
+  JOURNAL   Cytogenet. Genome Res. 101 (3-4), 261-265 (2003)
+   PUBMED   14684992
+REFERENCE   7  (bases 1 to 1040)
+  AUTHORS   Sato,M., Kimura,T., Kurokawa,K., Fujita,Y., Abe,K., Masuhara,M.,
+            Yasunaga,T., Ryo,A., Yamamoto,M. and Nakano,T.
+  TITLE     Identification of PGC7, a new gene expressed specifically in
+            preimplantation embryos and germ cells
+  JOURNAL   Mech. Dev. 113 (1), 91-94 (2002)
+   PUBMED   11900980
+  REMARK    GeneRIF: In mice, this gene may play a role in oogenesis and
+            primordial germ cell development.
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. The
+            reference sequence was derived from AY317075.1.
+            On Sep 22, 2004 this sequence version replaced gi:40548325.
+            
+            Summary: This gene encodes a protein that in mice may function as a
+            maternal factor during the preimplantation stage of development. In
+            mice, this gene may play a role in transcriptional repression, cell
+            division, and maintenance of cell pluripotentiality. In humans,
+            related intronless loci are located on chromosomes 14 and X.
+            [provided by RefSeq, Jul 2008].
+            
+            ##RefSeq-Attributes-START##
+            Transcript_exon_combination_evidence :: AY317075.1  [ECO:0000332]
+            ##RefSeq-Attributes-END##
+            COMPLETENESS: complete on the 3' end.
+PRIMARY     REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP
+            1-1040              AY317075.1         40-1079
+FEATURES             Location/Qualifiers
+     source          1..1040
+                     /organism="Homo sapiens"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="12"
+                     /map="12p13.31"
+     gene            1..1040
+                     /gene="DPPA3"
+                     /gene_synonym="STELLA"
+                     /note="developmental pluripotency associated 3"
+                     /db_xref="GeneID:359787"
+                     /db_xref="HGNC:19199"
+                     /db_xref="HPRD:16331"
+                     /db_xref="MIM:608408"
+     exon            1..160
+                     /gene="DPPA3"
+                     /gene_synonym="STELLA"
+                     /inference="alignment:Splign"
+                     /number=1
+     misc_feature    58..60
+                     /gene="DPPA3"
+                     /gene_synonym="STELLA"
+                     /note="upstream in-frame stop codon"
+     STS             59..827
+                     /gene="DPPA3"
+                     /gene_synonym="STELLA"
+                     /db_xref="UniSTS:489030"
+     CDS             79..558
+                     /gene="DPPA3"
+                     /gene_synonym="STELLA"
+                     /note="stella-related protein"
+                     /codon_start=1
+                     /product="developmental pluripotency-associated protein 3"
+                     /protein_id="NP_954980.1"
+                     /db_xref="GI:40548326"
+                     /db_xref="CCDS:CCDS8582.1"
+                     /db_xref="GeneID:359787"
+                     /db_xref="HGNC:19199"
+                     /db_xref="HPRD:16331"
+                     /db_xref="MIM:608408"
+                     /translation="MDPSQFNPTYIPGSPQMLTEENSRDDSGASQISSETLIKNLSNL
+                     TINASSESVSPLSEALLRRESVGAAVLREIEDEWLYSRRGVRTLLSVQREKMARLRYM
+                     LLGGVRTHERRPTNKEPKGVKKESRPFKCPCSFCVSNGWDPSENARIGNQDTKPLQP"
+     exon            161..405
+                     /gene="DPPA3"
+                     /gene_synonym="STELLA"
+                     /inference="alignment:Splign"
+                     /number=2
+     exon            406..447
+                     /gene="DPPA3"
+                     /gene_synonym="STELLA"
+                     /inference="alignment:Splign"
+                     /number=3
+     exon            448..1040
+                     /gene="DPPA3"
+                     /gene_synonym="STELLA"
+                     /inference="alignment:Splign"
+                     /number=4
+     polyA_signal    1009..1014
+                     /gene="DPPA3"
+                     /gene_synonym="STELLA"
+     polyA_site      1040
+                     /gene="DPPA3"
+                     /gene_synonym="STELLA"
+ORIGIN      
+        1 agcaatttga ggctctgtca tcagtttctg ctacgtttca aagatcctgg agaagcctag
+       61 tgttgtgtca agacgccgat ggacccatca cagtttaatc caacctacat cccagggtct
+      121 ccacaaatgc tcaccgaaga aaattcccgg gacgattcag gggcctctca aatctcctcc
+      181 gagacgttga taaagaacct tagtaacttg actatcaacg ctagtagcga atctgtttcc
+      241 cctctatcgg aagctttact ccgtcgagag tctgtaggag cagcagtcct cagggaaatc
+      301 gaagatgagt ggctttacag caggagagga gtaagaacat tgctgtctgt gcagagagaa
+      361 aagatggcaa gattgagata catgttactc ggcggagttc gtacgcatga aagaagacca
+      421 acaaacaagg agcctaaggg agttaagaag gaatcaagac cattcaaatg tccctgcagt
+      481 ttctgcgtgt ctaatggatg ggatccttct gagaatgcta gaatagggaa tcaagacacc
+      541 aagccacttc agccataaat cttattcttg cacctttttt tcttgctagt aattttatat
+      601 agcaggttga gaaagctact ctatgctagt atagactata caccaataat tttgataatg
+      661 agttctagga tgtatttttc ttgtatcttt ttcttcctac tatgatacta gtaattcata
+      721 agggatctgt gtaatctgaa tgtatttgaa taactttagc tctactgttt gatttgaccc
+      781 aaagaagcca agatgatata agtattccca tgtgtcttag aagcccaaag tcagtgagat
+      841 gaaacccaac atcaagaaat tgaagcaaag ttacttatgg ataaagaaag cattaggtag
+      901 ttgggctata gcataattag attttctggc tttcaaaaat ttggattgca atcacagcaa
+      961 actttgttat ttttacagtt ttcagtacaa aagtgtttat atagaaacaa taaagttgac
+     1021 atttgagtac cttttaaaaa
+//
+LOCUS       NM_001205386            2551 bp    mRNA    linear   ROD 15-SEP-2012
+DEFINITION  Mus musculus ARP3 actin-related protein 3 (Actr3), transcript
+            variant 3, mRNA.
+ACCESSION   NM_001205386
+VERSION     NM_001205386.1  GI:329664972
+KEYWORDS    .
+SOURCE      Mus musculus (house mouse)
+  ORGANISM  Mus musculus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Rodentia;
+            Sciurognathi; Muroidea; Muridae; Murinae; Mus; Mus.
+REFERENCE   1  (bases 1 to 2551)
+  AUTHORS   Wu,C., Asokan,S.B., Berginski,M.E., Haynes,E.M., Sharpless,N.E.,
+            Griffith,J.D., Gomez,S.M. and Bear,J.E.
+  TITLE     Arp2/3 is critical for lamellipodia and response to extracellular
+            matrix cues but is dispensable for chemotaxis
+  JOURNAL   Cell 148 (5), 973-987 (2012)
+   PUBMED   22385962
+  REMARK    GeneRIF: Cells depleted of Arp2/3 complex cannot respond to a
+            surface-bound gradient of extracellular matrix (haptotaxis).
+REFERENCE   2  (bases 1 to 2551)
+  AUTHORS   Yi,K., Unruh,J.R., Deng,M., Slaughter,B.D., Rubinstein,B. and Li,R.
+  TITLE     Dynamic maintenance of asymmetric meiotic spindle position through
+            Arp2/3-complex-driven cytoplasmic streaming in mouse oocytes
+  JOURNAL   Nat. Cell Biol. 13 (10), 1252-1258 (2011)
+   PUBMED   21874009
+  REMARK    GeneRIF: Show that the Arp2/3 complex localizes to the oocyte
+            cortical cap in a Ran-GTPase-dependent manner and nucleates actin
+            filaments in the cortical cap and a cytoplasmic actin network.
+            Publication Status: Online-Only
+REFERENCE   3  (bases 1 to 2551)
+  AUTHORS   Saarikangas,J., Mattila,P.K., Varjosalo,M., Bovellan,M.,
+            Hakanen,J., Calzada-Wack,J., Tost,M., Jennen,L., Rathkolb,B.,
+            Hans,W., Horsch,M., Hyvonen,M.E., Perala,N., Fuchs,H.,
+            Gailus-Durner,V., Esposito,I., Wolf,E., de Angelis,M.H.,
+            Frilander,M.J., Savilahti,H., Sariola,H., Sainio,K., Lehtonen,S.,
+            Taipale,J., Salminen,M. and Lappalainen,P.
+  TITLE     Missing-in-metastasis MIM/MTSS1 promotes actin assembly at
+            intercellular junctions and is required for integrity of kidney
+            epithelia
+  JOURNAL   J. Cell. Sci. 124 (PT 8), 1245-1255 (2011)
+   PUBMED   21406566
+REFERENCE   4  (bases 1 to 2551)
+  AUTHORS   Sun,S.C., Wang,Z.B., Xu,Y.N., Lee,S.E., Cui,X.S. and Kim,N.H.
+  TITLE     Arp2/3 complex regulates asymmetric division and cytokinesis in
+            mouse oocytes
+  JOURNAL   PLoS ONE 6 (4), E18392 (2011)
+   PUBMED   21494665
+  REMARK    Publication Status: Online-Only
+REFERENCE   5  (bases 1 to 2551)
+  AUTHORS   Derivery,E., Sousa,C., Gautier,J.J., Lombard,B., Loew,D. and
+            Gautreau,A.
+  TITLE     The Arp2/3 activator WASH controls the fission of endosomes through
+            a large multiprotein complex
+  JOURNAL   Dev. Cell 17 (5), 712-723 (2009)
+   PUBMED   19922875
+  REMARK    GeneRIF: WASH complex activates Arp2/3-mediated actin nucleation
+            and binds directly to liposomes. WASH also interacts with dynamin.
+REFERENCE   6  (bases 1 to 2551)
+  AUTHORS   Merrifield,C.J., Qualmann,B., Kessels,M.M. and Almers,W.
+  TITLE     Neural Wiskott Aldrich Syndrome Protein (N-WASP) and the Arp2/3
+            complex are recruited to sites of clathrin-mediated endocytosis in
+            cultured fibroblasts
+  JOURNAL   Eur. J. Cell Biol. 83 (1), 13-18 (2004)
+   PUBMED   15085951
+  REMARK    GeneRIF: N-WASP and the Arp2/3 complex trigger actin polymerization
+            during a late step in clathrin-mediated endocytosis
+REFERENCE   7  (bases 1 to 2551)
+  AUTHORS   Gavard,J., Lambert,M., Grosheva,I., Marthiens,V., Irinopoulou,T.,
+            Riou,J.F., Bershadsky,A. and Mege,R.M.
+  TITLE     Lamellipodium extension and cadherin adhesion: two cell responses
+            to cadherin activation relying on distinct signalling pathways
+  JOURNAL   J. Cell. Sci. 117 (PT 2), 257-270 (2004)
+   PUBMED   14657280
+REFERENCE   8  (bases 1 to 2551)
+  AUTHORS   Magdalena,J., Millard,T.H., Etienne-Manneville,S., Launay,S.,
+            Warwick,H.K. and Machesky,L.M.
+  TITLE     Involvement of the Arp2/3 complex and Scar2 in Golgi polarity in
+            scratch wound models
+  JOURNAL   Mol. Biol. Cell 14 (2), 670-684 (2003)
+   PUBMED   12589062
+  REMARK    GeneRIF: Scar2 and the Arp2/3 complex appear to be involved in the
+            establishment and maintenance of Golgi polarity during directed
+            migration
+REFERENCE   9  (bases 1 to 2551)
+  AUTHORS   Uruno,T., Liu,J., Zhang,P., Fan,Yx., Egile,C., Li,R., Mueller,S.C.
+            and Zhan,X.
+  TITLE     Activation of Arp2/3 complex-mediated actin polymerization by
+            cortactin
+  JOURNAL   Nat. Cell Biol. 3 (3), 259-266 (2001)
+   PUBMED   11231575
+REFERENCE   10 (bases 1 to 2551)
+  AUTHORS   Jiang,C.H., Tsien,J.Z., Schultz,P.G. and Hu,Y.
+  TITLE     The effects of aging on gene expression in the hypothalamus and
+            cortex of mice
+  JOURNAL   Proc. Natl. Acad. Sci. U.S.A. 98 (4), 1930-1934 (2001)
+   PUBMED   11172053
+COMMENT     VALIDATED REFSEQ: This record has undergone validation or
+            preliminary review. The reference sequence was derived from
+            AC124528.4, AK166529.1 and AV137086.1.
+            
+            Transcript Variant: This variant (3) differs in the 5' UTR,
+            compared to variant 1. Variants 1, 2 and 3 encode the same protein.
+            
+            Sequence Note: This RefSeq record was created from transcript and
+            genomic sequence data to make the sequence consistent with the
+            reference genome assembly. The genomic coordinates used for the
+            transcript record were based on transcript alignments.
+            
+            Publication Note:  This RefSeq record includes a subset of the
+            publications that are available for this gene. Please see the Gene
+            record to access additional publications.
+            
+            ##RefSeq-Attributes-START##
+            Transcript_exon_combination_evidence :: AK166529.1, AK166586.1
+                                                    [ECO:0000332]
+            ##RefSeq-Attributes-END##
+            COMPLETENESS: complete on the 3' end.
+PRIMARY     REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP
+            1-54                AC124528.4         76602-76655
+            55-2539             AK166529.1         2-2486
+            2540-2551           AV137086.1         281-292
+FEATURES             Location/Qualifiers
+     source          1..2551
+                     /organism="Mus musculus"
+                     /mol_type="mRNA"
+                     /strain="C57BL/6"
+                     /db_xref="taxon:10090"
+                     /chromosome="1"
+                     /map="1"
+     gene            1..2551
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /note="ARP3 actin-related protein 3"
+                     /db_xref="GeneID:74117"
+                     /db_xref="MGI:1921367"
+     exon            1..75
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=1a
+     exon            76..248
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=1d
+     misc_feature    148..150
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /note="upstream in-frame stop codon"
+     CDS             205..1461
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /note="ARP3 actin-related protein 3 homolog; actin-like
+                     protein 3"
+                     /codon_start=1
+                     /product="actin-related protein 3"
+                     /protein_id="NP_001192315.1"
+                     /db_xref="GI:329664973"
+                     /db_xref="CCDS:CCDS15242.1"
+                     /db_xref="GeneID:74117"
+                     /db_xref="MGI:1921367"
+                     /translation="MAGRLPACVVDCGTGYTKLGYAGNTEPQFIIPSCIAIKESAKVG
+                     DQAQRRVMKGVDDLDFFIGDEAIEKPTYATKWPIRHGIVEDWDLMERFMEQVIFKYLR
+                     AEPEDHYFLLTEPPLNTPENREYTAEIMFESFNVPGLYIAVQAVLALAASWTSRQVGE
+                     RTLTGTVIDSGDGVTHVIPVAEGYVIGSCIKHIPIAGRDITYFIQQLLRDREVGIPPE
+                     QSLETAKAVKERYSYVCPDLVKEFNKYDTDGSKWIKQYTGVNAISKKEFSIDVGYERF
+                     LGPEIFFHPEFANPDFTQPISEVVDEVIQNCPIDVRRPLYKNIVLSGGSTMFRDFGRR
+                     LQRDLKRTVDARLKLSEELSGGRLKPKPIDVQVITHHMQRYAVWFGGSMLASTPEFYQ
+                     VCHTKKDYEEIGPSICRHNPVFGVMS"
+     misc_feature    1456..1458
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (Q99JY9.3); phosphorylation site"
+     exon            249..304
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=2
+     exon            305..429
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=3
+     exon            430..540
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=4
+     exon            541..636
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=5
+     exon            637..744
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=6
+     exon            745..888
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=7
+     exon            889..1062
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=8
+     exon            1063..1155
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=9
+     exon            1156..1281
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=10
+     exon            1282..1365
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=11
+     exon            1366..2551
+                     /gene="Actr3"
+                     /gene_synonym="1200003A09Rik; Arp3"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=12
+ORIGIN      
+        1 gggagcgatc gcggcctggg gcctggcctg gccggggcgt cggcagcggc ggccatcttg
+       61 gctccccgcg gaaagctccc tcccttcctc cctccctccc gaccgagggc ggcccgggcc
+      121 ggtgcatggt cagccagctc ccatctctag ctccccggcc tctcagcagc acggaacgga
+      181 cggcagcggc gggcgaggag gaagatggcg ggacggctgc cggcctgtgt ggtggactgt
+      241 ggcacgggat atacaaaact aggatatgct ggaaatacag agccacagtt tatcatccca
+      301 tcatgtattg ccattaaaga gtctgcaaaa gtgggtgacc aagcccagag gagggtgatg
+      361 aaaggcgtgg atgacctaga cttcttcatt ggtgatgaag caatagaaaa gcccacatat
+      421 gcaacaaagt ggccaattcg ccatggtata gttgaagact gggacttaat ggaaaggttt
+      481 atggagcaag tgatttttaa atatttaagg gcagaacctg aagatcatta ctttcttttg
+      541 actgaacctc cactgaatac tccagaaaac agggaatata ctgctgaaat aatgtttgaa
+      601 tccttcaatg ttccaggctt gtacattgct gtgcaggctg ttcttgcctt agctgcatcc
+      661 tggacctcaa gacaagtagg agagcggacg ctgacgggta cagtaataga cagtggagac
+      721 ggagtcactc atgtcattcc tgtggctgaa ggatatgtta tcggcagctg tattaaacac
+      781 attccaatcg caggaagaga tataacatat tttattcagc aactgctgcg agaccgagaa
+      841 gtaggaatcc ctcctgagca gtccttggaa actgcgaaag cagtgaagga acgctacagt
+      901 tatgtctgcc cagatttagt aaaagagttt aacaagtatg acaccgatgg gtcaaagtgg
+      961 atcaaacagt acaccggagt caacgccatc tcaaagaaag agttttctat tgatgttggc
+     1021 tatgagcgat tcctgggacc cgagatcttt ttccatccag agtttgctaa tccagatttt
+     1081 acacaaccta tctcagaagt tgtagatgaa gtcattcaga attgccccat tgatgtccgg
+     1141 cgtcctctct acaagaacat tgtcctctct ggtggttcaa ccatgttcag ggactttgga
+     1201 cgtcgtttgc aaagagattt gaagagaact gtagatgcca ggctgaagtt aagcgaggag
+     1261 ctgagtggtg gtagattgaa gcccaagcct attgatgtac aagttattac acaccatatg
+     1321 cagcggtatg cagtctggtt tggagggtca atgctggctt ccacgcctga gttctaccaa
+     1381 gtatgccaca ccaaaaagga ttatgaagaa attggaccta gcatttgtcg tcacaatcca
+     1441 gtgtttggag tcatgtccta aagttgactt cttgttgatt gggttaggga gatggaaatg
+     1501 agataatctt tctgatgacc tgtttttgtc tgaatggatg gttctgaggt ttttaaccaa
+     1561 acatgatcat acaggaatat ttaatgagtg tgtcaacatg cagatgtaga agagagctaa
+     1621 gacgattgtt ttcctttagg ttgaatattt gaatcttatg tgtatcaaaa aagaaatggg
+     1681 ttttagttct ttctttgccc tgatattttg tatattattg acttacccag tgtgctgggc
+     1741 tcagtgggtg tgtagagagc tctgtaatgc ctgattgggc actgctgagt gggtagtgcc
+     1801 tgagcttgtt tatatttcat acttttttat actttgagga aaaaaagtca aagaaaaact
+     1861 gtagtattgg agggaaacaa tgtgaccaag gaaaagatga gttcaacaag cagcctcatg
+     1921 ggacttggcg cacactctgg gttccagtta tctcgagctg ctccacccct ccccagccca
+     1981 acggttctct ctgcaaatgc ttggatctaa gaagctagtc tcctgggtta gccgatgcct
+     2041 gccctgcttt ctggttactt acattctgtt tcttgcttta aaagaaggac aagactgttg
+     2101 gaccagtatt gcaattctgt agagtcgttt cttattaaaa caataatgtg attaccaaaa
+     2161 ttggcatatt taaggcctaa tgccattcta ataaaggcaa aaaatttctt tttactactt
+     2221 gtttcaggct ctttgatctc tttataagtt aactaatacg tctattttct tcagattctg
+     2281 cagtagctct ttaaaagcac agcggttgga tagcaagctg acttttttat gtgctctgta
+     2341 caaataattg tgaactttta atatgttgag tgctttcatt ttgataactg gatctccatt
+     2401 tgatatttca tttgtataac tcatttgcag tctgaatttt ttttagtgcc agtccctgac
+     2461 atatcatgaa aagttggttt tctttgcatt ttcaaatatc tggatcatga agaaaaagtg
+     2521 atgacaataa attaaaattg aattaccctt c
+//
+LOCUS       NM_001111966            1627 bp    mRNA    linear   PLN 21-JUL-2012
+DEFINITION  Zea mays knotted1 (kn1), mRNA.
+ACCESSION   NM_001111966
+VERSION     NM_001111966.2  GI:162952039
+KEYWORDS    .
+SOURCE      Zea mays
+  ORGANISM  Zea mays
+            Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;
+            Spermatophyta; Magnoliophyta; Liliopsida; Poales; Poaceae; PACMAD
+            clade; Panicoideae; Andropogoneae; Zea.
+REFERENCE   1  (bases 1 to 1627)
+  AUTHORS   Xu,X.M., Wang,J., Xuan,Z., Goldshmidt,A., Borrill,P.G.,
+            Hariharan,N., Kim,J.Y. and Jackson,D.
+  TITLE     Chaperonins facilitate KNOTTED1 cell-to-cell trafficking and stem
+            cell function
+  JOURNAL   Science 333 (6046), 1141-1144 (2011)
+   PUBMED   21868675
+  REMARK    GeneRIF: KN1 trafficking requires chaperonin complex; study shows
+            chaperonins are essential for cell-to-cell trafficking of subset of
+            mobile transcription factors and demonstrates importance of
+            chaperonin-dependent protein trafficking for plant stem cell
+            function
+REFERENCE   2  (bases 1 to 1627)
+  AUTHORS   Woodward,J.B., Abeydeera,N.D., Paul,D., Phillips,K.,
+            Rapala-Kozik,M., Freeling,M., Begley,T.P., Ealick,S.E., McSteen,P.
+            and Scanlon,M.J.
+  TITLE     A maize thiamine auxotroph is defective in shoot meristem
+            maintenance
+  JOURNAL   Plant Cell 22 (10), 3305-3317 (2010)
+   PUBMED   20971897
+REFERENCE   3  (bases 1 to 1627)
+  AUTHORS   Ramirez,J., Bolduc,N., Lisch,D. and Hake,S.
+  TITLE     Distal expression of knotted1 in maize leaves leads to
+            reestablishment of proximal/distal patterning and leaf dissection
+  JOURNAL   Plant Physiol. 151 (4), 1878-1888 (2009)
+   PUBMED   19854860
+  REMARK    GeneRIF: kn1 normally participates in the establishment of
+            proximal/distal polarity in the incipient leaf.
+REFERENCE   4  (bases 1 to 1627)
+  AUTHORS   Bolduc,N. and Hake,S.
+  TITLE     The maize transcription factor KNOTTED1 directly regulates the
+            gibberellin catabolism gene ga2ox1
+  JOURNAL   Plant Cell 21 (6), 1647-1658 (2009)
+   PUBMED   19567707
+  REMARK    GeneRIF: KN1 negatively modulates the accumulation of gibberellin
+            (GA) through the control of ga2ox1.
+REFERENCE   5  (bases 1 to 1627)
+  AUTHORS   Lunde,C. and Hake,S.
+  TITLE     The interaction of knotted1 and thick tassel dwarf1 in vegetative
+            and reproductive meristems of maize
+  JOURNAL   Genetics 181 (4), 1693-1697 (2009)
+   PUBMED   19153258
+  REMARK    GeneRIF: kn1 and td1 function in a pathway to maintain meristem
+            homeostasis but their products may interact with different partners
+            during development.
+REFERENCE   6  (bases 1 to 1627)
+  AUTHORS   Gardiner,J., Schroeder,S., Polacco,M.L., Sanchez-Villeda,H.,
+            Fang,Z., Morgante,M., Landewe,T., Fengler,K., Useche,F.,
+            Hanafey,M., Tingey,S., Chou,H., Wing,R., Soderlund,C. and Coe,E.H.
+            Jr.
+  TITLE     Anchoring 9,371 maize expressed sequence tagged unigenes to the
+            bacterial artificial chromosome contig map by two-dimensional
+            overgo hybridization
+  JOURNAL   Plant Physiol. 134 (4), 1317-1326 (2004)
+   PUBMED   15020742
+REFERENCE   7  (bases 1 to 1627)
+  AUTHORS   Meisel,L. and Lam,E.
+  TITLE     The conserved ELK-homeodomain of KNOTTED-1 contains two regions
+            that signal nuclear localization
+  JOURNAL   Plant Mol. Biol. 30 (1), 1-14 (1996)
+   PUBMED   8616227
+REFERENCE   8  (bases 1 to 1627)
+  AUTHORS   Smith,L.G., Greene,B., Veit,B. and Hake,S.
+  TITLE     A dominant mutation in the maize homeobox gene, Knotted-1, causes
+            its ectopic expression in leaf cells with altered fates
+  JOURNAL   Development 116 (1), 21-30 (1992)
+   PUBMED   1362381
+REFERENCE   9  (bases 1 to 1627)
+  AUTHORS   Vollbrecht,E., Veit,B., Sinha,N. and Hake,S.
+  TITLE     The developmental gene Knotted-1 is a member of a maize homeobox
+            gene family
+  JOURNAL   Nature 350 (6315), 241-243 (1991)
+   PUBMED   1672445
+REFERENCE   10 (bases 1 to 1627)
+  AUTHORS   Veit,B., Vollbrecht,E., Mathern,J. and Hake,S.
+  TITLE     A tandem duplication causes the Kn1-O allele of Knotted, a dominant
+            morphological mutant of maize
+  JOURNAL   Genetics 125 (3), 623-631 (1990)
+   PUBMED   2165968
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence was derived from X61308.1.
+            On Dec 18, 2007 this sequence version replaced gi:162458084.
+FEATURES             Location/Qualifiers
+     source          1..1627
+                     /organism="Zea mays"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:4577"
+                     /chromosome="1L"
+                     /map="128 centimorgans"
+     gene            1..1627
+                     /gene="kn1"
+                     /gene_synonym="KN-1"
+                     /note="knotted1"
+                     /db_xref="GeneID:542391"
+                     /db_xref="MaizeGDB:12352"
+     CDS             181..1260
+                     /gene="kn1"
+                     /gene_synonym="KN-1"
+                     /note="SC19; H2; H3; PCO065671; PCO065671_ov; gsy19(kn1);
+                     p-H2"
+                     /codon_start=1
+                     /product="homeotic protein knotted-1"
+                     /protein_id="NP_001105436.1"
+                     /db_xref="GI:162458085"
+                     /db_xref="GeneID:542391"
+                     /db_xref="MaizeGDB:12352"
+                     /translation="MEEITQHFGVGASSHGHGHGQHHHHHHHHHPWASSLSAVVAPLP
+                     PQPPSAGLPLTLNTVAATGNSGGSGNPVLQLANGGGLLDACVKAKEPSSSSPYAGDVE
+                     AIKAKIISHPHYYSLLTAYLECNKVGAPPEVSARLTEIAQEVEARQRTALGGLAAATE
+                     PELDQFMEAYHEMLVKFREELTRPLQEAMEFMRRVESQLNSLSISGRSLRNILSSGSS
+                     EEDQEGSGGETELPEVDAHGVDQELKHHLLKKYSGYLSSLKQELSKKKKKGKLPKEAR
+                     QQLLSWWDQHYKWPYPSETQKVALAESTGLDLKQINNWFINQRKRHWKPSEEMHHLMM
+                     DGYHTTNAFYMDGHFINDGGLYRLG"
+     misc_feature    223..270
+                     /gene="kn1"
+                     /gene_synonym="KN-1"
+                     /note="histidine-rich or CAX region"
+     misc_feature    <559..<559
+                     /gene="kn1"
+                     /gene_synonym="KN-1"
+                     /note="intron /exon boundary"
+     misc_feature    <682..<682
+                     /gene="kn1"
+                     /gene_synonym="KN-1"
+                     /note="intron /exon boundary"
+     misc_feature    811..888
+                     /gene="kn1"
+                     /gene_synonym="KN-1"
+                     /note="PEST sequence"
+     misc_feature    <827..<827
+                     /gene="kn1"
+                     /gene_synonym="KN-1"
+                     /note="intron /exon boundary"
+     misc_feature    967..1158
+                     /gene="kn1"
+                     /gene_synonym="KN-1"
+                     /note="homeodomain region"
+     misc_feature    <1060..<1060
+                     /gene="kn1"
+                     /gene_synonym="KN-1"
+                     /note="intron /exon boundary"
+     STS             1315..1587
+                     /gene="kn1"
+                     /gene_synonym="KN-1"
+                     /standard_name="scl285_p5_B73"
+                     /db_xref="UniSTS:260113"
+ORIGIN      
+        1 ccgaggcatc cttctccttt ccctctcctt ccccaaaccc ttttcctctt tccctcgccc
+       61 caagaacttc atctcatctc caggcgcccc ttttgcgctt gcgcaggagg agctcacggg
+      121 gacagtgggc ggagagctcg atcgctgcac cactacttca ctggaggtcc gcccactccc
+      181 atggaggaga tcacccaaca ctttggagtt ggcgcaagca gccacggcca tggccacggc
+      241 cagcaccacc atcatcacca ccaccaccac ccgtgggcat cctccctcag cgccgtcgta
+      301 gcgccgctgc cgccgcaacc gccaagcgca ggcctgccgc tgaccctgaa cacggtggcg
+      361 gccactggga acagcggcgg tagcggcaac ccggtgctgc agcttgccaa cggtggcggc
+      421 ctcctcgacg catgcgtcaa ggcgaaggag ccctcgtcgt cgtctcccta cgcaggcgac
+      481 gtcgaggcca tcaaggccaa gatcatctcg cacccacact actactcgct cctcactgcc
+      541 tacctcgagt gcaacaaggt gggggcacca ccggaggtgt cggcgaggct gacggagata
+      601 gcgcaggagg tggaggcgcg gcagcgcacg gcgctcggcg gcctggccgc tgcgacggag
+      661 ccggagctgg accagttcat ggaggcgtac cacgagatgc tggtgaagtt cagggaggag
+      721 ctgacgaggc cgctgcagga ggcgatggag ttcatgcgaa gggtggagtc gcagctgaac
+      781 tcgctttcca tctccggaag gtcgctgcgc aacatccttt catctggctc ttctgaggag
+      841 gatcaagaag gtagcggagg agagaccgag ctccctgaag ttgatgcaca tggtgtggac
+      901 caagagctga agcaccatct cctgaagaaa tacagtggct atctaagctc gctcaagcaa
+      961 gaactgtcaa agaagaagaa gaaagggaag ctccccaagg aggctcgcca gcagctcctt
+     1021 agctggtggg atcagcacta caaatggcct tacccctcag agactcagaa ggtggcactg
+     1081 gctgagtcta ccgggcttga cctgaagcag atcaacaact ggttcatcaa ccagcggaag
+     1141 cggcactgga agccatccga ggagatgcac cacctgatga tggatgggta ccacaccacc
+     1201 aatgccttct acatggacgg ccacttcatc aacgacggcg ggctgtaccg gctcggctag
+     1261 ccaccggtat ctcgcttcca tttcacaccc cacggcctag ctataaagac taatggttcc
+     1321 aggtgtctga agtactgaag acaggggggc tagctatcta atgtttgtgc cgcacgcatg
+     1381 agctgtaagg aggccatgct taattattct gttgccgttg ctactctatc tatatgcgcc
+     1441 tatgcctccg tgcatgaact atgctttagg tggttgctgc tccacactgt ggtggtgtgc
+     1501 ttttgctttt gtgtggtcgt attgtatgcg taacctgaca gatggatccc tgattgctac
+     1561 atgtttgaat aatttgcatg atctagctag tttctgccta atctaatggt acggctcatg
+     1621 tcttgtc
+//
