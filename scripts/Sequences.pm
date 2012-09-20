@@ -123,7 +123,7 @@ sub print{
 
 ###############################################################################
 #Sequences Package
-#Array of sequence
+#Array of sequence class
 package Sequences;
 
 sub new{
