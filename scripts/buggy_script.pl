@@ -1,4 +1,3 @@
-
 #!/usr/bin/perl
 # 
 # buggy_script.pl
