@@ -17,7 +17,7 @@ print "Generating $random random numbers: ";
 
 for(my $i = 1; $i <= $random; $i++){
 	my $rand_int = int(rand(10)) + 1;
-	print "rand_int ";
+	print "$rand_int";
     push @numbers, $rand_int;  #push row onto array
 }
 print "\n\n";
