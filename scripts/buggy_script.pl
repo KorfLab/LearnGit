@@ -10,9 +10,9 @@ use strict;
 
 # Fill array with 5–20 random integers (with values ranging from 1–10)
 # Calculates mean, population variance and std deviation of numbers in array
-my @numbers;
+my @numbers
 
-my $random=int(rand(15))+5;
+my $random = int(rand(15))+5;
 print "Generating $random random numbers: ";   
 
 for(my $i = 1; $i <= $random; $i++){
