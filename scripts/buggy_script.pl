@@ -1,4 +1,3 @@
-
 #!/usr/bin/perl
 # 
 # buggy_script.pl
@@ -32,7 +31,7 @@ my $n = scalar @numbers;
 # loop over each number
 for(my $i = 0; $i < scalar @numbers; $i++){
     $sum += $numbers[$i];
-    $square_sum += ($numbers[$i] * $numbers[$i]);
+    $square_sum += ($numbers[$i] * $numbers[$j]);
 }
 
 #  calculate basic stats and round down to 2 d.p.
