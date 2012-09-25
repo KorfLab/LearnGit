@@ -26,7 +26,7 @@ print "\n\n";
 # Calculate Mean and population variance and population std deviation in One Pass
 my $sum = 0;
 my $square_sum = 0;
-my $n = scalar @numbers;
+my $n = scalar $numbers;
 
 # loop over each number
 for(my $i = 0; $i < scalar @numbers; $i++){
