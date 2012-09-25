@@ -12,7 +12,7 @@ use strict;
 # Calculates mean, population variance and std deviation of numbers in array
 my @numbers;
 
-my $random =int(rand(15))+5;
+my $random = int(rand(15))+5;
 print "Generating $random random numbers: ";   
 
 for(my $i = 0; $i < $random; $i++){
@@ -26,7 +26,7 @@ print "\n\n";
 # Calculate Mean and population variance and population std deviation in One Pass
 my $sum = 0;
 my $square_sum = 0;
-my $n = scalar $numbers;
+my $n = scalar @numbers;
 
 # loop over each number
 for(my $i = 0; $i < scalar @numbers; $i++){
