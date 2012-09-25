@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#! /usr/bin/perl
 # 
 # buggy_script.pl
 # The 'fix-the-typo-and-add-a-new-typo-challenge'!
@@ -24,7 +24,7 @@ print "\n\n";
 
 
 # Calculate Mean and population variance and population std deviation in One Pass
-my $sum = 0
+my $sum = 0;
 my $square_sum = 0;
 my $n = scalar @numbers;
 
