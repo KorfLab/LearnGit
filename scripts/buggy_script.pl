@@ -49,7 +49,7 @@ print "Standard deviation = $sd\n\n\n";
 
 exit;
 
-__END__
+_END__
 Some people asked if variance could actually be calculated in a single pass.  Yes, see the links below for one pass algorithms:
 http://en.wikipedia.org/wiki/Algorithms_for_calculating_variance
 http://www.strchr.com/standard_deviation_in_one_pass
