@@ -1,4 +1,4 @@
-#!/usr/bin/purl
+#!/usr/bin/perl
 # 
 # buggy_script.pl
 # The 'fix-the-typo-and-add-a-new-typo-challenge'!
@@ -19,7 +19,7 @@ for(my $i = 0; $i < $random; $i++){
 	my $rand_int = int(rand(10)) + 1;
 	print "$rand_int ";
     push @numbers, $rand_int;  #push row onto array
-}
+
 print "\n\n";
 
 
