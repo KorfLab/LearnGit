@@ -1,4 +1,4 @@
-#!/usr/bin/Perl
+#!/usr/bin/purl
 # 
 # buggy_script.pl
 # The 'fix-the-typo-and-add-a-new-typo-challenge'!
