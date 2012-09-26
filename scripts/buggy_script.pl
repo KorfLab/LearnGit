@@ -21,7 +21,7 @@ for(my $i = 0; $i < $random; $i++){
     push @numbers, $rand_int;  #push row onto array
 }
 print "\n\n";
-
+
 
 # Calculate Mean and population variance and population std deviation in One Pass
 my $sum = 0;
