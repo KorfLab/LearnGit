@@ -35,9 +35,9 @@ for(my $i = 0; $i < scalar @numbers; $i++){
 }
 
 #  calculate basic stats and round down to 2 d.p.
-my $mean     = sprintf("%.2f", $sum / $n);
-my $variance = sprintf("%.2f", $square_sum / $n - $mean * $mean);
-my $sd       = sprintf("%.2f", sqrt($variance));
+my $mean     = sprintf("%.5e", $sum / $n);
+my $variance = sprintf("%.5e", $square_sum / $n - $mean * $mean);
+my $sd       = sprintf("%.5e", sqrt($variance));
 
 
 # print final output
