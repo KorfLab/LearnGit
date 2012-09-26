@@ -13,9 +13,9 @@ use strict;
 my @numbers;
 
 my $random = int(rand(15))+5;
-print "Generating $random random numbers: ";   
+print "Generating $random random numbers: ;   
 
-for(my $i = 0; $i > $random; $i++){
+for(my $i = 0; $i < $random; $i++){
 	my $rand_int = int(rand(10)) + 1;
 	print "$rand_int ";
     push @numbers, $rand_int;  #push row onto array
