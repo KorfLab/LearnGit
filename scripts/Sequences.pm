@@ -41,19 +41,19 @@ sub set_header{
 }
 
 #Return the sequence
-sub get_sequence{
+sub sequence{
     my $self=shift;
     return $self->{sequence};
 }
 
 #Return a reference to the Sequence
-sub get_sequence_ref{
+sub sequence_ref{
     my $self=shift;
     return \$self->{sequence};
 }
 
 #Return the header
-sub get_header{
+sub header{
     my $self=shift;
     return $self->{header};
 }
@@ -64,6 +64,19 @@ sub copy{
     my $self=shift;
     my $copy = new Sequence($self->{header},$self->{sequence});
     return $copy;
+}
+
+#Return sequence as Fasta formatted string
+sub asString{
+    my $self=shift;
+    return ">" . $self->{header} . "\n" . $self->{sequence} . "\n";
+}
+
+#print sequence (FASTA format)
+sub print{
+    my $self=shift;
+    print $self->asString;
+    return;
 }
 
 #Clean the sequence of invalid and whitespace characters
@@ -116,11 +129,6 @@ sub shuffle{
     
 }
 
-#print sequence (FASTA format)
-sub print{
-    
-}
-
 ###############################################################################
 #Sequences Package
 #Array of sequence class
@@ -132,19 +140,30 @@ sub new{
     return $self
 }
 
-sub push_sequence{
+sub push{
     my ($self,$seq)=@_;
-    push @$self,$seq;
+    CORE::push @$self,$seq;
     return $self;
 }
 
-sub pop_sequence{
-    my $self=shift;
-    return pop @$self;
+sub pop{
+    my $self=CORE::shift;
+    return CORE::pop @$self;
+}
+
+sub shift{
+    my $self=CORE::shift;
+    return CORE::shift @$self;
+}
+
+sub unshift{
+    my ($self,$seq)=@_;
+    CORE::unshift @$self,$seq;
+    return $self;
 }
 
 sub size{
-    my $self=>shift;
+    my $self=CORE::shift;
     return scalar @$self;
 }
 
@@ -194,10 +213,13 @@ sub print{
 
 ###############################################################################
 package Fasta;
+use IO::Uncompress::Gunzip;
 
+#Import fasta formatted sequences individually or collectively from a filehandle
+#, filename, or gzipped fasta file
 
 #Create new Fasta object from File or GLOB
-#Todo: implement gzip compatibility
+#implements gunzip compatibility using the IO::Uncompress::Gunzip core module
 sub new {
     my ($class,$file) = @_;
     
@@ -219,7 +241,8 @@ sub new {
         }
         else{
             if ($filename=~/\.gz$/){
-                open $fh , "gunzip -c $filename |" or die "Couldn't open " . $filename . " for reading fasta file\n";
+                $fh = new IO::Uncompress::Gunzip $filename
+                    or die "Couldn't open " . $filename . " for reading fasta file\n";
             }
             else{
                 open $fh , "<" , $filename or die "Couldn't open " . $filename . " for reading fasta file\n";
@@ -227,14 +250,16 @@ sub new {
         }
     }
     
-    my $self = bless {}, $class;
-    $self->{FH}=$fh;
+    my $self = bless {}, $class;  #Bless anonymous hash as FASTA 
+    $self->{FH}=$fh; #assign filehandle in FASTA
     
     #Check first line for valid Fasta mark
     my $first_line = <$fh>;
     chomp $first_line;
-    if ($first_line=~/^>/ || $first_line=~/^;/){
-        $self->{LAST}=$first_line;
+    if ($first_line=~/^>/ || $first_line=~/^;/){ #First line could be > or ;
+        $first_line=~s/^>|^;//;
+        $self->{LAST}=$first_line;      #Store that line so we don't have to
+                                        #re-read or move file position pointer.
     }
     else{
         die "Not FASTA format file\n";
@@ -255,6 +280,7 @@ sub getNext{
             next;
         }
         elsif (/^>/){
+            s/^>|^;//;
             $seq->set_header($self->{LAST});
             $self->{LAST}=$_;
             return $seq;
@@ -277,31 +303,19 @@ sub getAll{
     my $self = shift;
     my $fh = $self->{FH};
     my $seqs = new Sequences();
-    my $seq = new Sequence();
-    while(<$fh>){
-        chomp;
-        if (/^;/){
-            next;
-        }
-        elsif (/^>/){
-            $seq->set_header($self->{LAST});
-            $self->{LAST}=$_;
-            $seqs->push_sequence($seq);
-            $seq=new Sequence();
+    
+    while(!eof($fh)){
+        my $seq = $self->getNext;
+        if ($seq->length==0){
+            last;
         }
         else{
-            $seq->{sequence}.=$_;
+            $seqs->push($seq);
         }
     }
-    
-    if (length $seq->{sequence}==0){
-        return $seqs;
-    }
-    
-    $seq->set_header($self->{LAST});
-    $seqs->push_sequence($seq);
     return $seqs;
 }
+
 
 ###############################################################################
 package Genbank;
@@ -320,11 +334,6 @@ sub getNext{
 sub getAll{
     
 }
-
-
-
-
-
 
 
 ###############################################################################
