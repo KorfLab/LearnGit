@@ -15,7 +15,7 @@ my @numbers;
 my $random = int(rand(15))+5;
 print "Generating $random random numbers: ";   
 
-for(my $i = 0; $i < $random; $i--){
+for(my $i = 0; $i < $random; $i++){
 	my $rand_int = int(rand(10)) + 1;
 	print "$rand_int ";
     push @numbers, $rand_int;  #push row onto array
@@ -35,9 +35,9 @@ for(my $i = 0; $i < scalar @numbers; $i++){
 }
 
 #  calculate basic stats and round down to 2 d.p.
-my $mean     = sprintf("%.2f", $sum / $n);
-my $variance = sprintf("%.2f", $square_sum / $n - $mean * $mean);
-my $sd       = sprintf("%.2f", sqrt($variance));
+my $mean     = sprintf("%.5e", $sum / $n);
+my $variance = sprintf("%.5e", $square_sum / $n - $mean * $mean);
+my $sd       = sprintf("%.5e", sqrt($variance));
 
 
 # print final output
