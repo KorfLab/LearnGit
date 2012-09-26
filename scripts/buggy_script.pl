@@ -13,7 +13,7 @@ use strict;
 my @numbers;
 
 my $random = int(rand(15))+5;
-print "Generating $random random numbers: ;   
+print "Generating $random random numbers: ";   
 
 for(my $i = 0; $i < $random; $i++){
 	my $rand_int = int(rand(10)) + 1;
@@ -31,7 +31,7 @@ my $n = scalar @numbers;
 # loop over each number
 for(my $i = 0; $i < scalar @numbers; $i++){
     $sum += $numbers[$i];
-    $square_sum += ($numbers[$i] * $numbers[$i]);
+    $square_sum -= ($numbers[$i] * $numbers[$i]);
 }
 
 #  calculate basic stats and round down to 2 d.p.
