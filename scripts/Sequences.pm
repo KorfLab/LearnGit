@@ -4,6 +4,10 @@ use warnings;
 my $NUCLEOTIDE="ACGTURYSWKMBDHVN._";
 my $AMINO_ACID="ABCDEFGHIKLMNPQRSTVWXYZ.*";
 
+#Need to check passed data type in the functions to make sure it is a Sequence
+#or a compatible datatype.
+
+
 ###############################################################################
 package Sequence;
 
@@ -15,8 +19,12 @@ sub new{
     my $self = bless {sequence=>undef,header=>undef}, $class;
     if (defined $header){
         $self->set_header($header);
+    }
+    
+    if (defined $seq){
         $self->set_sequence($seq);
     }
+    
     return $self
 }
 
@@ -30,14 +38,14 @@ sub length{
 sub set_sequence{
     my ($self,$sequence)=@_;
     $self->{sequence}=$sequence;
-    return;
+    return $self;
 }
 
 #Set the header of the sequence
 sub set_header{
     my ($self,$header)=@_;
     $self->{header}=$header;
-    return;
+    return $self;
 }
 
 #Return the sequence
@@ -134,37 +142,64 @@ sub shuffle{
 #Array of sequence class
 package Sequences;
 
+#Create an new Sequences type
 sub new{
     my $class=shift;
     my $self = bless [], $class;
+    
     return $self
 }
 
-sub push{
+
+#Push a Sequence into Sequences
+sub push_seq{
     my ($self,$seq)=@_;
-    CORE::push @$self,$seq;
+    if (ref $seq ne "Sequence"){
+        warn "Tried to push a non-Sequence type on to Sequences\n";
+        return $self;
+    }
+    push @$self,$seq;
     return $self;
 }
 
-sub pop{
-    my $self=CORE::shift;
-    return CORE::pop @$self;
+#Pop a Sequence out of Sequences
+sub pop_seq{
+    my $self=shift;
+    return pop @$self;
 }
 
-sub shift{
-    my $self=CORE::shift;
-    return CORE::shift @$self;
+#Shift a Sequence out of Sequences
+sub shift_seq{
+    my $self=shift;
+    return shift @$self;
 }
 
-sub unshift{
+#Unshift a Sequence into Sequences
+sub unshift_seq{
     my ($self,$seq)=@_;
-    CORE::unshift @$self,$seq;
+    if (ref $seq ne "Sequence"){
+        warn "Tried to unshift a non-Sequence type on to Sequences\n";
+        return $self;
+    }
+    
+    unshift @$self,$seq;
     return $self;
 }
 
+#Get the number of sequences in Sequences
 sub size{
-    my $self=CORE::shift;
+    my $self=shift;
     return scalar @$self;
+}
+
+#Get the Sequence at the ith position
+sub at{
+    my ($self,$i)=@_;
+    if ($i>=@$self){
+        warn "Position $i: Uninitialized Sequence within Sequences\n";
+        return new Sequence();
+    }
+    return $self->[$i];
 }
 
 sub clean{
@@ -217,26 +252,58 @@ use IO::Uncompress::Gunzip;
 
 #Import fasta formatted sequences individually or collectively from a filehandle
 #, filename, or gzipped fasta file
+# Format specifications:
+#       http://en.wikipedia.org/wiki/FASTA_format
+#       http://www.ncbi.nlm.nih.gov/BLAST/blastcgihelp.shtml
+
+################ Constructor ################
 
 #Create new Fasta object from File or GLOB
 #implements gunzip compatibility using the IO::Uncompress::Gunzip core module
 sub new {
     my ($class,$file) = @_;
+    my $self = bless {}, $class;  #Bless anonymous hash as FASTA 
+    if (defined $file){
+        $self->set_filehandle($file);
+    }
+    return $self;
+}
+
+
+################ Methods ################
+
+#Sets the filehandle for Fasta (Opens filehandle if filename is provided)
+sub set_filehandle{
+    my ($self,$file)=@_;
+    
+    #Clear old filehandle and last header line
+    if (exists $self->{FH} && defined $self->{FH}){
+        close ($self->{FH});
+        $self->{FH} = undef;
+        $self->{LAST} = undef;
+    }
+    
+    if (!defined $file){
+        return;
+    }
     
     my $fh;
+    
+    #Make assignment of filehandle or open filehandle
     if (ref $file eq "GLOB"){
         $fh=$file;
     }
     else{
         my $filename;
         if (ref $file eq "SCALAR"){
-            $filename = $$file;
+            $filename = $$file;  #Get filename from scalar_ref
         }
         else{
             $filename=$file;
         }
         
-        if (!-e $filename){
+        #Check to make sure file exists and is readable.  Open filehandle
+        if (!-e $filename && !-r $filename){
             die "$filename doesn't exist\n";
         }
         else{
@@ -250,7 +317,7 @@ sub new {
         }
     }
     
-    my $self = bless {}, $class;  #Bless anonymous hash as FASTA 
+   
     $self->{FH}=$fh; #assign filehandle in FASTA
     
     #Check first line for valid Fasta mark
@@ -265,15 +332,23 @@ sub new {
         die "Not FASTA format file\n";
     }
     
-    return $self;
+    return $self; 
 }
+
 
 #Get the next sequence in the file and return a Sequence object
 #Todo: test using FASTA format with > or ;\n;...\n
 sub getNext{
     my $self = shift;
     my $fh = $self->{FH};
+    
+    if (!defined $fh){
+        warn "Fasta::getNext() called on undefined filehandle\n";
+        return;
+    }
+    
     my $seq = new Sequence();
+
     while(<$fh>){
         chomp;
         if (/^;/){
@@ -290,11 +365,16 @@ sub getNext{
         }
     }
     
-    if (length $seq->{sequence}==0){
+    $seq->set_header($self->{LAST});
+    
+    if ((length $seq->{sequence}==0) && (length $seq->{header}==0)){
         return;
     }
     
-    $seq->set_header($self->{LAST});
+    if (eof($fh)){
+        $self->{LAST}=undef;
+    }
+    
     return $seq;
 }
 
@@ -302,16 +382,16 @@ sub getNext{
 sub getAll{
     my $self = shift;
     my $fh = $self->{FH};
+    
+    if (!defined $fh){
+        warn "Fasta::getNext() called on undefined filehandle\n";
+        return;
+    }
+    
     my $seqs = new Sequences();
     
-    while(!eof($fh)){
-        my $seq = $self->getNext;
-        if ($seq->length==0){
-            last;
-        }
-        else{
-            $seqs->push($seq);
-        }
+    while(my $seq = $self->getNext){
+        $seqs->push_seq($seq);
     }
     return $seqs;
 }
