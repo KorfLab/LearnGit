@@ -37,14 +37,33 @@ sub length{
 #Set the sequence
 sub set_sequence{
     my ($self,$sequence)=@_;
-    $self->{sequence}=$sequence;
+    
+    if (ref $sequence eq "SCALAR"){
+        $self->{sequence}=$$sequence;
+    }
+    elsif (ref $sequence){
+        warn "Trying to set_sequence with non-scalar type\n";
+    }
+    else{
+        $self->{sequence}=$sequence;
+    }
     return $self;
 }
 
 #Set the header of the sequence
 sub set_header{
     my ($self,$header)=@_;
-    $self->{header}=$header;
+    
+    if (ref $header eq "SCALAR"){
+        $self->{header}=$$header;
+    }
+    elsif (ref $header){
+        warn "Trying to set_header with non-scalar type\n";
+    }
+    else{
+        $self->{header}=$header;
+    }
+    
     return $self;
 }
 
@@ -262,9 +281,16 @@ use IO::Uncompress::Gunzip;
 #implements gunzip compatibility using the IO::Uncompress::Gunzip core module
 sub new {
     my ($class,$file) = @_;
-    my $self = bless {}, $class;  #Bless anonymous hash as FASTA 
+    my $self = bless {FH=>undef, LAST=>undef, FILES=>undef, CURRENT_FILE=>undef}, $class;  #Bless anonymous hash as FASTA 
     if (defined $file){
-        $self->set_filehandle($file);
+        if (ref $file eq "ARRAY"){
+            $self->{FILES}=$file;
+            $self->{CURRENT_FILE}=0;
+            $self->set_filehandle($self->{FILES}->[0]);
+        }
+        else{
+            $self->set_filehandle($file);
+        }
     }
     return $self;
 }
@@ -373,6 +399,16 @@ sub getNext{
     
     if (eof($fh)){
         $self->{LAST}=undef;
+        if (defined $self->{FILES}){
+            $self->{CURRENT_FILE}++;
+            if ($self->{CURRENT_FILE}< scalar @{$self->{FILES}}){
+                $self->set_filehandle($self->{FILES}->[$self->{CURRENT_FILE}]);    
+            }
+            else{
+                $self->{CURRENT_FILE}=undef;
+                $self->{FILES}=undef;
+            }
+        }
     }
     
     return $seq;
@@ -384,7 +420,7 @@ sub getAll{
     my $fh = $self->{FH};
     
     if (!defined $fh){
-        warn "Fasta::getNext() called on undefined filehandle\n";
+        warn "Fasta::getAll() called on undefined filehandle\n";
         return;
     }
     
