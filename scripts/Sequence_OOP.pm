@@ -415,7 +415,7 @@ sub getNext{
 }
 
 #Get all the sequences in the file and return a Sequences object
-sub getAll{
+sub get_all_fastas{
     my $self = shift;
     my $fh = $self->{FH};
     
