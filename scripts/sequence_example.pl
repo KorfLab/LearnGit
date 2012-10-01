@@ -1,27 +1,28 @@
 use warnings;
 use strict;
-use Sequences;
+use Sequence;
 
-#Create a new Fasta type by handing it the filename
-my $fasta = new Fasta("../Sequences/sequences.fa.gz");
-my $seq = $fasta->getNext;  #imports first sequence of fasta file as Sequence type
-my $seqs = $fasta->getAll;  #imports the remaining fasta as Sequences type
+#Open fasta file/files for import.   
+my $fasta = open_fasta(["../Sequences/test_seq1.fa",
+                        "../Sequences/test_seq2.fa",
+                        "../Sequences/test_seq3.fa"]);
 
+#Import one fasta file at a time and print to stdout
+while (my $seq=get_next_fasta($fasta)){
+    my $header = $seq->{HEADER};
+    my $sequence = $seq->{SEQUENCE};
+    print ">$header\n$sequence\n";
+}
 
-#Get and print header and sequence from Sequence Type
-my $header = $seq->header;  #Get header string
-my $sequence = $seq->sequence;  #Get sequence string
-my $seq_ref  = $seq->sequence_ref; #Get reference to sequence string
-print "$header\n$sequence\n" . $$seq_ref . "\n";
+#Open fasta file/files for import
+$fasta = open_fasta("../Sequences/sequences.fa.gz");
 
-#Print Sequence header and sequence in Fasta format directly
-$seq->print();
+#Import all at once
+my $seqs = get_all_fastas($fasta);
 
-#Iterate through Sequences and print them twice
-for(my $i=0;$i<$seqs->size;$i++){
-    my $sequence = $seqs->[$i];  #Get ith sequence and print it
-    $sequence->print;
-    
-    $sequence = $seqs->pop;  #Pop last sequence off
-    $sequence->print; #print the sequence
+#Print each sequence in $seqs
+foreach my $sq (@$seqs){
+    my $header = $sq->{HEADER};
+    my $sequence = $sq->{SEQUENCE};
+    print ">$header\n$sequence\n";
 }

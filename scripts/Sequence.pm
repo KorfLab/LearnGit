@@ -6,7 +6,10 @@ our @ISA = qw(Exporter);
 our @EXPORT_OK = qw();
 my $VERSION = 0.1;
 
-
+#Open fasta file and check first line using _set_filehandle
+#Can accept Typeglob, Lexical filehandle, single filename or multiple filenames (array or array_ref);
+#Fasta can be either unzipped or gzipped fasta file
+#Outputs a data structure that is used by get_next_fasta(...) and get_all_fastas(...)
 sub open_fasta {
     my @files = @_;
     my $file_array_size = scalar @files;
@@ -105,41 +108,48 @@ sub _set_filehandle{
 }
 
 
-#Get the next sequence in the file and return a Sequence object
+#Get the next sequence in the file and return the sequence and header
 #Todo: test using FASTA format with > or ;\n;...\n
 sub get_next_fasta{
     my $fasta = shift;
+    
+    #Assign filehandle to temp variable
     my $fh = $fasta->{FH};
     
+    #Check that filehandle is defined
     if (!defined $fh){
         warn "get_next_fasta() called on undefined filehandle\nOpen";
         return;
     }
     
+    #initialize sequence hash
     my $seq = {HEADER => undef, SEQUENCE => undef};
 
     while(<$fh>){
         chomp;
-        if (/^;/){
+        if (/^;/){ #If line starts with ";" ignore the line
             next;
         }
-        elsif (/^>/){
-            s/^>|^;//;
+        elsif (/^>/){ #If line starts with ">" assign header to LAST
+            s/^>//;  #Remove ">" line
             $seq->{HEADER} = $fasta->{LAST};
             $fasta->{LAST} = $_;
             return $seq;
         }
         else{
-            $seq->{SEQUENCE}.=$_;
+            $seq->{SEQUENCE}.=$_;  #Assign line to sequence
         }
     }
     
+    #Handle when we reach EOF
     $seq->{HEADER} = $fasta->{LAST};
     
+    #If sequence and header have zero length return nothing
     if ((length $seq->{SEQUENCE}==0) && (length $seq->{HEADER}==0)){
         return;
     }
     
+    #If EOF move to next file and initialize the header in _set_filehandle
     if (eof($fh)){
         $fasta->{LAST}=undef;
         if (defined $fasta->{FILES}){
@@ -157,7 +167,7 @@ sub get_next_fasta{
     return $seq;
 }
 
-#Get all the sequences in the file and return a Sequences object
+#Get all the sequences in the file and return a array_ref to array of hashes{sequences and headers}
 sub get_all_fastas{
     my $fasta = shift;
     my $fh = $fasta->{FH};
@@ -169,9 +179,11 @@ sub get_all_fastas{
     
     my $seqs = [];
     
-    while(my $seq = $fasta->getNext){
+    #Use get_next_fasta to import all fastas
+    while(my $seq = get_next_fasta($fasta)){
         push @$seqs,$seq;
     }
+    
     return $seqs;
 }
 
