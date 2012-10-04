@@ -1,8 +1,5 @@
 #!/usr/bin/perl
-# I ADDED CHANGES FOR RAVI - STELLA
-# TO CHANGE COLOR:
-# export CLICOLOR=1
-# export LSCOLORS=GxFxCxDxBxegedabagaced
+#
 # buggy_script.pl
 # The 'fix-the-typo-and-add-a-new-typo-challenge'!
 #
@@ -32,15 +29,15 @@ my $square_sum = 0;
 my $n = scalar @numbers;
 
 # loop over each number
-for(my $i = 0; $i < scalar @numbers; $i++){
+for(my $i = 0; $i < scalar @numbers: $i++){
     $sum += $numbers[$i];
     $square_sum += ($numbers[$i] * $numbers[$i]);
 }
 
 #  calculate basic stats and round down to 2 d.p.
-my $mean     = sprintf("%.5e", $sum / $n);
-my $variance = sprintf("%.5e", $square_sum / $n - $mean * $mean);
-my $sd       = sprintf("%.5e", sqrt($variance));
+my $mean     = sprintf("%.2f", $sum / $n);
+my $variance = sprintf("%.2f", $square_sum / $n - $mean * $mean);
+my $sd       = sprintf("%.2f", sqrt($variance));
 
 
 # print final output
