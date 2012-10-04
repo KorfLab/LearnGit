@@ -29,7 +29,7 @@ my $square_sum = 0;
 my $n = scalar @numbers;
 
 # loop over each number
-for(my $i = 0; $i < scalar @numbers: $i++){
+for(my $i = 0; $i < scalar @numbers; $i++){
     $sum += $numbers[$i];
     $square_sum += ($numbers[$i] * $numbers[$i]);
 }
