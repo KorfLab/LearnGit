@@ -1,0 +1,54 @@
+LOCUS       JN705946                 651 bp    mRNA    linear   INV 02-OCT-2012
+DEFINITION  Galleria mellonella autophagy related protein Atg8 (ATG8) mRNA,
+            complete cds.
+ACCESSION   JN705946
+VERSION     JN705946.1  GI:400073885
+KEYWORDS    .
+SOURCE      Galleria mellonella (greater wax moth)
+  ORGANISM  Galleria mellonella
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta;
+            Pterygota; Neoptera; Endopterygota; Lepidoptera; Glossata;
+            Ditrysia; Pyraloidea; Pyralidae; Galleriinae; Galleria.
+REFERENCE   1  (bases 1 to 651)
+  AUTHORS   Khoa,D.B. and Takeda,M.
+  TITLE     Expression of autophagy 8 (Atg8) and its role in the midgut and
+            other organs of the greater wax moth, Galleria mellonella, during
+            metamorphic remodelling and under starvation
+  JOURNAL   Insect Mol. Biol. 21 (5), 473-487 (2012)
+   PUBMED   22830988
+REFERENCE   2  (bases 1 to 651)
+  AUTHORS   Khoa,D.B. and Takeda,M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (20-SEP-2011) Graduate School of Agricultural Science,
+            Kobe University, 1-1 Rokkodai-cho, Nada-ku, Kobe-shi, Hyogo-ken
+            657-8501, Japan
+FEATURES             Location/Qualifiers
+     source          1..651
+                     /organism="Galleria mellonella"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:7137"
+     gene            1..651
+                     /gene="ATG8"
+     CDS             1..357
+                     /gene="ATG8"
+                     /note="GmATG8"
+                     /codon_start=1
+                     /product="autophagy related protein Atg8"
+                     /protein_id="AFP66874.1"
+                     /db_xref="GI:400073886"
+                     /translation="MKFQYKEEHSFEKRKTEGEKIRRKYPDRVPVIVEKAPKARLGDL
+                     DKKKYLVPSDLTVGQFYFLIRKRIHLRPEDALFFFVNNVIPPTSATMGSLYQEHHDED
+                     FFLYIAFSDENVYGSM"
+ORIGIN      
+        1 atgaagtttc aatataaaga agaacactct tttgagaaac ggaagaccga aggagagaaa
+       61 atacgcagga agtatccgga tcgagtacca gtaattgtcg agaaagctcc gaaggctaga
+      121 ttgggagacc tcgacaagaa gaaatatttg gttccgtcag acttaactgt cggacaattc
+      181 tatttcctca ttcgaaaacg tattcatctg cgaccggagg acgcgctgtt tttctttgtt
+      241 aacaatgtaa ttcctcccac atctgcgacc atgggatctc tgtaccaaga acatcatgat
+      301 gaagactttt tcctctacat agccttttct gacgaaaacg tttatggatc tatgtaaaat
+      361 ttatcttttc ataaccatat gtagattgat gtaaccatat ggtgaaactt agttttaagg
+      421 cttagtttaa tattgatgta ttatgttacg atggtgataa ataattttaa tttgcaattt
+      481 ccacacacaa ctttgtgaac gcaatgtttt agttaataac attacactta tggtaaattt
+      541 attgaatctt ttcaatctct ttgtttggtt taggagtgtg attatttctg tatctataca
+      601 ataaactata aacaataaaa aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa a
+//

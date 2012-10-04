@@ -1,0 +1,268 @@
+LOCUS       NM_058265               1341 bp    mRNA    linear   INV 29-JUN-2012
+DEFINITION  Caenorhabditis elegans Protein PGS-1 (pgs-1) mRNA, complete cds.
+ACCESSION   NM_058265
+VERSION     NM_058265.4  GI:392884572
+KEYWORDS    .
+SOURCE      Caenorhabditis elegans
+  ORGANISM  Caenorhabditis elegans
+            Eukaryota; Metazoa; Ecdysozoa; Nematoda; Chromadorea; Rhabditida;
+            Rhabditoidea; Rhabditidae; Peloderinae; Caenorhabditis.
+REFERENCE   1  (bases 1 to 1341)
+  CONSRTM   C. elegans Sequencing Consortium
+  TITLE     Genome sequence of the nematode C. elegans: a platform for
+            investigating biology
+  JOURNAL   Science 282 (5396), 2012-2018 (1998)
+   PUBMED   9851916
+  REMARK    Erratum:[Science 1999 Jan 1;283(5398):35]
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. This
+            record is derived from an annotated genomic sequence (NC_003279).
+            On Jun 26, 2012 this sequence version replaced gi:71995026.
+            WormBase Consortium, Wellcome Trust Sanger Institute, Hinxton,
+            Cambridge CB10 1SA, UNITED KINGDOM. This record corresponds to
+            Wormbase release WS231.
+            COMPLETENESS: incomplete on both ends.
+FEATURES             Location/Qualifiers
+     source          1..1341
+                     /organism="Caenorhabditis elegans"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:6239"
+                     /chromosome="I"
+     gene            1..1341
+                     /gene="pgs-1"
+                     /locus_tag="CELE_Y48G1C.4"
+                     /db_xref="GeneID:171594"
+     CDS             1..1341
+                     /gene="pgs-1"
+                     /locus_tag="CELE_Y48G1C.4"
+                     /standard_name="Y48G1C.4"
+                     /note="C. elegans PGS-1 protein; contains similarity to
+                     Interpro domains IPR016270 (Phospholipase D,
+                     phosphatidylserine synthase type), IPR001736
+                     (Phospholipase D/Transphosphatidylase);
+                     Confirmed by transcript evidence"
+                     /codon_start=1
+                     /product="Protein PGS-1"
+                     /protein_id="NP_490666.2"
+                     /db_xref="GI:25143331"
+                     /db_xref="GOA:Q9BL79"
+                     /db_xref="InterPro:IPR001736"
+                     /db_xref="InterPro:IPR016270"
+                     /db_xref="UniProtKB/TrEMBL:Q9BL79"
+                     /db_xref="WormBase:WBGene00021677"
+                     /db_xref="GeneID:171594"
+                     /translation="MEIPDPELPGIPIDPQDLEILDTPTRFYEKLLELTASTERRLAL
+                     CSLYLGEGDLEKNLIAAIRERSEKSEIEVTILLDFLRGTRTNSSGESSVTVLKPISEK
+                     SKIYLFHTPELSGLVKRVLPQRADEIIGLQHMKLYIFDDNVLISGANLSDSYFTNRTD
+                     RYFLFRNCKPLADFFHEIINVVADSSFIVENEQLVPSPKCDVHPYLGSAHLYREMLKT
+                     RVNRVIEKYKESRKTSSNCMSADTWIYPVLQMGLLGIHQEFEFLQKLFSLKNPELKMT
+                     MASGYFNFIRDYEESILKEGDYHLDILTASPFANGFFESNGFSKYIPPLYSNISDQFL
+                     RKREINGRLNVKMFEYRREEWTFHAKGLWAEHNNQLMTLIGSSNYGYRSVHRDLEAQV
+                     MVVTRNPTLIDRLKDEKNLLFEYSSILDMAALQQPEHHIPPLVRVISRLIRSFL"
+ORIGIN      
+        1 atggaaattc ccgatcccga actgccggga ataccgattg atccgcaaga tttggagatt
+       61 ctagacacgc ccacacggtt ttacgagaag cttttagaat taactgcatc aaccgaacgg
+      121 cgtctcgcat tgtgtagtct gtatttgggc gaaggagatc tcgaaaaaaa tctgatcgct
+      181 gcgatccgag aaagatccga aaaatccgag attgaagtga cgattctgtt ggattttttg
+      241 cgcggaacac ggaccaattc aagcggcgaa agtagtgtaa cagtgctgaa acctatttcg
+      301 gaaaagtcaa aaatatatct cttccacaca ccggagctta gtggcttagt aaaacgagtt
+      361 cttccacagc gagccgacga gattatcggt ctccagcaca tgaaattata catttttgat
+      421 gacaatgtat tgattagtgg agcaaatttg tcggattctt attttactaa tcgaacggat
+      481 cgatattttc tattcagaaa ttgcaaacca ttggcagatt tcttccacga aattatcaat
+      541 gttgttgccg actcgagctt cattgtcgaa aatgagcaac tggtgccgag cccaaaatgt
+      601 gatgtgcacc catatttagg ctccgctcat ctctaccgag aaatgctcaa aacacgtgtg
+      661 aatcgagtta tcgaaaaat>gi|392884572|ref|NM_058265.4| Caenorhabditis elegans Protein PGS-1 (pgs-1) mRNA, complete cds
+ATGGAAATTCCCGATCCCGAACTGCCGGGAATACCGATTGATCCGCAAGATTTGGAGATTCTAGACACGC
+CCACACGGTTTTACGAGAAGCTTTTAGAATTAACTGCATCAACCGAACGGCGTCTCGCATTGTGTAGTCT
+GTATTTGGGCGAAGGAGATCTCGAAAAAAATCTGATCGCTGCGATCCGAGAAAGATCCGAAAAATCCGAG
+ATTGAAGTGACGATTCTGTTGGATTTTTTGCGCGGAACACGGACCAATTCAAGCGGCGAAAGTAGTGTAA
+CAGTGCTGAAACCTATTTCGGAAAAGTCAAAAATATATCTCTTCCACACACCGGAGCTTAGTGGCTTAGT
+AAAACGAGTTCTTCCACAGCGAGCCGACGAGATTATCGGTCTCCAGCACATGAAATTATACATTTTTGAT
+GACAATGTATTGATTAGTGGAGCAAATTTGTCGGATTCTTATTTTACTAATCGAACGGATCGATATTTTC
+TATTCAGAAATTGCAAACCATTGGCAGATTTCTTCCACGAAATTATCAATGTTGTTGCCGACTCGAGCTT
+CATTGTCGAAAATGAGCAACTGGTGCCGAGCCCAAAATGTGATGTGCACCCATATTTAGGCTCCGCTCAT
+CTCTACCGAGAAATGCTCAAAACACGTGTGAATCGAGTTATCGAAAAATACAAAGAATCGCGAAAAACGT
+CGTCGAATTGCATGTCTGCTGACACGTGGATTTACCCCGTTTTACAAATGGGGCTTTTGGGAATTCATCA
+GGAGTTTGAATTTTTGCAAAAACTTTTCTCACTGAAAAATCCGGAGCTCAAAATGACGATGGCTTCGGGA
+TATTTCAATTTTATTCGAGATTATGAGGAATCGATTCTGAAAGAAGGAGATTATCATTTGGATATTCTTA
+CAGCTTCTCCTTTTGCGAACGGATTCTTCGAATCAAATGGCTTCTCGAAATATATTCCACCACTATATTC
+CAACATTTCTGATCAATTTCTTCGAAAACGAGAAATCAACGGCCGATTGAATGTAAAAATGTTCGAATAT
+CGAAGAGAAGAATGGACATTTCATGCAAAAGGTCTTTGGGCAGAACATAATAATCAATTAATGACATTAA
+TTGGCTCATCAAATTACGGTTATCGATCGGTTCATCGAGATCTTGAAGCTCAAGTGATGGTTGTTACAAG
+AAATCCGACACTTATCGATCGATTGAAAGATGAGAAAAATCTATTATTCGAATATTCATCGATACTTGAC
+ATGGCTGCACTTCAACAACCGGAACATCATATTCCACCATTAGTTCGAGTTATTTCACGTCTTATTCGGA
+GTTTTTTGTAG
+a caaagaatcg cgaaaaacgt cgtcgaattg catgtctgct
+      721 gacacgtgga tttaccccgt tttacaaatg gggcttttgg gaattcatca ggagtttgaa
+      781 tttttgcaaa aacttttctc actgaaaaat ccggagctca aaatgacgat ggcttcggga
+      841 tatttcaatt ttattcgaga ttatgaggaa tcgattctga aagaaggaga ttatcatttg
+      901 gatattctta cagcttctcc ttttgcgaac ggattcttcg aatcaaatgg cttctcgaaa
+      961 tatattccac cactatattc caacatttct gatcaatttc ttcgaaaacg agaaatcaac
+     1021 ggccgattga atgtaaaaat gttcgaatat cgaagagaag aatggacatt tcatgcaaaa
+     1081 ggtctttggg cagaacataa taatcaatta atgacattaa ttggctcatc aaattacggt
+     1141 tatcgatcgg ttcatcgaga tcttgaagct caagtgatgg ttgttacaag aaatccgaca
+     1201 cttatcgatc gattgaaaga tgagaaaaat ctattattcg aatattcatc gatacttgac
+     1261 atggctgcac ttcaacaacc ggaacatcat attccaccat tagttcgagt tatttcacgt
+     1321 cttattcgga gttttttgta g
+//
+LOCUS       NM_124789                681 bp    mRNA    linear   PLN 28-MAY-2011
+DEFINITION  Arabidopsis thaliana uncharacterized protein (AT5G54095) mRNA,
+            complete cds.
+ACCESSION   NM_124789
+VERSION     NM_124789.3  GI:145359227
+KEYWORDS    .
+SOURCE      Arabidopsis thaliana (thale cress)
+  ORGANISM  Arabidopsis thaliana
+            Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;
+            Spermatophyta; Magnoliophyta; eudicotyledons; core eudicotyledons;
+            rosids; malvids; Brassicales; Brassicaceae; Camelineae;
+            Arabidopsis.
+REFERENCE   1  (bases 1 to 681)
+  AUTHORS   Swarbreck,D., Lamesch,P., Wilks,C. and Huala,E.
+  CONSRTM   Arabidopsis TAIR10 Release
+  TITLE     Direct Submission
+  JOURNAL   Submitted (18-FEB-2011) The Arabidopsis Information Resource,
+            Department of Plant Biology, Carnegie Institution, 260 Panama
+            Street, Stanford, CA, USA
+COMMENT     REVIEWED REFSEQ: This record has been curated by TAIR. This record
+            is derived from an annotated genomic sequence (NC_003076).
+            On Apr 18, 2007 this sequence version replaced gi:42568523.
+FEATURES             Location/Qualifiers
+     source          1..681
+                     /organism="Arabidopsis thaliana"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:3702"
+                     /chromosome="5"
+                     /ecotype="Columbia"
+     gene            1..681
+                     /locus_tag="AT5G54095"
+                     /db_xref="GeneID:835496"
+                     /db_xref="TAIR:AT5G54095"
+     CDS             139..546
+                     /locus_tag="AT5G54095"
+                     /inference="Similar to DNA
+                     sequence:INSD:AK175627.1,INSD:BX833012.1,INSD:AY086665.1,
+                     INSD:BX833773.1,INSD:BT030657.1"
+                     /inference="Similar to RNA sequence,
+                     EST:INSD:CK119566.1,INSD:BP834583.1,INSD:DR382044.1,
+                     INSD:DR295704.1,INSD:ES025707.1"
+                     /note="unknown protein; FUNCTIONS IN: molecular_function
+                     unknown; INVOLVED IN: N-terminal protein myristoylation;
+                     LOCATED IN: cellular_component unknown; EXPRESSED IN: 9
+                     plant structures; EXPRESSED DURING: L mature pollen stage,
+                     M germinated pollen stage, 4 anthesis, C globular stage,
+                     petal differentiation and expansion stage; BEST
+                     Arabidopsis thaliana protein match is: unknown protein
+                     (TAIR:AT4G27580.1); Has 30201 Blast hits to 17322 proteins
+                     in 780 species: Archae - 12; Bacteria - 1396; Metazoa -
+                     17338; Fungi - 3422; Plants - 5037; Viruses - 0; Other
+                     Eukaryotes - 2996 (source: NCBI BLink)."
+                     /codon_start=1
+                     /product="hypothetical protein"
+                     /protein_id="NP_568803.1"
+                     /db_xref="GI:18423589"
+                     /db_xref="GeneID:835496"
+                     /db_xref="TAIR:AT5G54095"
+                     /translation="MGGCASKPKESDIPETEKTVVESKNVETETVSQEKADEVVTEKK
+                     EESAGDVAETPKEAEAAKPAEAEAAKPAEAEVAKPAEAEVAKPAEAEAAPEVVKTEEA
+                     VVETVKETEPPKQEEAVVAANYTKTNEEPLVTL"
+ORIGIN      
+        1 tgctcagcct ctaataagga gaaaaaagaa acaaacagtt ttggcttctt gaaaggaatc
+       61 agaatctttt agctccacag ttcttcccat tgtgtaaatt tgttttcgtt tcaaaccgat
+      121 ttctttctat taaacaccat gggaggctgt gcgagcaaac ctaaggaatc tgatatccct
+      181 gaaaccgaaa agactgttgt cgagtccaag aacgtcgaaa ctgaaaccgt atctcaggag
+      241 aaggcagatg aagttgtcac agaaaagaag gaagagtctg ctggagatgt agcagagaca
+      301 ccgaaggaag ctgaggcagc caaaccggcc gaggccgagg cagctaagcc tgccgaggct
+      361 gaggtagcca agcctgccga ggctgaggta gccaagcctg ctgaggctga ggcagctcca
+      421 gaggtggtga agaccgaaga agctgtcgtc gaaactgtta aggagactga gccaccaaaa
+      481 caagaggagg ctgttgtagc agccaattac accaaaacca acgaagagcc tcttgtaacc
+      541 ctttaattct ttcacatttt catt>gi|145359227|ref|NM_124789.3| Arabidopsis thaliana uncharacterized protein (AT5G54095) mRNA, complete cds
+TGCTCAGCCTCTAATAAGGAGAAAAAAGAAACAAACAGTTTTGGCTTCTTGAAAGGAATCAGAATCTTTT
+AGCTCCACAGTTCTTCCCATTGTGTAAATTTGTTTTCGTTTCAAACCGATTTCTTTCTATTAAACACCAT
+GGGAGGCTGTGCGAGCAAACCTAAGGAATCTGATATCCCTGAAACCGAAAAGACTGTTGTCGAGTCCAAG
+AACGTCGAAACTGAAACCGTATCTCAGGAGAAGGCAGATGAAGTTGTCACAGAAAAGAAGGAAGAGTCTG
+CTGGAGATGTAGCAGAGACACCGAAGGAAGCTGAGGCAGCCAAACCGGCCGAGGCCGAGGCAGCTAAGCC
+TGCCGAGGCTGAGGTAGCCAAGCCTGCCGAGGCTGAGGTAGCCAAGCCTGCTGAGGCTGAGGCAGCTCCA
+GAGGTGGTGAAGACCGAAGAAGCTGTCGTCGAAACTGTTAAGGAGACTGAGCCACCAAAACAAGAGGAGG
+CTGTTGTAGCAGCCAATTACACCAAAACCAACGAAGAGCCTCTTGTAACCCTTTAATTCTTTCACATTTT
+CATTTCTCAAAACCCCAAAATTGTTGTGCATCAAATCTGTAATATGTATATGTTTCGCACCACTGTTGTA
+TTGCTATTGTTACCATACGTACGTTAATGAAACAATAGACTTGTTGTGATT
+tctcaa aaccccaaaa ttgttgtgca tcaaatctgt
+      601 aatatgtata tgtttcgcac cactgttgta ttgctattgt taccatacgt acgttaatga
+      661 aacaatagac ttgttgtgat t
+//
+>gi|400073885|gb|JN705946.1| Galleria mellonella autophagy related protein Atg8 (ATG8) mRNA, complete cds
+ATGAAGTTTCAATATAAAGAAGAACACTCTTTTGAGAAACGGAAGACCGAAGGAGAGAAAATACGCAGGA
+AGTATCCGGATCGAGTACCAGTAATTGTCGAGAAAGCTCCGAAGGCTAGATTGGGAGACCTCGACAAGAA
+GAAATATTTGGTTCCGTCAGACTTAACTGTCGGACAATTCTATTTCCTCATTCGAAAACGTATTCATCTG
+CGACCGGAGGACGCGCTGTTTTTCTTTGTTAACAATGTAATTCCTCCCACATCTGCGACCATGGGATCTC
+TGTACCAAGAACATCATGATGAAGACTTTTTCCTCTACATAGCCTTTTCTGACGAAAACGTTTATGGATC
+TATGTAAAATTTATCTTTTCATAACCATATGTAGATTGATGTAACCATATGGTGAAACTTAGTTTTAAGG
+CTTAGTTTAATATTGATGTATTATGTTACGATGGTGATAAATAATTTTAATTTGCAATTTCCACACACAA
+CTTTGTGAACGCAATGTTTTAGTTAATAACATTACACTTATGGTAAATTTATTGAATCTTTTCAATCTCT
+TTGTTTGGTTTAGGAGTGTGATTATTTCTGTATCTATACAATAAACTATAAACAATAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAA
+LOCUS       JN705946                 651 bp    mRNA    linear   INV 02-OCT-2012
+DEFINITION  Galleria mellonella autophagy related protein Atg8 (ATG8) mRNA,
+            complete cds.
+ACCESSION   JN705946
+VERSION     JN705946.1  GI:400073885
+KEYWORDS    .
+SOURCE      Galleria mellonella (greater wax moth)
+  ORGANISM  Galleria mellonella
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta;
+            Pterygota; Neoptera; Endopterygota; Lepidoptera; Glossata;
+            Ditrysia; Pyraloidea; Pyralidae; Galleriinae; Galleria.
+REFERENCE   1  (bases 1 to 651)
+  AUTHORS   Khoa,D.B. and Takeda,M.
+  TITLE     Expression of autophagy 8 (Atg8) and its role in the midgut and
+            other organs of the greater wax moth, Galleria mellonella, during
+            metamorphic remodelling and under starvation
+  JOURNAL   Insect Mol. Biol. 21 (5), 473-487 (2012)
+   PUBMED   22830988
+REFERENCE   2  (bases 1 to 651)
+  AUTHORS   Khoa,D.B. and Takeda,M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (20-SEP-2011) Graduate School of Agricultural Science,
+            Kobe University, 1-1 Rokkodai-cho, Nada-ku, Kobe-shi, Hyogo-ken
+            657-8501, Japan
+FEATURES             Location/Qualifiers
+     source          1..651
+                     /organism="Galleria mellonella"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:7137"
+     gene            1..651
+                     /gene="ATG8"
+     CDS             1..357
+                     /gene="ATG8"
+                     /note="GmATG8"
+                     /codon_start=1
+                     /product="autophagy related protein Atg8"
+                     /protein_id="AFP66874.1"
+                     /db_xref="GI:400073886"
+                     /translation="MKFQYKEEHSFEKRKTEGEKIRRKYPDRVPVIVEKAPKARLGDL
+                     DKKKYLVPSDLTVGQFYFLIRKRIHLRPEDALFFFVNNVIPPTSATMGSLYQEHHDED
+                     FFLYIAFSDENVYGSM"
+ORIGIN      
+        1 atgaagtttc aatataaaga agaacactct tttgagaaac ggaagaccga aggagagaaa
+       61 atacgcagga agtatccgga tcgagtacca gtaattgtcg agaaagctcc gaaggctaga
+      121 ttgggagacc tcgacaagaa gaaatatttg gttccgtcag acttaactgt cggacaattc
+      181 tatttcctca ttcgaaaacg tattcatctg cgaccggagg acgcgctgtt tttctttgtt
+      241 aacaatgtaa ttcctcccac atctgcgacc atgggatctc tgtaccaaga acatcatgat
+      301 gaagactttt tcctctacat agccttttct gacgaaaacg tttatggatc tatgtaaaat
+      361 ttatcttttc ataaccatat gtagattgat gtaaccatat ggtgaaactt agttttaagg
+      421 cttagtttaa tattgatgta ttatgttacg atggtgataa ataattttaa tttgcaattt
+      481 ccacacacaa ctttgtgaac gcaatgtttt agttaataac attacactta tggtaaattt
+      541 attgaatctt ttcaatctct ttgtttggtt taggagtgtg attatttctg tatctataca
+      601 ataaactata aacaataaaa aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa a
+//
+>gi|400073885|gb|JN705946.1| Galleria mellonella autophagy related protein Atg8 (ATG8) mRNA, complete cds
+ATGAAGTTTCAATATAAAGAAGAACACTCTTTTGAGAAACGGAAGACCGAAGGAGAGAAAATACGCAGGA
+AGTATCCGGATCGAGTACCAGTAATTGTCGAGAAAGCTCCGAAGGCTAGATTGGGAGACCTCGACAAGAA
+GAAATATTTGGTTCCGTCAGACTTAACTGTCGGACAATTCTATTTCCTCATTCGAAAACGTATTCATCTG
+CGACCGGAGGACGCGCTGTTTTTCTTTGTTAACAATGTAATTCCTCCCACATCTGCGACCATGGGATCTC
+TGTACCAAGAACATCATGATGAAGACTTTTTCCTCTACATAGCCTTTTCTGACGAAAACGTTTATGGATC
+TATGTAAAATTTATCTTTTCATAACCATATGTAGATTGATGTAACCATATGGTGAAACTTAGTTTTAAGG
+CTTAGTTTAATATTGATGTATTATGTTACGATGGTGATAAATAATTTTAATTTGCAATTTCCACACACAA
+CTTTGTGAACGCAATGTTTTAGTTAATAACATTACACTTATGGTAAATTTATTGAATCTTTTCAATCTCT
+TTGTTTGGTTTAGGAGTGTGATTATTTCTGTATCTATACAATAAACTATAAACAATAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAA
