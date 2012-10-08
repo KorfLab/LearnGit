@@ -4,7 +4,7 @@ use warnings;
 require Exporter;
 our @ISA = qw(Exporter);
 our @EXPORT_OK = qw();
-my $VERSION = 0.1;
+my $VERSION = 0.2;
 
 #Open fasta file and check first line using _set_filehandle
 #Can accept Typeglob, Lexical filehandle, single filename or multiple filenames (array or array_ref);
@@ -187,7 +187,26 @@ sub get_all_fastas{
     return $seqs;
 }
 
+sub complement {
+	# Returns the complement of the input $seq of type $nuc_type, which can be either "DNA" or "RNA"
+    # Given no value for $nuc_type, $nuc_type defaults to "DNA"
+	my ($seq, $nuc_type) = @_;
+	$nuc_type //= "DNA"; # If $nuc_type is undefined, set to DNA
+	if ($nuc_type eq "DNA") {$seq =~ tr/ATGCYRKMBDHVatgcyrkmbdhv/TACGRYMKVHDBtacgrymkvhdb/}
+	elsif ($nuc_type eq "RNA") {$seq =~ tr/AUGCYRKMBDHVaugcyrkmbdhv/UACGRYMKVHDBuacgrymkvhdb/}
+	return $seq;
+}
 
+sub rev_comp {
+	# Returns the reverse complement of the input $seq of type $nuc_type, which can be either "DNA" or "RNA"
+    # Given no value for $nuc_type, $nuc_type defaults to "DNA"
+	# Identical to complement(), except that the input sequence order is reversed before being complemented
+	my ($seq, $nuc_type) = @_;
+	$nuc_type //= "DNA"; # If $nuc_type is undefined, set to DNA
+	$seq = reverse($seq);
+	$seq = complement($seq, $nuc_type);
+	return $seq;
+}
 
 
 1;
