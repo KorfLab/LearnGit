@@ -205,7 +205,7 @@ sub complement {
 
 sub rev_comp {
 	# Returns the reverse complement of the input $seq of type $nuc_type, which can be either "DNA" or "RNA"
-    # Given no value for $nuc_type (or an invalid entry), $nuc_type defaults to "DNA"
+    # Given no value for $nuc_type, $nuc_type defaults to "DNA"
 	# Identical to complement(), except that the input sequence order is reversed before being complemented
 	my ($seq, $nuc_type) = @_;
 	$nuc_type //= "DNA"; # If $nuc_type is undefined, set to DNA
