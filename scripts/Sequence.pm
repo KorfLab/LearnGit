@@ -196,12 +196,16 @@ sub complement {
 	$nuc_type //= "DNA"; # If $nuc_type is undefined, set to DNA
 	if ($nuc_type eq "DNA") {$seq =~ tr/ATGCYRKMBDHVatgcyrkmbdhv/TACGRYMKVHDBtacgrymkvhdb/}
 	elsif ($nuc_type eq "RNA") {$seq =~ tr/AUGCYRKMBDHVaugcyrkmbdhv/UACGRYMKVHDBuacgrymkvhdb/}
+	else {
+		warn "An invalid value was provided for \$nuc_type. Please enter either 'DNA' or 'RNA'";
+		return "Error";
+		}
 	return $seq;
 }
 
 sub rev_comp {
 	# Returns the reverse complement of the input $seq of type $nuc_type, which can be either "DNA" or "RNA"
-    # Given no value for $nuc_type, $nuc_type defaults to "DNA"
+    # Given no value for $nuc_type (or an invalid entry), $nuc_type defaults to "DNA"
 	# Identical to complement(), except that the input sequence order is reversed before being complemented
 	my ($seq, $nuc_type) = @_;
 	$nuc_type //= "DNA"; # If $nuc_type is undefined, set to DNA
@@ -210,7 +214,6 @@ sub rev_comp {
 	return $seq;
 }
 
-
 # Shuffle a DNA/RNA/protein sequence
 sub shuffle_seq{
 	my ($seq) = @_;
@@ -218,7 +221,6 @@ sub shuffle_seq{
 	my @shuffled_seq = shuffle(@seq);
 	return(join('', @shuffled_seq));
 }
-
 
 # reverse a sequence
 sub reverse_seq {
