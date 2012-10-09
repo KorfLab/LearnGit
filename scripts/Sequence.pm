@@ -211,11 +211,19 @@ sub rev_comp {
 }
 
 
+# Shuffle a DNA/RNA/protein sequence
 sub shuffle_seq{
 	my ($seq) = @_;
 	my @seq = split(//, $seq);
 	my @shuffled_seq = shuffle(@seq);
 	return(join('', @shuffled_seq));
+}
+
+
+# reverse a sequence
+sub reverse_seq {
+	my ($seq) = @_;
+	return (reverse($seq));
 }
 
 1;

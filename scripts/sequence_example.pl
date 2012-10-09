@@ -22,6 +22,11 @@ my $shuffled = shuffle_seq($seq);
 print "\n$seq -> shuffle -> $shuffled\n\n";
 
 
+# reverse sequence
+$seq = "ACGTACGTACGT";
+my $reversed = reverse_seq($seq);
+print "\n$seq -> reversed -> $reversed\n\n";
+
 #Open fasta file/files for import
 $fasta = open_fasta("../Sequences/sequences.fa.gz");
 
