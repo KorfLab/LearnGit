@@ -15,11 +15,22 @@ while (my $seq=get_next_fasta($fasta)){
     print ">$header\n$sequence\n";
 }
 
+
+# how to shuffle a sequence
+my $seq = "ACGTACGTACGT";
+my $shuffled = shuffle_seq($seq);
+print "\n$seq -> shuffle -> $shuffled\n\n";
+
+
 #Open fasta file/files for import
 $fasta = open_fasta("../Sequences/sequences.fa.gz");
 
+
+
 #Import all at once
 my $seqs = get_all_fastas($fasta);
+
+
 
 #Print each sequence in $seqs
 foreach my $sq (@$seqs){
@@ -27,3 +38,4 @@ foreach my $sq (@$seqs){
     my $sequence = $sq->{SEQUENCE};
     print ">$header\n$sequence\n";
 }
+
