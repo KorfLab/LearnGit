@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 use List::Util qw(shuffle);
+use IO::Uncompress::Gunzip;
 
 require Exporter;
 our @ISA = qw(Exporter);

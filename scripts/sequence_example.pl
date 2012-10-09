@@ -36,6 +36,6 @@ my $seqs = get_all_fastas($fasta);
 foreach my $sq (@$seqs){
     my $header = $sq->{HEADER};
     my $sequence = $sq->{SEQUENCE};
-    print ">$header\n$sequence\n";
+    print ">$header\n";
 }
 
