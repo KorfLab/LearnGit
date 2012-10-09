@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+use List::Util qw(shuffle);
 
 require Exporter;
 our @ISA = qw(Exporter);
@@ -208,5 +209,12 @@ sub rev_comp {
 	return $seq;
 }
 
+
+sub shuffle_seq{
+	my ($seq) = @_;
+	my @seq = split(//, $seq);
+	my @shuffled_seq = shuffle(@seq);
+	return(join('', @shuffled_seq));
+}
 
 1;
