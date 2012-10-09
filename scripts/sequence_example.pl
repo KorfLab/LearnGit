@@ -23,7 +23,7 @@ print "\n$seq -> shuffle -> $shuffled\n\n";
 
 
 # reverse sequence
-$seq = "ACGTACGTACGT";
+$seq = "AAAACCCCGGGGTTTT";
 my $reversed = reverse_seq($seq);
 print "\n$seq -> reversed -> $reversed\n\n";
 
