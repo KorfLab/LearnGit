@@ -264,7 +264,7 @@ sub rand_seq {
 	my ($length, $type, $extra) = @_;
 	my @possible_type = qw(dna rna protein custom file);
 	die "usage: rand_seq(length [int], type [dna, rna, protein, custom ,file], extra)\n" unless defined($length);
-	die "Error at subroutine rand_seq: length must be positive integer (your input; $length).\n" unless $length =~ /^\d+$/;
+	die "Error at subroutine rand_seq: length must be positive integer (your input: $length).\n" unless $length =~ /^\d+$/;
 	$type = "dna" if not defined($type);
 	die "Error at subroutine rand_seq: type must be dna/rna/protein/custom/file (your input: $type).\n" unless grep(/^$type$/, @possible_type);
 	die "Error at subroutine rand_seq: type is custom but you have undefined ref hash or ref hash contain zero keys/value.\n" if ($type =~ /^custom$/i and keys %{$extra} == 0);
@@ -295,12 +295,18 @@ sub rand_seq {
 			my ($alphabet, $value) = split(",", $ref) if $ref =~ /\,/;
 			   ($alphabet, $value) = split("\t", $ref) if $ref =~ /\t/;
 			   ($alphabet)	       = $ref if $ref !~ /\,/ and $ref !~ /\t/;
+
+			# If the file is delimited by another format (space, underline) we tell user
 			if (not defined($value) and $alphabet =~ /.+\d+\.\d+/ and $print_once == 0) {
 				print "Possible error at subroutine rand_seq: Looks like you have file format error, file must be tab/comma delimited. Example correct Format:\nALPHABET1\t0.01\nALPHABET2\t0.99\n";
 				$print_once = 1;
 			}
+
 			elsif (defined($value)) {
-				die "Error at subroutine rand_seq: Probability must be positive fraction! (your input: $value)\n" unless $value == 0 or $value =~ /^\d+\.\d+$/ or $value =~ /^\d+\.*\d*\/\d+\.*\d*$/;
+				# To be honest, the program will work correctly even if "value" is not probability.
+				# It just makes more sense for me (also my OCD) that the value is in probability format.
+				# Feel free to comment this die function out if you don't care
+				die "Error at subroutine rand_seq: Probability must be positive fraction between 0-1! (your input: $alphabet $value)\n" unless ($value eq 0 or $value eq 1 or $value =~ /^\d*\.\d+$/ or $value =~ /^\d+\.*\d*\/\d+\.*\d*$/) and $value <= 1 and $value >= 0;
 				$ref{$alphabet} = $value;
 			}
 			else {
@@ -309,9 +315,17 @@ sub rand_seq {
 		}
 	}
 
+	
 	# Randomize #
-	# First make a dummy sequence at $pool that has length $lmax (the bigger lmax, the more accurate)
-	my ($lmax, $seq, $pool) = (999999);
+	# Pre-check to make sure probability is not more than 1. Feel free to comment the die function below if you don't care
+	my $probtest = 0;
+	foreach my $alphabet (sort keys %ref) {
+		$probtest += $ref{$alphabet};
+	}
+	die "Error at subroutine rand_seq: Total probability is more than 1 ($probtest)\n" unless $probtest < 1 or $probtest eq 1;
+
+	# FIrst make a dummy sequence at $pool that has length $lmax (the bigger lmax, the more accurate)
+	my ($lmax, $seq, $pool, $prob) = (999999);
 	foreach my $alphabet (sort keys %ref) {
 		my $value = int($ref{$alphabet} * $lmax);
 		for (my $i = 0; $i < $value; $i++) {
@@ -355,13 +369,14 @@ sub translate_codon {
 # Takes a sequence (string) and cleans it for unwanted characters
 sub clean_sequences{
 	my ($sequence) = @_;
-	$sequence ~= s/\w//;
+	$sequence =~ s/\w//;
 	$sequence = uc($sequence);
 #	$sequence ~= s/[a-z]/[A-Z]/;	
-	if($sequence ~= m/[^ACGTURYSWKMBDHVN.-EFILPQ]){
+	if($sequence =~ m/[^ACGTURYSWKMBDHVN.-EFILPQ]/){
 		die "Nonstandard characters found in this sequence";
 	}
 	return ($sequence);
+}
 1;
 
 
