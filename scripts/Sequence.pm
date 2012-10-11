@@ -351,7 +351,17 @@ sub translate_codon {
         return ($trans);
 }
 
-
+# Cleans a sequence(s) of white space or other characters that aren't valid. 
+# Takes a sequence (string) and cleans it for unwanted characters
+sub clean_sequences{
+	my ($sequence) = @_;
+	$sequence ~= s/\w//;
+	$sequence = uc($sequence);
+#	$sequence ~= s/[a-z]/[A-Z]/;	
+	if($sequence ~= m/[^ACGTURYSWKMBDHVN.-EFILPQ]){
+		die "Nonstandard characters found in this sequence";
+	}
+	return ($sequence);
 1;
 
 
