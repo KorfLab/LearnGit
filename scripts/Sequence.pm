@@ -228,4 +228,105 @@ sub reverse_seq {
 	return (reverse($seq));
 }
 
+
+# Returns a random sequence of type $type and length $length. 
+# $type (case insensitive) can be "dna" (default), "rna", "protein", "custom", or "file".
+# dna, rna, and protein will give equal probability to each alphabet (DNA - A/T/G/C has 25%, Protein - 1/22).
+# "custom" will have a third input hash reference $hash, which will have the alphabet as key and probability as value
+# "file" will have a third option $fh, which is a tab/comma delimited format file with alphabet at column 1 with equal 
+# probability, unless you define the probability yourself at col 2, e.g:
+# A	0.01
+# B	0.99
+sub rand_seq {
+	my ($length, $type, $extra) = @_;
+	die "usage: rand_seq(length, type, extra)\n" unless defined($length);
+	$type = "dna" if not defined($type);
+
+	# Get reference based on type #
+	my %ref;
+	%ref = ("A" => 0.25, "G" => 0.25, "T" => 0.25, "C" => 0.25) if $type =~ /^dna$/i or $type =~ /^rna$/i;
+	%ref = (
+	"A" => 1/22, "R" => 1/22, "N" => 1/22, "D" => 1/22, "C" => 1/22, 
+	"Q" => 1/22, "E" => 1/22, "G" => 1/22, "H" => 1/22, "I" => 1/22, 
+	"L" => 1/22, "K" => 1/22, "M" => 1/22, "F" => 1/22, "P" => 1/22, 
+	"S" => 1/22, "T" => 1/22, "W" => 1/22, "Y" => 1/22, "V" => 1/22
+	) if $type =~ /^protein$/i;
+	%ref = %{$extra} if $type =~ /^custom$/i;
+	if ($type =~ /^file$/i) {
+		open (my $in, "<", $extra) or die "rand_seq: Cannot read from $extra: $!\n";
+		my @ref = <$in>;
+		chomp(@ref);
+		foreach my $ref (0..@ref) {
+			$ref = uc($ref);
+			my ($alphabet, $value) = split(",", $ref) if $ref =~ /\,/;
+			   ($alphabet, $value) = split("\t", $ref) if $ref =~ /\t/;
+			if (defined($value)) {
+				die "probability must be positive number! (your input: $value)\n" unless $value =~ /^\d+\.*\d*$/ or $value =~ /\d+\.*\d*\/\d+\.*\d*/;
+				$ref{$alphabet} = $value;
+			}
+			else {
+				$ref{$alphabet} = 1/@ref;
+			}			
+		}
+	}
+
+	# Randomize #
+	my $seq;
+	for (my $i = 0; $i < $length; $i++) {
+		my @pool;
+		foreach my $alphabet (sort key %ref) {
+			my $value = $ref{$alphabet};
+			push(@pool, $alphabet) if (rand() < $value);
+			@pool = shuffle(@pool);
+		}			
+		$seq .= join("", @pool);
+	}
+	return($seq);
+		
+}
+
+# Take a case-insensitive sequence input $seq and optional start position $start (default 0)
+# And there is also a third option of what should undefined be (X, N, 0)
+# This was found somewhere at Ian/Keith's code so credit is theirs
+sub translate_codon {
+        my ($seq, $start, $undef) = @_;
+	$start = 0 if not defined($start);
+	$undef = 0 if not defined($undef);
+	die "start position of translation has to be positive integer\n" if $start !~ /^\d+$/;
+
+	$seq = uc($seq);
+	$seq =~ s/U/T/; #RNA
+	my %Translation = %{translate_table()};
+        my $trans = "";
+        for (my $i = $start; $i < length($seq); $i+=3) {
+                my $codon = substr($seq, $i, 3);
+                last if length($codon) < 3;
+                if (not exists $Translation{$codon}) {$trans .= $undef}
+                else                                 {$trans .= $Translation{$codon}}
+
+        }
+        return ($trans);
+}
+
+sub translate_table {	
+        my %Translation = (
+        'AAA' => 'K', 'AAC' => 'N', 'AAG' => 'K', 'AAT' => 'N',
+        'ACA' => 'T', 'ACC' => 'T', 'ACG' => 'T', 'ACT' => 'T',
+        'AGA' => 'R', 'AGC' => 'S', 'AGG' => 'R', 'AGT' => 'S',
+        'ATA' => 'I', 'ATC' => 'I', 'ATG' => 'M', 'ATT' => 'I',
+        'CAA' => 'Q', 'CAC' => 'H', 'CAG' => 'Q', 'CAT' => 'H',
+        'CCA' => 'P', 'CCC' => 'P', 'CCG' => 'P', 'CCT' => 'P',
+        'CGA' => 'R', 'CGC' => 'R', 'CGG' => 'R', 'CGT' => 'R',
+        'CTA' => 'L', 'CTC' => 'L', 'CTG' => 'L', 'CTT' => 'L',
+        'GAA' => 'E', 'GAC' => 'D', 'GAG' => 'E', 'GAT' => 'D',
+        'GCA' => 'A', 'GCC' => 'A', 'GCG' => 'A', 'GCT' => 'A',
+        'GGA' => 'G', 'GGC' => 'G', 'GGG' => 'G', 'GGT' => 'G',
+        'GTA' => 'V', 'GTC' => 'V', 'GTG' => 'V', 'GTT' => 'V',
+        'TAA' => '*', 'TAC' => 'Y', 'TAG' => '*', 'TAT' => 'Y',
+        'TCA' => 'S', 'TCC' => 'S', 'TCG' => 'S', 'TCT' => 'S',
+        'TGA' => '*', 'TGC' => 'C', 'TGG' => 'W', 'TGT' => 'C',
+        'TTA' => 'L', 'TTC' => 'F', 'TTG' => 'L', 'TTT' => 'F'
+        );
+	return(\%Translation);
+}
 1;
