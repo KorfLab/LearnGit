@@ -234,70 +234,80 @@ sub reverse_seq {
 # dna, rna, and protein will give equal probability to each alphabet (DNA - A/T/G/C has 25%, Protein - 1/22).
 # "custom" will have a third input hash reference $hash, which will have the alphabet as key and probability as value
 # "file" will have a third option $fh, which is a tab/comma delimited format file with alphabet at column 1 with equal 
-# probability, unless you define the probability yourself at col 2, e.g:
+# probability, unless you define the frequency/probability yourself at col 2, e.g:
 # A	0.01
 # B	0.99
+# or
+# A,9
+# B,1
+# C,100
 sub rand_seq {
 	my ($length, $type, $extra) = @_;
-	die "usage: rand_seq(length, type, extra)\n" unless defined($length);
-	die "Error at subroutine rand_seq: undefined custom hash\n" if ($type =~ /^custom$/i and keys %{$extra} == 0);
-	die "Error at subroutine rand_seq: undefined file input\n" if ($type =~ /^file$/i and not defined($extra));
+	my @possible_type = qw(dna rna protein custom file);
+	die "usage: rand_seq(length [int], type [dna, rna, protein, custom ,file], extra)\n" unless defined($length);
+	die "Error at subroutine rand_seq: length must be positive integer (your input; $length).\n" unless $length =~ /^\d+$/;
 	$type = "dna" if not defined($type);
+	die "Error at subroutine rand_seq: type must be dna/rna/protein/custom/file (your input: $type).\n" unless grep(/^$type$/, @possible_type);
+	die "Error at subroutine rand_seq: type is custom but you have undefined ref hash or ref hash contain zero keys/value.\n" if ($type =~ /^custom$/i and keys %{$extra} == 0);
+	die "Error at subroutine rand_seq: type is file but you give no file input.\n" if ($type =~ /^file$/i and not defined($extra));
 
 	# Get reference based on type #
 	my %ref;
+	# DNA/RNA
 	%ref = ("A" => 0.25, "G" => 0.25, "T" => 0.25, "C" => 0.25) if $type =~ /^dna$/i or $type =~ /^rna$/i;
+	# Protein
 	%ref = (
 	"A" => 1/20, "R" => 1/20, "N" => 1/20, "D" => 1/20, "C" => 1/20, 
 	"Q" => 1/20, "E" => 1/20, "G" => 1/20, "H" => 1/20, "I" => 1/20, 
 	"L" => 1/20, "K" => 1/20, "M" => 1/20, "F" => 1/20, "P" => 1/20, 
 	"S" => 1/20, "T" => 1/20, "W" => 1/20, "Y" => 1/20, "V" => 1/20
 	) if $type =~ /^protein$/i;
-
+	# Custom
 	%ref = %{$extra} if $type =~ /^custom$/i;
+	# File
 	if ($type =~ /^file$/i) {
-		open (my $in, "<", $extra) or die "Error at subroutine rand_seq: Cannot read from $extra: $!\n";
+		open (my $in, "<", $extra) or die "Error at subroutine rand_seq: Cannot read from $extra: $!.\n";
 		my @ref = <$in>;
 		chomp(@ref);
+		my $print_once = 0;
 		for (my $i = 0; $i < @ref; $i++) {
 			my $ref = $ref[$i];
 			$ref = uc($ref);
 			my ($alphabet, $value) = split(",", $ref) if $ref =~ /\,/;
 			   ($alphabet, $value) = split("\t", $ref) if $ref =~ /\t/;
-			die "Error at subroutine rand_seq: File format error, file must be tab/comma delimited. Example correct Format:\nALPHABET1\t0.01\nALPHABET2\t0.99\n" unless defined($alphabet);
-			if (defined($value)) {
+			   ($alphabet)	       = $ref if $ref !~ /\,/ and $ref !~ /\t/;
+			if (not defined($value) and $alphabet =~ /.+\d+\.\d+/ and $print_once == 0) {
+				print "Possible error at subroutine rand_seq: Looks like you have file format error, file must be tab/comma delimited. Example correct Format:\nALPHABET1\t0.01\nALPHABET2\t0.99\n";
+				$print_once = 1;
+			}
+			elsif (defined($value)) {
 				die "Error at subroutine rand_seq: Probability must be positive number! (your input: $value)\n" unless $value =~ /^\d+\.*\d*$/ or $value =~ /\d+\.*\d*\/\d+\.*\d*/;
 				$ref{$alphabet} = $value;
 			}
 			else {
-				$ref{$alphabet} = 1/@ref;
+				$ref{$alphabet} = 1 / @ref;
 			}			
 		}
 	}
 
 	# Randomize #
-	
 	# First make a dummy sequence at $pool that has length $lmax (the bigger lmax, the more accurate)
 	my ($lmax, $seq, $pool) = (999999);
-
-	while (1) {
-		foreach my $alphabet (sort keys %ref) {
-			my $value = $ref{$alphabet};
-			$pool .= $alphabet if (rand() < $value);
-			last if defined($pool) and length($pool) >= $lmax;
+	foreach my $alphabet (sort keys %ref) {
+		my $value = int($ref{$alphabet} * $lmax);
+		for (my $i = 0; $i < $value; $i++) {
+			$pool .= $alphabet;
 		}
-		last if defined($pool) and length($pool) >= $lmax;
-
 	}
 	
 	# Then randomly take alphabets from $pool to make $seq 
-	while (1) {
+	my $lseq = 0;
+	while ($lseq  < $length) {
 		$seq .= substr($pool, int(rand(length($pool))), 1);
-		last if length($seq) >= $length;
+		$lseq = length($seq);
 	}
 	$seq =~ tr/T/U/ if $type =~ /^rna$/i;
 	return($seq);
-		
 }
 
 # Take a case-insensitive sequence input $seq and optional start position $start (default 0)
