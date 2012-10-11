@@ -43,4 +43,13 @@ foreach my $sq (@$seqs){
     my $sequence = $sq->{SEQUENCE};
     print ">$header\n";
 }
+# Make random sequence of 1000 length
+my $rand_dna = rand_seq(1000, "dna");
+my $rand_rna = rand_seq(1000, "rna");
+my $rand_pro = rand_seq(1000, "protein");
 
+my %cust_ref = ("k" => 0.1, "o" => 0.2, "r" => 0.05, "f" => 0.1, "l" => 0.15, "a" => 0.25, "b" => 0.15);
+my $rand_custom = rand_seq(1000, "custom", \%cust_ref);
+my $rand_file   = rand_seq(1000, "file"  , "probtable.tsv");
+
+#print "dna; $rand_dna\nrna: $rand_rna\npro: $rand_pro\ncustom: $rand_custom\nfile:$rand_file\n";
