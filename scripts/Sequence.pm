@@ -240,28 +240,33 @@ sub reverse_seq {
 sub rand_seq {
 	my ($length, $type, $extra) = @_;
 	die "usage: rand_seq(length, type, extra)\n" unless defined($length);
+	die "Error at subroutine rand_seq: undefined custom hash\n" if ($type =~ /^custom$/i and keys %{$extra} == 0);
+	die "Error at subroutine rand_seq: undefined file input\n" if ($type =~ /^file$/i and not defined($extra));
 	$type = "dna" if not defined($type);
 
 	# Get reference based on type #
 	my %ref;
 	%ref = ("A" => 0.25, "G" => 0.25, "T" => 0.25, "C" => 0.25) if $type =~ /^dna$/i or $type =~ /^rna$/i;
 	%ref = (
-	"A" => 1/22, "R" => 1/22, "N" => 1/22, "D" => 1/22, "C" => 1/22, 
-	"Q" => 1/22, "E" => 1/22, "G" => 1/22, "H" => 1/22, "I" => 1/22, 
-	"L" => 1/22, "K" => 1/22, "M" => 1/22, "F" => 1/22, "P" => 1/22, 
-	"S" => 1/22, "T" => 1/22, "W" => 1/22, "Y" => 1/22, "V" => 1/22
+	"A" => 1/20, "R" => 1/20, "N" => 1/20, "D" => 1/20, "C" => 1/20, 
+	"Q" => 1/20, "E" => 1/20, "G" => 1/20, "H" => 1/20, "I" => 1/20, 
+	"L" => 1/20, "K" => 1/20, "M" => 1/20, "F" => 1/20, "P" => 1/20, 
+	"S" => 1/20, "T" => 1/20, "W" => 1/20, "Y" => 1/20, "V" => 1/20
 	) if $type =~ /^protein$/i;
+
 	%ref = %{$extra} if $type =~ /^custom$/i;
 	if ($type =~ /^file$/i) {
-		open (my $in, "<", $extra) or die "rand_seq: Cannot read from $extra: $!\n";
+		open (my $in, "<", $extra) or die "Error at subroutine rand_seq: Cannot read from $extra: $!\n";
 		my @ref = <$in>;
 		chomp(@ref);
-		foreach my $ref (0..@ref) {
+		for (my $i = 0; $i < @ref; $i++) {
+			my $ref = $ref[$i];
 			$ref = uc($ref);
 			my ($alphabet, $value) = split(",", $ref) if $ref =~ /\,/;
 			   ($alphabet, $value) = split("\t", $ref) if $ref =~ /\t/;
+			die "Error at subroutine rand_seq: File format error, file must be tab/comma delimited. Example correct Format:\nALPHABET1\t0.01\nALPHABET2\t0.99\n" unless defined($alphabet);
 			if (defined($value)) {
-				die "probability must be positive number! (your input: $value)\n" unless $value =~ /^\d+\.*\d*$/ or $value =~ /\d+\.*\d*\/\d+\.*\d*/;
+				die "Error at subroutine rand_seq: Probability must be positive number! (your input: $value)\n" unless $value =~ /^\d+\.*\d*$/ or $value =~ /\d+\.*\d*\/\d+\.*\d*/;
 				$ref{$alphabet} = $value;
 			}
 			else {
@@ -271,16 +276,26 @@ sub rand_seq {
 	}
 
 	# Randomize #
-	my $seq;
-	for (my $i = 0; $i < $length; $i++) {
-		my @pool;
-		foreach my $alphabet (sort key %ref) {
+	
+	# First make a dummy sequence at $pool that has length $lmax (the bigger lmax, the more accurate)
+	my ($lmax, $seq, $pool) = (999999);
+
+	while (1) {
+		foreach my $alphabet (sort keys %ref) {
 			my $value = $ref{$alphabet};
-			push(@pool, $alphabet) if (rand() < $value);
-			@pool = shuffle(@pool);
-		}			
-		$seq .= join("", @pool);
+			$pool .= $alphabet if (rand() < $value);
+			last if defined($pool) and length($pool) >= $lmax;
+		}
+		last if defined($pool) and length($pool) >= $lmax;
+
 	}
+	
+	# Then randomly take alphabets from $pool to make $seq 
+	while (1) {
+		$seq .= substr($pool, int(rand(length($pool))), 1);
+		last if length($seq) >= $length;
+	}
+	$seq =~ tr/T/U/ if $type =~ /^rna$/i;
 	return($seq);
 		
 }
@@ -330,3 +345,4 @@ sub translate_table {
 	return(\%Translation);
 }
 1;
+
