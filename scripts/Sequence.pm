@@ -281,7 +281,7 @@ sub rand_seq {
 				$print_once = 1;
 			}
 			elsif (defined($value)) {
-				die "Error at subroutine rand_seq: Probability must be positive number! (your input: $value)\n" unless $value =~ /^\d+\.*\d*$/ or $value =~ /\d+\.*\d*\/\d+\.*\d*/;
+				die "Error at subroutine rand_seq: Probability must be positive fraction! (your input: $value)\n" unless $value =~ /^\d+\.\d+$/ or $value =~ /\d+\.*\d*\/\d+\.*\d*/;
 				$ref{$alphabet} = $value;
 			}
 			else {
