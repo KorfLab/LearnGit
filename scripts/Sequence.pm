@@ -535,15 +535,13 @@ sub translate_codon {
         return ($trans);
 }
 sub rev_translate_codon {
-        my ($seq, $start, $undef) = @_;
-	$start = 0 if not defined($start);
+        my ($seq, $undef) = @_;
 	$undef = "NNN" if not defined($undef);
-	die "start position of translation has to be positive integer\n" if $start !~ /^\d+$/;
 
 	$seq = uc($seq);
 	print "SEQ = $seq\n";
         my $trans = "";
-        for (my $i = $start; $i < length($seq); $i++) {
+        for (my $i = 0; $i < length($seq); $i++) {
                 my $amino = substr($seq, $i, 1);
                 if (not exists $Rev_Translation{$amino}) {$trans .= $undef}
                 else                                     {$trans .= $Rev_Translation{$amino}}
