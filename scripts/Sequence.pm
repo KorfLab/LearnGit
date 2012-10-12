@@ -56,16 +56,18 @@ sub open_fasta {
     if (ref $file eq "ARRAY"){
         $fasta->{CURRENT_FILE}=0;
         _set_filehandle($fasta, $file->[0]);
+		_init_fasta_first_line($fasta);
         $fasta->{FILES}=$file;
     }
     else{
         _set_filehandle($fasta, $file);
+		_init_fasta_first_line($fasta);
     }
     
     return $fasta;
 }
 
-#Sets the filehandle for Fasta (Opens filehandle if filename is provided)
+#Sets the filehandle for Fasta or Genbank files (Opens filehandle if filename is provided)
 sub _set_filehandle{
     my ($fasta,$file)=@_;
     
@@ -80,11 +82,9 @@ sub _set_filehandle{
         return 0;
     }
     
-    my $fh;
-    
     #Make assignment of filehandle or open filehandle
     if (ref $file eq "GLOB"){
-        $fh=$file;
+        $fasta->{FH} = $file;
     }
     else{
         my $filename;
@@ -101,17 +101,25 @@ sub _set_filehandle{
         }
         else{
             if ($filename=~/\.gz$/){
-                $fh = new IO::Uncompress::Gunzip $filename
+                $fasta->{FH} = new IO::Uncompress::Gunzip $filename
                     or die "Couldn't open " . $filename . " for reading fasta file\n";
             }
             else{
-                open $fh , "<" , $filename or die "Couldn't open " . $filename . " for reading fasta file\n";
+                open my $fh , "<" , $filename or die "Couldn't open " . $filename . " for reading fasta file\n";
+				$fasta->{FH} = $fh;
             }
         }
     }
     
-   
-    $fasta->{FH}=$fh; #assign filehandle in FASTA
+    return 1; 
+}
+
+
+#Open fasta file and initialize the import of first line of fasta file
+sub _init_fasta_first_line{
+	my $fasta = shift;
+	
+	my $fh = $fasta->{FH}; #assign filehandle in FASTA
     
     #Check first line for valid Fasta mark
     my $first_line = <$fh>;
@@ -124,13 +132,12 @@ sub _set_filehandle{
     else{
         die "Not FASTA format file\n";
     }
-    
-    return 1; 
+	return;
 }
 
 
 #Get the next sequence in the file and return the sequence and header
-#Todo: test using FASTA format with > or ;\n;...\n
+#Todo: test using FASTA format with > or ;\n;...\n  (Old format defined in FASTA)
 sub get_next_fasta{
     my $fasta = shift;
     
@@ -139,12 +146,12 @@ sub get_next_fasta{
     
     #Check that filehandle is defined
     if (!defined $fh){
-        warn "get_next_fasta() called on undefined filehandle\nOpen";
+        warn "get_next_fasta() called on undefined filehandle\n";
         return;
     }
     
     #initialize sequence hash
-    my $seq = {HEADER => undef, SEQUENCE => undef};
+    my $seq = {HEADER => $fasta->{LAST}, SEQUENCE => undef};
 
     while(<$fh>){
         chomp;
@@ -152,8 +159,9 @@ sub get_next_fasta{
             next;
         }
         elsif (/^>/){ #If line starts with ">" assign header to LAST
-            s/^>//;  #Remove ">" line
-            $seq->{HEADER} = $fasta->{LAST};
+            #$seq->{HEADER} = $fasta->{LAST};
+			
+			s/^>//;  #Remove ">" line
             $fasta->{LAST} = $_;
             return $seq;
         }
@@ -161,9 +169,7 @@ sub get_next_fasta{
             $seq->{SEQUENCE}.=$_;  #Assign line to sequence
         }
     }
-    
-    #Handle when we reach EOF
-    $seq->{HEADER} = $fasta->{LAST};
+	
     
     #If sequence and header have zero length return nothing
     if ((length $seq->{SEQUENCE}==0) && (length $seq->{HEADER}==0)){
@@ -176,7 +182,8 @@ sub get_next_fasta{
         if (defined $fasta->{FILES}){
             $fasta->{CURRENT_FILE}++;
             if ($fasta->{CURRENT_FILE} < scalar @{$fasta->{FILES}}){
-                _set_filehandle($fasta, $fasta->{FILES}->[$fasta->{CURRENT_FILE}]);    
+                _set_filehandle($fasta, $fasta->{FILES}->[$fasta->{CURRENT_FILE}]);
+				_init_fasta_first_line($fasta);
             }
             else{
                 $fasta->{CURRENT_FILE}=undef;
@@ -188,7 +195,8 @@ sub get_next_fasta{
     return $seq;
 }
 
-#Get all the sequences in the file and return a array_ref to array of hashes{sequences and headers}
+#Get all the sequences in the file and return a array_ref to array of
+#hashes{sequences and headers}
 sub get_all_fastas{
     my $fasta = shift;
     my $fh = $fasta->{FH};
@@ -202,6 +210,160 @@ sub get_all_fastas{
     
     #Use get_next_fasta to import all fastas
     while(my $seq = get_next_fasta($fasta)){
+        push @$seqs,$seq;
+    }
+    
+    return $seqs;
+}
+
+
+#Open fasta file and check first line using _set_filehandle
+#Can accept Typeglob, Lexical filehandle, single filename or multiple filenames (array or array_ref);
+#Fasta can be either unzipped or gzipped fasta file
+#Outputs a data structure that is used by get_next_fasta(...) and get_all_fastas(...)
+sub open_genbank{
+	my @files = @_;
+    my $file_array_size = scalar @files;
+    my $file;
+    
+    my $genbank;
+    
+    #Initialize Fasta data structure
+    $genbank = {FILES => undef, CURRENT_FILE => undef, FH => undef, LAST => undef};
+    
+    if ($file_array_size==0){
+        die "No File or Filehandles provided to function open_fasta().\n";
+    }
+    elsif ($file_array_size==1){
+        $file = $files[0];
+    }
+    else{
+        $genbank->{FILES}=\@files;
+        $genbank->{CURRENT_FILE}=0;
+        $file = $files[0];
+    }
+    
+    if (ref $file eq "ARRAY"){
+        $genbank->{CURRENT_FILE}=0;
+        _set_filehandle($genbank, $file->[0]);
+		_init_genbank_first_line($genbank);
+        $genbank->{FILES}=$file;
+    }
+    else{
+        _set_filehandle($genbank, $file);
+		_init_genbank_first_line($genbank);
+    }
+    
+    return $genbank;
+}
+
+#Open fasta file and initialize the import of first line of fasta file
+sub _init_genbank_first_line{
+	my $genbank = shift;
+	
+	my $fh = $genbank->{FH}; #assign filehandle in FASTA
+    
+    #Check first line for valid Fasta mark
+    my $first_line = <$fh>;
+    chomp $first_line;
+    if ($first_line=~/^LOCUS/){ #First line could be > or ;
+        $first_line=~s/^LOCUS\s+//;
+        $genbank->{LAST}=$first_line;      #Store that line so we don't have to
+                                        #re-read or move file position pointer.
+    }
+    else{
+        die "Genbank File should start with first line \"LOCUS\".\nThis file format is not supported.\n
+		The first line is :\n$first_line\n";
+    }
+	return;
+}
+
+
+#Get the next sequence in the file and return the sequence and header
+#Todo: test using FASTA format with > or ;\n;...\n  (Old format defined in FASTA)
+sub get_next_genbank{
+    my $genbank = shift;
+    
+    #Assign filehandle to temp variable
+    my $fh = $genbank->{FH};
+    
+    #Check that filehandle is defined
+    if (!defined $fh){
+        warn "get_next_fasta() called on undefined filehandle\nOpen";
+        return;
+    }
+    
+    #initialize sequence hash
+    my $seq = {HEADER => $genbank->{LAST}, SEQUENCE => undef};
+	
+	my $seen_origin=0;
+
+    while(<$fh>){
+        chomp;
+        if (/^LOCUS/){ #If line starts with ">" assign header to LAST
+            s/^LOCUS\s+//;  #Remove ">" line
+            #$seq->{HEADER} = $genbank->{LAST};
+            $genbank->{LAST} = $_;
+            return $seq;
+        }
+		elsif (/^ACCESSION/){
+			s/^ACCESSION\s+//;
+			$seq->{HEADER} = "ACCESSION\t" . $_  . "\tLOCUS\t" . $seq->{HEADER};
+		}
+		elsif (/^ORIGIN/){
+			$seen_origin=1;
+		}
+		elsif (/^\/\//){
+			$seen_origin=0;
+		}
+        elsif ($seen_origin){
+			s/[0-9\s]+//g;
+            $seq->{SEQUENCE}.=uc($_);  #Assign line to sequence
+        }
+		else{
+			next;
+		}
+    }
+    
+    #If sequence and header have zero length return nothing
+    if ((length $seq->{SEQUENCE}==0) && (length $seq->{HEADER}==0)){
+        return;
+    }
+    
+    #If EOF move to next file and initialize the header in _set_filehandle
+    if (eof($fh)){
+        $genbank->{LAST}=undef;
+        if (defined $genbank->{FILES}){
+            $genbank->{CURRENT_FILE}++;
+            if ($genbank->{CURRENT_FILE} < scalar @{$genbank->{FILES}}){
+                _set_filehandle($genbank, $genbank->{FILES}->[$genbank->{CURRENT_FILE}]);
+				_init_genbank_first_line($genbank);
+            }
+            else{
+                $genbank->{CURRENT_FILE}=undef;
+                $genbank->{FILES}=undef;
+            }
+        }
+    }
+    
+    return $seq;
+}
+
+#Get all the sequences in the genbank file and return a array_ref to array of
+#hashes{SEQUENCE=>seq and HEADER=>header}
+sub get_all_genbanks{
+    my $genbank = shift;
+    my $fh = $genbank->{FH};
+    
+    if (!defined $fh){
+        warn "get_all_genbanks() called on undefined filehandle\n";
+        return;
+    }
+    
+    my $seqs = [];
+    
+    #Use get_next_fasta to import all fastas
+    while(my $seq = get_next_fasta($genbank)){
         push @$seqs,$seq;
     }
     
