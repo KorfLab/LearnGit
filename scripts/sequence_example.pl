@@ -45,12 +45,18 @@ foreach my $sq (@$seqs){
 }
 
 # Make random sequence of 1000 length
-my $rand_dna = rand_seq(1000, "dna");
-my $rand_rna = rand_seq(1000, "rna");
-my $rand_pro = rand_seq(1000, "protein");
+my $rand_dna = rand_seq(100, "dna");
+my $rand_rna = rand_seq(100, "rna");
+my $rand_pro = rand_seq(100, "protein");
 
 my %cust_ref = ("k" => 0.1, "o" => 0.2, "r" => 0.05, "f" => 0.1, "l" => 0.15, "a" => 0.25, "b" => 0.15);
-my $rand_custom = rand_seq(1000, "custom", \%cust_ref);
-my $rand_file   = rand_seq(1000, "file"  , "probtable.tsv");
+my $rand_custom = rand_seq(100, "custom", \%cust_ref);
+my $rand_file   = rand_seq(100, "file"  , "probtable.tsv");
+print "\n\nFunction rand_seq(\$length, \$type[dna rna protein custom file], [NA or \$custom hash], [optional: File]): Random sequence generator\n";
+print "dna: $rand_dna\nrna: $rand_rna\npro: $rand_pro\ncustom: $rand_custom\nfile:$rand_file\n";
 
-print "dna; $rand_dna\nrna: $rand_rna\npro: $rand_pro\ncustom: $rand_custom\nfile:$rand_file\n";
+# Translate a sequence and reverse translate it
+my $dnatoprotein = translate_codon($rand_dna);
+my $proteintodna = rev_translate_codon($dnatoprotein);
+print "\n\nFunction translate_codon(\$dna): Translate a sequence\nFunction rev_translate_codon(\$protein): Reverse translate protein seq\n";
+print "dna:$rand_dna\ndna to protein: $dnatoprotein\nprotein to dna: $proteintodna\n\n";
