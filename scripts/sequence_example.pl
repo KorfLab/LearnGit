@@ -2,14 +2,14 @@
 use warnings;
 use strict;
 use Sequence;
-=comments
+
 #Open fasta file/files for import.   
-my $fasta = open_fasta(["../Sequences/test_seq1.fa",
-                        "../Sequences/test_seq2.fa",
-                        "../Sequences/test_seq3.fa"]);
+my $fasta = open_fasta("../sequences/test_seq1.fa",
+                        "../sequences/test_seq2.fa",
+                        "../sequences/test_seq3.fa");
 
 #Import one fasta file at a time and print to stdout
-while (my $seq=get_next_fasta($fasta)){
+while (my $seq = get_next_fasta($fasta)){
     my $header = $seq->{HEADER};
     my $sequence = $seq->{SEQUENCE};
     print ">$header\n$sequence\n";
@@ -28,7 +28,7 @@ my $reversed = reverse_seq($seq);
 print "\n$seq -> reversed -> $reversed\n\n";
 
 #Open fasta file/files for import
-$fasta = open_fasta("../Sequences/sequences.fa.gz");
+$fasta = open_fasta("../sequences/sequences.fa.gz");
 
 
 
@@ -43,7 +43,7 @@ foreach my $sq (@$seqs){
     my $sequence = $sq->{SEQUENCE};
     print ">$header\n";
 }
-=cut
+
 # Make random sequence of 1000 length
 my $rand_dna = rand_seq(1000, "dna");
 my $rand_rna = rand_seq(1000, "rna");
