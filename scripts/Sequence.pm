@@ -306,7 +306,9 @@ sub rand_seq {
 				# To be honest, the program will work correctly even if "value" is not probability.
 				# It just makes more sense for me (also my OCD) that the value is in probability format.
 				# Feel free to comment this die function out if you don't care
-				die "Error at subroutine rand_seq: Probability must be positive fraction between 0-1! (your input: $alphabet $value)\n" unless ($value eq 0 or $value eq 1 or $value =~ /^\d*\.\d+$/ or $value =~ /^\d+\.*\d*\/\d+\.*\d*$/) and $value <= 1 and $value >= 0;
+				#die "Error at subroutine rand_seq: Probability must be positive fraction between 0-1! (your input: $alphabet $value)\n" unless ($value eq 0 or $value eq 1 or $value =~ /^\d*\.\d+$/ or $value =~ /^\d+\.*\d*\/\d+\.*\d*$/) and $value <= 1 and $value >= 0;
+				
+				# Nevermind, it's better to use weighted instead of probability
 				$ref{$alphabet} = $value;
 			}
 			else {
@@ -317,12 +319,14 @@ sub rand_seq {
 
 	
 	# Randomize #
+	
 	# Pre-check to make sure probability is not more than 1. Feel free to comment the die function below if you don't care
-	my $probtest = 0;
-	foreach my $alphabet (sort keys %ref) {
-		$probtest += $ref{$alphabet};
-	}
-	die "Error at subroutine rand_seq: Total probability is more than 1 ($probtest)\n" unless $probtest < 1 or $probtest eq 1;
+	#my $probtest = 0;
+	#foreach my $alphabet (sort keys %ref) {
+	#	$probtest += $ref{$alphabet};
+	#}
+	#die "Error at subroutine rand_seq: Total probability is more than 1 ($probtest)\n" unless $probtest < 1 or $probtest eq 1;
+	# Since this is weighted we don't need probability.
 
 	# FIrst make a dummy sequence at $pool that has length $lmax (the bigger lmax, the more accurate)
 	my ($lmax, $seq, $pool, $prob) = (999999);
