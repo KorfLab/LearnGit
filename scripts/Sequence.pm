@@ -24,6 +24,10 @@ my %Translation = (
         'TGA' => '*', 'TGC' => 'C', 'TGG' => 'W', 'TGT' => 'C',
         'TTA' => 'L', 'TTC' => 'F', 'TTG' => 'L', 'TTT' => 'F'
 );
+my %Rev_Translation;
+foreach my $nuc (keys %Translation) {
+	$Rev_Translation{$Translation{$nuc}} = $nuc;
+}
 
 my $VERSION = 0.2;
 
@@ -530,6 +534,22 @@ sub translate_codon {
         }
         return ($trans);
 }
+sub rev_translate_codon {
+        my ($seq, $start, $undef) = @_;
+	$start = 0 if not defined($start);
+	$undef = "NNN" if not defined($undef);
+	die "start position of translation has to be positive integer\n" if $start !~ /^\d+$/;
+
+	$seq = uc($seq);
+	print "SEQ = $seq\n";
+        my $trans = "";
+        for (my $i = $start; $i < length($seq); $i++) {
+                my $amino = substr($seq, $i, 1);
+                if (not exists $Rev_Translation{$amino}) {$trans .= $undef}
+                else                                     {$trans .= $Rev_Translation{$amino}}
+        }
+        return ($trans);
+}
 
 # Cleans a sequence(s) of white space or other characters that aren't valid. 
 # Takes a sequence (string) and cleans it for unwanted characters
@@ -543,6 +563,7 @@ sub clean_sequences{
 	}
 	return ($sequence);
 }
+
 1;
 
 
