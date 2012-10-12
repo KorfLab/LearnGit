@@ -50,7 +50,7 @@ sub open_fasta {
     else{
         $fasta->{FILES}=\@files;
         $fasta->{CURRENT_FILE}=0;
-        my $file = $files[0];
+        $file = $files[0];
     }
     
     if (ref $file eq "ARRAY"){
