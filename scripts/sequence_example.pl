@@ -49,8 +49,7 @@ my $rand_dna = rand_seq(1000, "dna");
 my $rand_rna = rand_seq(1000, "rna");
 my $rand_pro = rand_seq(1000, "protein");
 
-my %cust_ref = ("k" => 0.1, "o" => 0.2, "r" => 0.05, "f" => 0.1, "l" => 0.15, "a" => 0.25, "b" => 0.15);
+my %cust_ref = ("k" => 10, "o" => 0.5, "r" => 0.5, "f" => 0.5, "l" => 1, "a" => 2, "b" => 2);
 my $rand_custom = rand_seq(1000, "custom", \%cust_ref);
-my $rand_file   = rand_seq(1000, "file"  , "probtable.tsv");
 
-print "dna; $rand_dna\nrna: $rand_rna\npro: $rand_pro\ncustom: $rand_custom\nfile:$rand_file\n";
+print "dna; $rand_dna\nrna: $rand_rna\npro: $rand_pro\ncustom: $rand_custom\n";
