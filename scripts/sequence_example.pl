@@ -77,3 +77,14 @@ my $dnatoprotein = translate_codon($rand_dna);
 my $proteintodna = rev_translate_codon($dnatoprotein);
 print "\n\nFunction translate_codon(\$dna): Translate a sequence\nFunction rev_translate_codon(\$protein): Reverse translate protein seq\n";
 print "dna:$rand_dna\ndna to protein: $dnatoprotein\nprotein to dna: $proteintodna\n\n";
+
+#----------------------- Check for Whitespace ------------------------#
+
+# reverse sequence
+$seq = "AAAACCCCGGGG
+TTTT -AAA";
+#$seq = "AAAACCCCGGGGTTTT -AAA!";
+my $nowhitespace_seq = clean_sequences($seq);
+print "\nSequence before cleaning:\n$seq\n\nSequence after cleaning:\n$nowhitespace_seq \n\n";
+
+

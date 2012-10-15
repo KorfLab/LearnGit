@@ -553,10 +553,10 @@ sub rev_translate_codon {
 # Takes a sequence (string) and cleans it for unwanted characters
 sub clean_sequences{
 	my ($sequence) = @_;
-	$sequence =~ s/\w//;
+	$sequence =~ s/\s//g;
 	$sequence = uc($sequence);
-#	$sequence ~= s/[a-z]/[A-Z]/;	
-	if($sequence =~ m/[^ACGTURYSWKMBDHVN.-EFILPQ]/){
+	print $sequence , "\n";
+	if ($sequence =~ m/[^ACGTURYSWKMBDHVN\.\-EFILPQ]/) {
 		die "Nonstandard characters found in this sequence";
 	}
 	return ($sequence);
