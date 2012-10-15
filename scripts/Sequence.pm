@@ -282,14 +282,15 @@ sub _init_genbank_first_line{
 }
 
 
-#Get the next sequence in the file and return the sequence and header
-#Todo: test using FASTA format with > or ;\n;...\n  (Old format defined in FASTA)
+#Get the next genbank record in the file and return the sequence, header, and
+#annotation
+#Input: variable from open_genbank(..)
+#Output: hash ref with {SEQUENCE->..., HEADER->..., ANNOTATION->...}
 sub get_next_genbank{
     my $genbank = shift;
     
     #Assign filehandle to temp variable
     my $fh = $genbank->{FH};
-	
 	if (eof($fh)){
 		return;
 	}
@@ -308,37 +309,18 @@ sub get_next_genbank{
 		return;
 	}
     
+	#Parse genbank locus Field (first line of record)
 	chomp $genbank->{LAST};
 	my $seq = {HEADER => $genbank->{LAST}, SEQUENCE => undef};
 	_add_genbank_locus($fh,$seq,$genbank->{LAST});
 	$genbank->{LAST} = <$fh>;
 	
-	my $seen_origin=0;
-	
-	my $parent;
-	
+	my $seen_origin=0;	
 	
     while(defined $genbank->{LAST}){
 		my $line = $genbank->{LAST};
         chomp $line;
-#        if ($line =~ /^DEFINITION/){
-#			$genbank->{LAST} = _add_genbank_general($fh,$seq,"DEFINITION",$line);
-#		}
-#		elsif ($line =~ /^ACCESSION/){
-#			$genbank->{LAST} = _add_genbank_general($fh,$seq,"ACCESSION",$line);
-#		}
-#		elsif ($line =~ /^VERSION/){
-#			$genbank->{LAST} = _add_genbank_general($fh,$seq,"VERSION",$line);
-#		}
-#		elsif ($line =~ /^KEYWORDS/){
-#			$genbank->{LAST} = _add_genbank_general($fh,$seq,"KEYWORDS",$line);
-#		}
-#		elsif ($line =~ /^COMMENT/){
-#			$genbank->{LAST} = _add_genbank_general($fh,$seq,"COMMENT",$line);
-#		}
-#		elsif ($line =~ /^PRIMARY/){
-#			$genbank->{LAST} = _add_genbank_general($fh,$seq,"PRIMARY",$line);
-#		}
+
 		if ($line =~ /^SOURCE/){
 			$genbank->{LAST} = _add_genbank_source($fh,$seq,$line);
 		}
@@ -352,10 +334,8 @@ sub get_next_genbank{
 			$seen_origin=1;
 			$genbank->{LAST} = <$fh>;
 			chomp $genbank->{LAST};
-
 		}
-		elsif ($line =~ /^\/\//){
-			$seen_origin=0;
+		elsif ($line =~ /^\/\//){  #end of record
 			if (!eof($fh)){
 				$genbank->{LAST} = <$fh>;
 				chomp $genbank->{LAST};
@@ -369,7 +349,7 @@ sub get_next_genbank{
 			$genbank->{LAST} = <$fh>;
 			chomp $genbank->{LAST};
         }
-		elsif ($line=~/^(\w+)/){
+		elsif ($line=~/^(\w+)/){  #Import general field information
 			$genbank->{LAST} = _add_genbank_general($fh,$seq,$1,$line);
 		}
 		else{
@@ -417,6 +397,10 @@ sub _add_genbank_locus{
 	return;
 }
 
+#Parse the Record Field and any lines after that don't have a field ID
+#Modifies $seq and adds annotation to the Annotation hash
+#Returns the last line read from the file
+#Must return last line because gzipped files can't use seek.
 sub _add_genbank_general{
 	my ($fh,$seq,$type,$line,) = @_;
 	$line =~ s/^$type\s+//;
@@ -435,6 +419,10 @@ sub _add_genbank_general{
 	return $line;
 }
 
+
+#Parse the Source Field of the record and the sub-field Organism
+#Modifies $seq and adds annotation to the Annotation hash
+#Returns the last line read from the file
 sub _add_genbank_source{
 	my ($fh,$seq,$line) = @_;
 	$line =~ s/^SOURCE\s+//;
@@ -452,6 +440,9 @@ sub _add_genbank_source{
 	return $line;
 }
 
+#Parse the Refernce ID field and associated sub-fields
+#Modifies $seq and adds annotation to the Annotation hash
+#Returns the last line read from the file
 sub _add_genbank_reference{
 	my ($fh,$seq,$line) = @_;
 	$line =~ s/^REFERENCE\s+//;
@@ -507,6 +498,11 @@ sub _add_genbank_reference{
 	return $line;
 }
 
+
+#Parse the Feature fields and associated sub-fields
+#Adds features to array of Features in Annotation hash
+#Modifies $seq and adds annotation to the Annotation hash
+#Returns the last line read from the file
 sub _add_genbank_feature{
 	my ($fh,$seq) = @_;
 	
@@ -528,6 +524,9 @@ sub _add_genbank_feature{
 }
 
 
+#Parse individual features sub-fields
+#Modifies $feature hash_ref
+#Returns the last line read from the file
 sub _parse_genbank_feature{
 	my ($fh,$feature) = @_;
 	my $line = <$fh>;
