@@ -39,7 +39,7 @@ my $genbank = open_genbank("../sequences/sequences.gbk.gz");
 while (my $seq = get_next_genbank($genbank)){
     my $header = $seq->{HEADER};
     my $sequence = $seq->{SEQUENCE};
-    print "$header\n";
+    print ">$header\n";
 }
 
 
