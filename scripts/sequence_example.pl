@@ -84,12 +84,21 @@ my $entropy = entropy_shannon($rand_dna);
 my $entropy_case = entropy_shannon($rand_dna, "case");
 print "\n\nFunction entropy_shannon(\$dna, [case]): Calculate Shannon's Entropy of a dna sequence\n";
 print "Shannon Entropy of sequence rand_dna():\ncase insensitive: $entropy\ncase sensitive: $entropy_case\n";
-#----------------------- Check for Whitespace ------------------------#
 
-# reverse sequence
+#----------------------- Check for Whitespace ------------------------#
 $seq = "AAAACCCCGGGGTTTT -AAA";
 #$seq = "AAAACCCCGGGGTTTT -AAA!";
 my $nowhitespace_seq = clean_sequences($seq);
+print "\n\nFunction clean_sequence(\$seq): Cleans whitespace from a DNA, RNA, or protein sequence\n";
 print "\nSequence before cleaning:\n$seq\n\nSequence after cleaning:\n$nowhitespace_seq \n\n";
 
-
+#-------------------- Needleman-Wunsch Alignment ---------------------#
+my $alignseq1 = "AAATTTCCCGGG";
+my $alignseq2 = "AATTCCCG";
+my $MATCH = 1;
+my $MISMATCH = -4;
+my $GAP = -1;
+my ($aligned1, $aligned2) = nw_align($alignseq1, $alignseq2, $MATCH, $MISMATCH, $GAP);
+print "\n\nFunction nw_align(\$seq): Aligns two sequences using the Needleman-Wunsch Alignment\n";
+print "\nBefore Needleman-Wunsch Alignment\nSeq1:\t$alignseq1\nSeq2:\t$alignseq2\n";
+print "\nAfter Needleman-Wunsch Alignment\nAligned Seq1:\t$aligned1\nAligned Seq2:\t$aligned2\n";
