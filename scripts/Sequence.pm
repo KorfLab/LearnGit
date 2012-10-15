@@ -475,9 +475,8 @@ sub translate_codon {
 	$seq = uc($seq);
 	$seq =~ s/U/T/; #RNA
         my $trans = "";
-        for (my $i = $start; $i < length($seq); $i+=3) {
+        for (my $i = $start; $i < length($seq)-3; $i+=3) {
                 my $codon = substr($seq, $i, 3);
-                last if length($codon) < 3;
                 if (not exists $Translation{$codon}) {$trans .= $undef}
                 else                                 {$trans .= $Translation{$codon}}
 
