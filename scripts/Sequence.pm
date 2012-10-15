@@ -1,11 +1,10 @@
+package Sequence;
 use strict;
 use warnings;
 use List::Util qw(shuffle);
 use IO::Uncompress::Gunzip;
 
-require Exporter;
-our @ISA = qw(Exporter);
-our @EXPORT_OK = qw();
+
 my %Translation = (
 	'AAA' => 'K',	'AAC' => 'N',	'AAG' => 'K',	'AAT' => 'N',
 	'AAR' => 'K',	'AAY' => 'N',	'ACA' => 'T',	'ACC' => 'T',
