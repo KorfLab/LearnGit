@@ -432,7 +432,7 @@ sub rand_seq {
 	# Get reference based on type #
 	my %ref;
 	# DNA/RNA
-	%ref = ("A" => 1, "G" => 1, "T" => 1, "C" => 1) if $type =~ /^dna$/i or $type =~ /^rna$/i;
+	%ref = ("A" => 1, "a" => 1, "G" => 1, "g" => 1, "T" => 1, "t" => 1, "C" => 1, "c" => 1) if $type =~ /^dna$/i or $type =~ /^rna$/i;
 	# Protein
 	%ref = (
 	"A" => 1, "R" => 1, "N" => 1, "D" => 1, "C" => 1, 
@@ -445,7 +445,7 @@ sub rand_seq {
 	
 	# Randomize #
 	# First make a dummy sequence at $pool that has length $lmax (the bigger lmax, the more accurate)
-	my ($lmax, $seq, $pool, $prob) = (999999);
+	my ($lmax, $seq, $pool, $prob) = (99999);
 	foreach my $alphabet (sort keys %ref) {
 		my $value = int($ref{$alphabet} * $lmax);
 		for (my $i = 0; $i < $value; $i++) {
@@ -499,6 +499,21 @@ sub rev_translate_codon {
         return ($trans);
 }
 
+sub entropy_shannon {
+	my ($seq, $case) = @_;
+	$seq = uc($seq) if defined($case);
+	my %seq;
+	for (my $i = 0; $i < length($seq); $i++) {
+		my $nuc = substr($seq, $i, 1);
+		$seq{'nuc'}{$nuc}++;
+		$seq{'tot'}++;
+	}
+	foreach my $nuc (keys %{$seq{'nuc'}}) {
+		$seq{'nuc'}{$nuc} /= $seq{'tot'};
+		$seq{'ent'} += -1 * $seq{'nuc'}{$nuc} * (log($seq{'nuc'}{$nuc}) / log (2));
+	}
+	return($seq{'ent'});
+}
 # Cleans a sequence(s) of white space or other characters that aren't valid. 
 # Takes a sequence (string) and cleans it for unwanted characters
 sub clean_sequences{
