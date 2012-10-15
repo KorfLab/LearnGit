@@ -463,6 +463,7 @@ sub rand_seq {
 	return($seq);
 }
 
+
 # Take a case-insensitive sequence input $seq and optional start position $start (default 0)
 # And there is also a third option of what should undefined be (X, N, 0)
 # This was found somewhere at Ian/Keith's code so credit is theirs
@@ -483,6 +484,7 @@ sub translate_codon {
         }
         return ($trans);
 }
+
 sub rev_translate_codon {
         my ($seq, $undef) = @_;
 	$undef = "NNN" if not defined($undef);
@@ -516,6 +518,7 @@ sub entropy_shannon {
 	return($seq{'ent'});
 }
 
+
 # Cleans a sequence(s) of white space or other characters that aren't valid. 
 # Takes a sequence (string) and cleans it for unwanted characters
 sub clean_sequence{
@@ -527,6 +530,8 @@ sub clean_sequence{
 	}
 	return ($sequence);
 }
+
+
 
 # Aligns two sequences using the Needleman-Wunsch Alignment algorithm 
 sub nw_align{
@@ -624,6 +629,28 @@ sub nw_align{
 	$align2 = reverse $align2;
 	return ($align1, $align2);
 }
+
+
+# extract_subsequence, extract and return subsequence from larger sequence
+sub extract_subsequence{
+	my ($seq, $start, $length) = @_;
+	my $subseq;
+	
+	# need to have two versions, based on whether length is specified
+	if (not defined $length){
+		$subseq = substr($seq, $start);
+		return($subseq);
+	}
+
+	# check that length of subseq won't exceed end of $seq, warn if so
+	if (($start + $length) > length($seq)){
+		warn "WARNING: You are trying to extract beyond range of sequence (\$start = $start, \$length = $length)\n";
+	} 
+	$subseq = substr($seq, $start, $length);
+	
+	return($subseq);
+}
+
 
 1;
 
