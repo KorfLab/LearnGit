@@ -517,7 +517,7 @@ sub entropy_shannon {
 
 # Cleans a sequence(s) of white space or other characters that aren't valid. 
 # Takes a sequence (string) and cleans it for unwanted characters
-sub clean_sequences{
+sub clean_sequence{
 	my ($sequence) = @_;
 	$sequence =~ s/\s//g;
 	$sequence = uc($sequence);
