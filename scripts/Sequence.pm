@@ -271,7 +271,6 @@ sub _init_genbank_first_line{
     my $first_line = <$fh>;
     chomp $first_line;
     if ($first_line=~/^LOCUS/){ #First line could be > or ;
-        $first_line=~s/^LOCUS\s+//;
         $genbank->{LAST}=$first_line;      #Store that line so we don't have to
                                         #re-read or move file position pointer.
     }
@@ -290,6 +289,10 @@ sub get_next_genbank{
     
     #Assign filehandle to temp variable
     my $fh = $genbank->{FH};
+	
+	if (eof($fh)){
+		return;
+	}
     
     #Check that filehandle is defined
     if (!defined $fh){
@@ -297,34 +300,81 @@ sub get_next_genbank{
         return;
     }
     
-    #initialize sequence hash
-    my $seq = {HEADER => $genbank->{LAST}, SEQUENCE => undef};
+    #initialize sequence assign Header information
+	if ($genbank->{LAST} !~ /^LOCUS/){
+		warn "Genbank file begins without LOCUS on first line of record\n" .
+		"Line:\t" . $genbank->{LAST};
+		$genbank->{LAST} = <$fh>;
+		return;
+	}
+    
+	chomp $genbank->{LAST};
+	my $seq = {HEADER => $genbank->{LAST}, SEQUENCE => undef};
+	_add_genbank_locus($fh,$seq,$genbank->{LAST});
+	$genbank->{LAST} = <$fh>;
 	
 	my $seen_origin=0;
-
-    while(<$fh>){
-        chomp;
-        if (/^LOCUS/){ #If line starts with ">" assign header to LAST
-            s/^LOCUS\s+//;  #Remove ">" line
-            #$seq->{HEADER} = $genbank->{LAST};
-            $genbank->{LAST} = $_;
-            return $seq;
-        }
-		elsif (/^ACCESSION/){
-			s/^ACCESSION\s+//;
-			$seq->{HEADER} = "ACCESSION\t" . $_  . "\tLOCUS\t" . $seq->{HEADER};
+	
+	my $parent;
+	
+	
+    while(defined $genbank->{LAST}){
+		my $line = $genbank->{LAST};
+        chomp $line;
+#        if ($line =~ /^DEFINITION/){
+#			$genbank->{LAST} = _add_genbank_general($fh,$seq,"DEFINITION",$line);
+#		}
+#		elsif ($line =~ /^ACCESSION/){
+#			$genbank->{LAST} = _add_genbank_general($fh,$seq,"ACCESSION",$line);
+#		}
+#		elsif ($line =~ /^VERSION/){
+#			$genbank->{LAST} = _add_genbank_general($fh,$seq,"VERSION",$line);
+#		}
+#		elsif ($line =~ /^KEYWORDS/){
+#			$genbank->{LAST} = _add_genbank_general($fh,$seq,"KEYWORDS",$line);
+#		}
+#		elsif ($line =~ /^COMMENT/){
+#			$genbank->{LAST} = _add_genbank_general($fh,$seq,"COMMENT",$line);
+#		}
+#		elsif ($line =~ /^PRIMARY/){
+#			$genbank->{LAST} = _add_genbank_general($fh,$seq,"PRIMARY",$line);
+#		}
+		if ($line =~ /^SOURCE/){
+			$genbank->{LAST} = _add_genbank_source($fh,$seq,$line);
 		}
-		elsif (/^ORIGIN/){
+		elsif ($line =~ /^REFERENCE/){
+			$genbank->{LAST} = _add_genbank_reference($fh,$seq,$line);
+		}
+		elsif ($line =~ /^FEATURES/){
+			$genbank->{LAST} = _add_genbank_feature($fh,$seq);
+		}
+		elsif ($line =~ /^ORIGIN/){
 			$seen_origin=1;
+			$genbank->{LAST} = <$fh>;
+			chomp $genbank->{LAST};
+
 		}
-		elsif (/^\/\//){
+		elsif ($line =~ /^\/\//){
 			$seen_origin=0;
+			if (!eof($fh)){
+				$genbank->{LAST} = <$fh>;
+				chomp $genbank->{LAST};
+			}
+			
+			last;
 		}
         elsif ($seen_origin){
-			s/[0-9\s]+//g;
-            $seq->{SEQUENCE}.=uc($_);  #Assign line to sequence
+			$line =~ s/[0-9\s]+//g;
+            $seq->{SEQUENCE}.=uc($line);  #Assign line to sequence
+			$genbank->{LAST} = <$fh>;
+			chomp $genbank->{LAST};
         }
+		elsif ($line=~/^(\w+)/){
+			$genbank->{LAST} = _add_genbank_general($fh,$seq,$1,$line);
+		}
 		else{
+			$genbank->{LAST} = <$fh>;
+			chomp $genbank->{LAST};
 			next;
 		}
     }
@@ -352,6 +402,160 @@ sub get_next_genbank{
     
     return $seq;
 }
+
+sub _add_genbank_locus{
+	my ($fh,$seq,$line) = @_;
+	$line =~ s/^LOCUS\s+//;  #Remove ">" line
+	$line =~ m/^(\S+)\s+(\d+)\s+bp\s+(\S+)\s+(linear|circular)*\s+(PRI|ROD|MAM|VRT|INV|PLN|BCT|VRL|PHG|SYN|UNA|EST|PAT|STS|GSS|HTG|HTC|ENV)\s+(\S+)$/g;
+	$seq->{ANNOTATION}->{LOCUS}->{NAME} = $1;
+	$seq->{ANNOTATION}->{LOCUS}->{LENGTH} = $2;
+	$seq->{ANNOTATION}->{LOCUS}->{MOLECULE_TYPE} = $3;	
+	$seq->{ANNOTATION}->{LOCUS}->{MOLECULE_STRUCT} = $4;
+	$seq->{ANNOTATION}->{LOCUS}->{GENBANK_DIVISION} = $5;
+	$seq->{ANNOTATION}->{LOCUS}->{MODIFICATION_DATE} = $6;
+	
+	return;
+}
+
+sub _add_genbank_general{
+	my ($fh,$seq,$type,$line,) = @_;
+	$line =~ s/^$type\s+//;
+	$seq->{ANNOTATION}->{$type} = $line;
+	
+	$line = <$fh>;
+	chomp $line;
+	
+	while ($line=~/^\s+/){
+		$line =~ s/^\s+//;
+		$seq->{ANNOTATION}->{$type} .= " " . $line;
+		$line = <$fh>;
+		chomp $line;
+	}
+		
+	return $line;
+}
+
+sub _add_genbank_source{
+	my ($fh,$seq,$line) = @_;
+	$line =~ s/^SOURCE\s+//;
+	$seq->{ANNOTATION}->{SOURCE} = $line;
+	
+	my $position = tell $fh;
+	$line = <$fh>;
+	chomp $line;
+	
+	if ($line=~/^\s+ORGANISM/){
+		$line =~ s/^\s+ORGANISM\s+//;
+		$line = _add_genbank_general($fh,$seq,"ORGANISM",$line);
+	}
+	
+	return $line;
+}
+
+sub _add_genbank_reference{
+	my ($fh,$seq,$line) = @_;
+	$line =~ s/^REFERENCE\s+//;
+	$line =~ m/^(\d+)(\s+(\(.*\)))?/;
+	my $ref_index = $1;
+	my $ref_coord = (defined $3) ? $3 : q();
+	
+	$seq->{ANNOTATION}->{REFERENCES}->[$ref_index]->{COORD} = $ref_coord;
+	
+	$line = <$fh>;
+	chomp $line;
+	
+	my $parent = q();
+	
+	while ($line=~/^s+/){
+		if ($line=~/^\s+AUTHORS/){
+			$parent = "AUTHORS";
+			$line =~ s/^\s+AUTHORS\s+//;
+			$seq->{ANNOTATION}->{REFERENCES}->[$ref_index]->{AUTHORS} = $line;
+		}
+		elsif ($line=~/^\s+CONSRTM/){
+			$parent = "TITLE";
+			$line =~ s/^\s+CONSRTM\s+//;
+			$seq->{ANNOTATION}->{REFERENCES}->[$ref_index]->{CONSRTM} = $line;
+		}
+		elsif ($line=~/^\s+TITLE/){
+			$parent = "TITLE";
+			$line =~ s/^\s+TITLE\s+//;
+			$seq->{ANNOTATION}->{REFERENCES}->[$ref_index]->{TITLE} = $line;
+		}
+		elsif ($line=~/^\s+JOURNAL/){
+			$parent = "JOURNAL";
+			$line =~ s/^\s+JOURNAL\s+//;
+			$seq->{ANNOTATION}->{REFERENCES}->[$ref_index]->{JOURNAL} = $line;
+		}
+		elsif ($line=~/^\s+PUBMED/){
+			$parent = "PUBMED";
+			$line =~ s/^\s+PUBMED\s+//;
+			$seq->{ANNOTATION}->{REFERENCES}->[$ref_index]->{PUBMED} = $line;
+		}
+		elsif ($line=~/^REFERENCE/){
+			last;
+		}
+		else{
+			$line=~s/^\s+//;
+			$seq->{ANNOTATION}->{REFERENCES}->[$ref_index]->{$parent} .= " " . $line;
+		}
+		
+		$line = <$fh>;
+		chomp $line;
+	}
+	
+	return $line;
+}
+
+sub _add_genbank_feature{
+	my ($fh,$seq) = @_;
+	
+	my $line = <$fh>;
+	chomp $line;
+	
+	while ($line=~/^\s{5}(\S+)\s+(\S+)/){
+		my $feature;
+		$feature->{FEATURE}=$1;
+		$feature->{COORD}=$2;
+		$line = _parse_genbank_feature($fh,$feature);
+		
+		push @{$seq->{ANNOTATION}->{FEATURES}},$feature;
+		chomp $line;
+	}
+	
+	return $line;
+	
+}
+
+
+sub _parse_genbank_feature{
+	my ($fh,$feature) = @_;
+	my $line = <$fh>;
+	chomp $line;
+	
+	my $parent = "COORD";
+	
+	while ($line =~ m/^\s{21}(.+)/){
+		my $group = $1;
+		
+		if ($group =~ /^\/(\S+)\=\"(.*)\"$/){
+			$parent = uc($1);
+			$feature->{$parent} = $2;
+		}
+		else{
+			$line =~ s/^\s+//;
+			$feature->{$parent} .= " " . $line;
+		}
+		
+		$line = <$fh>;
+		chomp $line;
+	}
+	
+	return $line;
+}
+
+
+
 
 #Get all the sequences in the genbank file and return a array_ref to array of
 #hashes{SEQUENCE=>seq and HEADER=>header}
