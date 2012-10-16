@@ -3,6 +3,7 @@ use strict;
 use warnings;
 use List::Util qw(shuffle);
 use IO::Uncompress::Gunzip;
+use Inline C => 'DATA';
 
 
 my %Translation = (
@@ -654,7 +655,7 @@ sub rand_seq {
 	my $ref = $_[2] if $type =~ /^custom$/i;
 	my @possible_type = qw(dna rna protein custom);
 	die "usage: rand_seq(length [int], type [dna, rna, protein, custom], [custom: hash of ref])\n" unless defined($length);
-	die "Error at subroutine rand_seq: length must be positive integer (your input: $length).\n" unless $length =~ /^\d+$/;
+	die "Error at subroutine rand_seq: length must be positive integer (your input: $length).\n" unless $length =~ /^\d+E{0,1}\d*$/i;
 	$type = "dna" if not defined($type);
 	die "Error at subroutine rand_seq: type must be dna/rna/protein/custom/file (your input: $type).\n" unless grep(/^$type$/, @possible_type);
 	die "Error at subroutine rand_seq: type is custom but you have undefined ref hash or ref hash contain zero keys/value.\n" if ($type =~ /^custom$/i and keys %{$ref} == 0);
@@ -662,7 +663,8 @@ sub rand_seq {
 	# Get reference based on type #
 	my %ref;
 	# DNA/RNA
-	%ref = ("A" => 1, "a" => 1, "G" => 1, "g" => 1, "T" => 1, "t" => 1, "C" => 1, "c" => 1) if $type =~ /^dna$/i or $type =~ /^rna$/i;
+	%ref = ("A" => 1, "G" => 1, "T" => 1, "C" => 1) if $type =~ /^dna$/i or $type =~ /^rna$/i;
+	#%ref = ("A" => 1, "a" => 1, "G" => 1, "g" => 1, "T" => 1, "t" => 1, "C" => 1, "c" => 1) if $type =~ /^dna$/i or $type =~ /^rna$/i; #case insensitive
 	# Protein
 	%ref = (
 	"A" => 1, "R" => 1, "N" => 1, "D" => 1, "C" => 1, 
@@ -674,25 +676,41 @@ sub rand_seq {
 	%ref = %{$ref} if $type =~ /^custom$/i;
 	
 	# Randomize #
-	# First make a dummy sequence at $pool that has length $lmax (the bigger lmax, the more accurate)
-	my ($lmax, $seq, $pool, $prob) = (99999);
-	foreach my $alphabet (sort keys %ref) {
-		my $value = int($ref{$alphabet} * $lmax);
-		for (my $i = 0; $i < $value; $i++) {
-			$pool .= $alphabet;
-		}
+	# Stepped CDF #
+	my %cdf;
+
+	# Get total of weights #
+	my $total = 0;
+	foreach my $char (sort {$ref{$a} <=> $ref{$b}} keys %ref) {
+		my $value = $ref{$char};
+		$total += $value;
+	}
+
+	# Get steps of weights #
+	my $curr_val = 0;
+	foreach my $char (sort {$ref{$a} <=> $ref{$b}} keys %ref) {
+		$cdf{$char}{'min'} = $curr_val;
+		$curr_val += $ref{$char}/$total;
+		$cdf{$char}{'max'} = $curr_val;
 	}
 	
-	# Then randomly take alphabets from $pool to make $seq 
-	my $lseq = 0;
-	while ($lseq  < $length) {
-		$seq .= substr($pool, int(rand(length($pool))), 1);
-		$lseq = length($seq);
+	# Make sequence #
+	my ($lseq, $seq) = 0;
+	while ($lseq < $length) {
+		my $rnum = rand();
+		foreach my $char (sort {$cdf{$a} <=> $cdf{$b}} keys %cdf) {
+			if ($rnum > $cdf{$char}{'min'} and $rnum <= $cdf{$char}{'max'}) {
+				$seq .= $char;
+				$lseq++;
+				last;
+			}
+		}
 	}
-	$seq =~ tr/T/U/ if $type =~ /^rna$/i;
+
+	# Correct for RNA #
+	$seq =~ tr/Tt/Uu/ if $type =~ /^rna$/i;
 	return($seq);
 }
-
 
 # Take a case-insensitive sequence input $seq and optional start position $start (default 0)
 # And there is also a third option of what should undefined be (X, N, 0)
@@ -884,4 +902,85 @@ sub extract_subsequence{
 
 1;
 
+
+__END__
+__C__
+
+void align_sw (const char *s1, const char *s2, double m, double n, double g) {
+	int i, j, l1, l2, max_i, max_j, min_i, min_j, pos, alen;
+	double d, v, h, max_s = 0;
+	double ** sm;
+	char ** tm;
+	char *a1, *a2, *a3;
+	
+	l1 = strlen(s1), l2 = strlen(s2);
+	
+	/* allocate matrices */
+	sm = malloc(sizeof(double*) * (l1+1));
+	tm = malloc(sizeof(double*) * (l1+1));
+	for (i = 0; i <= l1; i++)  sm[i] = malloc(sizeof(double) * (l2+1));
+	for (i = 0; i <= l1; i++)  tm[i] = malloc(sizeof(double) * (l2+1));
+	
+	/* init first column and row */
+	for (i = 0; i <= l1; i++) sm[i][0] = 0, tm[i][0] = '.';
+	for (j = 1; j <= l2; j++) sm[0][j] = 0, tm[0][j] = '.';
+	
+	/* fill matrix */
+	for (i = 1; i <= l1; i++) {
+		for (j = 1; j <= l2; j++) {
+			if (s1[i-1] == s2[j-1]) d = sm[i-1][j-1] + m;
+			else                    d = sm[i-1][j-1] + n;
+			h = sm[i-1][j] + g;
+			v = sm[i][j-1] + g;
+			
+			if (d > h && d > v && d > 0) sm[i][j] = d, tm[i][j] = 'd';
+			else if (h > v && h > 0)     sm[i][j] = h, tm[i][j] = 'h';
+			else if (v > 0)              sm[i][j] = v, tm[i][j] = 'v';
+			else                         sm[i][j] = 0, tm[i][j] = '.';
+			
+			if (d > max_s) max_s = d, max_i = i, max_j = j;
+		}
+	}
+	
+	/* allocate alignment strings */
+	a1 = malloc(sizeof(l1 + l2 + 1));
+	a2 = malloc(sizeof(l1 + l2 + 1));
+	a3 = malloc(sizeof(l1 + l2 + 1));
+	
+	/* traceback */
+	i = max_i, j = max_j, pos = 0;
+	while (sm[i][j] > 0) {
+		a1[pos] = s1[i-1];
+		a2[pos] = s2[j-1];
+		min_i = i, min_j = j, pos++;
+		if      (tm[i][j] == 'd') i--, j--;
+		else if (tm[i][j] == 'h') j--;
+		else if (tm[i][j] == 'v') i--;
+	}
+	a1[pos] = '\0', a2[pos] = '\0', a3[pos] = '\0';
+		
+	/* reverse strings */
+	for (i = 0; i < strlen(a1); i++) a3[pos -i -1] = a1[i];
+	strcpy(a1, a3);
+	for (i = 0; i < strlen(a2); i++) a3[pos -i -1] = a2[i];
+	strcpy(a2, a3);
+	alen = strlen(a1);
+	
+	/* create return values */
+	Inline_Stack_Vars;
+	Inline_Stack_Reset;
+	Inline_Stack_Push(sv_2mortal(newSVnv(max_s)));
+	Inline_Stack_Push(sv_2mortal(newSVpv(a1, alen)));
+	Inline_Stack_Push(sv_2mortal(newSVpv(a2, alen)));
+	Inline_Stack_Push(sv_2mortal(newSViv(min_i)));
+	Inline_Stack_Push(sv_2mortal(newSViv(max_i)));
+	Inline_Stack_Push(sv_2mortal(newSViv(min_j)));
+	Inline_Stack_Push(sv_2mortal(newSViv(max_j)));
+	Inline_Stack_Done;
+	
+	/* clean up */
+	free(a1); free(a2); free(a3);
+	for (i = 0; i <= l1; i++) free(sm[i]), free(tm[i]);
+	free(sm); free(tm);
+}
 
