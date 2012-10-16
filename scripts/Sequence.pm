@@ -902,8 +902,7 @@ sub extract_subsequence{
 
 1;
 
-
-__END__
+__DATA__
 __C__
 
 void align_sw (const char *s1, const char *s2, double m, double n, double g) {
@@ -912,7 +911,7 @@ void align_sw (const char *s1, const char *s2, double m, double n, double g) {
 	double ** sm;
 	char ** tm;
 	char *a1, *a2, *a3;
-	
+		
 	l1 = strlen(s1), l2 = strlen(s2);
 	
 	/* allocate matrices */
@@ -920,19 +919,20 @@ void align_sw (const char *s1, const char *s2, double m, double n, double g) {
 	tm = malloc(sizeof(double*) * (l1+1));
 	for (i = 0; i <= l1; i++)  sm[i] = malloc(sizeof(double) * (l2+1));
 	for (i = 0; i <= l1; i++)  tm[i] = malloc(sizeof(double) * (l2+1));
-	
+		
 	/* init first column and row */
 	for (i = 0; i <= l1; i++) sm[i][0] = 0, tm[i][0] = '.';
 	for (j = 1; j <= l2; j++) sm[0][j] = 0, tm[0][j] = '.';
-	
+		
 	/* fill matrix */
+	max_i = max_j = 0;
 	for (i = 1; i <= l1; i++) {
 		for (j = 1; j <= l2; j++) {
 			if (s1[i-1] == s2[j-1]) d = sm[i-1][j-1] + m;
 			else                    d = sm[i-1][j-1] + n;
-			h = sm[i-1][j] + g;
-			v = sm[i][j-1] + g;
-			
+			v = sm[i-1][ j ] + g;
+			h = sm[ i ][j-1] + g;
+						
 			if (d > h && d > v && d > 0) sm[i][j] = d, tm[i][j] = 'd';
 			else if (h > v && h > 0)     sm[i][j] = h, tm[i][j] = 'h';
 			else if (v > 0)              sm[i][j] = v, tm[i][j] = 'v';
@@ -943,44 +943,51 @@ void align_sw (const char *s1, const char *s2, double m, double n, double g) {
 	}
 	
 	/* allocate alignment strings */
-	a1 = malloc(sizeof(l1 + l2 + 1));
-	a2 = malloc(sizeof(l1 + l2 + 1));
-	a3 = malloc(sizeof(l1 + l2 + 1));
+	a1 = malloc((l1 + l2 + 1) * sizeof(char));
+	a2 = malloc((l1 + l2 + 1) * sizeof(char));
+	a3 = malloc((l1 + l2 + 1) * sizeof(char));
 	
 	/* traceback */
 	i = max_i, j = max_j, pos = 0;
 	while (sm[i][j] > 0) {
-		a1[pos] = s1[i-1];
+		if (i == 0 || j == 0) {
+			fprintf(stderr, "found 1\n");
+		}
+		if (pos >= (l1 + l2)) {
+			fprintf(stderr, "found 2\n");
+		}
+		a1[pos] = s1[i-1]; 
 		a2[pos] = s2[j-1];
-		min_i = i, min_j = j, pos++;
+		min_i = i;
+		min_j = j;
+		pos++;
 		if      (tm[i][j] == 'd') i--, j--;
 		else if (tm[i][j] == 'h') j--;
 		else if (tm[i][j] == 'v') i--;
 	}
 	a1[pos] = '\0', a2[pos] = '\0', a3[pos] = '\0';
-		
+			
 	/* reverse strings */
 	for (i = 0; i < strlen(a1); i++) a3[pos -i -1] = a1[i];
-	strcpy(a1, a3);
-	for (i = 0; i < strlen(a2); i++) a3[pos -i -1] = a2[i];
-	strcpy(a2, a3);
+	for (i = 0; i < strlen(a2); i++) a1[pos -i -1] = a2[i];
 	alen = strlen(a1);
-	
+		
 	/* create return values */
 	Inline_Stack_Vars;
 	Inline_Stack_Reset;
 	Inline_Stack_Push(sv_2mortal(newSVnv(max_s)));
+	Inline_Stack_Push(sv_2mortal(newSVpv(a3, alen)));
 	Inline_Stack_Push(sv_2mortal(newSVpv(a1, alen)));
-	Inline_Stack_Push(sv_2mortal(newSVpv(a2, alen)));
 	Inline_Stack_Push(sv_2mortal(newSViv(min_i)));
 	Inline_Stack_Push(sv_2mortal(newSViv(max_i)));
 	Inline_Stack_Push(sv_2mortal(newSViv(min_j)));
 	Inline_Stack_Push(sv_2mortal(newSViv(max_j)));
 	Inline_Stack_Done;
-	
+		
 	/* clean up */
 	free(a1); free(a2); free(a3);
 	for (i = 0; i <= l1; i++) free(sm[i]), free(tm[i]);
 	free(sm); free(tm);
+	
 }
 
