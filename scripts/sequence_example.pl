@@ -61,17 +61,18 @@ print "\n$seq -> reversed -> $reversed\n\n";
 
 #-------------------- Generate Ranom Sequence -_----------------------#
 
-# Make random sequence of 1000 length
-my $rand_dna = Sequence::rand_seq(100, "dna");
-my $rand_rna = Sequence::rand_seq(100, "rna");
-my $rand_pro = Sequence::rand_seq(100, "protein");
+# Make random sequence of 100 length
+my $rand_seq_length = 1E2;
+my $rand_dna = Sequence::rand_seq($rand_seq_length, "dna");
+my $rand_rna = Sequence::rand_seq($rand_seq_length, "rna");
+my $rand_pro = Sequence::rand_seq($rand_seq_length, "protein");
 
 #my %cust_ref = ("k" => 10, "o" => 0.5, "r" => 0.5, "f" => 0.5, "l" => 1, "a" => 2, "b" => 2);
 my %cust_ref = ("A" => 1, "T" => 1, "G" => 1, "C" => 1, "N" => 1);
-my $rand_custom = Sequence::rand_seq(100, "custom", \%cust_ref);
+my $rand_custom = Sequence::rand_seq($rand_seq_length, "custom", \%cust_ref);
 
-print "\n\nFunction rand_seq(\$length, \$type[dna rna protein custom], [NA or \$custom hash]\n";
-print "dna; $rand_dna\nrna: $rand_rna\npro: $rand_pro\ncustom: $rand_custom\n";
+print "\n\nFunction rand_seq(\$length, \$type[dna rna protein custom], [optional: \$custom hash])\n";
+print "$rand_seq_length length of rand_seq()\ndna: $rand_dna\nrna: $rand_rna\npro: $rand_pro\ncustom: $rand_custom\n";
 
 
 #----------------------- Translate DNA seq to Protein ------------------------#

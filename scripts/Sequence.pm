@@ -654,7 +654,7 @@ sub rand_seq {
 	my $ref = $_[2] if $type =~ /^custom$/i;
 	my @possible_type = qw(dna rna protein custom);
 	die "usage: rand_seq(length [int], type [dna, rna, protein, custom], [custom: hash of ref])\n" unless defined($length);
-	die "Error at subroutine rand_seq: length must be positive integer (your input: $length).\n" unless $length =~ /^\d+$/;
+	die "Error at subroutine rand_seq: length must be positive integer (your input: $length).\n" unless $length =~ /^\d+E{0,1}\d*$/i;
 	$type = "dna" if not defined($type);
 	die "Error at subroutine rand_seq: type must be dna/rna/protein/custom/file (your input: $type).\n" unless grep(/^$type$/, @possible_type);
 	die "Error at subroutine rand_seq: type is custom but you have undefined ref hash or ref hash contain zero keys/value.\n" if ($type =~ /^custom$/i and keys %{$ref} == 0);
@@ -662,13 +662,14 @@ sub rand_seq {
 	# Get reference based on type #
 	my %ref;
 	# DNA/RNA
-	%ref = ("A" => 1, "a" => 1, "G" => 1, "g" => 1, "T" => 1, "t" => 1, "C" => 1, "c" => 1) if $type =~ /^dna$/i or $type =~ /^rna$/i;
+	%ref = ("A" => 1, "G" => 1, "T" => 1, "C" => 1) if $type =~ /^dna$/i or $type =~ /^rna$/i;
+	#%ref = ("A" => 1, "a" => 1, "G" => 1, "g" => 1, "T" => 1, "t" => 1, "C" => 1, "c" => 1) if $type =~ /^dna$/i or $type =~ /^rna$/i; #case insensitive
 	# Protein
 	%ref = (
 	"A" => 1, "R" => 1, "N" => 1, "D" => 1, "C" => 1, 
 	"Q" => 1, "E" => 1, "G" => 1, "H" => 1, "I" => 1, 
 	"L" => 1, "K" => 1, "M" => 1, "F" => 1, "P" => 1, 
-	"S" => 1, "T" => 1, "W" => 1E-50, "Y" => 1E-50, "V" => 1
+	"S" => 1, "T" => 1, "W" => 1, "Y" => 1, "V" => 1
 	) if $type =~ /^protein$/i;
 	# Custom
 	%ref = %{$ref} if $type =~ /^custom$/i;
@@ -686,13 +687,10 @@ sub rand_seq {
 
 	# Get steps of weights #
 	my $curr_val = 0;
-	#print "rand_seq() protein scpd reference\n" if $type =~ /^protein$/i;
 	foreach my $char (sort {$ref{$a} <=> $ref{$b}} keys %ref) {
 		$cdf{$char}{'min'} = $curr_val;
-		#print "$char\t$curr_val-" if $type =~ /^protein$/i;
 		$curr_val += $ref{$char}/$total;
 		$cdf{$char}{'max'} = $curr_val;
-		#print "$curr_val\n" if $type =~ /^protein$/i;
 	}
 	
 	# Make sequence #
