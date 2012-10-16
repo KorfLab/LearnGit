@@ -668,31 +668,50 @@ sub rand_seq {
 	"A" => 1, "R" => 1, "N" => 1, "D" => 1, "C" => 1, 
 	"Q" => 1, "E" => 1, "G" => 1, "H" => 1, "I" => 1, 
 	"L" => 1, "K" => 1, "M" => 1, "F" => 1, "P" => 1, 
-	"S" => 1, "T" => 1, "W" => 1, "Y" => 1, "V" => 1
+	"S" => 1, "T" => 1, "W" => 1E-50, "Y" => 1E-50, "V" => 1
 	) if $type =~ /^protein$/i;
 	# Custom
 	%ref = %{$ref} if $type =~ /^custom$/i;
 	
 	# Randomize #
-	# First make a dummy sequence at $pool that has length $lmax (the bigger lmax, the more accurate)
-	my ($lmax, $seq, $pool, $prob) = (99999);
-	foreach my $alphabet (sort keys %ref) {
-		my $value = int($ref{$alphabet} * $lmax);
-		for (my $i = 0; $i < $value; $i++) {
-			$pool .= $alphabet;
-		}
+	# Stepped CDF #
+	my %cdf;
+
+	# Get total of weights #
+	my $total = 0;
+	foreach my $char (sort {$ref{$a} <=> $ref{$b}} keys %ref) {
+		my $value = $ref{$char};
+		$total += $value;
+	}
+
+	# Get steps of weights #
+	my $curr_val = 0;
+	#print "rand_seq() protein scpd reference\n" if $type =~ /^protein$/i;
+	foreach my $char (sort {$ref{$a} <=> $ref{$b}} keys %ref) {
+		$cdf{$char}{'min'} = $curr_val;
+		#print "$char\t$curr_val-" if $type =~ /^protein$/i;
+		$curr_val += $ref{$char}/$total;
+		$cdf{$char}{'max'} = $curr_val;
+		#print "$curr_val\n" if $type =~ /^protein$/i;
 	}
 	
-	# Then randomly take alphabets from $pool to make $seq 
-	my $lseq = 0;
-	while ($lseq  < $length) {
-		$seq .= substr($pool, int(rand(length($pool))), 1);
-		$lseq = length($seq);
+	# Make sequence #
+	my ($lseq, $seq) = 0;
+	while ($lseq < $length) {
+		my $rnum = rand();
+		foreach my $char (sort {$cdf{$a} <=> $cdf{$b}} keys %cdf) {
+			if ($rnum > $cdf{$char}{'min'} and $rnum <= $cdf{$char}{'max'}) {
+				$seq .= $char;
+				$lseq++;
+				last;
+			}
+		}
 	}
+
+	# Correct for RNA #
 	$seq =~ tr/T/U/ if $type =~ /^rna$/i;
 	return($seq);
 }
-
 
 # Take a case-insensitive sequence input $seq and optional start position $start (default 0)
 # And there is also a third option of what should undefined be (X, N, 0)
