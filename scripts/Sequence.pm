@@ -1,12 +1,11 @@
+package Sequence;
 use strict;
 use warnings;
 use List::Util qw(shuffle);
 use IO::Uncompress::Gunzip;
 use Inline C => 'DATA';
 
-require Exporter;
-our @ISA = qw(Exporter);
-our @EXPORT_OK = qw();
+
 my %Translation = (
 	'AAA' => 'K',	'AAC' => 'N',	'AAG' => 'K',	'AAT' => 'N',
 	'AAR' => 'K',	'AAY' => 'N',	'ACA' => 'T',	'ACC' => 'T',
@@ -300,7 +299,6 @@ sub _init_genbank_first_line{
     my $first_line = <$fh>;
     chomp $first_line;
     if ($first_line=~/^LOCUS/){ #First line could be > or ;
-        $first_line=~s/^LOCUS\s+//;
         $genbank->{LAST}=$first_line;      #Store that line so we don't have to
                                         #re-read or move file position pointer.
     }
@@ -312,13 +310,18 @@ sub _init_genbank_first_line{
 }
 
 
-#Get the next sequence in the file and return the sequence and header
-#Todo: test using FASTA format with > or ;\n;...\n  (Old format defined in FASTA)
+#Get the next genbank record in the file and return the sequence, header, and
+#annotation
+#Input: variable from open_genbank(..)
+#Output: hash ref with {SEQUENCE->..., HEADER->..., ANNOTATION->...}
 sub get_next_genbank{
     my $genbank = shift;
     
     #Assign filehandle to temp variable
     my $fh = $genbank->{FH};
+	if (eof($fh)){
+		return;
+	}
     
     #Check that filehandle is defined
     if (!defined $fh){
@@ -326,34 +329,60 @@ sub get_next_genbank{
         return;
     }
     
-    #initialize sequence hash
-    my $seq = {HEADER => $genbank->{LAST}, SEQUENCE => undef};
+    #initialize sequence assign Header information
+	if ($genbank->{LAST} !~ /^LOCUS/){
+		warn "Genbank file begins without LOCUS on first line of record\n" .
+		"Line:\t" . $genbank->{LAST};
+		$genbank->{LAST} = <$fh>;
+		return;
+	}
+    
+	#Parse genbank locus Field (first line of record)
+	chomp $genbank->{LAST};
+	my $seq = {HEADER => $genbank->{LAST}, SEQUENCE => undef};
+	_add_genbank_locus($fh,$seq,$genbank->{LAST});
+	$genbank->{LAST} = <$fh>;
 	
-	my $seen_origin=0;
+	my $seen_origin=0;	
+	
+    while(defined $genbank->{LAST}){
+		my $line = $genbank->{LAST};
+        chomp $line;
 
-    while(<$fh>){
-        chomp;
-        if (/^LOCUS/){ #If line starts with ">" assign header to LAST
-            s/^LOCUS\s+//;  #Remove ">" line
-            #$seq->{HEADER} = $genbank->{LAST};
-            $genbank->{LAST} = $_;
-            return $seq;
-        }
-		elsif (/^ACCESSION/){
-			s/^ACCESSION\s+//;
-			$seq->{HEADER} = "ACCESSION\t" . $_  . "\tLOCUS\t" . $seq->{HEADER};
+		if ($line =~ /^SOURCE/){
+			$genbank->{LAST} = _add_genbank_source($fh,$seq,$line);
 		}
-		elsif (/^ORIGIN/){
+		elsif ($line =~ /^REFERENCE/){
+			$genbank->{LAST} = _add_genbank_reference($fh,$seq,$line);
+		}
+		elsif ($line =~ /^FEATURES/){
+			$genbank->{LAST} = _add_genbank_feature($fh,$seq);
+		}
+		elsif ($line =~ /^ORIGIN/){
 			$seen_origin=1;
+			$genbank->{LAST} = <$fh>;
+			chomp $genbank->{LAST};
 		}
-		elsif (/^\/\//){
-			$seen_origin=0;
+		elsif ($line =~ /^\/\//){  #end of record
+			if (!eof($fh)){
+				$genbank->{LAST} = <$fh>;
+				chomp $genbank->{LAST};
+			}
+			
+			last;
 		}
         elsif ($seen_origin){
-			s/[0-9\s]+//g;
-            $seq->{SEQUENCE}.=uc($_);  #Assign line to sequence
+			$line =~ s/[0-9\s]+//g;
+            $seq->{SEQUENCE}.=uc($line);  #Assign line to sequence
+			$genbank->{LAST} = <$fh>;
+			chomp $genbank->{LAST};
         }
+		elsif ($line=~/^(\w+)/){  #Import general field information
+			$genbank->{LAST} = _add_genbank_general($fh,$seq,$1,$line);
+		}
 		else{
+			$genbank->{LAST} = <$fh>;
+			chomp $genbank->{LAST};
 			next;
 		}
     }
@@ -381,6 +410,179 @@ sub get_next_genbank{
     
     return $seq;
 }
+
+sub _add_genbank_locus{
+	my ($fh,$seq,$line) = @_;
+	$line =~ s/^LOCUS\s+//;  #Remove ">" line
+	$line =~ m/^(\S+)\s+(\d+)\s+bp\s+(\S+)\s+(linear|circular)*\s+(PRI|ROD|MAM|VRT|INV|PLN|BCT|VRL|PHG|SYN|UNA|EST|PAT|STS|GSS|HTG|HTC|ENV)\s+(\S+)$/g;
+	$seq->{ANNOTATION}->{LOCUS}->{NAME} = $1;
+	$seq->{ANNOTATION}->{LOCUS}->{LENGTH} = $2;
+	$seq->{ANNOTATION}->{LOCUS}->{MOLECULE_TYPE} = $3;	
+	$seq->{ANNOTATION}->{LOCUS}->{MOLECULE_STRUCT} = $4;
+	$seq->{ANNOTATION}->{LOCUS}->{GENBANK_DIVISION} = $5;
+	$seq->{ANNOTATION}->{LOCUS}->{MODIFICATION_DATE} = $6;
+	
+	return;
+}
+
+#Parse the Record Field and any lines after that don't have a field ID
+#Modifies $seq and adds annotation to the Annotation hash
+#Returns the last line read from the file
+#Must return last line because gzipped files can't use seek.
+sub _add_genbank_general{
+	my ($fh,$seq,$type,$line,) = @_;
+	$line =~ s/^$type\s+//;
+	$seq->{ANNOTATION}->{$type} = $line;
+	
+	$line = <$fh>;
+	chomp $line;
+	
+	while ($line=~/^\s+/){
+		$line =~ s/^\s+//;
+		$seq->{ANNOTATION}->{$type} .= " " . $line;
+		$line = <$fh>;
+		chomp $line;
+	}
+		
+	return $line;
+}
+
+
+#Parse the Source Field of the record and the sub-field Organism
+#Modifies $seq and adds annotation to the Annotation hash
+#Returns the last line read from the file
+sub _add_genbank_source{
+	my ($fh,$seq,$line) = @_;
+	$line =~ s/^SOURCE\s+//;
+	$seq->{ANNOTATION}->{SOURCE} = $line;
+	
+	my $position = tell $fh;
+	$line = <$fh>;
+	chomp $line;
+	
+	if ($line=~/^\s+ORGANISM/){
+		$line =~ s/^\s+ORGANISM\s+//;
+		$line = _add_genbank_general($fh,$seq,"ORGANISM",$line);
+	}
+	
+	return $line;
+}
+
+#Parse the Refernce ID field and associated sub-fields
+#Modifies $seq and adds annotation to the Annotation hash
+#Returns the last line read from the file
+sub _add_genbank_reference{
+	my ($fh,$seq,$line) = @_;
+	$line =~ s/^REFERENCE\s+//;
+	$line =~ m/^(\d+)(\s+(\(.*\)))?/;
+	my $ref_index = $1;
+	my $ref_coord = (defined $3) ? $3 : q();
+	
+	$seq->{ANNOTATION}->{REFERENCES}->[$ref_index]->{COORD} = $ref_coord;
+	
+	$line = <$fh>;
+	chomp $line;
+	
+	my $parent = q();
+	
+	while ($line=~/^s+/){
+		if ($line=~/^\s+AUTHORS/){
+			$parent = "AUTHORS";
+			$line =~ s/^\s+AUTHORS\s+//;
+			$seq->{ANNOTATION}->{REFERENCES}->[$ref_index]->{AUTHORS} = $line;
+		}
+		elsif ($line=~/^\s+CONSRTM/){
+			$parent = "TITLE";
+			$line =~ s/^\s+CONSRTM\s+//;
+			$seq->{ANNOTATION}->{REFERENCES}->[$ref_index]->{CONSRTM} = $line;
+		}
+		elsif ($line=~/^\s+TITLE/){
+			$parent = "TITLE";
+			$line =~ s/^\s+TITLE\s+//;
+			$seq->{ANNOTATION}->{REFERENCES}->[$ref_index]->{TITLE} = $line;
+		}
+		elsif ($line=~/^\s+JOURNAL/){
+			$parent = "JOURNAL";
+			$line =~ s/^\s+JOURNAL\s+//;
+			$seq->{ANNOTATION}->{REFERENCES}->[$ref_index]->{JOURNAL} = $line;
+		}
+		elsif ($line=~/^\s+PUBMED/){
+			$parent = "PUBMED";
+			$line =~ s/^\s+PUBMED\s+//;
+			$seq->{ANNOTATION}->{REFERENCES}->[$ref_index]->{PUBMED} = $line;
+		}
+		elsif ($line=~/^REFERENCE/){
+			last;
+		}
+		else{
+			$line=~s/^\s+//;
+			$seq->{ANNOTATION}->{REFERENCES}->[$ref_index]->{$parent} .= " " . $line;
+		}
+		
+		$line = <$fh>;
+		chomp $line;
+	}
+	
+	return $line;
+}
+
+
+#Parse the Feature fields and associated sub-fields
+#Adds features to array of Features in Annotation hash
+#Modifies $seq and adds annotation to the Annotation hash
+#Returns the last line read from the file
+sub _add_genbank_feature{
+	my ($fh,$seq) = @_;
+	
+	my $line = <$fh>;
+	chomp $line;
+	
+	while ($line=~/^\s{5}(\S+)\s+(\S+)/){
+		my $feature;
+		$feature->{FEATURE}=$1;
+		$feature->{COORD}=$2;
+		$line = _parse_genbank_feature($fh,$feature);
+		
+		push @{$seq->{ANNOTATION}->{FEATURES}},$feature;
+		chomp $line;
+	}
+	
+	return $line;
+	
+}
+
+
+#Parse individual features sub-fields
+#Modifies $feature hash_ref
+#Returns the last line read from the file
+sub _parse_genbank_feature{
+	my ($fh,$feature) = @_;
+	my $line = <$fh>;
+	chomp $line;
+	
+	my $parent = "COORD";
+	
+	while ($line =~ m/^\s{21}(.+)/){
+		my $group = $1;
+		
+		if ($group =~ /^\/(\S+)\=\"(.*)\"$/){
+			$parent = uc($1);
+			$feature->{$parent} = $2;
+		}
+		else{
+			$line =~ s/^\s+//;
+			$feature->{$parent} .= " " . $line;
+		}
+		
+		$line = <$fh>;
+		chomp $line;
+	}
+	
+	return $line;
+}
+
+
+
 
 #Get all the sequences in the genbank file and return a array_ref to array of
 #hashes{SEQUENCE=>seq and HEADER=>header}
@@ -453,7 +655,7 @@ sub rand_seq {
 	my $ref = $_[2] if $type =~ /^custom$/i;
 	my @possible_type = qw(dna rna protein custom);
 	die "usage: rand_seq(length [int], type [dna, rna, protein, custom], [custom: hash of ref])\n" unless defined($length);
-	die "Error at subroutine rand_seq: length must be positive integer (your input: $length).\n" unless $length =~ /^\d+$/;
+	die "Error at subroutine rand_seq: length must be positive integer (your input: $length).\n" unless $length =~ /^\d+E{0,1}\d*$/i;
 	$type = "dna" if not defined($type);
 	die "Error at subroutine rand_seq: type must be dna/rna/protein/custom/file (your input: $type).\n" unless grep(/^$type$/, @possible_type);
 	die "Error at subroutine rand_seq: type is custom but you have undefined ref hash or ref hash contain zero keys/value.\n" if ($type =~ /^custom$/i and keys %{$ref} == 0);
@@ -461,7 +663,8 @@ sub rand_seq {
 	# Get reference based on type #
 	my %ref;
 	# DNA/RNA
-	%ref = ("A" => 1, "a" => 1, "G" => 1, "g" => 1, "T" => 1, "t" => 1, "C" => 1, "c" => 1) if $type =~ /^dna$/i or $type =~ /^rna$/i;
+	%ref = ("A" => 1, "G" => 1, "T" => 1, "C" => 1) if $type =~ /^dna$/i or $type =~ /^rna$/i;
+	#%ref = ("A" => 1, "a" => 1, "G" => 1, "g" => 1, "T" => 1, "t" => 1, "C" => 1, "c" => 1) if $type =~ /^dna$/i or $type =~ /^rna$/i; #case insensitive
 	# Protein
 	%ref = (
 	"A" => 1, "R" => 1, "N" => 1, "D" => 1, "C" => 1, 
@@ -473,25 +676,41 @@ sub rand_seq {
 	%ref = %{$ref} if $type =~ /^custom$/i;
 	
 	# Randomize #
-	# First make a dummy sequence at $pool that has length $lmax (the bigger lmax, the more accurate)
-	my ($lmax, $seq, $pool, $prob) = (99999);
-	foreach my $alphabet (sort keys %ref) {
-		my $value = int($ref{$alphabet} * $lmax);
-		for (my $i = 0; $i < $value; $i++) {
-			$pool .= $alphabet;
-		}
+	# Stepped CDF #
+	my %cdf;
+
+	# Get total of weights #
+	my $total = 0;
+	foreach my $char (sort {$ref{$a} <=> $ref{$b}} keys %ref) {
+		my $value = $ref{$char};
+		$total += $value;
+	}
+
+	# Get steps of weights #
+	my $curr_val = 0;
+	foreach my $char (sort {$ref{$a} <=> $ref{$b}} keys %ref) {
+		$cdf{$char}{'min'} = $curr_val;
+		$curr_val += $ref{$char}/$total;
+		$cdf{$char}{'max'} = $curr_val;
 	}
 	
-	# Then randomly take alphabets from $pool to make $seq 
-	my $lseq = 0;
-	while ($lseq  < $length) {
-		$seq .= substr($pool, int(rand(length($pool))), 1);
-		$lseq = length($seq);
+	# Make sequence #
+	my ($lseq, $seq) = 0;
+	while ($lseq < $length) {
+		my $rnum = rand();
+		foreach my $char (sort {$cdf{$a} <=> $cdf{$b}} keys %cdf) {
+			if ($rnum > $cdf{$char}{'min'} and $rnum <= $cdf{$char}{'max'}) {
+				$seq .= $char;
+				$lseq++;
+				last;
+			}
+		}
 	}
-	$seq =~ tr/T/U/ if $type =~ /^rna$/i;
+
+	# Correct for RNA #
+	$seq =~ tr/Tt/Uu/ if $type =~ /^rna$/i;
 	return($seq);
 }
-
 
 # Take a case-insensitive sequence input $seq and optional start position $start (default 0)
 # And there is also a third option of what should undefined be (X, N, 0)
