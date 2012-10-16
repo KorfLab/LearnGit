@@ -709,7 +709,7 @@ sub rand_seq {
 	}
 
 	# Correct for RNA #
-	$seq =~ tr/T/U/ if $type =~ /^rna$/i;
+	$seq =~ tr/Tt/Uu/ if $type =~ /^rna$/i;
 	return($seq);
 }
 
