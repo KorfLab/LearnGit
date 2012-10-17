@@ -127,6 +127,13 @@ print "\n\nFunction clean_sequence(\$seq): Cleans whitespace from a DNA, RNA, or
 print "\nSequence before cleaning:\n$seq\n\nSequence after cleaning:\n$nowhitespace_seq \n\n";
 
 
+#---------------------- Check the Type of a Sequence ---------------------------#
+
+my $seq = "ACGTACGTACGT";
+my $seq_type = Sequence::check_type($seq);
+print "\n$seq -> check type -> $seq_type\n\n";
+
+
 #-------------------- Needleman-Wunsch Alignment ---------------------#
 my $alignseq1 = "AAATTTCCCGGG";
 my $alignseq2 = "AATTCCCG";
