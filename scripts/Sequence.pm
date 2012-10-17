@@ -654,67 +654,58 @@ sub reverse_seq {
 # $type (case insensitive) can be "dna" (default), "rna", "protein", or "custom".
 # dna, rna, and protein will give equal weight to each alphabet (DNA - A/T/G/C, Protein - 20 amino acids).
 # "custom" will have a third input hash reference $hash, which will have the alphabet as key and weight as value
-# Please don't make the weight in crazy big number. Keep them less than 10 if possible.
 sub rand_seq {
-	my ($length, $type) = @_;
-	my $ref = $_[2] if $type =~ /^custom$/i;
-	my @possible_type = qw(dna rna protein custom);
-	die "usage: rand_seq(length [int], type [dna, rna, protein, custom], [custom: hash of ref])\n" unless defined($length);
-	die "Error at subroutine rand_seq: length must be positive integer (your input: $length).\n" unless $length =~ /^\d+E{0,1}\d*$/i;
-	$type = "dna" if not defined($type);
-	die "Error at subroutine rand_seq: type must be dna/rna/protein/custom/file (your input: $type).\n" unless grep(/^$type$/, @possible_type);
-	die "Error at subroutine rand_seq: type is custom but you have undefined ref hash or ref hash contain zero keys/value.\n" if ($type =~ /^custom$/i and keys %{$ref} == 0);
+	my ($target_seq_length, $target_seq_type) = @_;
+	die "Error at subroutine rand_seq: length must be positive integer (your input: $target_seq_length).\n" unless $target_seq_length =~ /^\d+E{0,1}\d*$/i;
+	$target_seq_type = "dna" if not defined($target_seq_type);
 
-	# Get reference based on type #
-	my %ref;
+	# Define char weight reference based on type #
+	my %char_weight;
 	# DNA/RNA
-	%ref = ("A" => 1, "G" => 1, "T" => 1, "C" => 1) if $type =~ /^dna$/i or $type =~ /^rna$/i;
-	#%ref = ("A" => 1, "a" => 1, "G" => 1, "g" => 1, "T" => 1, "t" => 1, "C" => 1, "c" => 1) if $type =~ /^dna$/i or $type =~ /^rna$/i; #case insensitive
+	if (lc($target_seq_type) eq "dna" or lc($target_seq_type) eq "rna") {%char_weight = ("A" => 1, "G" => 1, "T" => 1, "C" => 1)}
 	# Protein
-	%ref = (
+	elsif (lc($target_seq_type) eq "protein") {%char_weight = (
 	"A" => 1, "R" => 1, "N" => 1, "D" => 1, "C" => 1, 
 	"Q" => 1, "E" => 1, "G" => 1, "H" => 1, "I" => 1, 
 	"L" => 1, "K" => 1, "M" => 1, "F" => 1, "P" => 1, 
-	"S" => 1, "T" => 1, "W" => 1, "Y" => 1, "V" => 1
-	) if $type =~ /^protein$/i;
+	"S" => 1, "T" => 1, "W" => 1, "Y" => 1, "V" => 1)}
 	# Custom
-	%ref = %{$ref} if $type =~ /^custom$/i;
+	elsif (lc($target_seq_type) eq "custom") {
+		die "Your type input is \"custom\" but you don't define custom hash\n" unless defined($_[2]);
+		%char_weight = %{$_[2]};
+	}
+	else {die "Please input a valid sequence type [dna|rna|protein|custom]\n"}
 	
 	# Randomize #
-	# Stepped CDF #
-	my %cdf;
+	# Create a hash to store Stepped Cumulative Probability Distribution (SCPD)#
+	my %scpd; 
 
-	# Get total of weights #
-	my $total = 0;
-	foreach my $char (sort {$ref{$a} <=> $ref{$b}} keys %ref) {
-		my $value = $ref{$char};
-		$total += $value;
-	}
-
-	# Get steps of weights #
-	my $curr_val = 0;
-	foreach my $char (sort {$ref{$a} <=> $ref{$b}} keys %ref) {
-		$cdf{$char}{'min'} = $curr_val;
-		$curr_val += $ref{$char}/$total;
-		$cdf{$char}{'max'} = $curr_val;
+	# Define steps of the probabilities #
+	# E.g. if weights for A, C, G, T are 10, 10, 10, 30, we will make a distribution of boundaries
+	# starting from 0 + initial weight (10), ending at total sum of weights
+	# A = 10 (0+10)
+	# C = 20 (10+10)
+	# G = 30 (20+10)
+	# T = 60 (30+30)
+	my $step_boundary = 0;
+	foreach my $char (sort {$char_weight{$a} <=> $char_weight{$b}} keys %char_weight) {
+		$step_boundary += $char_weight{$char};
+		$scpd{$char} = $step_boundary;
 	}
 	
-	# Make sequence #
-	my ($lseq, $seq) = 0;
-	while ($lseq < $length) {
-		my $rnum = rand();
-		foreach my $char (sort {$cdf{$a} <=> $cdf{$b}} keys %cdf) {
-			if ($rnum > $cdf{$char}{'min'} and $rnum <= $cdf{$char}{'max'}) {
-				$seq .= $char;
-				$lseq++;
-				last;
-			}
+	# Create random sequence #
+	my $random_seq;
+	for(my $i = 0; $i < $target_seq_length; $i++){
+		my $random_num = rand() * $step_boundary ; # $step_boundary is the total weight
+		foreach my $char (sort {$scpd{$a} <=> $scpd{$b}} keys %scpd) {
+
+			$random_seq .= $char and last if ($random_num <= $scpd{$char});
 		}
 	}
 
 	# Correct for RNA #
-	$seq =~ tr/Tt/Uu/ if $type =~ /^rna$/i;
-	return($seq);
+	$random_seq =~ tr/Tt/Uu/ if $target_seq_type =~ /^rna$/i;
+	return($random_seq);
 }
 
 # Take a case-insensitive sequence input $seq and optional start position $start (default 0)
