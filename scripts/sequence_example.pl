@@ -59,7 +59,7 @@ my $reversed = Sequence::reverse_seq($seq);
 print "\n$seq -> reversed -> $reversed\n\n";
 
 
-#-------------------- Generate Ranom Sequence -_----------------------#
+#-------------------- Generate Random Sequence ------------------------#
 
 # Make random sequence of 100 length
 my $rand_seq_length = 1E2;
@@ -125,6 +125,13 @@ $seq = "AAAACCCCGGGGTTTT -AAA";
 my $nowhitespace_seq = Sequence::clean_sequence($seq);
 print "\n\nFunction clean_sequence(\$seq): Cleans whitespace from a DNA, RNA, or protein sequence\n";
 print "\nSequence before cleaning:\n$seq\n\nSequence after cleaning:\n$nowhitespace_seq \n\n";
+
+
+#---------------------- Check the Type of a Sequence ---------------------------#
+
+$seq = "ACGTACGTACGT";
+my $seq_type = Sequence::check_type($seq);
+print "\n$seq -> check type -> $seq_type\n\n";
 
 
 #-------------------- Needleman-Wunsch Alignment ---------------------#
