@@ -129,7 +129,7 @@ print "\nSequence before cleaning:\n$seq\n\nSequence after cleaning:\n$nowhitesp
 
 #---------------------- Check the Type of a Sequence ---------------------------#
 
-my $seq = "ACGTACGTACGT";
+$seq = "ACGTACGTACGT";
 my $seq_type = Sequence::check_type($seq);
 print "\n$seq -> check type -> $seq_type\n\n";
 
