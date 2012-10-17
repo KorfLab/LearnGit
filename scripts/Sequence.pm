@@ -743,7 +743,6 @@ sub rev_translate_codon {
 	$undef = "NNN" if not defined($undef);
 
 	$seq = uc($seq);
-	print "SEQ = $seq\n";
         my $trans = "";
         for (my $i = 0; $i < length($seq); $i++) {
                 my $amino = substr($seq, $i, 1);
@@ -754,21 +753,20 @@ sub rev_translate_codon {
 }
 
 # Calculate Shannon's Entropy
-# Default is case insensitive
+# Case sensitive (people should know to put the correct case for their seq - Ian)
 sub entropy_shannon {
-	my ($seq, $case) = @_;
-	$seq = uc($seq) if not defined($case);
+	my ($seq) = @_;
 	my %seq;
 	for (my $i = 0; $i < length($seq); $i++) {
 		my $nuc = substr($seq, $i, 1);
-		$seq{'nuc'}{$nuc}++;
-		$seq{'tot'}++;
+		$seq{nuc}{$nuc}++;
+		$seq{tot}++;
 	}
-	foreach my $nuc (keys %{$seq{'nuc'}}) {
-		$seq{'nuc'}{$nuc} /= $seq{'tot'};
-		$seq{'ent'} += -1 * $seq{'nuc'}{$nuc} * (log($seq{'nuc'}{$nuc}) / log (2));
+	foreach my $nuc (keys %{$seq{nuc}}) {
+		$seq{nuc}{$nuc} /= $seq{tot};
+		$seq{ent} += -1 * $seq{nuc}{$nuc} * (log($seq{nuc}{$nuc}) / log (2));
 	}
-	return($seq{'ent'});
+	return($seq{ent});
 }
 
 
