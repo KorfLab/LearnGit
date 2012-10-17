@@ -59,7 +59,7 @@ my $reversed = Sequence::reverse_seq($seq);
 print "\n$seq -> reversed -> $reversed\n\n";
 
 
-#-------------------- Generate Ranom Sequence -_----------------------#
+#-------------------- Generate Random Sequence ------------------------#
 
 # Make random sequence of 100 length
 my $rand_seq_length = 1E2;
