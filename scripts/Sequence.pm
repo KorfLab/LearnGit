@@ -991,6 +991,26 @@ sub align_sw_pl {
 
 }
 
+# count_kmer will count occurences of kmers within a given 
+# sequence of length k
+sub count_kmer {
+	my ($length, $seq) = @_;
+	
+	# Hash to store kmers and associated counts
+	my %count;
+	
+	# Read through sequence with a window size of $length
+	for (my $i = 0; $i <= length($seq) - $length; $i++) {
+		my $kmer = substr($seq, $i, $length);
+		
+		# Tally counts for kmer
+		$count{$kmer}++;
+	}
+	
+	# Return reference to count hash
+	return(\%count);
+}
+
 1;
 
 __DATA__
