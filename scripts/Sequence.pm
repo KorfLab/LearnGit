@@ -610,6 +610,24 @@ sub get_all_genbanks{
     return $seqs;
 }
 
+sub check_type {
+	my $seq = shift;
+	my $seq_type = "None specified"; # default if unable to get sequence type
+	
+	# check for IUPAC characters unique to protein, DNA, or RNA
+	if ($seq =~ m/[EFILPQXZ]/i) {
+		$seq_type = "Protein";
+	} elsif ($seq =~ m/U/i) {
+		$seq_type = "RNA";
+	} elsif ($seq =~ m/[ACGTRYSWKMBDHVN]/i) {
+		$seq_type = "DNA";
+	} else {
+		$seq_type = "Not IUPAC standard sequence. Does not match  DNA, RNA, or amino acid symbols\n"; 
+	}
+	return $seq_type;
+}
+
+
 sub complement {
 	# Returns the complement of the input $seq of type $nuc_type, which can be either "DNA" or "RNA"
     # Given no value for $nuc_type, $nuc_type defaults to "DNA"
