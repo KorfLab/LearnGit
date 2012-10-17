@@ -67,12 +67,20 @@ my $rand_dna = Sequence::rand_seq($rand_seq_length, "dna");
 my $rand_rna = Sequence::rand_seq($rand_seq_length, "rna");
 my $rand_pro = Sequence::rand_seq($rand_seq_length, "protein");
 
-#my %cust_ref = ("k" => 10, "o" => 0.5, "r" => 0.5, "f" => 0.5, "l" => 1, "a" => 2, "b" => 2);
-my %cust_ref = ("A" => 1, "T" => 1, "G" => 1, "C" => 1, "N" => 1);
+my %cust_ref = (
+	"A" => 100, "T" => 100, "G" => 100, "C" => 100, "N" => 10,
+	"k" => 1, "o" => 1, "r" => 1, "f" => 1, "l" => 1, "a" => 1, "b" => 1
+	);
 my $rand_custom = Sequence::rand_seq($rand_seq_length, "custom", \%cust_ref);
 
 print "\n\nFunction rand_seq(\$length, \$type[dna rna protein custom], [optional: \$custom hash])\n";
-print "$rand_seq_length length of rand_seq()\ndna: $rand_dna\nrna: $rand_rna\npro: $rand_pro\ncustom: $rand_custom\n";
+print "$rand_seq_length length of rand_seq()\ndna: $rand_dna\nrna: $rand_rna\npro: $rand_pro
+custom hash: 
+my \%cust_ref = (
+	\"A\" => 100, \"T\" => 100, \"G\" => 100, \"C\" => 100, \"N\" => 10,
+	\"k\" => 1, \"o\" => 1, \"r\" => 1, \"f\" => 1, \"l\" => 1, \"a\" => 1, \"b\" => 1)
+	\;
+custom dna: $rand_custom\n";
 
 
 #----------------------- Translate DNA seq to Protein ------------------------#
@@ -84,11 +92,10 @@ print "dna:$rand_custom\ndna to protein: $dnatoprotein\nprotein to dna: $protein
 
 
 #----------------------- Shannon Entropy ------------------------#
-my $entropy = Sequence::entropy_shannon($rand_dna);
-my $entropy_case = Sequence::entropy_shannon($rand_dna, "case");
-print "\n\nFunction entropy_shannon(\$dna, [case]): Calculate Shannon's Entropy of a dna sequence\n";
+my $Sh_entropy = Sequence::entropy_shannon($rand_custom);
+print "\n\nFunction entropy_shannon(\$dna): Calculate Shannon's Entropy of any sequence (e.g. DNA)\n";
 print "DNA = $rand_custom\n";
-print "Shannon Entropy of sequence rand_dna():\ncase insensitive: $entropy\ncase sensitive: $entropy_case\n";
+print "Shannon Entropy of sequence rand_dna(\$rand_custom): $Sh_entropy\n";
 
 
 #----------------------- Check for Whitespace ------------------------#

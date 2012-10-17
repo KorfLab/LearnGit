@@ -749,20 +749,20 @@ sub rev_translate_codon {
 }
 
 # Calculate Shannon's Entropy
-# Default is case sensitive (people should know to the correct character - Ian)
+# Case sensitive (people should know to put the correct case for their seq - Ian)
 sub entropy_shannon {
-	my ($seq, $case) = @_;
+	my ($seq) = @_;
 	my %seq;
 	for (my $i = 0; $i < length($seq); $i++) {
 		my $nuc = substr($seq, $i, 1);
-		$seq{'nuc'}{$nuc}++;
-		$seq{'tot'}++;
+		$seq{nuc}{$nuc}++;
+		$seq{tot}++;
 	}
-	foreach my $nuc (keys %{$seq{'nuc'}}) {
-		$seq{'nuc'}{$nuc} /= $seq{'tot'};
-		$seq{'ent'} += -1 * $seq{'nuc'}{$nuc} * (log($seq{'nuc'}{$nuc}) / log (2));
+	foreach my $nuc (keys %{$seq{nuc}}) {
+		$seq{nuc}{$nuc} /= $seq{tot};
+		$seq{ent} += -1 * $seq{nuc}{$nuc} * (log($seq{nuc}{$nuc}) / log (2));
 	}
-	return($seq{'ent'});
+	return($seq{ent});
 }
 
 
