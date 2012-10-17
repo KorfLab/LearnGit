@@ -909,8 +909,9 @@ sub extract_subsequence{
 # The sw_align function calls the C implementation if Inline is installed.
 # Performance considerations for 500bp and 5kbp sequences below
 #          500x500x500  5000x5000x10 
-#  Perl:   30Mb 285s  
+#  Perl:   30Mb 285s     2.5Gb 641s
 #  C:      11Mb 3.0s     235Mb 4.4s
+# In longer sequences, C is >100x faster and requires < 1/10 memory
 
 sub sw_align {
 	if ($Dependency{Inline}) {return align_sw_c(@_)}
