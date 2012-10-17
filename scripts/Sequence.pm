@@ -749,10 +749,9 @@ sub rev_translate_codon {
 }
 
 # Calculate Shannon's Entropy
-# Default is case insensitive
+# Default is case sensitive (people should know to the correct character - Ian)
 sub entropy_shannon {
 	my ($seq, $case) = @_;
-	$seq = uc($seq) if not defined($case);
 	my %seq;
 	for (my $i = 0; $i < length($seq); $i++) {
 		my $nuc = substr($seq, $i, 1);
