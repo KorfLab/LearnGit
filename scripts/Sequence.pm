@@ -3,8 +3,13 @@ use strict;
 use warnings;
 use List::Util qw(shuffle);
 use IO::Uncompress::Gunzip;
-use Inline C => 'DATA';
+our %Dependency;
 
+BEGIN {
+	eval "use Inline C => 'DATA'";
+	if ($@ =~ /^Can't locate Inline.pm/) {$Dependency{Inline} = 0}
+	else                                 {$Dependency{Inline} = 1}
+}
 
 my %Translation = (
 	'AAA' => 'K',	'AAC' => 'N',	'AAG' => 'K',	'AAT' => 'N',
@@ -899,13 +904,100 @@ sub extract_subsequence{
 	return($subseq);
 }
 
+# Two smith-waterman implementations are given below. Both are very similar
+#   so that one might compare Perl and C.
+# The sw_align function calls the C implementation if Inline is installed.
+# Performance considerations for 500bp and 5kbp sequences below
+#          500x500x500  5000x5000x10 
+#  Perl:   30Mb 285s  
+#  C:      11Mb 3.0s     235Mb 4.4s
+
+sub sw_align {
+	if ($Dependency{Inline}) {return align_sw_c(@_)}
+	else                     {return align_sw_pl(@_)}
+}
+
+sub align_sw_pl {
+	my ($s1, $s2, $m, $n, $g) = @_;
+	
+	my ($l1, $l2) = (length($s1), length($s2));
+	
+	# allocate matrices
+	my (@sm, @tm);
+		
+	# init first column and row
+	for (my $i = 0; $i <= $l1; $i++) {
+		$sm[$i][0] = 0;
+		$tm[$i][0] = '.';
+	}
+	for (my $j = 1; $j <= $l2; $j++) {
+		$sm[0][$j] = 0;
+		$tm[0][$j] = '.';
+	}
+		
+	# fill matrix
+	my ($max_i, $max_j, $max_s) = (0, 0, 0);
+	for (my $i = 1; $i <= $l1; $i++) {
+		for (my $j = 1; $j <= $l2; $j++) {
+			my ($d, $v, $h);
+			my ($sym1, $sym2) = (substr($s1, $i-1, 1), substr($s2, $j-1, 1));
+			if ($sym1 eq $sym2) {$d = $sm[$i-1][$j-1] + $m}
+			else                {$d = $sm[$i-1][$j-1] + $n}
+			$v = $sm[$i-1][ $j ] + $g;
+			$h = $sm[ $i ][$j-1] + $g;
+						
+			if ($d > $h && $d > $v && $d > 0) {
+				$sm[$i][$j] = $d;
+				$tm[$i][$j] = 'd';
+				if ($d > $max_s) {
+					$max_s = $d;
+					$max_i = $i;
+					$max_j = $j;
+				}
+			} elsif ($h > $v && $h > 0) {
+				$sm[$i][$j] = $h;
+				$tm[$i][$j] = 'h';
+			} elsif ($v > 0) {
+				$sm[$i][$j] = $v;
+				$tm[$i][$j] = 'v';
+			} else {
+				$sm[$i][$j] = 0;
+				$tm[$i][$j] = '.';
+			}
+		}
+	}
+	
+	# allocate alignment strings
+	my ($a1, $a2);
+
+	# traceback
+	my ($i, $j) = ($max_i, $max_j);
+	my ($min_i, $min_j);
+	while ($sm[$i][$j] > 0) {
+		$a1 .= substr($s1, $i-1, 1);
+		$a2 .= substr($s2, $j-1, 1);
+		$min_i = $i;
+		$min_j = $j;
+		if    ($tm[$i][$j] eq 'd') {$i--; $j--}
+		elsif ($tm[$i][$j] eq 'h') {$j--}
+		elsif ($tm[$i][$j] eq 'v') {$i--}
+	}
+	
+	# reverse strings
+	$a1 = reverse $a1;
+	$a2 = reverse $a2;
+	
+	# return values
+	return $max_s, $s1, $s2, $min_i, $max_i, $min_j, $max_j;
+
+}
 
 1;
 
 __DATA__
 __C__
 
-void align_sw (const char *s1, const char *s2, double m, double n, double g) {
+void align_sw_c (const char *s1, const char *s2, double m, double n, double g) {
 	int i, j, l1, l2, max_i, max_j, min_i, min_j, pos, alen;
 	double d, v, h, max_s = 0;
 	double ** sm;
@@ -926,6 +1018,7 @@ void align_sw (const char *s1, const char *s2, double m, double n, double g) {
 		
 	/* fill matrix */
 	max_i = max_j = 0;
+	max_s = 0;
 	for (i = 1; i <= l1; i++) {
 		for (j = 1; j <= l2; j++) {
 			if (s1[i-1] == s2[j-1]) d = sm[i-1][j-1] + m;
@@ -950,12 +1043,6 @@ void align_sw (const char *s1, const char *s2, double m, double n, double g) {
 	/* traceback */
 	i = max_i, j = max_j, pos = 0;
 	while (sm[i][j] > 0) {
-		if (i == 0 || j == 0) {
-			fprintf(stderr, "found 1\n");
-		}
-		if (pos >= (l1 + l2)) {
-			fprintf(stderr, "found 2\n");
-		}
 		a1[pos] = s1[i-1]; 
 		a2[pos] = s2[j-1];
 		min_i = i;
