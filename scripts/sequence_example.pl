@@ -82,12 +82,33 @@ my \%cust_ref = (
 	\;
 custom dna: $rand_custom\n";
 
+#CHECK FOR RANDOMNESS of 100000bp seq#
+$rand_seq_length = 1E5;
+$rand_dna = Sequence::rand_seq($rand_seq_length, "dna");
+my %rand;
+my $ldna = length($rand_dna);
+for (my $i = 0; $i < $ldna; $i++) {
+	my $nuc = substr($rand_dna, $i, 1);
+	$rand{$nuc}++;
+	$nuc = substr($rand_dna, $i, 2) if $i < $ldna-1;
+	$rand{$nuc}++ if $i < $ldna-1;
+	$nuc = substr($rand_dna, $i, 3) if $i < $ldna-2;
+	$rand{$nuc}++ if $i < $ldna-2;
+}
+print "How random is random_seq()? (Tested on 1E5 bp DNA for 1-3 mer)\n";
+foreach my $nuc (sort keys %rand) {
+	$rand{$nuc} /= $ldna if length($nuc) == 1;
+	$rand{$nuc} /= ($ldna-1) if length($nuc) == 2;
+	$rand{$nuc} /= ($ldna-2) if length($nuc) == 3;
+	printf "$nuc\t$rand{$nuc} (log odd = %.4f)\n", log($rand{$nuc} / 0.25**(length($nuc)));
+}
+	
 
 #----------------------- Translate DNA seq to Protein ------------------------#
 # Translate a sequence and reverse translate it
+print "\n\nFunction translate_codon(\$dna): Translate a sequence\nFunction rev_translate_codon(\$protein): Reverse translate protein seq\n";
 my $dnatoprotein = Sequence::translate_codon($rand_custom);
 my $proteintodna = Sequence::rev_translate_codon($dnatoprotein);
-print "\n\nFunction translate_codon(\$dna): Translate a sequence\nFunction rev_translate_codon(\$protein): Reverse translate protein seq\n";
 print "dna:$rand_custom\ndna to protein: $dnatoprotein\nprotein to dna: $proteintodna\n\n";
 
 

@@ -738,7 +738,6 @@ sub rev_translate_codon {
 	$undef = "NNN" if not defined($undef);
 
 	$seq = uc($seq);
-	print "SEQ = $seq\n";
         my $trans = "";
         for (my $i = 0; $i < length($seq); $i++) {
                 my $amino = substr($seq, $i, 1);
