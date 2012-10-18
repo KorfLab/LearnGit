@@ -95,13 +95,16 @@ for (my $i = 0; $i < $ldna; $i++) {
 	$nuc = substr($rand_dna, $i, 3) if $i < $ldna-2;
 	$rand{$nuc}++ if $i < $ldna-2;
 }
-print "DEBUG create_rand_seq(): How random is the seq? (Tested on 1E5 bp DNA for 1-3 mer)
+my $DEBUG = 0;
+if ($DEBUG == 1) {
+	print "DEBUG create_rand_seq(): How random is the seq? (Tested on 1E5 bp DNA for 1-3 mer)
 log odd ratio is a function of log(observed/expected), where if it's random enough, obs = exp, and value would be 0 (log(1) = 0)\n";
-foreach my $nuc (sort keys %rand) {
-	$rand{$nuc} /= $ldna if length($nuc) == 1;
-	$rand{$nuc} /= ($ldna-1) if length($nuc) == 2;
-	$rand{$nuc} /= ($ldna-2) if length($nuc) == 3;
-	printf "$nuc\t$rand{$nuc} (log odd = %.4f)\n", log($rand{$nuc} / 0.25**(length($nuc)));
+	foreach my $nuc (sort keys %rand) {
+		$rand{$nuc} /= $ldna if length($nuc) == 1;
+		$rand{$nuc} /= ($ldna-1) if length($nuc) == 2;
+		$rand{$nuc} /= ($ldna-2) if length($nuc) == 3;
+		printf "$nuc\t$rand{$nuc} (log odd = %.4f)\n", log($rand{$nuc} / 0.25**(length($nuc)));
+	}
 }
 #----------------------- Create random seq based on kmer freq ------------------------#
 print "\n\nFunction create_rand_seq_kmer(\$seq_length, \\\%kmer_table)\nGenerate \$seq_length bp sequence based on hash reference \\\%kmer_table\n";
@@ -123,13 +126,16 @@ my $kmer2 = Sequence::count_kmer($seq_kmer, 3);
 
 my %kmer = %{$kmer};
 my %kmer2 = %{$kmer2};
-print "DEBUG create_rand_seq_kmer(): How random is the seq? (Tested on 100 bp DNA for 2 mer)
+$DEBUG = 0;
+if ($DEBUG == 1) {
+	print "DEBUG create_rand_seq_kmer(): How random is the seq? (Tested on 100 bp DNA for 2 mer)
 log odd ratio is a function of log(observed/expected), where if it's random enough, obs = exp, and value would be 0 (log(1) = 0)
-kmer\tIn\tOut\n";
-foreach my $nuc (sort {$kmer{$b} <=> $kmer{$a}} keys %kmer) {
-	$kmer2{$nuc} = 0 if not defined($kmer2{$nuc});
-	my $logodd = $kmer2{$nuc} == 0 ? "inf" : log($kmer{$nuc} / $kmer2{$nuc});
-        print "$nuc\t$kmer{$nuc}\t$kmer2{$nuc}\t$logodd\n";
+	kmer\tIn\tOut\n";
+	foreach my $nuc (sort {$kmer{$b} <=> $kmer{$a}} keys %kmer) {
+		$kmer2{$nuc} = 0 if not defined($kmer2{$nuc});
+		my $logodd = $kmer2{$nuc} == 0 ? "inf" : log($kmer{$nuc} / $kmer2{$nuc});
+	        print "$nuc\t$kmer{$nuc}\t$kmer2{$nuc}\t$logodd\n";
+	}
 }
 ######## NOT COMPLETE YET ^^^^^^^^^^^^^^^^^^^^
 
