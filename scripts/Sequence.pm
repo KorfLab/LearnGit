@@ -1081,21 +1081,28 @@ sub align_sw_pl {
 # count_kmer will count occurences of kmers within a given 
 # sequence of length k
 sub count_kmer {
-	my ($length, $seq) = @_;
+	my ($k_length, $seq) = @_;
+	my $seq_length = length($seq);
 	
-	# Hash to store kmers and associated counts
-	my %count;
-	
-	# Read through sequence with a window size of $length
-	for (my $i = 0; $i <= length($seq) - $length; $i++) {
-		my $kmer = substr($seq, $i, $length);
+	# Make sure that the sequence length is not shorter than the k-mer length
+	if ($seq_length < $k_length) {
+		print STDERR "Sequence length ($seq_length) is shorter than k-mer length ($k_length)";
+		return;
+	} else {
+		# Hash to store kmers and associated counts
+		my %count;
 		
-		# Tally counts for kmer
-		$count{$kmer}++;
+		# Read through sequence with a window size of $length
+		for (my $i = 0; $i <= $seq_length - $k_length; $i++) {
+			my $kmer = substr($seq, $i, $k_length);
+			
+			# Tally counts for kmer
+			$count{$kmer}++;
+		}
+		
+		# Return reference to count hash
+		return(\%count);
 	}
-	
-	# Return reference to count hash
-	return(\%count);
 }
 
 1;
