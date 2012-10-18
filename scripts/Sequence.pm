@@ -734,11 +734,12 @@ sub create_rand_seq {
 sub create_rand_seq_kmer {
 	my ($seq_length, $kmer_table) = @_;
 	die "Error at create_rand_seq_kmer: sequence length must be positive integer\n" unless defined($seq_length) and $seq_length =~ /^\d+E{0,1}\d*$/;
+	die "Error at create_rand_seq_kmer: please input a hash refernce of kmer table\n" unless defined($kmer_table) and (keys %{$kmer_table} > 0);
 	my %kmer_table = %{$kmer_table};
-	die "Error at create_rand_seq_kmer: kmer table must be hash\n" unless (keys %kmer_table > 0);
 
-	# Create %weight hash that is used to store total weight of each nucleotide and nuc2 given nuc1 from %kmer_table #
-	# The weight is going to be used later to create random sequence using Markov chain dinucleotide #
+	# Create %weight hash that is used to store total weight of each nucleotide given nothing and
+	# total weight of each nucleotide given previous nucleotide based on %kmer_table.
+	# The weight is going to be used later to create random sequence using Markov chain dinucleotide.
 	my %weight;
 	foreach my $kmer (sort keys %kmer_table) {
 		my $weight = $kmer_table{$kmer};
@@ -750,9 +751,11 @@ sub create_rand_seq_kmer {
 		}
 	}
 
-	
-	# Create %init_kmer hash for initialization (first nucleotide of seq doesn't depend on prev nuc)
-	# Create %kmer hash which contain scpd (see create_rand_seq()) boundaries of the main Markov chain dinucleotide weight.
+	# Now use Stepped Cumulative Distribution Probability (weight)
+	# Create stepped boundaries based on total weight of each nucleotide ($nuc2), given another nucleotide ($nuc)
+	# There are two types of hash which stores boundary steps for each $nuc:
+	# 1. %init_kmer hash for first nucleotide of seq, which doesn't prev nuc on the sequence (only contain $nuc)
+	# 2. %kmer hash for the rest of seq, since weight of each nucleotide($nuc2) depend on prev nucleotide ($nuc)
 	my %init_kmer;
 	my %kmer;
 	foreach my $nuc (sort keys %{$weight{weight}}) {
@@ -769,14 +772,14 @@ sub create_rand_seq_kmer {
 	POSITION: for (my $i = 0; $i < $seq_length; $i++) {
 		my $rand_number = rand();
 	
-		# First nuc of sequence
+		# First nuc of sequence, use %init_kmer
 		if ($i == 0) {
 			foreach my $nuc (sort {$init_kmer{weight}{$a} <=> $init_kmer{weight}{$b}} keys %{$init_kmer{weight}}) {
-				print "$rand_number * $init_kmer{total} < $init_kmer{weight}{$nuc}\n";
 				$seq .= $nuc and next POSITION if $rand_number * $init_kmer{total} < $init_kmer{weight}{$nuc};
 			}
 		}
 
+		# Rest of sequence, use %kmer
 		else {
 			# Get prev nucleotide
 			my $prev_nuc = substr($seq, $i-1, 1);
