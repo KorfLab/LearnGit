@@ -1,10 +1,9 @@
 package Sequence;
 use strict;
 use warnings;
-use List::Util qw(shuffle);
+use List::Util qw(shuffle sum);
 use IO::Uncompress::Gunzip;
 our %Dependency;
-use List::Util qw(sum);
 
 BEGIN {
 	eval "use Inline C => 'DATA'";
