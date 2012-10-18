@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+use List::Util qw(sum);
 
 require Exporter;
 our @ISA = qw(Exporter);
@@ -187,7 +188,49 @@ sub get_all_fastas{
     return $seqs;
 }
 
-
+sub kl_distance {
+	# These are two hash references which contain the kmer counts for two different sequences
+	my ($P_ref,$Q_ref) = @_;
+	
+	#If any value does not exist or equals 0
+	map { if(!exists $P_ref->{$_}){$P_ref->{$_}=0;}} keys %$Q_ref;
+	map { if(!exists $Q_ref->{$_}){$Q_ref->{$_}=0;}} keys %$P_ref;
+	
+	#If either of the above conditions is met, each distribution will be increased by 1 to normalize the additional or already existing zero value
+	foreach my $count (keys %$P_ref) {
+		if ($P_ref->{$count}==0 or $Q_ref->{$count}==0) {
+			foreach my $position (keys %$P_ref) {
+				$P_ref->{$position} += 1;
+				$Q_ref->{$position} += 1;
+			}
+		}
+	}
+	
+	my $sumP = sum(values %$P_ref);
+	my $sumQ = sum(values %$Q_ref);
+	
+	my %P_distn;
+	my %Q_distn;
+	
+	#Within the @P_distn array, each key is assigned a value that is set equal to the positional value ($_) divided by the sum(using the map command)
+	@P_distn{keys %$P_ref} = map {$_ /= $sumP} values %$P_ref;
+	@Q_distn{keys %$Q_ref} = map {$_ /= $sumQ} values %$Q_ref;
+	
+	#Create hash for KL distance
+	my %KL;
+	
+	my $kl_pq = 0;
+	my $kl_qp = 0;
+	foreach my $seq (keys %P_distn){
+		$kl_pq += $P_distn{$seq} + log ($P_distn{$seq}/$Q_distn{$seq});
+		$kl_qp += $Q_distn{$seq} + log ($Q_distn{$seq}/$P_distn{$seq});
+	}
+	
+	$KL{"D(P||Q)"} = $kl_pq;
+	$KL{"D(Q||P)"} = $kl_qp;
+	
+	return (\%KL);
+}
 
 
 1;
