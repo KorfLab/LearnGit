@@ -793,20 +793,6 @@ sub create_rand_seq_kmer {
 	return($seq);		
 }
 
-#####################################################################
-# STELLAS TEMPORARY QUICK DIRTY KMER COUNTER, REMOVE THIS TOMORROW  #
-#VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV#
-sub count_kmer {
-	my ($seq, $length_kmer) = @_;
-	my %kmer;
-	for (my $i = 0; $i < length($seq)-$length_kmer; $i++) {$kmer{substr($seq, $i, $length_kmer)}++}
-	return(\%kmer);
-}
-#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#
-# STELLAS TEMPORARY QUICK DIRTY KMER COUNTER, REMOVE THIS TOMORROW  #
-#####################################################################
-
-
 # Translate codon to amino acid #
 # And there is also a third option of what should undefined be (X, N, 0)
 # This was found somewhere at Ian/Keith's code so credit is theirs
