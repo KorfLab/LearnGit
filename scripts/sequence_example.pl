@@ -115,7 +115,7 @@ my %biased_nuc = (A => 0.5, T => 0.4, G => 0.07, C => 0.03);
 # Based on the biased nuc freq table, I use create_rand_seq() to generate random sequence of 100k length
 my $seq_kmer = Sequence::create_rand_seq(100000, "custom", \%biased_nuc);
 # Then use my quick dirty count_kmer function to make a kmer hash reference table based on the sequence above
-my $kmer = Sequence::count_kmer($seq_kmer, 3);
+my $kmer = Sequence::count_kmer(3, $seq_kmer);
 # Then based on the kmer hash reference table, I make sequence of 100k length
 $seq_kmer = Sequence::create_rand_seq_kmer(100000, $kmer); # Final product #
 my $seq_100bp = substr($seq_kmer, 0, 100);
@@ -123,7 +123,7 @@ print "create_rand_seq_kmer first 100bp result: $seq_100bp\n";
 
 # DEBUG: As a test of how random it is, create_rand_seq_kmer output kmer table must be similar as input kmer table.
 # I use 3 mer so that it's not printing crazy amount of kmer
-my $kmer2 = Sequence::count_kmer($seq_kmer, 3);
+my $kmer2 = Sequence::count_kmer(3, $seq_kmer);
 
 my %kmer = %{$kmer};
 my %kmer2 = %{$kmer2};
