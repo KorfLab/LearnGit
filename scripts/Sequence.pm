@@ -615,7 +615,7 @@ sub check_type {
 	my $seq_type;
 	
 	# check for IUPAC characters unique to protein, DNA, or RNA
-	if ($seq =~ m/[EFILPQXZ]/i) {
+	if ($seq =~ m/[EFILPQXZO]/i) {
 		$seq_type = "Protein";
 	} elsif ($seq =~ m/U/i) {
 		$seq_type = "RNA";
