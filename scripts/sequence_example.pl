@@ -2,7 +2,7 @@
 use warnings;
 use strict;
 use Sequence;
-
+use List::Util qw(sum);
 
 #---------------------- Fasta Import ---------------------------#
 
@@ -67,19 +67,13 @@ my $rand_dna = Sequence::create_rand_seq($rand_seq_length, "dna");
 my $rand_rna = Sequence::create_rand_seq($rand_seq_length, "rna");
 my $rand_pro = Sequence::create_rand_seq($rand_seq_length, "protein");
 
-my %cust_ref = (
-	"A" => 100, "T" => 100, "G" => 100, "C" => 100, "N" => 10,
-	"k" => 1, "o" => 1, "r" => 1, "f" => 1, "l" => 1, "a" => 1, "b" => 1
-	);
+my %cust_ref = ("A" => 100, "T" => 100, "G" => 100, "C" => 100, "N" => 10);
 my $rand_custom = Sequence::create_rand_seq($rand_seq_length, "custom", \%cust_ref);
 
 print "\n\nFunction rand_seq(\$length, \$type[dna rna protein custom], [optional: \$custom hash])\n";
 print "$rand_seq_length length of create_rand_seq()\ndna: $rand_dna\nrna: $rand_rna\npro: $rand_pro
 custom hash: 
-my \%cust_ref = (
-	\"A\" => 100, \"T\" => 100, \"G\" => 100, \"C\" => 100, \"N\" => 10,
-	\"k\" => 1, \"o\" => 1, \"r\" => 1, \"f\" => 1, \"l\" => 1, \"a\" => 1, \"b\" => 1)
-	\;
+my \%cust_ref = (\"A\" => 100, \"T\" => 100, \"G\" => 100, \"C\" => 100, \"N\" => 10)
 custom dna: $rand_custom\n";
 
 #CHECK FOR RANDOMNESS of 100000bp seq#
@@ -97,7 +91,7 @@ for (my $i = 0; $i < $ldna; $i++) {
 }
 my $DEBUG = 0;
 if ($DEBUG == 1) {
-	print "DEBUG create_rand_seq(): How random is the seq? (Tested on 1E5 bp DNA for 1-3 mer)
+	print "\nDEBUG create_rand_seq(): How random is the seq? (Tested on 1E5 bp DNA for 1-3 mer)
 log odd ratio is a function of log(observed/expected), where if it's random enough, obs = exp, and value would be 0 (log(1) = 0)\n";
 	foreach my $nuc (sort keys %rand) {
 		$rand{$nuc} /= $ldna if length($nuc) == 1;
@@ -116,25 +110,35 @@ my %biased_nuc = (A => 0.5, T => 0.4, G => 0.07, C => 0.03);
 my $seq_kmer = Sequence::create_rand_seq(100000, "custom", \%biased_nuc);
 # Then use my quick dirty count_kmer function to make a kmer hash reference table based on the sequence above
 my $kmer = Sequence::count_kmer(3, $seq_kmer);
-# Then based on the kmer hash reference table, I make sequence of 100k length
+# Then based on the kmer hash reference table, I make sequence of 100k length.
+# Kmer hash ref table can't be made "out of the blue" and has to be based on legit real sequence
+# otherwise it'll not make sense to have kmer of AAA with 500 weight and TTT with 500 weight, only AAA or TT and not both, will appear 100% of the time
+# This is out of the blue table => my %kmer = ("AAA" => 99999999, "ATA" => 1000, "AAT" => 10, "TAT" => 2500, "TAA" => 99); $kmer = \%kmer;
 $seq_kmer = Sequence::create_rand_seq_kmer(100000, $kmer); # Final product #
+
+# Print first 100bp of sequence
 my $seq_100bp = substr($seq_kmer, 0, 100);
 print "create_rand_seq_kmer first 100bp result: $seq_100bp\n";
 
-# DEBUG: As a test of how random it is, create_rand_seq_kmer output kmer table must be similar as input kmer table.
+# DEBUG: As a test of how random it is, create_rand_seq_kmer output kmer table must be similar as input kmer table
+# as long as the kmer table is legit.
 # I use 3 mer so that it's not printing crazy amount of kmer
-my $kmer2 = Sequence::count_kmer(3, $seq_kmer);
-
-my %kmer = %{$kmer};
-my %kmer2 = %{$kmer2};
 $DEBUG = 0;
 if ($DEBUG == 1) {
-	print "DEBUG create_rand_seq_kmer(): How random is the seq? (Tested on 100000 bp DNA for 3 mer)
+	print "\nDEBUG create_rand_seq_kmer(): How random is the seq if it's based on real sequence? (Tested on 100000 bp DNA for 3 mer)
 log odd ratio is a function of log(observed/expected), where if it's random enough, obs = exp, and value would be 0 (log(1) = 0)
 kmer\tIn\tOut\tlogodd\n";
+	my $kmer2 = Sequence::count_kmer(3, $seq_kmer);
+	
+	my %kmer = %{$kmer};
+	my %kmer2 = %{$kmer2};
+	my $total1 = sum(values %kmer);
+	my $total2 = sum(values %kmer2);
 	foreach my $nuc (sort {$kmer{$b} <=> $kmer{$a}} keys %kmer) {
 		$kmer2{$nuc} = 0 if not defined($kmer2{$nuc});
-		my $logodd = $kmer2{$nuc} == 0 ? "inf" : log($kmer{$nuc} / $kmer2{$nuc});
+		$kmer{$nuc} /= $total1;
+		$kmer2{$nuc} /= $total2;
+		my $logodd = $kmer2{$nuc} == 0 ? "inf" : log($kmer{$nuc}/$kmer2{$nuc});
 	        print "$nuc\t$kmer{$nuc}\t$kmer2{$nuc}\t$logodd\n";
 	}
 }
