@@ -672,15 +672,18 @@ sub reverse_seq {
 # $type (case insensitive) can be "dna" (default), "rna", "protein", or "custom".
 # dna, rna, and protein will give equal weight to each alphabet (DNA - A/T/G/C, Protein - 20 amino acids).
 # "custom" will have a third input hash reference $hash, which will have the alphabet as key and weight as value
-sub rand_seq {
-	my ($target_seq_length, $target_seq_type) = @_;
+sub create_rand_seq {
+	my ($target_seq_length, $target_seq_type, $custom_char_weight) = @_;
+	print "$target_seq_type\n";
 	die "Error at subroutine rand_seq: length must be positive integer (your input: $target_seq_length).\n" unless $target_seq_length =~ /^\d+E{0,1}\d*$/i;
 	$target_seq_type = "dna" if not defined($target_seq_type);
 
 	# Define char weight reference based on type #
 	my %char_weight;
-	# DNA/RNA
-	if (lc($target_seq_type) eq "dna" or lc($target_seq_type) eq "rna") {%char_weight = ("A" => 1, "G" => 1, "T" => 1, "C" => 1)}
+	# DNA
+	if (lc($target_seq_type) eq "dna") {%char_weight = ("A" => 1, "G" => 1, "T" => 1, "C" => 1)}
+	# RNA
+	elsif (lc($target_seq_type) eq "rna") {%char_weight = ("A" => 1, "G" => 1, "U" => 1, "C" => 1)}
 	# Protein
 	elsif (lc($target_seq_type) eq "protein") {%char_weight = (
 	"A" => 1, "R" => 1, "N" => 1, "D" => 1, "C" => 1, 
@@ -689,9 +692,10 @@ sub rand_seq {
 	"S" => 1, "T" => 1, "W" => 1, "Y" => 1, "V" => 1)}
 	# Custom
 	elsif (lc($target_seq_type) eq "custom") {
-		die "Your type input is \"custom\" but you don't define custom hash\n" unless defined($_[2]);
-		%char_weight = %{$_[2]};
+		die "Your type input is \"custom\" but you don't define custom hash\n" unless defined($custom_char_weight);
+		%char_weight = %{$custom_char_weight};
 	}
+	# Else, please die
 	else {die "Please input a valid sequence type [dna|rna|protein|custom]\n"}
 	
 	# Randomize #
@@ -713,16 +717,18 @@ sub rand_seq {
 	
 	# Create random sequence #
 	my $random_seq;
-	for(my $i = 0; $i < $target_seq_length; $i++){
+	POSITION: for(my $i = 0; $i < $target_seq_length; $i++){
 		my $random_num = rand() * $step_boundary ; # $step_boundary is the total weight
-		foreach my $char (sort {$scpd{$a} <=> $scpd{$b}} keys %scpd) {
 
-			$random_seq .= $char and last if ($random_num <= $scpd{$char});
+		# LOop over each characer and ask 
+		foreach my $char (sort {$scpd{$a} <=> $scpd{$b}} keys %scpd) {
+			if ($random_num <= $scpd{$char}) {
+				$random_seq .= $char;
+				next POSITION;
+			}
 		}
 	}
 
-	# Correct for RNA #
-	$random_seq =~ tr/Tt/Uu/ if $target_seq_type =~ /^rna$/i;
 	return($random_seq);
 }
 

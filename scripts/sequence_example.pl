@@ -59,22 +59,22 @@ my $reversed = Sequence::reverse_seq($seq);
 print "\n$seq -> reversed -> $reversed\n\n";
 
 
-#-------------------- Generate Random Sequence ------------------------#
+#---------------------- Create Random Seq ---------------------------#
 
 # Make random sequence of 100 length
 my $rand_seq_length = 1E2;
-my $rand_dna = Sequence::rand_seq($rand_seq_length, "dna");
-my $rand_rna = Sequence::rand_seq($rand_seq_length, "rna");
-my $rand_pro = Sequence::rand_seq($rand_seq_length, "protein");
+my $rand_dna = Sequence::create_rand_seq($rand_seq_length, "dna");
+my $rand_rna = Sequence::create_rand_seq($rand_seq_length, "rna");
+my $rand_pro = Sequence::create_rand_seq($rand_seq_length, "protein");
 
 my %cust_ref = (
 	"A" => 100, "T" => 100, "G" => 100, "C" => 100, "N" => 10,
 	"k" => 1, "o" => 1, "r" => 1, "f" => 1, "l" => 1, "a" => 1, "b" => 1
 	);
-my $rand_custom = Sequence::rand_seq($rand_seq_length, "custom", \%cust_ref);
+my $rand_custom = Sequence::create_rand_seq($rand_seq_length, "custom", \%cust_ref);
 
 print "\n\nFunction rand_seq(\$length, \$type[dna rna protein custom], [optional: \$custom hash])\n";
-print "$rand_seq_length length of rand_seq()\ndna: $rand_dna\nrna: $rand_rna\npro: $rand_pro
+print "$rand_seq_length length of create_rand_seq()\ndna: $rand_dna\nrna: $rand_rna\npro: $rand_pro
 custom hash: 
 my \%cust_ref = (
 	\"A\" => 100, \"T\" => 100, \"G\" => 100, \"C\" => 100, \"N\" => 10,
@@ -84,7 +84,7 @@ custom dna: $rand_custom\n";
 
 #CHECK FOR RANDOMNESS of 100000bp seq#
 $rand_seq_length = 1E5;
-$rand_dna = Sequence::rand_seq($rand_seq_length, "dna");
+$rand_dna = Sequence::create_rand_seq($rand_seq_length, "dna");
 my %rand;
 my $ldna = length($rand_dna);
 for (my $i = 0; $i < $ldna; $i++) {
@@ -95,7 +95,8 @@ for (my $i = 0; $i < $ldna; $i++) {
 	$nuc = substr($rand_dna, $i, 3) if $i < $ldna-2;
 	$rand{$nuc}++ if $i < $ldna-2;
 }
-print "How random is random_seq()? (Tested on 1E5 bp DNA for 1-3 mer)\n";
+print "DEBUG create_rand_seq(): How random is the seq? (Tested on 1E5 bp DNA for 1-3 mer)
+log odd ratio is a function of log(observed/expected), where if it's random enough, obs = exp, and value would be 0 (log(1) = 0)\n";
 foreach my $nuc (sort keys %rand) {
 	$rand{$nuc} /= $ldna if length($nuc) == 1;
 	$rand{$nuc} /= ($ldna-1) if length($nuc) == 2;
