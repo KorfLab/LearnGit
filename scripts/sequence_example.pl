@@ -112,15 +112,16 @@ print "\n\nFunction create_rand_seq_kmer(\$seq_length, \\\%kmer_table)\nGenerate
 # How to use create_rand_seq_kmer:
 #I have a table of a biased nucleotide frequencies
 my %biased_nuc = (A => 0.5, T => 0.4, G => 0.07, C => 0.03);
-# Based on the DNA nuceotide table I use create_rand_seq() to generate random sequence of 100k length
+# Based on the biased nuc freq table, I use create_rand_seq() to generate random sequence of 100k length
 my $seq_kmer = Sequence::create_rand_seq(100000, "custom", \%biased_nuc);
 # Then use my quick dirty count_kmer function to make a kmer hash reference table based on the sequence above
 my $kmer = Sequence::count_kmer($seq_kmer, 3);
 # Then based on the kmer hash reference table, I make sequence of 100k length
 $seq_kmer = Sequence::create_rand_seq_kmer(100000, $kmer); # Final product #
 my $seq_100bp = substr($seq_kmer, 0, 100);
-print "create_rand_seq_kmer result: $seq_100bp\n";
-# DEBUG: As a comparison of how "good" the crete_rand_seq_kmer function is, kmer table must be similar as input kmer table.
+print "create_rand_seq_kmer first 100bp result: $seq_100bp\n";
+
+# DEBUG: As a test of how random it is, create_rand_seq_kmer output kmer table must be similar as input kmer table.
 # I use 3 mer so that it's not printing crazy amount of kmer
 my $kmer2 = Sequence::count_kmer($seq_kmer, 3);
 
@@ -128,9 +129,9 @@ my %kmer = %{$kmer};
 my %kmer2 = %{$kmer2};
 $DEBUG = 0;
 if ($DEBUG == 1) {
-	print "DEBUG create_rand_seq_kmer(): How random is the seq? (Tested on 100 bp DNA for 2 mer)
+	print "DEBUG create_rand_seq_kmer(): How random is the seq? (Tested on 100000 bp DNA for 3 mer)
 log odd ratio is a function of log(observed/expected), where if it's random enough, obs = exp, and value would be 0 (log(1) = 0)
-	kmer\tIn\tOut\n";
+kmer\tIn\tOut\tlogodd\n";
 	foreach my $nuc (sort {$kmer{$b} <=> $kmer{$a}} keys %kmer) {
 		$kmer2{$nuc} = 0 if not defined($kmer2{$nuc});
 		my $logodd = $kmer2{$nuc} == 0 ? "inf" : log($kmer{$nuc} / $kmer2{$nuc});
