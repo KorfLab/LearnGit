@@ -732,7 +732,78 @@ sub create_rand_seq {
 	return($random_seq);
 }
 
-# Take a case-insensitive sequence input $seq and optional start position $start (default 0)
+sub create_rand_seq_kmer {
+	my ($seq_length, $kmer_table) = @_;
+	my %kmer_table = %{$kmer_table};
+	my %kmer;
+	my $total = 0;
+	foreach my $kmer (sort keys %kmer_table) { #A A A A A = 0.5 A A A A T = 0.1 AAAAT = 0.05
+		my $prob = $kmer_table{$kmer};
+		for (my $i = 0; $i < length($kmer); $i++) {
+			my $nuc1 = substr($kmer, $i, 1);
+			my $nuc2 = substr($kmer, $i+1, 1) if $i < length($kmer) - 1;
+			$kmer{$nuc1}{prob}+=$prob/(length($kmer)-1);
+			$kmer{$nuc1}{nuc2}{$nuc2}+=$prob/(length($kmer)-1) if $i < length($kmer) - 1;
+			#print "$nuc1 ($prob/(length($kmer)-1)]\n" if not defined($nuc2);
+			#print "$nuc1 ($prob/(length($kmer)-1)\t$nuc2 ($prob/(length($kmer)-1)\n" if defined($nuc2);
+		}
+	}
+	my @kmer;
+	foreach my $nuc (sort keys %kmer) {
+		$kmer[1]{tot} += $kmer{$nuc}{prob};
+		$kmer[1]{nuc}{$nuc} = $kmer[1]{tot};
+		#print "$nuc ($kmer{$nuc}{prob})\t$kmer[1]{nuc}{$nuc}\n";
+		foreach my $nuc2 (sort keys %{$kmer{$nuc}{nuc2}}) {
+			$kmer[2]{tot}{$nuc} += $kmer{$nuc}{nuc2}{$nuc2};
+			$kmer[2]{nuc}{$nuc}{$nuc2} = $kmer[2]{tot}{$nuc};
+			#print ">$nuc ($kmer{$nuc}{nuc2}{$nuc2})\t$nuc2\t$kmer[2]{nuc}{$nuc}{$nuc2}\n";
+		}
+	}
+
+	# Initiate #
+	my $seq;
+	POSITION: for (my $i = 0; $i < $seq_length; $i++) {
+	#	die "seq = $seq\n" if $i == 2;
+
+		my $rand_number = rand();
+		if ($i == 0) {
+			foreach my $nuc (sort {$kmer[1]{nuc}{$a} <=> $kmer[1]{nuc}{$b}} keys %{$kmer[1]{nuc}}) {
+				$seq .= $nuc and next POSITION if $rand_number*$kmer[1]{tot} < $kmer[1]{nuc}{$nuc};
+			}
+		}
+		else {
+			my $prev_nuc = substr($seq, $i-1, 1);
+			#print "seq = $seq, i = $i, prev_nuc = $prev_nuc\n";
+			die "sequence undefined\n" if not defined($kmer[2]{nuc}{$prev_nuc});
+			foreach my $nuc (sort {$kmer[2]{nuc}{$prev_nuc}{$a} <=> $kmer[2]{nuc}{$prev_nuc}{$b}} keys %{$kmer[2]{nuc}{$prev_nuc}}) {
+				#print "BLA $rand_number * $kmer[2]{tot}{$prev_nuc} < $kmer[2]{nuc}{$prev_nuc}{$nuc}\n";
+				$seq .= $nuc and next POSITION if $rand_number*$kmer[2]{tot}{$prev_nuc} < $kmer[2]{nuc}{$prev_nuc}{$nuc};
+			}
+		}
+			
+	}
+	return($seq);		
+}
+
+#####################################################################
+# STELLAS TEMPORARY QUICK DIRTY KMER COUNTER, REMOVE THIS TOMORROW  #
+#VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV#
+sub count_kmer {
+	my ($seq, $length_kmer) = @_;
+	my @seq = split("", $seq);
+	my %kmer;
+	for (my $i = 0; $i < @seq-$length_kmer; $i++) {
+		my $kmer = substr($seq, $i, $length_kmer);
+		$kmer{$kmer}++;
+	}
+	return(\%kmer);
+}
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#
+# STELLAS TEMPORARY QUICK DIRTY KMER COUNTER, REMOVE THIS TOMORROW  #
+#####################################################################
+
+
+# Translate codon to amino acid #
 # And there is also a third option of what should undefined be (X, N, 0)
 # This was found somewhere at Ian/Keith's code so credit is theirs
 sub translate_codon {
