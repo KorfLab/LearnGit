@@ -612,7 +612,7 @@ sub get_all_genbanks{
 
 sub check_type {
 	my $seq = shift;
-	my $seq_type = "None specified"; # default if unable to get sequence type
+	my $seq_type;
 	
 	# check for IUPAC characters unique to protein, DNA, or RNA
 	if ($seq =~ m/[EFILPQXZ]/i) {
