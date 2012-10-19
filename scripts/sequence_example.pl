@@ -217,3 +217,17 @@ print "Sequence: $seq\n";
 print "Extracting from position $start, length $length\n";
 $subseq = Sequence::extract_subsequence($seq, $start, $length);
 print "Subsequence: $subseq\n\n";
+
+#----------------------- Calculate K-L Distance ------------------------#
+
+#Input two sequence hash references containing count distributions, calculated by the count_kmer subroutine
+
+#Example anonymous hashes that could be used as input
+my $P_ref = {A => 10, G =>10, C => 10, T => 10};
+my $Q_ref = {A => 20, G =>20, C => 30, T => 30};
+
+#Call function
+my $KL = Sequence::kl_distance($P_ref, $Q_ref);
+
+#Since this function returns a hash reference, remember to dereference in order to extract K-L Distances
+print "K-L DISTNCES:\n",$KL->{"D(P||Q)"}, "\n", $KL->{"D(Q||P)"}, "\n"; 

@@ -253,15 +253,17 @@ sub get_all_fastas{
     return $seqs;
 }
 
+#Takes the count distribution of two sequences, outputted from the count_kmer subroutine, and calculates the Kullback-Leibler(K-L) Distance
 sub kl_distance {
 	# These are two hash references which contain the kmer counts for two different sequences
 	my ($P_ref,$Q_ref) = @_;
 	
-	#If any value does not exist or equals 0
+	#Normalizes each key by assigning a value of zero to any non-existing spaces
 	map { if(!exists $P_ref->{$_}){$P_ref->{$_}=0;}} keys %$Q_ref;
 	map { if(!exists $Q_ref->{$_}){$Q_ref->{$_}=0;}} keys %$P_ref;
 	
-	#If either of the above conditions is met, each distribution will be increased by 1 to normalize the additional or already existing zero value
+	#Pseudo-count for each distribution. if a value of 0 is found within either distribution, all values in both distributions increase by 1
+	# The presence of 0 within either distribution will prevent hinder the computation of the K-L Distance 
 	foreach my $count (keys %$P_ref) {
 		if ($P_ref->{$count}==0 or $Q_ref->{$count}==0) {
 			foreach my $position (keys %$P_ref) {
@@ -271,26 +273,32 @@ sub kl_distance {
 		}
 	}
 	
+	# Calculates the sum of counts for each count distribution 
 	my $sumP = sum(values %$P_ref);
 	my $sumQ = sum(values %$Q_ref);
 	
 	my %P_distn;
 	my %Q_distn;
 	
-	#Within the @P_distn array, each key is assigned a value that is set equal to the positional value ($_) divided by the sum(using the map command)
+	#The sum is used as a denominator to normalize both distributions and generate probability values. Each distribution now sums to 1.
+	#Initialize the hash values for %P_distn and %Q_distn using the following arrays that convert count values into probability values
 	@P_distn{keys %$P_ref} = map {$_ /= $sumP} values %$P_ref;
 	@Q_distn{keys %$Q_ref} = map {$_ /= $sumQ} values %$Q_ref;
 	
-	#Create hash for KL distance
+	#Create hash for K-L distance
 	my %KL;
 	
+	#Created to store the K-L Distance as well as its reciprocal($kl_qp)
 	my $kl_pq = 0;
 	my $kl_qp = 0;
+	
+	# Calculates K-L Distances using the equation for K-L Divergence 
 	foreach my $seq (keys %P_distn){
-		$kl_pq += $P_distn{$seq} + log ($P_distn{$seq}/$Q_distn{$seq});
-		$kl_qp += $Q_distn{$seq} + log ($Q_distn{$seq}/$P_distn{$seq});
+		$kl_pq += $P_distn{$seq} * log ($P_distn{$seq}/$Q_distn{$seq});
+		$kl_qp += $Q_distn{$seq} * log ($Q_distn{$seq}/$P_distn{$seq});
 	}
 	
+	#Each K-L Distance value and its reciprocal are both stored in a hash
 	$KL{"D(P||Q)"} = $kl_pq;
 	$KL{"D(Q||P)"} = $kl_qp;
 	
@@ -1222,5 +1230,3 @@ void align_sw_c (const char *s1, const char *s2, double m, double n, double g) {
 	free(sm); free(tm);
 	
 }
-
-1;
