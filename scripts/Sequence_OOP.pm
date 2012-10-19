@@ -11,12 +11,10 @@ my $AMINO_ACID="ABCDEFGHIKLMNPQRSTVWXYZ.*";
 ###############################################################################
 package Sequence;
 
-#Note may think about keeping track of whether sequence is DNA,RNA, or Amino acid
-
 #Create a new sequence object
 sub new{
-    my ($class,$header,$seq)=@_;
-    my $self = bless {sequence=>undef,header=>undef}, $class;
+    my ($class,$header,$seq,$seq_type)=@_;
+    my $self = bless {sequence=>undef,header=>undef,seq_type=>undef}, $class;
     if (defined $header){
         $self->set_header($header);
     }
@@ -25,6 +23,10 @@ sub new{
         $self->set_sequence($seq);
     }
     
+    if (defined $seq_type){
+        # $seq_type can be "DNA", "RNA", or "PRO"
+        $self->set_seq_type($seq_type);
+    }
     return $self
 }
 
@@ -32,6 +34,43 @@ sub new{
 sub length{
     my $self=shift;
     return length $self->{sequence};
+}
+
+sub complement {
+	# Returns the complement of $seq as a new Sequence object
+	my $self = shift;
+    if (undef $self->{seq_type}) {
+        warn "Trying to use comp without a value assigned for \$seq_type\n";
+        return $self;
+    }
+    if ($self->{seq_type} eq "PRO") {
+        warn "Cannot find the complement for a protein";
+        return $self;
+    }
+    
+    my $tmp_seq = $self->{seq};
+	if    ($self->{seq_type} eq "DNA") {$tmp_seq =~ tr/ATGCYRKMBDHVatgcyrkmbdhv/TACGRYMKVHDBtacgrymkvhdb/}
+	elsif ($self->{seq_type} eq "RNA") {$tmp_seq =~ tr/AUGCYRKMBDHVaugcyrkmbdhv/UACGRYMKVHDBuacgrymkvhdb/}
+    my $new_obj = new Sequence($self->{header}, $tmp_seq, $self->{seq_type});
+	return $self, $new_obj;
+    
+sub rev_comp {
+	# Returns the reverse complement of $seq as a new Sequence object
+	my $self = shift;
+    if (undef $self->{seq_type}) {
+        warn "Trying to use rev_comp without a value assigned for \$seq_type\n";
+        return $self;
+    }
+	if ($self->{seq_type} eq "PRO") {
+        warn "Cannot find the reverse complement for a protein";
+        return $self;
+    }
+    
+	my $tmp_seq = reverse($self->{seq});
+	if    ($self->{seq_type} eq "DNA") {$tmp_seq =~ tr/ATGCYRKMBDHVatgcyrkmbdhv/TACGRYMKVHDBtacgrymkvhdb/}
+	elsif ($self->{seq_type} eq "RNA") {$tmp_seq =~ tr/AUGCYRKMBDHVaugcyrkmbdhv/UACGRYMKVHDBuacgrymkvhdb/}
+    my $new_obj = new Sequence($self->{header}, $tmp_seq, $self->{seq_type});
+	return $self, $new_obj;
 }
 
 #Set the sequence
@@ -65,6 +104,18 @@ sub set_header{
     }
     
     return $self;
+}
+
+sub set_seq_type{
+    my ($self, $seq_type)=@_;
+    
+    if (ref $seq_type eq "SCALAR") {
+        if    ($seq_type eq "DNA" or $seq_type eq "D")  {$self->{seq_type} = "DNA"}
+        elsif ($seq_type eq "RNA" or $seq_type eq "R")  {$self->{seq_type} = "RNA"}
+        elsif ($seq_type eq "PRO" or $seq_type eq "P")  {$self->{seq_type} = "PRO"}
+        else  {warn "Invalid \$seq_type provided to set_seq_type\n"}
+    }
+    else {warn "Trying to use set_seq_type with non-scalar type for \$seq_type\n"}
 }
 
 #Return the sequence
@@ -119,16 +170,6 @@ sub check{
 #Reverse sequence and return a new Sequence object
 sub reverse{
 
-}
-
-#Complement the sequence and return a new Sequence object
-sub complement{
-    
-}
-
-#Reverse complement the sequence and return a new Sequence object
-sub reverse_complement{
-    
 }
 
 #Extract subsequence given a range and return a new Sequence object
