@@ -43,6 +43,11 @@ $DNA = Sequence_OOP::generate_kmer_sequence(100000, \%kmer);
 #------------------------------Translate----------------------------------------------#
 my $Translate = Sequence_OOP::Sequence::translate($DNA);
 
+#----------------------------------Clean----------------------------------------------#
+my $dirtyDNA = "ASERTWB D\nT";
+$DNA->clean;
+
+
 ############
 # clean up #
 ############

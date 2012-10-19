@@ -205,7 +205,16 @@ sub print{
 
 #Clean the sequence of invalid and whitespace characters
 sub clean{
-    
+ 	#my ($sequence) = @_;
+    my $self=shift;
+ 	my $sequence = $self->sequence;
+	$sequence =~ s/\s//g;
+	$sequence = uc($sequence);
+	if ($sequence =~ m/[^ACGTURYSWKMBDHVN\*\-EFILPQ]/) {
+		die "Nonstandard characters found in this sequence";
+	}
+	$self->set_sequence($sequence);
+	return;   
 }
 
 #Check sequence is valid DNA,RNA, or amino acid sequence
