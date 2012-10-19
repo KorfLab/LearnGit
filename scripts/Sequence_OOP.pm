@@ -228,7 +228,7 @@ sub extract{
 
 #Translate sequence
 sub translate {
-	my $self = shift;
+	my ($self) = @_;
 	if (undef $self->{seq_type} or $self->{seq_type} ne "DNA" or $self->{seq_type} ne "RNA") {
         	warn "Translate error: sequence type must be either DNA/RNA\n";
 		return $self;
@@ -237,20 +237,21 @@ sub translate {
 		my $seq = $self->{sequence};
 		$seq =~ tr/Uu/Tt/;
 		my $trans;
-		for (my $i = 0; $i < length($seq)-3; $i+=3) {
+		for (my $i = 0; $i < CORE::length($seq)-3; $i+=3) {
 			my $codon = substr($seq, $i, 3);
-			if (not exists $Translation{$codon}) {$trans .= $undef}
+			if (not exists $Translation{$codon}) {$trans .= "0"}
 			else                                 {$trans .= $Translation{$codon}}
 		}
+		my $new_obj = new Sequence($self->{header}, $trans, "PROTEIN");
+		return ($self, $new_obj);
 	}
-	my $new_obj = new Sequence($self->{header}, $trans, "PROTEIN");
-	return ($self, $new_obj);
    
 }
 
 #Count given k-mer size and return hash {AAA=>10,AAC=>2...}
 sub count_kmer{
-    
+
+
 }
 
 #Match Regex or string to sequence and return array of matching positions
@@ -563,11 +564,125 @@ sub getAll{
 package main;
 
 sub generate_random_sequence{
+
+        my ($target_seq_length, $target_seq_type, $custom_char_weight) = @_;
+        die "Error at subroutine rand_seq: length must be positive integer (your input: $target_seq_length).\n" unless $target_seq_length =~ /^\d+E{0,1}\d*$/i;
+        $target_seq_type = "dna" if not defined($target_seq_type);
+
+        # Define char weight reference based on type #
+        my %char_weight;
+        # DNA
+        if (lc($target_seq_type) eq "dna") {%char_weight = ("A" => 1, "G" => 1, "T" => 1, "C" => 1)}
+        # RNA
+        elsif (lc($target_seq_type) eq "rna") {%char_weight = ("A" => 1, "G" => 1, "U" => 1, "C" => 1)}
+        # Protein
+        elsif (lc($target_seq_type) eq "protein") {%char_weight = (
+        "A" => 1, "R" => 1, "N" => 1, "D" => 1, "C" => 1,
+        "Q" => 1, "E" => 1, "G" => 1, "H" => 1, "I" => 1,
+        "L" => 1, "K" => 1, "M" => 1, "F" => 1, "P" => 1,
+        "S" => 1, "T" => 1, "W" => 1, "Y" => 1, "V" => 1)}
+        # Custom
+        elsif (lc($target_seq_type) eq "custom") {
+                die "Your type input is \"custom\" but you don't define custom hash\n" unless defined($custom_char_weight);
+                %char_weight = %{$custom_char_weight};
+        }
+        # Else, please go die
+        else {die "Please input a valid sequence type [dna|rna|protein|custom]\n"}
+        # Randomize #
+        # Create a hash to store Stepped Cumulative Probability Distribution (SCPD)#
+        my %scpd;
+
+        # Define steps of the probabilities #
+        # E.g. if weights for A, C, G, T are 10, 10, 10, 30, we will make a distribution of boundaries
+        # starting from 0 + initial weight (10), ending at total sum of weights
+        # A = 10 (0+10)
+        # C = 20 (10+10)
+        # G = 30 (20+10)
+        # T = 60 (30+30)
+        my $step_boundary = 0;
+        foreach my $char (sort {$char_weight{$a} <=> $char_weight{$b}} keys %char_weight) {
+                $step_boundary += $char_weight{$char};
+                $scpd{$char} = $step_boundary;
+        }
+
+        # Create random sequence #
+        my $random_seq;
+        POSITION: for(my $i = 0; $i < $target_seq_length; $i++){
+                my $random_num = rand() * $step_boundary ; # $step_boundary is the total weight
+
+                # Loop over each characer and ask if random number is less than the weight boundary
+                foreach my $char (sort {$scpd{$a} <=> $scpd{$b}} keys %scpd) {
+                        if ($random_num <= $scpd{$char}) {
+                                $random_seq .= $char;
+                                next POSITION;
+                        }
+                }
+        }
+
+        return($random_seq);
     
 }
 
 sub generate_kmer_sequence{
-    
+        my ($seq_length, $kmer_table) = @_;
+        die "Error at create_rand_seq_kmer: sequence length must be positive integer\n" unless defined($seq_length) and $seq_length =~ /^\d+E{0,1}\d*$/;
+        die "Error at create_rand_seq_kmer: please input a hash refernce of kmer table\n" unless defined($kmer_table) and (keys %{$kmer_table} > 0);
+        my %kmer_table = %{$kmer_table};
+
+        # Create %weight hash that is used to store total weight of each nucleotide given nothing and
+        # total weight of each nucleotide given previous nucleotide based on %kmer_table.
+        # The weight is going to be used later to create random sequence using Markov chain dinucleotide.
+        my %weight;
+        foreach my $kmer (sort keys %kmer_table) {
+                my $weight = $kmer_table{$kmer};
+                for (my $i = 0; $i < length($kmer); $i++) {
+                        my $nuc1 = substr($kmer, $i, 1);
+                        my $nuc2 = substr($kmer, $i+1, 1) if $i < length($kmer) - 1;
+                        $weight{weight}{$nuc1} = $weight / length($kmer);
+                        $weight{$nuc1}{weight}{$nuc2} = $weight / (length($kmer) - 1) if $i < length($kmer) - 1;
+                }
+        }
+
+        # Now use Stepped Cumulative Distribution Probability (weight)
+        # Create stepped boundaries based on total weight of each nucleotide ($nuc2), given another nucleotide ($nuc)
+        # There are two types of hash which stores boundary steps for each $nuc:
+        # 1. %init_kmer hash for first nucleotide of seq, which doesn't prev nuc on the sequence (only contain $nuc)
+        # 2. %kmer hash for the rest of seq, since weight of each nucleotide($nuc2) depend on prev nucleotide ($nuc)
+        my %init_kmer;
+        my %kmer;
+        foreach my $nuc (sort keys %{$weight{weight}}) {
+                $init_kmer{total} += $weight{weight}{$nuc};
+                $init_kmer{weight}{$nuc} = $init_kmer{total};
+                foreach my $nuc2 (sort keys %{$weight{$nuc}{weight}}) {
+                        $kmer{$nuc}{total} += $weight{$nuc}{weight}{$nuc2};
+                        $kmer{$nuc}{weight}{$nuc2} = $kmer{$nuc}{total};
+                }
+        }
+
+       # Sequence is stored at $seq
+        my $seq;
+        POSITION: for (my $i = 0; $i < $seq_length; $i++) {
+                my $rand_number = rand();
+
+                # First nuc of sequence, use %init_kmer
+                if ($i == 0) {
+                        foreach my $nuc (sort {$init_kmer{weight}{$a} <=> $init_kmer{weight}{$b}} keys %{$init_kmer{weight}}) {
+                                $seq .= $nuc and next POSITION if $rand_number * $init_kmer{total} < $init_kmer{weight}{$nuc};
+                        }
+                }
+
+                # Rest of sequence, use %kmer
+                else {
+                        # Get prev nucleotide
+                        my $prev_nuc = substr($seq, $i-1, 1);
+                        # Get each nucleotide boundary given previous nucleotide, sorted smallest => biggest 
+                        foreach my $nuc (sort {$kmer{$prev_nuc}{weight}{$a} <=> $kmer{$prev_nuc}{weight}{$b}} keys %{$kmer{$prev_nuc}{weight}}) {
+                                $seq .= $nuc and next POSITION if $rand_number * $kmer{$prev_nuc}{total} < $kmer{$prev_nuc}{weight}{$nuc};
+                        }
+                }
+
+        }
+        return($seq);
 }
 
 sub global_alignment{
