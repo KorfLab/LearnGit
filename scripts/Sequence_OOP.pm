@@ -1,3 +1,4 @@
+#!/usr/bin/perl
 use strict;
 use warnings;
 
@@ -56,13 +57,23 @@ foreach my $nuc (keys %Translation) {
 #Need to check passed data type in the functions to make sure it is a Sequence
 #or a compatible datatype.
 
-
+#my %biased_kmer = ("A" => 0.5, "T" => 0.3, "G" => 0.05, "C" => 0.15);
+#my $DNA = generate_random_sequence(100000, "custom", "DNA", \%biased_kmer);
+##print ">$DNA->{header} ($DNA->{seq_type}\)n$DNA->{sequence}\n";
+#my %kmer = %{Sequence::count_kmer(3, $DNA->{sequence})};
+#$DNA = generate_kmer_sequence(100000, \%kmer);
+#my %kmer2 = %{Sequence::count_kmer(3, $DNA->{sequence})};
+#print "kmer\tIN\tOUT\tLOGODD\n";
+#foreach my $kmer (sort {$kmer{$b} <=> $kmer{$a}} keys %kmer) {
+#	my $logodd = $kmer2{$kmer} == 0 ? "inf" : log($kmer{$kmer}/$kmer2{$kmer});
+#	print "$kmer\t$kmer{$kmer}\t$kmer2{$kmer}\t$logodd\n";
+#}
 ###############################################################################
 package Sequence;
 
 #Create a new sequence object
 sub new{
-    my ($class,$header,$seq,$seq_type)=@_;
+    my ($class, $header, $seq, $seq_type)=@_;
     my $self = bless {sequence=>undef,header=>undef,seq_type=>undef}, $class;
     if (defined $header){
         $self->set_header($header);
@@ -106,11 +117,11 @@ sub complement {
 sub rev_comp {
 	# Returns the reverse complement of $seq as a new Sequence object
 	my $self = shift;
-    if (undef $self->{seq_type}) {
+	if (undef $self->{seq_type}) {
         warn "Trying to use rev_comp without a value assigned for \$seq_type\n";
         return $self;
     }
-	if ($self->{seq_type} eq "PRO") {
+	elsif ($self->{seq_type} eq "PRO") {
         warn "Cannot find the reverse complement for a protein";
         return $self;
     }
@@ -157,14 +168,20 @@ sub set_header{
 
 sub set_seq_type{
     my ($self, $seq_type)=@_;
-    
-    if (ref $seq_type eq "SCALAR") {
+	print "seq type = $seq_type\n";  
+   if (ref $seq_type eq "SCALAR") {
         if    ($seq_type eq "DNA" or $seq_type eq "D")  {$self->{seq_type} = "DNA"}
         elsif ($seq_type eq "RNA" or $seq_type eq "R")  {$self->{seq_type} = "RNA"}
         elsif ($seq_type eq "PRO" or $seq_type eq "P")  {$self->{seq_type} = "PRO"}
         else  {warn "Invalid \$seq_type provided to set_seq_type\n"}
     }
-    else {warn "Trying to use set_seq_type with non-scalar type for \$seq_type\n"}
+    elsif (ref $seq_type) {warn "Trying to use set_seq_type with non-scalar type for \$seq_type\n"}
+    else {
+        if    ($seq_type eq "DNA" or $seq_type eq "D")  {$self->{seq_type} = "DNA"}
+        elsif ($seq_type eq "RNA" or $seq_type eq "R")  {$self->{seq_type} = "RNA"}
+        elsif ($seq_type eq "PRO" or $seq_type eq "P")  {$self->{seq_type} = "PRO"}
+        else  {warn "Invalid \$seq_type provided to set_seq_type\n"}
+    }
 }
 
 #Return the sequence
@@ -249,10 +266,36 @@ sub translate {
 }
 
 #Count given k-mer size and return hash {AAA=>10,AAC=>2...}
-sub count_kmer{
+####################################################
+# STELLA STOLE ABBY'S COUNT_KMER DELETE THIS LATER #
+#VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV#
+sub count_kmer {
+        my ($k_length, $seq) = @_;
+        my $seq_length = length($seq);
+                        
+        # Make sure that the sequence length is not shorter than the k-mer length
+        if ($seq_length < $k_length) {
+                print STDERR "Sequence length ($seq_length) is shorter than k-mer length ($k_length)";
+                return;
+        } else {
+                # Hash to store kmers and associated counts
+                my %count;
+                        
+                # Read through sequence with a window size of $length
+                for (my $i = 0; $i <= $seq_length - $k_length; $i++) {
+                        my $kmer = substr($seq, $i, $k_length);
+                                
+                        # Tally counts for kmer   
+                        $count{$kmer}++;
+                }
 
-
+                # Return reference to count hash
+                return(\%count);
+        }
 }
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#
+# STELLA STOLE ABBY'S COUNT_KMER DELETE THIS LATER #
+####################################################
 
 #Match Regex or string to sequence and return array of matching positions
 sub pattern_match{
@@ -353,7 +396,24 @@ sub extract{
     
 }
 
-sub translate{
+sub translate {
+        my ($self) = @_;
+        if (undef $self->{seq_type} or $self->{seq_type} ne "DNA" or $self->{seq_type} ne "RNA") {
+                warn "Translate error: sequence type must be either DNA/RNA\n";
+                return $self;
+        }
+        else {
+                my $seq = $self->{sequence};
+                $seq =~ tr/Uu/Tt/;
+                my $trans;
+                for (my $i = 0; $i < CORE::length($seq)-3; $i+=3) {
+                        my $codon = substr($seq, $i, 3);
+                        if (not exists $Translation{$codon}) {$trans .= "0"}
+                        else                                 {$trans .= $Translation{$codon}}
+                }
+                my $new_obj = new Sequence($self->{header}, $trans, "PROTEIN");
+                return ($self, $new_obj); 
+        }
     
 }
 
@@ -565,8 +625,9 @@ package main;
 
 sub generate_random_sequence{
 
-        my ($target_seq_length, $target_seq_type, $custom_char_weight) = @_;
+        my ($target_seq_length, $target_seq_type, $seq_type, $custom_char_weight) = @_;
         die "Error at subroutine rand_seq: length must be positive integer (your input: $target_seq_length).\n" unless $target_seq_length =~ /^\d+E{0,1}\d*$/i;
+	
         $target_seq_type = "dna" if not defined($target_seq_type);
 
         # Define char weight reference based on type #
@@ -618,8 +679,8 @@ sub generate_random_sequence{
                         }
                 }
         }
-
-        return($random_seq);
+	my $new_obj = new Sequence("Randomized_seq", $random_seq, $seq_type);
+        return($new_obj);
     
 }
 
@@ -682,7 +743,9 @@ sub generate_kmer_sequence{
                 }
 
         }
-        return($seq);
+	
+	my $new_obj = new Sequence("Randomized_seq_kmer", $seq, "DNA");
+        return($new_obj);
 }
 
 sub global_alignment{
@@ -702,3 +765,4 @@ sub calculate_relative_entropy{
 }
 
 1;
+

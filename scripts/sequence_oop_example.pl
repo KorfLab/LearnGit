@@ -18,7 +18,7 @@ use warnings FATAL => 'all';
 
 use Getopt::Std;
 
-
+use Sequence_OOP;
 
 ################
 
@@ -38,7 +38,7 @@ options:
 
   -p <parameter>
 
-" unless @ARGV; # adjust as necessary
+" unless @ARGV == 0; # adjust as necessary
 
 
 
@@ -61,6 +61,30 @@ my ($var1, $var2) = @ARGV;
 # main loop #
 
 #############
+
+
+#----------------------------Generate random sequence----------------------------------#
+my %biased_kmer = ("A" => 0.5, "T" => 0.3, "G" => 0.05, "C" => 0.15);
+my $DNA = Sequence_OOP::generate_random_sequence(100000, "custom", "DNA", \%biased_kmer);
+
+#_---------------------------Generate kmer sequence-----------------------------------#
+my %kmer = %{Sequence_OOP::Sequence::count_kmer(3, $DNA->{sequence})};
+$DNA = Sequence_OOP::generate_kmer_sequence(100000, \%kmer);
+my $DEBUG = 0;
+#DEBUG#
+#How random is random?
+if ($DEBUG==1) {
+	my %kmer2 = %{Sequence_OOP::Sequence::count_kmer(3, $DNA->{sequence})};
+	print "kmer\tIN\tOUT\tLOGODD\n";
+	foreach my $kmer (sort {$kmer{$b} <=> $kmer{$a}} keys %kmer) {
+	        my $logodd = $kmer2{$kmer} == 0 ? "inf" : log($kmer{$kmer}/$kmer2{$kmer});
+		        print "$kmer\t$kmer{$kmer}\t$kmer2{$kmer}\t$logodd\n";
+	}
+}
+#------------------------------Translate----------------------------------------------#
+#my $Translate = Sequence_OOP::Sequence::translate($DNA);
+
+
 
 
 
