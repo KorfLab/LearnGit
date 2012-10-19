@@ -1145,6 +1145,22 @@ sub count_kmer {
 	}
 }
 
+sub motif_finder {
+  # input: sequence, regex_pattern, nucl(DNA or RNA)
+  # output: number of times pattern was found on either strand
+  my ($seq, $regex, $nuc_type) = @_;
+ 	$nuc_type //= "DNA"; # If $nuc_type is undefined, set to DNA
+  $seq = uc($seq);
+  my $reversed_seq = rev_comp($seq, $nuc_type);
+  my @matches = ($seq =~ /$regex/g); #returns array of all matches to regex input
+  my $seq_length = scalar(@matches);
+  
+  ### to find the pattern for reversed complement will add to count
+  my @rev_matches = ($reversed_seq =~ /$regex/g);
+  my $rev_length = scalar(@rev_matches);
+  return $seq_length, $rev_length;
+}
+
 1;
 
 __DATA__

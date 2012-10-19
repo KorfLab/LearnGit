@@ -231,3 +231,10 @@ my $KL = Sequence::kl_distance($P_ref, $Q_ref);
 
 #Since this function returns a hash reference, remember to dereference in order to extract K-L Distances
 print "K-L DISTNCES:\n",$KL->{"D(P||Q)"}, "\n", $KL->{"D(Q||P)"}, "\n"; 
+
+#---------------------------Motif Finder --------------------#
+#find number of times pattern is seen
+my $motif = 'AT';
+my ($seq_length, $rev_length)  = Sequence::motif_finder($seq, $motif);
+print("$motif is seen $seq_length times on the positive strand and $rev_length times on the reverse complement\n");
+
