@@ -1,4 +1,3 @@
-#!/usr/bin/perl
 use strict;
 use warnings;
 
@@ -57,23 +56,11 @@ foreach my $nuc (keys %Translation) {
 #Need to check passed data type in the functions to make sure it is a Sequence
 #or a compatible datatype.
 
-#my %biased_kmer = ("A" => 0.5, "T" => 0.3, "G" => 0.05, "C" => 0.15);
-#my $DNA = generate_random_sequence(100000, "custom", "DNA", \%biased_kmer);
-##print ">$DNA->{header} ($DNA->{seq_type}\)n$DNA->{sequence}\n";
-#my %kmer = %{Sequence::count_kmer(3, $DNA->{sequence})};
-#$DNA = generate_kmer_sequence(100000, \%kmer);
-#my %kmer2 = %{Sequence::count_kmer(3, $DNA->{sequence})};
-#print "kmer\tIN\tOUT\tLOGODD\n";
-#foreach my $kmer (sort {$kmer{$b} <=> $kmer{$a}} keys %kmer) {
-#	my $logodd = $kmer2{$kmer} == 0 ? "inf" : log($kmer{$kmer}/$kmer2{$kmer});
-#	print "$kmer\t$kmer{$kmer}\t$kmer2{$kmer}\t$logodd\n";
-#}
-###############################################################################
 package Sequence;
 
 #Create a new sequence object
 sub new{
-    my ($class, $header, $seq, $seq_type)=@_;
+    my ($class,$header,$seq,$seq_type)=@_;
     my $self = bless {sequence=>undef,header=>undef,seq_type=>undef}, $class;
     if (defined $header){
         $self->set_header($header);
@@ -168,20 +155,13 @@ sub set_header{
 
 sub set_seq_type{
     my ($self, $seq_type)=@_;
-	print "seq type = $seq_type\n";  
-   if (ref $seq_type eq "SCALAR") {
+    if (ref $seq_type eq "SCALAR") {
         if    ($seq_type eq "DNA" or $seq_type eq "D")  {$self->{seq_type} = "DNA"}
         elsif ($seq_type eq "RNA" or $seq_type eq "R")  {$self->{seq_type} = "RNA"}
         elsif ($seq_type eq "PRO" or $seq_type eq "P")  {$self->{seq_type} = "PRO"}
         else  {warn "Invalid \$seq_type provided to set_seq_type\n"}
     }
-    elsif (ref $seq_type) {warn "Trying to use set_seq_type with non-scalar type for \$seq_type\n"}
-    else {
-        if    ($seq_type eq "DNA" or $seq_type eq "D")  {$self->{seq_type} = "DNA"}
-        elsif ($seq_type eq "RNA" or $seq_type eq "R")  {$self->{seq_type} = "RNA"}
-        elsif ($seq_type eq "PRO" or $seq_type eq "P")  {$self->{seq_type} = "PRO"}
-        else  {warn "Invalid \$seq_type provided to set_seq_type\n"}
-    }
+    else {warn "Trying to use set_seq_type with non-scalar type for \$seq_type\n"}
 }
 
 #Return the sequence
@@ -266,9 +246,9 @@ sub translate {
 }
 
 #Count given k-mer size and return hash {AAA=>10,AAC=>2...}
-####################################################
-# STELLA STOLE ABBY'S COUNT_KMER DELETE THIS LATER #
-#VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV#
+###############################################
+# NON OOP ABBY'S COUNT_KMER DELETE THIS LATER #
+#VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV#
 sub count_kmer {
         my ($k_length, $seq) = @_;
         my $seq_length = length($seq);
@@ -293,9 +273,9 @@ sub count_kmer {
                 return(\%count);
         }
 }
-#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#
-# STELLA STOLE ABBY'S COUNT_KMER DELETE THIS LATER #
-####################################################
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#
+# NON OOP ABBY'S COUNT_KMER DELETE THIS LATER #
+###############################################
 
 #Match Regex or string to sequence and return array of matching positions
 sub pattern_match{
@@ -411,10 +391,9 @@ sub translate {
                         if (not exists $Translation{$codon}) {$trans .= "0"}
                         else                                 {$trans .= $Translation{$codon}}
                 }
-                my $new_obj = new Sequence($self->{header}, $trans, "PROTEIN");
+                my $new_obj = new Sequence($self->{header}, $trans, "PRO");
                 return ($self, $new_obj); 
         }
-    
 }
 
 sub count_kmer{
