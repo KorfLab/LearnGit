@@ -1,8 +1,5 @@
 #!/usr/bin/perl
 #
-# Name:        <script_name.pl>
-# Description: <one line description>
-# Author:      <your name>
 # Name:        sequence_oop_example.pl
 # Description: A script to demonstrate the usage of Sequence_OOP functions
 # Author:      Korf Lab
@@ -16,13 +13,6 @@ use Sequence_OOP;
 ################
 # command line #
 ################
-
-die "
-usage: <program_name> [options] <arguments...>
-options:
-  -h
-  -p <parameter>
-"; # adjust as necessary
 
 my %opt;
 getopts('hp:', \%opt);
