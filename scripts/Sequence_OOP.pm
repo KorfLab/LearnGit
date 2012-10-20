@@ -56,7 +56,6 @@ foreach my $nuc (keys %Translation) {
 
 package Sequence;
 
-=HEAD2 Sequence Constructor
 =head2 Sequence Constructor
 
 Sequence::new constructor subroutine
