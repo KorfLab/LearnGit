@@ -115,7 +115,7 @@ sub new{
 #Return the lenght of the sequence
 sub length{
     my $self=shift;
-    return length $self->{sequence};
+    return CORE::length $self->{sequence};
 }
 
 sub complement {
