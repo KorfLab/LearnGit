@@ -112,7 +112,17 @@ sub new{
     return $self;
 }
 
-#Return the lenght of the sequence
+
+=head2 Length
+
+Return the length of the sequence
+
+Example:
+
+my $length = $sequence->length;
+
+=cut
+
 sub length{
     my $self=shift;
     return CORE::length $self->{sequence};
