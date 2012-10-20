@@ -165,9 +165,28 @@ sub rev_comp {
 	return $self, $new_obj;
 }
 
-#Set the sequence
-sub set_sequence{
+
+=head2 sequence accessor
+
+Accessor for sequence
+
+If used without passing parameters, the function will return the sequence string.
+If passed a string, it will assign the string to the Sequence;
+
+Example:
+
+    print $seq->sequence . "\n";   #passes sequence to print
+
+    $seq->sequence("ACGTACGT")  # assigns sequence the passed value;
+
+=cut
+
+sub sequence{
     my ($self,$sequence)=@_;
+    
+    if (!defined $sequence){
+        return $self->{sequence};
+    }
     
     if (ref $sequence eq "SCALAR"){
         $self->{sequence}=$$sequence;
@@ -209,11 +228,6 @@ sub set_seq_type{
     else {warn "Trying to use set_seq_type with non-scalar type for \$seq_type\n"}
 }
 
-#Return the sequence
-sub sequence{
-    my $self=shift;
-    return $self->{sequence};
-}
 
 #Return a reference to the Sequence
 sub sequence_ref{

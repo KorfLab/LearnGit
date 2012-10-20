@@ -48,6 +48,14 @@ $sequence       = new Sequence(HEADER   => "This is my Sequence",
 $sequence       = new Sequence(SEQUENCE => "CGGAAATTTGGT",
                                TYPE     => "PRO");
 
+#----------------------------  Using sequence accessor method -----------------#
+
+print $sequence->sequence . "\n";
+
+$sequence->sequence("ACGTACGT");
+
+print $sequence->sequence ."\n";
+
 #---------------------------  Using length method  ----------------------------#
 
 print $sequence->length . "\n";
