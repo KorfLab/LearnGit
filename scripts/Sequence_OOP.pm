@@ -53,28 +53,63 @@ my %Rev_Translation;
 foreach my $nuc (keys %Translation) {
         $Rev_Translation{$Translation{$nuc}} = $nuc;
 }
-#Need to check passed data type in the functions to make sure it is a Sequence
-#or a compatible datatype.
 
 package Sequence;
 
-#Create a new sequence object
+=HEAD2 Sequence Constructor
+
+Sequence::new constructor subroutine
+Usage:
+
+    my $seq = new Sequence(); #empty sequence
+    
+    my $seq = new Sequence("Bare Sequence");
+
+    my $seq = new Sequence( -header   => "Fasta Header or Sequence Name,
+                            -sequence => "Sequence ACTDDA");
+                            
+    my $seq = new Sequence( -header   => "Fasta Header or Sequence Name,
+                            -sequence => "Sequence ACTDDA",
+                            -type     => "PROT");
+
+
+Accepted types are "UNDEFINED"  , "UNDEF" (DEFAULT)
+                   "UNKNOWN"    , "UNK"
+                   "RNA"        , "R"
+                   "DNA"        , "D"
+                   "PROT"       , "P" , "AA"
+                   
+(Types initially created by Matt Porter.  Paul Lott added UNDEFINED and UNKNOWN)
+
+UNDEFINED = sequence that hasn't been check and type hasn't been defined
+
+UNKNOWN = Has been checked and the sequence isn't RNA, DNA, or PROT  
+
+
+=cut
+
+
 sub new{
-    my ($class,$header,$seq,$seq_type)=@_;
-    my $self = bless {sequence=>undef,header=>undef,seq_type=>undef}, $class;
-    if (defined $header){
-        $self->set_header($header);
-    }
+    my %default=("TYPE"     =>  "UNDEFINED",
+                 "HEADER"   =>  q(),
+                 "SEQUENCE" =>  q());
+    my %arg;
+    my $class = shift;
     
-    if (defined $seq){
-        $self->set_sequence($seq);
+    if (scalar @_ % 2 == 0){
+        %arg=(%default,@_);
     }
+    else{        
+        my $seq = shift;
+        %arg = (%default,@_);
+        $arg{SEQUENCE} = $seq;
+     }
+    my $self = bless {sequence  =>  $arg{SEQUENCE},
+                      header    =>  $arg{HEADER},
+                      seq_type  =>  $arg{TYPE}} , $class;
+    #TODO:  once the set_type function is fixed.  I'll set the type using set_type();
     
-    if (defined $seq_type){
-        # $seq_type can be "DNA", "RNA", or "PRO"
-        $self->set_seq_type($seq_type);
-    }
-    return $self
+    return $self;
 }
 
 #Return the lenght of the sequence

@@ -3,6 +3,9 @@
 # Name:        <script_name.pl>
 # Description: <one line description>
 # Author:      <your name>
+# Name:        sequence_oop_example.pl
+# Description: A script to demonstrate the usage of Sequence_OOP functions
+# Author:      Korf Lab
 # License:     <BSD, MIT, GPL, CC, PD, choose one>
 
 use strict;
@@ -31,6 +34,19 @@ my ($var1, $var2) = @ARGV;
 #############
 # main loop #
 #############
+
+
+#----------------------------  Create a new Sequence  ---------------------------------#
+
+my $sequence    = new Sequence();  #empty sequence;
+$sequence       = new Sequence("ACGTACGT");
+$sequence       = new Sequence("ACGTACGT", TYPE => "DNA");
+$sequence       = new Sequence(SEQUENCE => "ACGTACGTACGT");
+$sequence       = new Sequence(HEADER   => "Empty Sequence");
+$sequence       = new Sequence(HEADER   => "This is my Sequence",
+                               SEQUENCE => "ACGTACGTACGT");
+$sequence       = new Sequence(SEQUENCE => "CGGAAATTTGGT",
+                               TYPE     => "PRO");
 
 #----------------------------Generate random sequence----------------------------------#
 my %biased_kmer = ("A" => 0.5, "T" => 0.3, "G" => 0.05, "C" => 0.15);
