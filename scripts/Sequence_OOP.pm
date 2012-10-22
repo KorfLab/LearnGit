@@ -570,6 +570,29 @@ sub print{
 ###############################################################################
 package main;
 
+=head2 generate_random_sequence
+
+Returns a random sequence of type $type and length $length. 
+$type (case insensitive) can be "dna" (default), "rna", 
+"protein", or "custom". 
+dna, rna, and protein will give equal 
+weight to each alphabet (DNA - A/T/G/C, Protein - 20 am
+ino acids).
+"custom" will have a third input hash reference $hash, which will have the alphabet as key an
+d weight as value
+
+Example:
+
+my %biased_kmer = (	
+"A" => 0.5,
+"T" => 0.3, 
+"G" => 0.05, 
+"C" => 0.15);
+
+my $new_seq = generate_random_sequence{100000,"custom","DNA",\%biased_kmer);
+
+=cut
+
 sub generate_random_sequence{
 
         my ($target_seq_length, $target_seq_type, $seq_type, $custom_char_weight) = @_;
