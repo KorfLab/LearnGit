@@ -657,6 +657,19 @@ sub generate_random_sequence{
     
 }
 
+=head2 generate_kmer_sequence
+
+Returns a random sequence of $length based on %kmer table
+Return object with unknown seq_type
+
+Example:
+
+my %kmer = ("AAA" => 2, "ATT" => 2, "TAA" => 2);
+
+my $new_seq = generate_kmer_sequence(100000, \%kmer);
+
+=cut
+
 sub generate_kmer_sequence{
         my ($seq_length, $kmer_table) = @_;
         die "Error at create_rand_seq_kmer: sequence length must be positive integer\n" unless defined($seq_length) and $seq_length =~ /^\d+E{0,1}\d*$/;
