@@ -421,6 +421,15 @@ sub extract{
 }
 
 #Translate sequence
+=head2 Translate
+
+Translate a DNA/RNA sequence
+Returns object with PRO seq type
+
+Example:
+my $translate = $DNA->translate;
+
+=cut
 sub translate {
 	my ($self) = @_;
 	if (not defined($self->{seq_type}) and $self->{seq_type} ne "DNA" and $self->{seq_type} ne "RNA") {
