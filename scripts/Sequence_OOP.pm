@@ -297,11 +297,6 @@ sub sequence{
     return $self;
 }
 
-    }
-    
-    return $self;
-}
-
 sub set_seq_type{
     my ($self, $seq_type)=@_;
     if (ref $seq_type eq "SCALAR") {
