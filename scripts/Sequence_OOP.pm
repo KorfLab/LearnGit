@@ -706,7 +706,7 @@ sub generate_kmer_sequence{
 
         }
 	
-	my $new_obj = new Sequence("Randomized_seq_kmer", $seq, "DNA");
+	my $new_obj = new Sequence($seq, "random_kmer_seq, "DNA");
         return($new_obj);
 }
 
