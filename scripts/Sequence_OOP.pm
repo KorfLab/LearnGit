@@ -59,7 +59,8 @@ package Sequence;
 =head2 Sequence Constructor
 
 Sequence::new constructor subroutine
-Usage:
+
+Examples:
 
     my $seq = new Sequence(); #empty sequence
     
@@ -113,12 +114,11 @@ sub new{
 }
 
 
-=head2 Length
+=head2 length
 
 Return the length of the sequence
 
 Example:
-
 my $length = $sequence->length;
 
 =cut
