@@ -55,6 +55,7 @@ foreach my $nuc (keys %Translation) {
 }
 
 package Sequence;
+use overload '=' => \&copy;
 use overload '""' => \&sequence;
 
 =head2 Sequence Constructor
@@ -127,6 +128,24 @@ my $length = $sequence->length;
 sub length{
     my $self=shift;
     return CORE::length $self->{sequence};
+}
+
+=head2 copy
+
+Copy a Sequence instance and return the new Sequence instance
+
+Example:
+my $new_seq = $seq->copy();
+
+Example using overloaded operator '=':
+my $new_seq = $seq;
+
+=cut
+
+sub copy{
+    my $self = shift;
+    my $new_seq = new Sequence( SEQUENCE=>$self->sequence, HEADER=>$self->{header}, TYPE=>$self->{seq_type});
+    return $new_seq;
 }
 
 sub complement {
@@ -240,14 +259,6 @@ sub sequence_ref{
 sub header{
     my $self=shift;
     return $self->{header};
-}
-
-
-#Create a copy of the Sequence object
-sub copy{
-    my $self=shift;
-    my $copy = new Sequence($self->{header},$self->{sequence});
-    return $copy;
 }
 
 #Return sequence as Fasta formatted string
