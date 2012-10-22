@@ -443,36 +443,9 @@ sub translate {
 }
 
 #Count given k-mer size and return hash {AAA=>10,AAC=>2...}
-###############################################
-# NON OOP ABBY'S COUNT_KMER DELETE THIS LATER #
-#VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV#
-sub count_kmer {
-        my ($k_length, $seq) = @_;
-        my $seq_length = length($seq);
-                        
-        # Make sure that the sequence length is not shorter than the k-mer length
-        if ($seq_length < $k_length) {
-                print STDERR "Sequence length ($seq_length) is shorter than k-mer length ($k_length)";
-                return;
-        } else {
-                # Hash to store kmers and associated counts
-                my %count;
-                        
-                # Read through sequence with a window size of $length
-                for (my $i = 0; $i <= $seq_length - $k_length; $i++) {
-                        my $kmer = substr($seq, $i, $k_length);
-                                
-                        # Tally counts for kmer   
-                        $count{$kmer}++;
-                }
+sub count_kmer{
 
-                # Return reference to count hash
-                return(\%count);
-        }
 }
-#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#
-# NON OOP ABBY'S COUNT_KMER DELETE THIS LATER #
-###############################################
 
 #Match Regex or string to sequence and return array of matching positions
 sub pattern_match{
