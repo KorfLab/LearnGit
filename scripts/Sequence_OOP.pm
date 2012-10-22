@@ -55,6 +55,7 @@ foreach my $nuc (keys %Translation) {
 }
 
 package Sequence;
+use overload '""' => \&sequence;
 
 =head2 Sequence Constructor
 
