@@ -436,7 +436,9 @@ sub translate {
 			if (not exists $Translation{$codon}) {$trans .= "0"}
 			else                                 {$trans .= $Translation{$codon}}
 		}
-		my $new_obj = new Sequence($self->{header}, $trans, "PROTEIN");
+		my $new_obj = new Sequence(	SEQUENCE 	=> "$trans",
+						HEADER		=> $self->{header},
+						TYPE		=> "PRO");
 		return ($self, $new_obj);
 	}
    
