@@ -55,6 +55,8 @@ foreach my $nuc (keys %Translation) {
 }
 
 package Sequence;
+use overload '.' => \&concatenate_copy;
+use overload '.=' => \&concatenate;
 use overload '=' => \&copy;
 use overload '""' => \&sequence;
 
@@ -128,6 +130,81 @@ my $length = $sequence->length;
 sub length{
     my $self=shift;
     return CORE::length $self->{sequence};
+}
+
+
+=head2 concatenate
+
+concatenate allows user to concatenate two Sequences together or a string to the
+Sequence instance.  Provides functionality for '.=' operator
+
+Example:  
+$seq->concatenate("ACGTA"); #concatenate a string to end of Sequence instance
+$seq->concatenate($alt_seq);  #concatenate another Sequence instance
+
+Example through overloaded operator '.=':
+
+$seq .= "ACGTA";
+$seq .= $alt_seq;
+
+
+=cut
+
+sub concatenate{
+    my ($self, $r_self)= @_;
+    
+    if (ref $self eq "Sequence" && ref $r_self eq "Sequence"){
+        $self->{sequence} .=  $r_self->{sequence};
+    }
+    elsif (ref $self eq "Sequence" && !(ref $r_self)){
+        $self->{sequence} .= $r_self;
+    }
+    
+    return $self
+}
+
+=head2 concatenate_copy
+
+concatenate_copy subroutine allows user to concatenate two Sequences, or
+Sequence and string together.   Returns a new Sequence instance.  Provides
+functionality for '.' perl concatenate operator.
+
+Example:
+my $new_seq = $seq->concatenate_copy($alt_seq);
+my $new_seq = $seq->concatenate_copy("ACGT");
+
+Example through overloaded operator '.':
+
+my $new_seq = $seq . "ACGT";    #Concatenate a Sequence and string
+my $new_seq = "ACGT" . $seq;    #Concatenate a Sequence and string
+my $new_seq = $seq . $alt_seq;  #Concatenate two Sequence instances
+
+=cut
+
+sub concatenate_copy{
+    my ($self, $concat_self, $order) = @_;
+    
+    my $new_seq = new Sequence();
+    
+    
+     if ($order){
+        if (ref $concat_self eq "Sequence"){
+            $new_seq->{sequence} = $concat_self->{sequence} . $self->{sequence};
+        }
+        else{
+            $new_seq->{sequence} = $concat_self . $self->{sequence};
+        }
+    }
+    else{
+         if (ref $concat_self eq "Sequence"){
+            $new_seq->{sequence} = $self->{sequence} . $concat_self->{sequence} ;
+        }
+        else{
+            $new_seq->{sequence} = $self->{sequence} . $concat_self;
+        }
+    }
+    
+    return $new_seq;
 }
 
 =head2 copy

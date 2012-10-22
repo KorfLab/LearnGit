@@ -49,6 +49,36 @@ print $sequence->sequence ."\n";
 #---------------------------  Using length method  ----------------------------#
 
 print $sequence->length . "\n";
+#---------------------------  Using Sequence Concatenation --------------------#
+my $first_seq   = new Sequence ("ACGT");    #create new Sequence
+my $second_seq  = new Sequence ("NNNN");    #create new Sequence
+my $string      = "AUUG";  #create string
+
+$first_seq->concatenate("__TT");
+print $first_seq->sequence . "\t=\tACGT__TT\n";   #print $first_seq
+
+#Using overloaded operator '.='
+$first_seq .= $string;  #Concatenate AUUG to ACGTACGT
+print $first_seq->sequence . "\t=\tACGT__TTAUUG\n";   #print $first_seq
+
+
+#Using concatenate_copy
+my $new_seq = $first_seq->concatenate_copy($second_seq);
+print $new_seq->sequence . "\t=\tACGT__TTAUUGNNNN\n";   #print $new_seq
+
+#Using overloaded operator '.'
+$new_seq = $first_seq . $second_seq;
+print $new_seq->sequence . "\t=\tACGT__TTAUUGNNNN\n";   #print $new_seq
+
+#Concatenating with string using overloaded '.'
+$new_seq = "ata_" . $first_seq;
+print $new_seq->sequence . "\t=\tata_ACGT__TTAUUG\n";   #print $new_seq
+
+
+$new_seq = $first_seq . "_tat";
+print $new_seq->sequence . "\t=\tACGT__TTAUUG_tat\n";   #print $new_seq
+
+
 
 #----------------------------Generate random sequence----------------------------------#
 my %biased_kmer = ("A" => 0.5, "T" => 0.3, "G" => 0.05, "C" => 0.15);
