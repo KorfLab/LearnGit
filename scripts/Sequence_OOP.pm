@@ -401,7 +401,7 @@ sub clean{
 	if ($sequence =~ m/[^ACGTURYSWKMBDHVN\*\-EFILPQ]/) {
 		die "Nonstandard characters found in this sequence";
 	}
-	$self->set_sequence($sequence);
+	$self->sequence($sequence);
 	return;   
 }
 
