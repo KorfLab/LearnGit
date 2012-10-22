@@ -325,8 +325,18 @@ sub set_seq_type{
     else {warn "Trying to use set_seq_type with non-scalar type for \$seq_type\n"}
 }
 
+=head 2 sequence_ref
 
-#Return a reference to the Sequence
+Return a reference to sequence string
+For long sequenes passing a reference to function is much faster than passing
+by copy.   This allows quick access to a reference to sequence
+
+Example:
+
+example_function($seq->sequence_ref);  #Passing a reference to sequence to function
+
+=cut
+
 sub sequence_ref{
     my $self=shift;
     return \$self->{sequence};
