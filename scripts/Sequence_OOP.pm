@@ -358,16 +358,36 @@ sub header{
     return $self;
 }
 
-#Return sequence as Fasta formatted string
-sub asString{
+=head2 as_fasta_string
+
+Return sequence as a Fasta formatted string
+
+=cut
+
+sub as_fasta_string{
     my $self=shift;
     return ">" . $self->{header} . "\n" . $self->{sequence} . "\n";
 }
 
-#print sequence (FASTA format)
-sub print{
-    my $self=shift;
-    print $self->asString;
+=head2 print_fasta
+
+Print the Sequence object as Fasta
+If passed a GLOB, it will print the Fasta formatted Sequence to the GLOB
+
+Example:
+    $seq->print_fasta;
+    $seq->print_fasta(\*STDOUT);
+
+=cut
+sub print_fasta{
+    my ($self,$fh)=@_;
+    if (defined $fh && ref $fh eq "GLOB"){
+        print $fh $self->as_fasta_string;
+    }
+    else{
+        print $self->as_fasta_string;
+    }
+    
     return;
 }
 

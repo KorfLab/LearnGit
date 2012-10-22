@@ -38,6 +38,9 @@ $sequence       = new Sequence(HEADER   => "This is my Sequence",
 $sequence       = new Sequence(SEQUENCE => "CGGAAATTTGGT",
                                TYPE     => "PRO");
 
+#---------------------------- Format Sequence as Fasta ------------------------#
+print $sequence->as_fasta_string . "\n";
+$sequence->print_fasta;
 #----------------------------  Using sequence accessor method -----------------#
 
 print $sequence->sequence . "\n";   #print sequence
