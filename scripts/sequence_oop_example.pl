@@ -106,11 +106,11 @@ my %biased_kmer = ("A" => 0.5, "T" => 0.3, "G" => 0.05, "C" => 0.15);
 my $DNA = generate_random_sequence(100000, "custom", "DNA", \%biased_kmer);
 
 #_---------------------------Generate kmer sequence-----------------------------------#
-my %kmer = %{Sequence_OOP::Sequence::count_kmer(3, $DNA->{sequence})};
+my %kmer = ("AAA" => 2, "ATT" => 2, "TAA" => 2);
 $DNA = generate_kmer_sequence(100000, \%kmer);
 
 #------------------------------Translate----------------------------------------------#
-my $Translate = Sequence_OOP::Sequence::translate($DNA);
+my $Translate = $DNA->translate;
 
 #----------------------------------Clean----------------------------------------------#
 my $dirtyDNA = "ASERTWB D\nT";
