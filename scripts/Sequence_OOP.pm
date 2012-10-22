@@ -308,7 +308,7 @@ sub set_seq_type{
     else {warn "Trying to use set_seq_type with non-scalar type for \$seq_type\n"}
 }
 
-=head 2 sequence_ref
+=head2 sequence_ref
 
 Return a reference to sequence string
 For long sequenes passing a reference to function is much faster than passing
