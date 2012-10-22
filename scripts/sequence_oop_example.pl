@@ -107,7 +107,7 @@ my $DNA = generate_random_sequence(100000, "custom", "DNA", \%biased_kmer);
 
 #_---------------------------Generate kmer sequence-----------------------------------#
 my %kmer = %{Sequence_OOP::Sequence::count_kmer(3, $DNA->{sequence})};
-$DNA = Sequence_OOP::Sequence::generate_kmer_sequence(100000, \%kmer);
+$DNA = generate_kmer_sequence(100000, \%kmer);
 
 #------------------------------Translate----------------------------------------------#
 my $Translate = Sequence_OOP::Sequence::translate($DNA);
