@@ -40,15 +40,19 @@ $sequence       = new Sequence(SEQUENCE => "CGGAAATTTGGT",
 
 #----------------------------  Using sequence accessor method -----------------#
 
-print $sequence->sequence . "\n";
+print $sequence->sequence . "\n";   #print sequence
 
-$sequence->sequence("ACGTACGT");
+$sequence->sequence("ACGTACGT");    #assign sequence
+print $sequence->sequence ."\n";    #print ACGTACGT\n
 
-print $sequence->sequence ."\n";
+print $sequence . "\n";     #print using overloaded '""'
+print length $sequence;     #print length using overloaded '""'
+print "\n";
 
 #---------------------------  Using length method  ----------------------------#
 
-print $sequence->length . "\n";
+print $sequence->length . "\n";     #get length using Sequence::length
+
 #---------------------------  Using Sequence Concatenation --------------------#
 my $first_seq   = new Sequence ("ACGT");    #create new Sequence
 my $second_seq  = new Sequence ("NNNN");    #create new Sequence
@@ -79,6 +83,15 @@ $new_seq = $first_seq . "_tat";
 print $new_seq->sequence . "\t=\tACGT__TTAUUG_tat\n";   #print $new_seq
 
 
+#-------------------------- Using Sequence copy -------------------------------#
+$new_seq = $first_seq->copy;  #Copy $first_seq with copy subroutine
+
+$new_seq = $first_seq;  #Copy $first_seq using overloaded '='
+
+$new_seq .= "ACGT";
+
+print "Original Sequence: $first_seq\n";
+print "Copied Sequence after concat: " . $new_seq . "\n";
 
 #----------------------------Generate random sequence----------------------------------#
 my %biased_kmer = ("A" => 0.5, "T" => 0.3, "G" => 0.05, "C" => 0.15);
