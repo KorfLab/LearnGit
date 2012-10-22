@@ -297,18 +297,6 @@ sub sequence{
     return $self;
 }
 
-#Set the header of the sequence
-sub set_header{
-    my ($self,$header)=@_;
-    
-    if (ref $header eq "SCALAR"){
-        $self->{header}=$$header;
-    }
-    elsif (ref $header){
-        warn "Trying to set_header with non-scalar type\n";
-    }
-    else{
-        $self->{header}=$header;
     }
     
     return $self;
@@ -342,10 +330,37 @@ sub sequence_ref{
     return \$self->{sequence};
 }
 
-#Return the header
+=head2 header
+
+Access or Returns the header of the Sequence object
+If parameter provided, header will be changed to provided parameter.
+If no parameters provided, function will return the header of Sequence object.
+
+Example:
+
+$seq->header("My sequence definition"); #Set the header
+my $string = $seq->header;  #Assign $string the header string from Sequence object
+
+=cut
+
 sub header{
-    my $self=shift;
-    return $self->{header};
+    my ($self,$header)=@_;
+    
+    if (!defined $header){
+        return $self->{header};
+    }
+    
+    if (ref $header eq "SCALAR"){
+        $self->{header}=$$header;
+    }
+    elsif (ref $header){
+        warn "Trying to set header with non-scalar type\n";
+    }
+    else{
+        $self->{header}=$header;
+    }
+    
+    return $self;
 }
 
 #Return sequence as Fasta formatted string

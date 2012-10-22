@@ -49,6 +49,11 @@ print $sequence . "\n";     #print using overloaded '""'
 print length $sequence;     #print length using overloaded '""'
 print "\n";
 
+#---------------------------  Using header accessor method --------------------#
+
+$sequence->header("My Header");     #Setting header
+print $sequence->header . "\n";     #Getting header
+
 #---------------------------  Using length method  ----------------------------#
 
 print $sequence->length . "\n";     #get length using Sequence::length
