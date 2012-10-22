@@ -549,23 +549,6 @@ sub extract{
 }
 
 sub translate {
-        my ($self) = @_;
-        if (undef $self->{seq_type} or $self->{seq_type} ne "DNA" or $self->{seq_type} ne "RNA") {
-                warn "Translate error: sequence type must be either DNA/RNA\n";
-                return $self;
-        }
-        else {
-                my $seq = $self->{sequence};
-                $seq =~ tr/Uu/Tt/;
-                my $trans;
-                for (my $i = 0; $i < CORE::length($seq)-3; $i+=3) {
-                        my $codon = substr($seq, $i, 3);
-                        if (not exists $Translation{$codon}) {$trans .= "0"}
-                        else                                 {$trans .= $Translation{$codon}}
-                }
-                my $new_obj = new Sequence($self->{header}, $trans, "PRO");
-                return ($self, $new_obj); 
-        }
 }
 
 sub count_kmer{
