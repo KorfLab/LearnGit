@@ -423,7 +423,7 @@ sub extract{
 #Translate sequence
 sub translate {
 	my ($self) = @_;
-	if (undef $self->{seq_type} or $self->{seq_type} ne "DNA" or $self->{seq_type} ne "RNA") {
+	if (not defined($self->{seq_type}) or $self->{seq_type} ne "DNA" or $self->{seq_type} ne "RNA") {
         	warn "Translate error: sequence type must be either DNA/RNA\n";
 		return $self;
 	}
