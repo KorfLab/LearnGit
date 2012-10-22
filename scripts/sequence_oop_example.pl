@@ -103,11 +103,11 @@ print "Copied Sequence after concat: " . $new_seq . "\n";
 
 #----------------------------Generate random sequence----------------------------------#
 my %biased_kmer = ("A" => 0.5, "T" => 0.3, "G" => 0.05, "C" => 0.15);
-my $DNA = Sequence_OOP::generate_random_sequence(100000, "custom", "DNA", \%biased_kmer);
+my $DNA = generate_random_sequence(100000, "custom", "DNA", \%biased_kmer);
 
 #_---------------------------Generate kmer sequence-----------------------------------#
 my %kmer = %{Sequence_OOP::Sequence::count_kmer(3, $DNA->{sequence})};
-$DNA = Sequence_OOP::generate_kmer_sequence(100000, \%kmer);
+$DNA = Sequence_OOP::Sequence::generate_kmer_sequence(100000, \%kmer);
 
 #------------------------------Translate----------------------------------------------#
 my $Translate = Sequence_OOP::Sequence::translate($DNA);
