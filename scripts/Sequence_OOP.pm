@@ -471,9 +471,13 @@ sub shuffle{
 =head2 Calculate Entropy
 
 Calculate Shannon's Entropy from $self->{sequence}
+
 return float of entropy result
+
 Example:
+
 my $DNA = "ATGCC";
+
 my $entropy = $DNA->calculate_entropy;
 
 
