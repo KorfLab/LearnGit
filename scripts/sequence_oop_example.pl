@@ -111,7 +111,8 @@ $DNA = generate_kmer_sequence(15, \%kmer);
 print "\nFunction generate_kmer_sequence\n>" . $DNA->header . "\n" . $DNA->sequence . "\n";
 
 #------------------------------Translate----------------------------------------------#
-my $Translate = $DNA->translate;
+my $PRO = $DNA->translate;
+print "\nFunction translate\n>" . $PRO->header . "\n" . $PRO->sequence . "\n";
 
 #-----------------------Calculate Entropy------------------------------------#
 my $entropy = $DNA->calculate_entropy;
