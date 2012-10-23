@@ -685,7 +685,6 @@ sub generate_random_sequence{
                         }
                 }
         }
-	my $new_obj = new Sequence($random_seq, "random_seq", $seq_type);
 	my $new_obj = new Sequence(	SEQUENCE 	=> $random_seq, 
 					HEADER 		=> "random_seq",
 					TYPE		=> $seq_type);
