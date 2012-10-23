@@ -468,6 +468,33 @@ sub shuffle{
     
 }
 
+=head2 Calculate Entropy
+
+Calculate Shannon's Entropy from $self->{sequence}
+return float of entropy result
+Example:
+my $DNA = "ATGCC";
+my $entropy = $DNA->calculate_entropy;
+
+
+=cut
+
+sub calculate_entropy{
+	my ($self) = @_;
+	my %seq;
+        for (my $i = 0; $i < length($self); $i++) {
+                my $nuc = substr($self->{sequence}, $i, 1);
+                $seq{nuc}{$nuc}++;
+                $seq{tot}++;
+        }
+        foreach my $nuc (keys %{$seq{nuc}}) {
+                $seq{nuc}{$nuc} /= $seq{tot};
+                $seq{ent} += -1 * $seq{nuc}{$nuc} * (log($seq{nuc}{$nuc}) / log (2));
+        }
+        return($seq{ent});    
+}
+
+
 ###############################################################################
 #Sequences Package
 #Array of sequence class
@@ -749,10 +776,6 @@ sub global_alignment{
 }
 
 sub local_alignment{
-    
-}
-
-sub calculate_entropy{
     
 }
 

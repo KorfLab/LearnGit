@@ -112,6 +112,9 @@ $DNA = generate_kmer_sequence(100000, \%kmer);
 #------------------------------Translate----------------------------------------------#
 my $Translate = $DNA->translate;
 
+#-----------------------Calculate Entropy------------------------------------#
+my $entropy = $DNA->calculate_entropy;
+
 #----------------------------------Clean----------------------------------------------#
 my $dirtyDNA = "ASERTWB D\nT";
 $DNA->clean;
