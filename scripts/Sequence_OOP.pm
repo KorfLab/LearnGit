@@ -609,11 +609,13 @@ package main;
 =head2 generate_random_sequence
 
 Returns a random sequence of type $type and length $length. 
+
 $type (case insensitive) can be "dna" (default), "rna", 
 "protein", or "custom". 
-dna, rna, and protein will give equal 
-weight to each alphabet (DNA - A/T/G/C, Protein - 20 am
-ino acids).
+
+dna, rna, and protein will have equal weight to each 
+alphabet (DNA - A/T/G/C, Protein - 20 amino acids). 
+
 "custom" will have a third input seqtype, which will be used to set object type
 and fourth input hash reference $hash, which will have the alphabet as key and weight as value
 
