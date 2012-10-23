@@ -116,7 +116,7 @@ print "\nFunction translate\n>" . $PRO->header . "\n" . $PRO->sequence . "\n";
 
 #-----------------------Calculate Entropy------------------------------------#
 my $entropy = $DNA->calculate_entropy;
-
+print "\nFuncion calculate_entropy (on " . $DNA->header . ")\nEntropy = " . $entropy . "\n";
 #----------------------------------Clean----------------------------------------------#
 my $dirtyDNA = "ASERTWB D\nT";
 $DNA->clean;
