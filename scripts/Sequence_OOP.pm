@@ -482,7 +482,7 @@ my $entropy = $DNA->calculate_entropy;
 sub calculate_entropy{
 	my ($self) = @_;
 	my %seq;
-        for (my $i = 0; $i < length($self); $i++) {
+        for (my $i = 0; $i < $self->length; $i++) {
                 my $nuc = substr($self->{sequence}, $i, 1);
                 $seq{nuc}{$nuc}++;
                 $seq{tot}++;
