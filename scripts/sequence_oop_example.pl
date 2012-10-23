@@ -107,7 +107,8 @@ my $DNA = generate_random_sequence(15, "custom", "DNA", \%biased_kmer);
 print "\nFunction generate_random_sequence\n>" . $DNA->header . "\n" . $DNA->sequence . "\n";
 #_---------------------------Generate kmer sequence-----------------------------------#
 my %kmer = ("AAA" => 2, "ATT" => 2, "TAA" => 2);
-$DNA = generate_kmer_sequence(100000, \%kmer);
+$DNA = generate_kmer_sequence(15, \%kmer);
+print "\nFunction generate_kmer_sequence\n>" . $DNA->header . "\n" . $DNA->sequence . "\n";
 
 #------------------------------Translate----------------------------------------------#
 my $Translate = $DNA->translate;
