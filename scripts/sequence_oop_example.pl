@@ -103,8 +103,8 @@ print "Copied Sequence after concat: " . $new_seq . "\n";
 
 #----------------------------Generate random sequence----------------------------------#
 my %biased_kmer = ("A" => 0.5, "T" => 0.3, "G" => 0.05, "C" => 0.15);
-my $DNA = generate_random_sequence(100000, "custom", "DNA", \%biased_kmer);
-
+my $DNA = generate_random_sequence(15, "custom", "DNA", \%biased_kmer);
+print "\nFunction generate_random_sequence\n>" . $DNA->header . "\n" . $DNA->sequence . "\n";
 #_---------------------------Generate kmer sequence-----------------------------------#
 my %kmer = ("AAA" => 2, "ATT" => 2, "TAA" => 2);
 $DNA = generate_kmer_sequence(100000, \%kmer);
