@@ -614,8 +614,8 @@ $type (case insensitive) can be "dna" (default), "rna",
 dna, rna, and protein will give equal 
 weight to each alphabet (DNA - A/T/G/C, Protein - 20 am
 ino acids).
-"custom" will have a third input hash reference $hash, which will have the alphabet as key an
-d weight as value
+"custom" will have a third input seqtype, which will be used to set object type
+and fourth input hash reference $hash, which will have the alphabet as key and weight as value
 
 Example:
 
@@ -625,7 +625,7 @@ my %biased_kmer = (
 "G" => 0.05, 
 "C" => 0.15);
 
-my $new_seq = generate_random_sequence{100000,"custom","DNA",\%biased_kmer);
+my $new_seq = generate_random_sequence{100000,"custom", "DNA", \%biased_kmer);
 
 =cut
 
