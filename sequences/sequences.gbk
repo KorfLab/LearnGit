@@ -52,3 +52,56 @@ ORIGIN
       541 attgaatctt ttcaatctct ttgtttggtt taggagtgtg attatttctg tatctataca
       601 ataaactata aacaataaaa aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa a
 //
+LOCUS       AF087939                 257 bp    DNA     linear   PRI 22-JUN-1999
+DEFINITION  Homo sapiens MHC class II antigen (HLA-DQB1) gene, HLA-DQB1*0616
+            allele, exon 3 and partial cds.
+ACCESSION   AF087939
+VERSION     AF087939.1  GI:5106431
+KEYWORDS    .
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 257)
+  AUTHORS   Luo,M., Blanchard,J., Maclean,I. and Brunham,R.
+  TITLE     Identification of a novel DQB1 allele DBQ1*0616
+  JOURNAL   Tissue Antigens 53 (4 Pt 1), 381-382 (1999)
+   PUBMED   10323344
+REFERENCE   2  (bases 1 to 257)
+  AUTHORS   Luo,M., Blanchard,J., Maclean,I. and Brunham,R.C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (28-AUG-1998) Medical Microbiology, University of
+            Manitoba, 730 William Avenue, Winnipeg, Manitoba R3E 0W3, Canada
+FEATURES             Location/Qualifiers
+     source          1..257
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+     gene            1..257
+                     /gene="HLA-DQB1"
+                     /allele="HLA-DQB1*0616"
+     mRNA            <1..>257
+                     /gene="HLA-DQB1"
+                     /allele="HLA-DQB1*0616"
+                     /product="MHC class II antigen"
+     CDS             <1..>257
+                     /gene="HLA-DQB1"
+                     /allele="HLA-DQB1*0616"
+                     /codon_start=3
+                     /product="MHC class II antigen"
+                     /protein_id="AAD39697.1"
+                     /db_xref="GI:5106432"
+                     /translation="DFVFQFKGMCYFTNGTERVRLVTRYIYNREEYARFDSDVGVYRA
+                     VTPQGRPDAENWNSQKEVLEGTRAELDTVSRHNYEVAFRGI"
+     exon            1..257
+                     /gene="HLA-DQB1"
+                     /allele="HLA-DQB1*0616"
+                     /number=2
+ORIGIN      
+        1 aggatttcgt gttccagttt aagggcatgt gctacttcac caacgggacg gagcgcgtgc
+       61 gtcttgtgac cagatacatc tataaccgag aggagtacgc gcgcttcgac agcgacgtgg
+      121 gggtgtaccg cgcggtgacg ccgcaggggc ggcctgatgc cgagaactgg aacagccaga
+      181 aggaagtcct ggaggggacc cgggcggagt tggacacggt gagcagacac aactacgagg
+      241 tggcgttccg cgggatc
+//
